@@ -1,0 +1,6 @@
+*
+!*.yaml
+!scenes
+!packages
+!.gitignore
+secrets.yaml

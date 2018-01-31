@@ -1,0 +1,204 @@
+group.all_devices:
+  friendly_name: Discovered
+  order: 99
+sensor.christian_1_humidity:
+  hidden: true
+sensor.christian_1_temperature:
+  hidden: true
+sensor.christian_2_humidity:
+  hidden: true
+sensor.christian_2_temperature:
+  hidden: true
+switch.stereo:
+  icon: mdi:speaker
+switch.cupevarmare:
+  icon: mdi:car
+switch.sovrummet:
+  icon: mdi:lightbulb-outline
+sensor.yr_wind_speed:
+  extra_data_template: ${entities['sensor.yr_wind_direction'].state + "°"}
+  icon: mdi:weather-windy-variant
+sensor.yr_wind_direction:
+  hidden: true
+  icon: mdi:weather-windy
+sensor.yr_precipitation:
+  icon: mdi:weather-pouring
+sensor.yr_fog:
+  icon: mdi:weather-fog
+sensor.yr_cloudiness:
+  extra_data_template: '${"H: " + entities[''sensor.yr_high_clouds''].state + "%,
+    M: " + entities[''sensor.yr_medium_clouds''].state +"%, L: " + entities[''sensor.yr_low_clouds''].state
+    + "%"}'
+  icon: mdi:weather-cloudy
+sensor.yr_high_clouds:
+  hidden: true
+  icon: mdi:weather-cloudy
+sensor.yr_medium_clouds:
+  hidden: true
+  icon: mdi:weather-cloudy
+sensor.yr_low_clouds:
+  hidden: true
+  icon: mdi:weather-cloudy
+sensor.yr_dewpoint_temperature:
+  hidden: true
+  icon: mdi:thermometer-lines
+sensor.yr_humidity:
+  hidden: true
+  icon: mdi:water-percent
+light.glodlampan:
+  icon: mdi:lamp
+light.fonster_vardagsrum: {}
+climate.daikin:
+  friendly_name: Mjövik
+  icon: mdi:air-conditioner
+history_graph.temperature_10_days:
+  hidden: true
+sensor.dew_point:
+  friendly_name: Krypgrund Daggpunkt
+  icon: mdi:thermometer-lines
+  unit_of_measurement: °C
+  hidden: true
+sensor.daikin_indoor:
+  icon: mdi:home-heart
+sensor.daikin_outdoor:
+  icon: mdi:home-outline
+sensor.yr_pressure:
+  icon: mdi:gauge
+sensor.yr_temperature:
+  extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
+    "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
+  icon: mdi:thermometer
+input_number.internet_traffic_delta_in:
+  hidden: true
+input_number.internet_traffic_delta_out:
+  hidden: true
+sensor.snmp_wan_in:
+  hidden: true
+sensor.snmp_wan_out:
+  hidden: true
+automation.monitor_traffic_in:
+  hidden: true
+automation.monitor_traffic_out:
+  hidden: true
+group.semester:
+  control: hidden
+switch.goodnight:
+  hidden: true
+automation.ac_weekday_heat_18:
+  show_last_changed: true
+automation.ac_weekday_afternoon_heat_23:
+  show_last_changed: true
+automation.ac_weekday_morning_heat_23:
+  show_last_changed: true
+script.goodnight:
+  show_last_changed: true
+light.utebelysning:
+  extra_data_template: '${entities[''sensor.utebelysning_power''].state !== 0.0 ?
+    entities[''sensor.utebelysning_power''].state + " W" : "F"}'
+  show_last_changed: true
+  state_card_mode: single-line
+sensor.vit_inne_temperature:
+  extra_data_template: ${"Humidity:" + entities['sensor.vit_inne_humidity'].state
+    + "%"}
+sensor.krypgrund_temperature:
+  extra_data_template: '${"Humidity: " + entities[''sensor.krypgrund_humidity''].state
+    + "% (" + entities[''sensor.dew_point''].state +"°C)"}'
+input_boolean.vacation_mode:
+  show_last_changed: true
+input_boolean.trip_mode:
+  show_last_changed: true
+sensor.krypgrund_humidity:
+  hidden: true
+sensor.utebelysning_power_2:
+  hidden: true
+sensor.utebelysning_power:
+  hidden: true
+sensor.vit_inne_humidity:
+  hidden: true
+sensor.regnmatare_rain_rate:
+  extra_data_template: '${"Total: " + entities["sensor.regnmatare_rain_total"].state
+    + "mm"}'
+sensor.regnmatare_rain_total:
+  hidden: true
+sensor.wan_in:
+  hidden: true
+sensor.wan_out:
+  hidden: true
+automation.sleep:
+  show_last_changed: true
+group.net_monitor:
+  state_card_mode: badges
+sensor.sonarr_upcoming: {}
+group.snmp_monitor:
+  hidden: true
+  state_card_mode: badges
+sensor.internet_speed_in: {}
+sensor.internet_speed_out: {}
+sensor.wan_traffic_in_mean:
+  state_card_mode: badges
+sensor.wan_traffic_out_mean:
+  state_card_mode: badges
+sensor.traffic_in_stats_mean:
+  hidden: true
+sensor.traffic_out_stats_mean:
+  hidden: true
+sun.sun:
+  extra_data_template: 'Elevation ${attributes.elevation}°, ${(attributes.elevation
+    > 0) ? ( (((Date.parse(attributes.next_setting) - Date.now()) / 3600000) < 0)
+    ? (Math.floor((Date.parse(attributes.next_setting) - Date.now()) / 60000) + "
+    min to setting") : (Math.floor((Date.parse(attributes.next_setting) - Date.now())
+    / 3600000) + " h to setting") ) : ( (Math.floor((Date.parse(attributes.next_rising)
+    - Date.now()) / 3600000) === 0) ? (Math.floor((Date.parse(attributes.next_rising)
+    - Date.now()) / 60000) + " min to rising") : (Math.floor((Date.parse(attributes.next_rising)
+    - Date.now()) / 3600000) + " h to rising") )}'
+sensor.departuretime_ak:
+  icon: mdi:clock
+sensor.yr_symbol:
+  hidden: true
+device_tracker.78f882cf23d5: {}
+device_tracker.ac3743a16232: {}
+sensor.hemma:
+  hidden: true
+group.mvak:
+  hide_in_default_view: true
+climate.mjovik:
+  hidden: true
+sensor.sparsnas_battery_remaining:
+  hidden: true
+  icon: mdi:battery-outline
+sensor.sparsnas_frequency_error:
+  hidden: true
+  icon: mdi:signal
+sensor.kwh_today:
+  friendly_name: Sparsnäs Today
+  group:
+    group.sparsnas:
+      friendly_name: Today
+  icon: mdi:flash-circle
+sensor.kwh_current_month:
+  group:
+    group.sparsnas:
+      friendly_name: This Month
+  icon: mdi:flash-circle
+sensor.sparsnas_template_kwh_sensor_day:
+  hidden: true
+sensor.sparsnas_template_kwh_sensor_month:
+  hidden: true
+sensor.sparsnas_energy_consumption_over_time:
+  friendly_name: Sparsnäs total
+  hidden: true
+  icon: mdi:flash-circle
+sensor.sparsnas_energy_consumption_momentary:
+  extra_data_template: '${"Battery: " + entities[''sensor.sparsnas_battery_remaining''].state
+    + "%, Signal: " + entities[''sensor.sparsnas_frequency_error''].state}'
+  friendly_name: 'Power usage '
+  icon: mdi:flash-circle
+group.sparsnas:
+  entity_id:
+  - sensor.sparsnas_energy_consumption_momentary
+  - sensor.sparsnas_energy_consumption_over_time
+  - sensor.sparsnas_battery_remaining
+  - sensor.sparsnas_frequency_error
+  - sensor.kwh_today
+  - sensor.kwh_current_month
+device_tracker.0008ae922b20: {}

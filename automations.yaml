@@ -1,0 +1,87 @@
+- alias: AC weekday (heat 18)
+  trigger:
+  - platform: time
+    minutes: /5
+    seconds: 0
+  - platform: state
+    entity_id: group.tracking
+    to: not_home
+    from: home
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: group.tracking
+      state: not_home
+    - condition: time
+      after: 07:15:00
+      before: '15:00:00'
+      weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.daikin
+      temperature: 18
+      operation_mode: Heat
+  - service: climate.set_fan_mode
+    data:
+      fan_mode: Auto
+- alias: AC weekday morning (heat 23)
+  trigger:
+    platform: time
+    at: '5:50:00'
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 23
+      operation_mode: Heat
+  - service: climate.set_fan_mode
+    data:
+      fan_mode: Auto
+- alias: AC weekday afternoon (heat 23)
+  trigger:
+    platform: time
+    at: '15:00:00'
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: climate.set_temperature
+    data:
+      temperature: 23
+      operation_mode: Heat
+  - service: climate.set_fan_mode
+    data:
+      fan_mode: Auto
+- alias: Sleep
+  trigger:
+    platform: time
+    at: '22:30:00'
+  condition:
+    condition: time
+    weekday:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+  action:
+    service: script.goodnight

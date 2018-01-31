@@ -1,0 +1,30 @@
+goodnight:
+  alias: Goodnight
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: 
+        - switch.barnensrum
+        - light.fonster_vardagsrum
+        - light.glodlampan
+        - switch.barnensrum
+        - switch.cupevarmare
+        - switch.goodnight
+        - switch.julgranen
+        - switch.kok_uppe
+        - switch.koksfonster
+        #- switch.ljusslingor
+        - switch.sovrummet
+        - switch.stereo
+        - light.fonster_vardagsrum
+        - light.glodlampan
+        #- light.utebelysning
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.daikin
+        operation_mode: Auto
+        temperature: 19
+    - service: climate.set_fan_mode
+      data:
+        entity_id: climate.daikin
+        fan_mode: low

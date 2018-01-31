@@ -1,0 +1,156 @@
+# Automation section
+automation:
+  - alias: "heater ak minus 10"
+    initial_state: True
+    trigger:
+     - platform: time
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions: 
+        - condition: numeric_state
+          entity_id: sensor.netatmo_utomhus_norra_husgaveln_temperature
+          below: -10
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 7200) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'
+    action:
+       - service: script.turn_on
+         entity_id: script.heater_ak_on
+       - service: notify.telegram
+         data_template:
+           message: 'Motorvärmaren (-10°) är på i 2h från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+       - service: homeassistant.turn_off
+         entity_id: automation.heater_ak_minus_10, automation.heater_ak_plus_1, automation.heater_ak_plus_5
+  
+  - alias: "heater ak plus 1"
+    initial_state: True
+    trigger:
+     - platform: time
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.netatmo_utomhus_norra_husgaveln_temperature
+          below: 1.0 
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 3600) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'        
+    action:
+       - service: script.turn_on
+         entity_id: script.heater_ak_on
+       - service: notify.telegram
+         data_template:
+           message: 'Motorvärmaren (+1°) är på i 1h från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+       - service: homeassistant.turn_off
+         entity_id: automation.heater_ak_plus_1, automation.heater_ak_plus_5, automation.heater_ak_minus_10
+  
+  - alias: "heater ak plus 5"
+    initial_state: True
+    trigger:
+     - platform: time
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.netatmo_utomhus_norra_husgaveln_temperature
+          below: 5.0 
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 1800) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'        
+    action:
+       - service: script.turn_on
+         entity_id: script.heater_ak_on
+       - service: notify.telegram
+         data_template:
+           message: 'Motorvärmaren (+5°) är på i 30 min från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+       - service: homeassistant.turn_off
+         entity_id: automation.heater_ak_plus_5, automation.heater_ak_plus_1, automation.heater_ak_minus_10
+
+  - alias: "heater ak enabled"
+    trigger:
+      platform: state
+      entity_id: input_number.heater_ak_hour, input_number.heater_ak_minutes
+    action:
+      - service: homeassistant.turn_on
+        entity_id:
+          - automation.heater_ak_minus_10
+          - automation.heater_ak_plus_1
+          - automation.heater_ak_plus_5
+
+  - alias: "heater ak off"
+    initial_state: False
+    trigger:
+     - platform: time
+       minutes: '/5'
+       seconds: 2
+    condition:
+      - condition: template
+        value_template: '{{ now().hour == (states.input_number.heater_ak_hour.state  | round(0))  and  now().minute == (states.input_number.heater_ak_minutes.state  | round(0) )  }}'        
+    action:
+       - service: homeassistant.turn_off
+         entity_id: switch.carheater_ak_plug_switch, automation.heater_ak_off
+       - service: notify.telegram
+         data_template:
+           message: 'Motorvärmaren Stängs nu av {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+
+
+# Input section
+input_number:
+  heater_ak_hour:
+    name: Timmar
+    icon: mdi:timer
+    initial: 07
+    min: 0
+    max: 23
+    step: 1
+  
+  heater_ak_minutes:
+    name: Minuter
+    icon: mdi:timer
+    initial: 30
+    min: 0
+    max: 55
+    step: 5
+
+# Sensor section
+sensor:
+  - platform: template
+    sensors:
+      departuretime_ak:
+        friendly_name: 'Avresetid'
+        value_template: '{% if states.input_number.heater_ak_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_hour.state|round(0)|string }}:{% if states.input_number.heater_ak_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_minutes.state|round(0)|string }}'
+        #entity_id: 
+        # - input_number.heater_ak_minutes
+        # - input_number.heater_ak_hour
+
+# Group section
+group:
+  heaterak:
+    name: Heater
+    icon: mdi:alarm
+    view: yes
+    entities:
+      - group.mvak
+  mvak:
+    name: "Motorvärmare"
+    entities:
+      - sensor.departuretime_ak
+      - sensor.heater_start_time_ak
+      - input_number.heater_ak_hour
+      - input_number.heater_ak_minutes
+      - sensor.ute_temperature
+      - switch.cupevarmare
+
+# Script section
+script:
+
+  heater_ak_on:
+    sequence:
+    - service: homeassistant.turn_on
+      #data: 
+      entity_id: switch.carheater_ak_plug_switch
+    - service: automation.turn_on
+      entity_id: automation.heater_ak_off

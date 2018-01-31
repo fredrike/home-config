@@ -1,0 +1,86 @@
+climate:
+  name: Climate
+  view: no
+  entities:
+  - sensor.weather_symbol_description
+  - sun.sun
+  - sensor.daikin_indoor  
+  - sensor.daikin_outdoor
+  - sensor.ute_temperature
+  - sensor.krypgrund_temperature
+  #- sensor.krypgrund_humidity
+  #- sensor.dew_point
+  - sensor.vit_inne_temperature
+  #- sensor.vit_inne_humidity
+  - sensor.regnmatare_rain_rate
+  - sensor.yr_temperature
+  #- sensor.yr_humidity
+  #- sensor.yr_dewpoint_temperature
+  - sensor.yr_precipitation
+  #- sensor.yr_wind_direction
+  - sensor.yr_wind_speed
+  - sensor.yr_cloudiness
+  #- sensor.yr_high_clouds
+  #- sensor.yr_low_clouds
+  #- sensor.yr_medium_clouds
+  - sensor.yr_fog
+  - sensor.yr_pressure
+
+
+weather:
+  name: Weather
+  view: yes
+  entities:
+  - group.climate
+  - sensor.yr_dewpoint_temperature
+  - sensor.yr_cloudiness
+  - sensor.yr_cloudiness
+  - sensor.yr_high_clouds
+  - sensor.yr_low_clouds
+  - sensor.yr_medium_clouds
+  - sensor.yr_precipitation
+  - sensor.yr_pressure
+  - sensor.yr_wind_speed
+  - sensor.yr_wind_direction
+
+plots:
+  name: Plots
+  view: yes
+  entities:
+  - history_graph.temperature_10_days
+  - history_graph.temperature_30_days
+
+tracking:
+  name: Tracking
+  entities:
+  - sensor.hemma
+  - device_tracker.ac3743a16232
+  - device_tracker.78f882cf23d5
+
+semester:
+  name: Semester
+  entities:
+  - input_boolean.vacation_mode
+  - input_boolean.trip_mode
+
+net_monitor:
+  name: Traffic Monitoring
+  view: no
+  entities:
+    - sensor.internet_speed_in
+    - sensor.internet_speed_out
+    - sensor.wan_traffic_in_mean
+    - sensor.wan_traffic_out_mean
+    - sensor.sonarr_upcoming
+
+mediaplayers:
+  name: Media Players
+  view: yes
+  entities:
+    - media_player.erlandssons_sheild
+    - media_player.j__f_ipad_mini_4
+    - media_player.lg_webos_smart_tv 
+    - media_player.living_room_tv
+    - media_player.plex_web_chrome
+    - media_player.shield_android_tv
+    - media_player.unnamed_device

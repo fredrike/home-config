@@ -1,0 +1,217 @@
+
+78f882cf23d5:
+  hide_if_away: false
+  icon:
+  mac: 78:F8:82:CF:23:D5
+  name: Nexus 5X (Fredrik)
+  gravatar: !secret fredrik_gravatar
+  picture:
+  track: true
+  vendor: unknown
+
+ac3743a16232:
+  hide_if_away: false
+  icon: mdi:cellphone-android
+  mac: AC:37:43:A1:62:32
+  name: Johanna
+  picture: !secret johanna_picture
+  track: true
+  vendor: HTC Corporation
+
+f0c77fb3ffe2:
+  hide_if_away: true
+  icon: mdi:air-conditioner
+  mac: F0:C7:7F:B3:FF:E2
+  name: Sensibo
+  picture:
+  track: false
+  vendor: unknown
+
+784f43754df9:
+  hide_if_away: false
+  icon: mdi:laptop-mac
+  mac: 78:4F:43:75:4D:F9
+  name: FredriksMBP2017
+  picture:
+  track: true
+  vendor: unknown
+
+a06faa48ed64:
+  hide_if_away: false
+  icon: mdi:television
+  mac: A0:6F:AA:48:ED:64
+  name: TV
+  picture:
+  track: true
+  vendor: unknown
+
+6cadf84ab3a0:
+  hide_if_away: false
+  icon: mdi:cast
+  mac: 6C:AD:F8:4A:B3:A0
+  name: Chromecast Living room
+  picture:
+  track: true
+  vendor: AzureWave Technology Inc.
+
+3c15c2067185:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 3C:15:C2:06:71:85
+  name: Lila iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+9cf387c11dd2:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 9C:F3:87:C1:1D:D2
+  name: 9cf387c11dd2
+  picture:
+  track: true
+  vendor: unknown
+
+9c04ebc79e72:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 9C:04:EB:C7:9E:72
+  name: Orange iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+3412986c3e80:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 34:12:98:6C:3E:80
+  name: Golden iPad
+  picture:
+  track: true
+  vendor: Apple Inc.
+
+00044b55d114:
+  hide_if_away: false
+  icon: mdi:cast
+  mac: 00:04:4B:55:D1:14
+  name: Nvidia Sheild
+  picture:
+  track: true
+  vendor: NVIDIA
+
+141aa3d4c5af:
+  hide_if_away: false
+  icon:
+  mac: 14:1A:A3:D4:C5:AF
+  name: 141aa3d4c5af-unknown :/
+  picture:
+  track: true
+  vendor: Motorola Mobility LLC, a Lenovo Company
+
+e8b1fc93b7f0:
+  hide_if_away: false
+  icon: mdi:laptop-windows
+  mac: E8:B1:FC:93:B7:F0
+  name: Johanna work
+  picture:
+  track: true
+  vendor: unknown
+
+a408eaf07afe:
+  hide_if_away: false
+  icon: mdi:air-conditioner
+  mac: A4:08:EA:F0:7A:FE
+  name: Daikin
+  picture:
+  track: true
+  vendor: Murata Manufacturing Co., Ltd.
+
+00113261ee4e:
+  hide_if_away: false
+  icon: mdi:server-network
+  mac: 00:11:32:61:EE:4E
+  name: Synology
+  picture:
+  track: true
+  vendor: unknown
+
+bcf685760256:
+  hide_if_away: false
+  icon:
+  mac: BC:F6:85:76:02:56
+  name: bcf685760256
+  picture: D-Link
+  track: false
+  vendor: unknown
+
+tellstickznetlite:
+  hide_if_away: false
+  icon:
+  mac: AC:CA:54:01:B5:EA
+  name: TellStick-ZNet-Lite
+  picture:
+  track: true
+  vendor: unknown
+
+0008ae922b20:
+  hide_if_away: false
+  icon:
+  mac: 00:08:AE:92:2B:20
+  name: 0008ae922b20
+  picture:
+  track: true
+  vendor: unknown
+
+iphonej:
+  hide_if_away: false
+  icon:
+  mac: 30:F7:C5:E4:BF:97
+  name: iPhone-J
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+macbook:
+  hide_if_away: false
+  icon:
+  mac: 8C:85:90:62:FE:84
+  name: MacBook
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+johannasmacbook:
+  hide_if_away: false
+  icon:
+  mac: 00:0E:C6:E2:0D:50
+  name: JohannasMacBook
+  picture:
+  track: true
+  vendor: ASIX ELECTRONICS CORP.
+
+wii:
+  hide_if_away: false
+  icon:
+  mac: 00:1B:EA:CF:21:54
+  name: Wii
+  picture:
+  track: true
+  vendor: Nintendo Co., Ltd.
+
+3052cbdf3ae1:
+  hide_if_away: false
+  icon:
+  mac: 30:52:CB:DF:3A:E1
+  name: 3052cbdf3ae1
+  picture:
+  track: true
+  vendor: Liteon Technology Corporation
+
+esp_1c2f10:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:1C:2F:10
+  name: ESP 1C2F10
+  picture:
+  track: true
+  vendor: Espressif Inc.
