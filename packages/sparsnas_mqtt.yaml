@@ -5,18 +5,12 @@ sensor:
     unit_of_measurement: "W"
     value_template: '{{ value_json.Watt | round(1) }}'
     icon: mdi:flash-circle
-    extra_data_template: '${"Battery: " + entities[''sensor.sparsnas_battery_remaining''].state
-      + "%, Signal: " + entities[''sensor.sparsnas_frequency_error''].state}'
-    group:
-      group.sparsnas:
-        friendly_name: 'Current'
 # Note that the sensor below will be resetted if you remove/reinstall the batteries in the Sparsnäs transmitter
   - platform: mqtt
     state_topic: "home/sparsnas"
     name: "Sparsnäs energy consumption over time"
     unit_of_measurement: "kWh"
     value_template: '{{ value_json.kWh | round(1) }}'
-    friendly_name: Sparsnäs total
     hidden: true
     icon: mdi:flash-circle
   - platform: mqtt

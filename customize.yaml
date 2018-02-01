@@ -1,6 +1,3 @@
-group.all_devices:
-  friendly_name: Discovered
-  order: 99
 sensor.christian_1_humidity:
   hidden: true
 sensor.christian_1_temperature:
@@ -47,7 +44,11 @@ sensor.yr_humidity:
   icon: mdi:water-percent
 light.glodlampan:
   icon: mdi:lamp
-light.fonster_vardagsrum: {}
+  show_last_changed: true
+  state_card_mode: single-line
+light.fonster_vardagsrum:
+  show_last_changed: true
+  state_card_mode: single-line
 climate.daikin:
   friendly_name: Mjövik
   icon: mdi:air-conditioner
@@ -80,7 +81,7 @@ automation.monitor_traffic_in:
   hidden: true
 automation.monitor_traffic_out:
   hidden: true
-group.semester:
+group.control:
   control: hidden
 switch.goodnight:
   hidden: true
@@ -91,6 +92,7 @@ automation.ac_weekday_afternoon_heat_23:
 automation.ac_weekday_morning_heat_23:
   show_last_changed: true
 script.goodnight:
+  icon: mdi:sleep
   show_last_changed: true
 light.utebelysning:
   extra_data_template: '${entities[''sensor.utebelysning_power''].state !== 0.0 ?
@@ -155,14 +157,27 @@ sensor.departuretime_ak:
   icon: mdi:clock
 sensor.yr_symbol:
   hidden: true
-device_tracker.78f882cf23d5: {}
-device_tracker.ac3743a16232: {}
 sensor.hemma:
   hidden: true
-group.mvak:
-  hide_in_default_view: true
-climate.mjovik:
-  hidden: true
+group.all_lights:
+  hidden: false
+  control: hidden
+  friendly_name: Lamps
+group.all_scripts:
+  hidden: false
+  control: hidden
+  friendly_name: Scripts
+group.all_switches:
+  hidden: false
+  control: hidden
+  friendly_name: Switches
+group.all_devices:
+  friendly_name: Discovered
+  order: 99
+  hidden: false
+group.all_automations:
+  friendly_name: Automations
+  hidden: false
 sensor.sparsnas_battery_remaining:
   hidden: true
   icon: mdi:battery-outline
@@ -170,7 +185,6 @@ sensor.sparsnas_frequency_error:
   hidden: true
   icon: mdi:signal
 sensor.kwh_today:
-  friendly_name: Sparsnäs Today
   group:
     group.sparsnas:
       friendly_name: Today
@@ -185,20 +199,12 @@ sensor.sparsnas_template_kwh_sensor_day:
 sensor.sparsnas_template_kwh_sensor_month:
   hidden: true
 sensor.sparsnas_energy_consumption_over_time:
-  friendly_name: Sparsnäs total
   hidden: true
   icon: mdi:flash-circle
 sensor.sparsnas_energy_consumption_momentary:
   extra_data_template: '${"Battery: " + entities[''sensor.sparsnas_battery_remaining''].state
     + "%, Signal: " + entities[''sensor.sparsnas_frequency_error''].state}'
-  friendly_name: 'Power usage '
+  group:
+    group.sparsnas:
+      friendly_name: Power usage
   icon: mdi:flash-circle
-group.sparsnas:
-  entity_id:
-  - sensor.sparsnas_energy_consumption_momentary
-  - sensor.sparsnas_energy_consumption_over_time
-  - sensor.sparsnas_battery_remaining
-  - sensor.sparsnas_frequency_error
-  - sensor.kwh_today
-  - sensor.kwh_current_month
-device_tracker.0008ae922b20: {}

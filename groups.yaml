@@ -1,24 +1,24 @@
 climate:
-  name: Climate
+  name: Weather
   view: no
   entities:
   - sensor.weather_symbol_description
   - sun.sun
-  - sensor.daikin_indoor  
+  - sensor.daikin_indoor
   - sensor.daikin_outdoor
   - sensor.ute_temperature
   - sensor.krypgrund_temperature
-  #- sensor.krypgrund_humidity
-  #- sensor.dew_point
+  - sensor.krypgrund_humidity
+  - sensor.dew_point
   - sensor.vit_inne_temperature
-  #- sensor.vit_inne_humidity
+  - sensor.vit_inne_humidity
   - sensor.regnmatare_rain_rate
   - sensor.yr_temperature
-  #- sensor.yr_humidity
-  #- sensor.yr_dewpoint_temperature
+  - sensor.yr_humidity
+  - sensor.yr_dewpoint_temperature
   - sensor.yr_precipitation
-  #- sensor.yr_wind_direction
   - sensor.yr_wind_speed
+  - sensor.yr_wind_direction
   - sensor.yr_cloudiness
   #- sensor.yr_high_clouds
   #- sensor.yr_low_clouds
@@ -27,21 +27,27 @@ climate:
   - sensor.yr_pressure
 
 
-weather:
-  name: Weather
+default_view:
+  name: Mjövik
   view: yes
   entities:
   - group.climate
-  - sensor.yr_dewpoint_temperature
-  - sensor.yr_cloudiness
-  - sensor.yr_cloudiness
-  - sensor.yr_high_clouds
-  - sensor.yr_low_clouds
-  - sensor.yr_medium_clouds
-  - sensor.yr_precipitation
-  - sensor.yr_pressure
-  - sensor.yr_wind_speed
-  - sensor.yr_wind_direction
+  - climate.daikin
+  - group.all_lights
+  - group.all_switches
+  - group.tracking
+  - group.control
+  - group.sparsnas
+
+automate:
+  name: Automate
+  view: yes
+  entities:
+  - group.all_automations
+  - group.all_devices
+  - group.all_scripts
+  - group.mvak
+  - group.net_monitor
 
 plots:
   name: Plots
@@ -57,11 +63,12 @@ tracking:
   - device_tracker.ac3743a16232
   - device_tracker.78f882cf23d5
 
-semester:
-  name: Semester
+control:
+  name: Control
   entities:
   - input_boolean.vacation_mode
   - input_boolean.trip_mode
+  - script.goodnight
 
 net_monitor:
   name: Traffic Monitoring
@@ -79,7 +86,7 @@ mediaplayers:
   entities:
     - media_player.erlandssons_sheild
     - media_player.j__f_ipad_mini_4
-    - media_player.lg_webos_smart_tv 
+    - media_player.lg_webos_smart_tv
     - media_player.living_room_tv
     - media_player.plex_web_chrome
     - media_player.shield_android_tv
