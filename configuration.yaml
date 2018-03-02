@@ -146,6 +146,12 @@ sensor:
           {%- else -%}
           No one is home
           {%- endif %}
+      dark_sky:
+        entity_picture_template: "{{states.sensor.dark_sky_summary.attributes.entity_picture}}"
+        value_template: "{{states.sensor.dark_sky_temperature.state}}"
+        friendly_name: "Dark Sky"
+        friendly_name_template: "{{states.sensor.dark_sky_summary.state}} — ⟨Dark Sky⟩"
+        unit_of_measurement: "°C"
 
   #  sensors:
   #    daikin_in:
@@ -168,6 +174,29 @@ sensor:
   #  accept_errors: true
   #  unit_of_measurement: kB
   #  value_template: '{{((value | int) / 1024) | int}}'
+  - platform: darksky #https://pastebin.com/iX7u4ZSg
+    api_key: !secret darksky_api_key
+    update_interval: '00:03'
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+      - temperature
+      - apparent_temperature
+      - precip_probability
+      - wind_speed
+      - pressure
+      - wind_bearing
+      - humidity
+      - cloud_cover
+      - dew_point
+      - hourly_summary
+      - daily_summary
+
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
 
 mqtt:
   broker: 127.0.0.1

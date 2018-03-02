@@ -30,8 +30,10 @@ sensor.dew_point:
   unit_of_measurement: °C
   hidden: true
 sensor.daikin_indoor:
+  hidden: true
   icon: mdi:home-heart
 sensor.daikin_outdoor:
+  hidden: true
   icon: mdi:home-outline
 group.control:
   control: hidden
@@ -130,3 +132,17 @@ group.all_devices:
 group.all_automations:
   friendly_name: Automations
   hidden: false
+sensor.dark_sky_temperature:
+  extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
+    + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
+    + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
+  hidden: true
+sensor.dark_sky_wind_speed:
+  extra_data_template: ${entities['sensor.dark_sky_wind_bearing'].state + "°"}
+sensor.ute_temperature:
+  extra_data_template: '${"Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
+  friendly_name: Ute Temperatur
+sensor.dark_sky:
+  extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
+    + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
+    + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
