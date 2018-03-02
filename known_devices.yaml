@@ -1,13 +1,23 @@
 
+android2c3c68e2b6856433:
+  hide_if_away: false
+  mac: 2C:59:8A:70:70:82
+  name: android-2c3c68e2b6856433
+  name: Nexus 5X (Fredrik)
+  gravatar: !secret fredrik_gravatar
+  track: true
+  vendor: LG Electronics (Mobile Communications)
+
 78f882cf23d5:
   hide_if_away: false
   icon:
   mac: 78:F8:82:CF:23:D5
-  name: Nexus 5X (Fredrik)
+  name: Nexus 5X (Fredrik old)
   gravatar: !secret fredrik_gravatar
   picture:
   track: true
   vendor: unknown
+  hidden: true
 
 ac3743a16232:
   hide_if_away: false
@@ -215,3 +225,21 @@ esp_1c2f10:
   picture:
   track: true
   vendor: Espressif Inc.
+
+macbookpro:
+  hide_if_away: false
+  icon:
+  mac: 00:26:BB:1A:DF:AA
+  name: MacBook-Pro
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+androidb09c2197f29ffbd4:
+  hide_if_away: false
+  icon:
+  mac: 48:5A:3F:6C:02:AB
+  name: Jessicas telefon
+  picture:
+  track: true
+  vendor: WISOL
