@@ -15,7 +15,18 @@ homeassistant:
     sensor.wan_traffic_out_mean:
       friendly_name: 'WAN Upload Average'
       icon: mdi:upload
-
+    input_number.internet_traffic_delta_in:
+      hidden: true
+    input_number.internet_traffic_delta_out:
+      hidden: true
+    sensor.snmp_wan_in:
+      hidden: true
+    sensor.snmp_wan_out:
+      hidden: true
+    automation.monitor_traffic_in:
+      hidden: true
+    automation.monitor_traffic_out:
+      hidden: true
 sensor:
   - platform: snmp
     name: snmp_wan_in

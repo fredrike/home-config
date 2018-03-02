@@ -33,18 +33,6 @@ sensor.daikin_indoor:
   icon: mdi:home-heart
 sensor.daikin_outdoor:
   icon: mdi:home-outline
-input_number.internet_traffic_delta_in:
-  hidden: true
-input_number.internet_traffic_delta_out:
-  hidden: true
-sensor.snmp_wan_in:
-  hidden: true
-sensor.snmp_wan_out:
-  hidden: true
-automation.monitor_traffic_in:
-  hidden: true
-automation.monitor_traffic_out:
-  hidden: true
 group.control:
   control: hidden
 switch.goodnight:
