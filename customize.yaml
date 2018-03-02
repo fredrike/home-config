@@ -12,36 +12,6 @@ switch.cupevarmare:
   icon: mdi:car
 switch.sovrummet:
   icon: mdi:lightbulb-outline
-sensor.yr_wind_speed:
-  extra_data_template: ${entities['sensor.yr_wind_direction'].state + "°"}
-  icon: mdi:weather-windy-variant
-sensor.yr_wind_direction:
-  hidden: true
-  icon: mdi:weather-windy
-sensor.yr_precipitation:
-  icon: mdi:weather-pouring
-sensor.yr_fog:
-  icon: mdi:weather-fog
-sensor.yr_cloudiness:
-  extra_data_template: '${"H: " + entities[''sensor.yr_high_clouds''].state + "%,
-    M: " + entities[''sensor.yr_medium_clouds''].state +"%, L: " + entities[''sensor.yr_low_clouds''].state
-    + "%"}'
-  icon: mdi:weather-cloudy
-sensor.yr_high_clouds:
-  hidden: true
-  icon: mdi:weather-cloudy
-sensor.yr_medium_clouds:
-  hidden: true
-  icon: mdi:weather-cloudy
-sensor.yr_low_clouds:
-  hidden: true
-  icon: mdi:weather-cloudy
-sensor.yr_dewpoint_temperature:
-  hidden: true
-  icon: mdi:thermometer-lines
-sensor.yr_humidity:
-  hidden: true
-  icon: mdi:water-percent
 light.glodlampan:
   icon: mdi:lamp
   show_last_changed: true
@@ -63,12 +33,6 @@ sensor.daikin_indoor:
   icon: mdi:home-heart
 sensor.daikin_outdoor:
   icon: mdi:home-outline
-sensor.yr_pressure:
-  icon: mdi:gauge
-sensor.yr_temperature:
-  extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
-    "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
-  icon: mdi:thermometer
 input_number.internet_traffic_delta_in:
   hidden: true
 input_number.internet_traffic_delta_out:
@@ -100,11 +64,13 @@ light.utebelysning:
   show_last_changed: true
   state_card_mode: single-line
 sensor.vit_inne_temperature:
-  extra_data_template: ${"Humidity:" + entities['sensor.vit_inne_humidity'].state
-    + "%"}
+  extra_data_template: '${"Humidity: " + entities[''sensor.vit_inne_humidity''].state
+    + "%" + ", Daikin: " +  entities[''sensor.daikin_indoor''].state +"°C" }'
+  friendly_name: Inne Temperatur (vit)
 sensor.krypgrund_temperature:
   extra_data_template: '${"Humidity: " + entities[''sensor.krypgrund_humidity''].state
-    + "% (" + entities[''sensor.dew_point''].state +"°C)"}'
+    + "% (" + entities[''sensor.dew_point''].state + "°C)"}'
+  friendly_name: Krypgrund Temperatur
 input_boolean.vacation_mode:
   show_last_changed: true
 input_boolean.trip_mode:
@@ -155,8 +121,6 @@ sun.sun:
     - Date.now()) / 3600000) + " h to rising") )}'
 sensor.departuretime_ak:
   icon: mdi:clock
-sensor.yr_symbol:
-  hidden: true
 sensor.hemma:
   hidden: true
 group.all_lights:

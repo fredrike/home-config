@@ -1,3 +1,47 @@
+homeassistant:
+  customize:
+    sensor.yr_symbol:
+      hidden: true
+    sensor.yr_wind_speed:
+      extra_data_template: ${entities['sensor.yr_wind_direction'].state + "°"}
+      icon: mdi:weather-windy-variant
+    sensor.yr_wind_direction:
+      hidden: true
+      icon: mdi:weather-windy
+    sensor.yr_precipitation:
+      icon: mdi:weather-pouring
+    sensor.yr_fog:
+      icon: mdi:weather-fog
+    sensor.yr_cloudiness:
+      extra_data_template: '${"H: " + entities[''sensor.yr_high_clouds''].state + "%,
+        M: " + entities[''sensor.yr_medium_clouds''].state +"%, L: " + entities[''sensor.yr_low_clouds''].state
+        + "%"}'
+      icon: mdi:weather-cloudy
+    sensor.yr_high_clouds:
+      hidden: true
+      icon: mdi:weather-cloudy
+    sensor.yr_medium_clouds:
+      hidden: true
+      icon: mdi:weather-cloudy
+    sensor.yr_low_clouds:
+      hidden: true
+      icon: mdi:weather-cloudy
+    sensor.yr_dewpoint_temperature:
+      hidden: true
+      icon: mdi:thermometer-lines
+    sensor.yr_humidity:
+      hidden: true
+      icon: mdi:water-percent
+    sensor.yr_pressure:
+      icon: mdi:gauge
+    sensor.yr_temperature:
+      hidden: true
+      extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
+        "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
+      icon: mdi:thermometer
+    sensor.yr:
+      extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
+        "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
 
 # Weather prediction
 sensor:
@@ -18,9 +62,11 @@ sensor:
       - dewpointTemperature
   - platform: template
     sensors:
-      weather_symbol_description:
-        friendly_name: 'Väder'
-        value_template: >-
+      yr:
+        value_template: "{{states.sensor.yr_temperature.state}}"
+        friendly_name: 'Yr - Väder'
+        unit_of_measurement: "°C"
+        friendly_name_template: >-
           {% if states.sensor.yr_symbol.state | int==1%}Klart
           {% elif states.sensor.yr_symbol.state | int==2%}Lätt monlighet
           {% elif states.sensor.yr_symbol.state | int==3%}Halvklart till mulet
@@ -42,7 +88,7 @@ sensor:
           {% elif states.sensor.yr_symbol.state | int==19%}Titta ut!
           {% elif states.sensor.yr_symbol.state | int==20%}Snöblandat regn och åska
           {% elif states.sensor.yr_symbol.state | int==21%}Sol och snö med inslag av åska
-          {% elif states.sensor.yr_symbol.state | int==22%}Lätt regn 
+          {% elif states.sensor.yr_symbol.state | int==22%}Lätt regn
           {% elif states.sensor.yr_symbol.state | int==23%}SleetThunder
           {% elif states.sensor.yr_symbol.state | int==24%}DrizzleThunderSun
           {% elif states.sensor.yr_symbol.state | int==25%}RainThunderSun
@@ -72,9 +118,10 @@ sensor:
           {% elif states.sensor.yr_symbol.state | int==49%}Lätt snöfall
           {% elif states.sensor.yr_symbol.state | int==50%}Kraftigt snöfall
           {% endif %}
+          — ⟨Yr⟩
         entity_picture_template: >-
           {% if is_state('sun.sun', 'above_horizon') %}
-          //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=0;content_type=image/png
+          //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=0;content_type=image/svg%2Bxml
           {% else %}
-          //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=1;content_type=image/png
+          //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=1;content_type=image/svg%2Bxml
           {% endif %}
