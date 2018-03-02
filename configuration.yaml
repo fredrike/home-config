@@ -112,6 +112,25 @@ sun:
 influxdb:
   host: 192.168.1.2
 
+emoncms_history:
+  api_key: !secret emoncms_key
+  url: https://emoncms.org
+  inputnode: 1337
+  whitelist:
+    - sensor.daikin_indoor
+    - sensor.daikin_outdoor
+    - sensor.ute_temperature
+    - sensor.krypgrund_temperature
+    - sensor.krypgrund_humidity
+    - sensor.dew_point
+    - sensor.vit_inne_temperature
+    - sensor.vit_inne_humidity
+    - sensor.regnmatare_rain_rate
+    - sensor.internet_speed_in
+    - sensor.internet_speed_out
+    - sensor.sparsnas_energy_consumption_momentary
+    - sensor.sparsnas_energy_consumption_over_time
+
 sensor:
   #https://home-assistant.io/components/sensor.template/
   - platform: template
