@@ -63,7 +63,7 @@ tracking:
   entities:
   - sensor.hemma
   - device_tracker.ac3743a16232
-  - device_tracker.78f882cf23d5
+  - device_tracker.android2c3c68e2b6856433
 
 control:
   name: Control

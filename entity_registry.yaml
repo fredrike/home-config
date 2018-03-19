@@ -1,18 +1,36 @@
 media_player.shield_android_tv:
+  name:
   platform: plex
   unique_id: 724b83b588dd0308-com-plexapp-android
 media_player.plex_web_chrome:
+  name:
   platform: plex
   unique_id: vuz4h07ce58fpjwlmy1u6vzh
 media_player.j__f_ipad_mini_4:
+  name:
   platform: plex
   unique_id: E9423957-A39C-40AF-92FD-567185BEF264
 media_player.plex_web_chrome_2:
+  name:
   platform: plex
   unique_id: mtlrtmzp0eekh4ml1dnzlmbp
 media_player.living_room_tv:
+  name:
   platform: cast
   unique_id: f3716017-b86b-1b18-a14d-daf790e90fbe
 media_player.erlandssons_sheild:
+  name:
   platform: cast
   unique_id: ffde8a70-6644-21a9-9de4-320603c0f5a4
+media_player.unnamed_device:
+  name:
+  platform: plex
+  unique_id: 2pg7xjm9id6uhaorukbgvmpc
+media_player.chrome:
+  name:
+  platform: plex
+  unique_id: 0lii33c2nk0pdf8ldp3cryoy
+media_player.diddcom0002dapbthse:
+  name:
+  platform: plex
+  unique_id: e50ce3d4-f096-4b4a-a498-8f49be2b3553

@@ -10,14 +10,11 @@ android2c3c68e2b6856433:
 
 78f882cf23d5:
   hide_if_away: false
-  icon:
+  icon: mdi:cellphone-android
   mac: 78:F8:82:CF:23:D5
   name: Nexus 5X (Fredrik old)
   gravatar: !secret fredrik_gravatar
-  picture:
   track: true
-  vendor: unknown
-  hidden: true
 
 ac3743a16232:
   hide_if_away: false
@@ -243,3 +240,12 @@ androidb09c2197f29ffbd4:
   picture:
   track: true
   vendor: WISOL
+
+moode:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:4E:E6:03
+  name: moode
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
