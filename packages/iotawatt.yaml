@@ -1,0 +1,65 @@
+sensor:
+  - platform: rest
+    name: iotawatt
+    json_attributes:
+      - inputs
+      - outputs
+      - stats
+    resource: 'http://iotawatt/status?inputs=yes&outputs=yes&stats=yes'
+    value_template: '{{ value_json.stats.runseconds }}'
+    unit_of_measurement: seconds
+  - platform: rest
+    name: iotawatt config
+    json_attributes:
+      - inputs
+    resource: 'http://iotawatt/config.txt'
+    value_template: '{{ value_json.device.name }}'
+
+  - platform: template
+    sensors:
+      iotawatt_in_1:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[1].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[1].Watts }}'
+      iotawatt_in_2:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[2].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[2].Watts }}'
+      iotawatt_in_3:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[3].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[3].Watts }}'
+      iotawatt_in_4:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[4].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[4].Watts }}'
+      iotawatt_in_5:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[5].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[5].Watts }}'
+      iotawatt_in_6:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[6].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[6].Watts }}'
+      iotawatt_in_7:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[7].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[7].Watts }}'
+      iotawatt_in_8:
+        unit_of_measurement: W
+        friendly_name_template: '{{ states.sensor.iotawatt_config.attributes.inputs[8].name }}'
+        value_template: '{{ states.sensor.iotawatt.attributes.inputs[8].Watts }}'
+      iotawatt_out_0:
+        friendly_name_template: '{{ states.sensor.iotawatt.attributes.outputs[0].name }}'
+        unit_of_measurement: W
+        value_template: '{{ states.sensor.iotawatt.attributes.outputs[0].value }}'
+      iotawatt_out_1:
+        friendly_name_template: '{{ states.sensor.iotawatt.attributes.outputs[1].name }}'
+        unit_of_measurement: W
+        value_template: '{{ states.sensor.iotawatt.attributes.outputs[1].value }}'
+      iotawatt_out_2:
+        friendly_name_template: '{{ states.sensor.iotawatt.attributes.outputs[2].name }}'
+        unit_of_measurement: W
+        value_template: '{{ states.sensor.iotawatt.attributes.outputs[2].value }}'
+
+
