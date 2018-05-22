@@ -24,7 +24,7 @@ climate.mjovik:
   icon: mdi:air-conditioner
 history_graph.temperature_10_days:
   hidden: true
-sensor.dew_point:
+sensor.krypgrund_dew_point:
   friendly_name: Krypgrund Daggpunkt
   icon: mdi:thermometer-lines
   unit_of_measurement: °C
@@ -38,6 +38,8 @@ sensor.daikin_outdoor:
 group.control:
   control: hidden
 switch.goodnight:
+  hidden: true
+switch.altandorr:
   hidden: true
 automation.ac_weekday_heat_18:
   show_last_changed: true
@@ -58,8 +60,8 @@ sensor.vit_inne_temperature:
     + "%" + ", Daikin: " +  entities[''sensor.daikin_indoor''].state +"°C" }'
   friendly_name: Inne Temperatur (vit)
 sensor.krypgrund_temperature:
-  extra_data_template: '${"Humidity: " + entities[''sensor.krypgrund_humidity''].state
-    + "% (" + entities[''sensor.dew_point''].state + "°C)"}'
+  extra_data_template: '${"Humidity: " + entities["sensor.krypgrund_humidity"].state
+    + "% (" + entities["sensor.krypgrund_dew_point"].state +"°C)"}'
   friendly_name: Krypgrund Temperatur
 input_boolean.vacation_mode:
   show_last_changed: true

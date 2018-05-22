@@ -50,6 +50,7 @@ automate:
   - group.all_scripts
   - group.mvak
   - group.net_monitor
+  - binary_sensor.altandorren
 
 plots:
   name: Plots

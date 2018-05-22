@@ -139,7 +139,7 @@ sensor:
   #https://home-assistant.io/components/sensor.template/
   - platform: template
     sensors:
-      dew_point:
+      krypgrund_dew_point:
         unit_of_measurement: "%"
         value_template: "{{ ((states.sensor.krypgrund_temperature.state | float * 1) -
           ((100 - (states.sensor.krypgrund_humidity.state | float * 1)) / 5)) | round(2) }}"

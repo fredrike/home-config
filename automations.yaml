@@ -85,3 +85,16 @@
     - thu
   action:
     service: script.goodnight
+- alias: 'Patio door opened'
+  # https://community.home-assistant.io/t/time-since-a-sensor-last-updated-in-a-condition/14503/5
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.altandorren
+      to: 'on'
+  condition:
+    condition: template
+    value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.patio_door_opened.attributes.last_triggered) | int > 10 }}'
+  action:
+    service: notify.notify
+    data:
+      message: "Patio door opened 10s ago."
