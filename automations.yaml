@@ -25,9 +25,9 @@
   action:
   - service: climate.set_temperature
     data:
-      entity_id: climate.daikin
+      entity_id: climate.mjovik
       temperature: 18
-      operation_mode: Heat
+      operation_mode: Hot
   - service: climate.set_fan_mode
     data:
       fan_mode: Auto
@@ -47,7 +47,7 @@
   - service: climate.set_temperature
     data:
       temperature: 23
-      operation_mode: Heat
+      operation_mode: Hot
   - service: climate.set_fan_mode
     data:
       fan_mode: Auto
@@ -67,7 +67,7 @@
   - service: climate.set_temperature
     data:
       temperature: 23
-      operation_mode: Heat
+      operation_mode: Hot
   - service: climate.set_fan_mode
     data:
       fan_mode: Auto

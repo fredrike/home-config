@@ -3,7 +3,7 @@ goodnight:
   sequence:
     - service: homeassistant.turn_off
       data:
-        entity_id: 
+        entity_id:
         - switch.barnensrum
         - light.fonster_vardagsrum
         - light.glodlampan
@@ -21,10 +21,10 @@ goodnight:
         #- light.utebelysning
     - service: climate.set_temperature
       data:
-        entity_id: climate.daikin
+        entity_id: climate.mjovik
         operation_mode: Auto
         temperature: 19
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.daikin
+        entity_id: climate.mjovik
         fan_mode: low

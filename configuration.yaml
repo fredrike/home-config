@@ -103,7 +103,11 @@ climate:
   - platform: daikin
     host: 192.168.1.15
 
-#customizer:
+daikin:
+  hosts:
+  - 192.168.1.15
+
+# customizer:
 #  custom_ui: local
 
 # Track the sun
@@ -156,10 +160,10 @@ sensor:
         friendly_name: "Dark Sky"
         friendly_name_template: "{{states.sensor.dark_sky_summary.state}} — ⟨Dark Sky⟩"
         unit_of_measurement: "°C"
-
-  #  sensors:
-  #    daikin_in:
-  #      value_template: "{{ climate.daikin.current_temperature }}"
+      daikin_indoor:
+        value_template: "{{ states.sensor.inside_temperature_mjovik_inside_temperature.state }}"
+      daikin_outdoor:
+        value_template: "{{ states.sensor.outside_temperature_mjovik_outside_temperature.state }}"
   - platform: sonarr
     api_key: !secret sonarr_api_key
     host: 192.168.1.2

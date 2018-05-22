@@ -19,7 +19,7 @@ light.glodlampan:
 light.fonster_vardagsrum:
   show_last_changed: true
   state_card_mode: single-line
-climate.daikin:
+climate.mjovik:
   friendly_name: Mjövik
   icon: mdi:air-conditioner
 history_graph.temperature_10_days:
@@ -140,7 +140,8 @@ sensor.dark_sky_temperature:
 sensor.dark_sky_wind_speed:
   extra_data_template: ${entities['sensor.dark_sky_wind_bearing'].state + "°"}
 sensor.ute_temperature:
-  extra_data_template: '${"Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
+  extra_data_template: '${ entities["sensor.daikin_outdoor"].state == "unknown" ?
+    "" : "Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
   friendly_name: Ute Temperatur
 sensor.dark_sky:
   extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state

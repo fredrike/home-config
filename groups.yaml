@@ -32,7 +32,7 @@ default_view:
   view: yes
   entities:
   - group.climate
-  - climate.daikin
+  - climate.mjovik
   - group.all_lights
   - group.all_switches
   - group.tracking
