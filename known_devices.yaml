@@ -2,7 +2,6 @@
 android2c3c68e2b6856433:
   hide_if_away: false
   mac: 2C:59:8A:70:70:82
-  name: android-2c3c68e2b6856433
   name: Nexus 5X (Fredrik)
   gravatar: !secret fredrik_gravatar
   track: true
