@@ -83,6 +83,32 @@ sensor:
         value_template: >-
           {{ (float(states.sensor.sparsnas_energy_consumption_over_time.state) - float(states.sensor.sparsnas_template_kwh_sensor_day.state)) | round(1) }}
 
+#IoTaWatt config
+  - platform: influxdb
+    host: 192.168.1.2
+    queries:
+      - name: iotawatt total
+        unit_of_measurement: W
+        value_template: '{{ value | round(1) }}'
+        group_function: last
+        where: '"entity_id" = ''Total'''
+        measurement: '"Watts"'
+        field: value
+        database: iotawatt
+  - platform: template
+    sensors:
+      sparsnas_iotawatt:
+        friendly_name: "Sparsnäs - IoTaWatt"
+        unit_of_measurement: W
+        value_template: >-
+          {% set value = (states("sensor.sparsnas_energy_consumption_momentary") | float -  (states("sensor.iotawatt_total") | float)) | round(1) %}
+          {% if value < 0 %}
+          {{ states("sensor.sparsnas_iotawatt") }}
+          {% else %}
+          {{ value }}
+          {% endif %}
+
+
 # Thanks to @bhaap and @naestrom for the monthly and daily automation below
 automation:
 - action:
@@ -167,6 +193,8 @@ group:
     icon: mdi:flash-circle
     entities:
       - sensor.sparsnas_energy_consumption_momentary
+      - sensor.iotawatt_total
+      - sensor.sparsnas_iotawatt
       - sensor.sparsnas_energy_consumption_over_time
       - sensor.sparsnas_battery_remaining
       - sensor.sparsnas_frequency_error
