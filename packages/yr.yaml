@@ -42,6 +42,8 @@ homeassistant:
     sensor.yr:
       extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
         "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
+    sensor.pressure:
+      icon: mdi:gauge
 
 # Weather prediction
 sensor:
@@ -125,3 +127,6 @@ sensor:
           {% else %}
           //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=1;content_type=image/svg%2Bxml
           {% endif %}
+      pressure:
+        value_template: "{{  (float(states.sensor.yr_pressure.state) + float(states.sensor.dark_sky_pressure.state))/2|round(2) }}"
+        unit_of_measurement: hPa
