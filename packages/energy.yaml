@@ -30,6 +30,13 @@ homeassistant:
         group.sparsnas:
           friendly_name: Power usage
       icon: mdi:flash-circle
+    sensor.iotawatt_total:
+      icon: mdi:flash-circle
+      friendly_name: IoTaWatt
+      show_last_changed: true
+    sensor.sparsnas_iotawatt:
+      icon: mdi:flash-circle
+      show_last_changed: true
 
 sensor:
   - platform: mqtt
@@ -98,7 +105,7 @@ sensor:
   - platform: template
     sensors:
       sparsnas_iotawatt:
-        friendly_name: "Sparsnäs - IoTaWatt"
+        friendly_name: "Others"
         unit_of_measurement: W
         value_template: >-
           {% set value = (states("sensor.sparsnas_energy_consumption_momentary") | float -  (states("sensor.iotawatt_total") | float)) | round(1) %}
