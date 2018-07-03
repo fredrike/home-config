@@ -71,7 +71,7 @@ updater:
 # Discover some devices automatically
 discovery:
   ignore:
-    - daikin
+  #  - daikin
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -191,6 +191,11 @@ sensor:
       - dew_point
       - hourly_summary
       - daily_summary
+  - platform: rest
+    resource: https://api.ioe.allbin.se/buoys
+    name: Badtemp Tallholmen
+    unit_of_measurement: °C
+    value_template: '{{ value_json|selectattr("name", "equalto", "Tallholmen")|map(attribute="temperature")|first|round(1) }}'
 
 
 weather:
