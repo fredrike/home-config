@@ -1,0 +1,151 @@
+title: Mjövik
+
+views:
+  - title: Monitor
+    icon: mdi:home
+    id: home
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: entities
+          entities: 
+            - sun.sun
+            - sensor.dark_sky_hourly_summary
+            - sensor.dark_sky_daily_summary
+        - type: glance
+          entities:
+            - sensor.dark_sky
+            - sensor.yr
+            - sensor.dark_sky_temperature
+            - sensor.yr_dewpoint_temperature
+            - sensor.yr_precipitation
+            - sensor.yr_wind_speed
+            - sensor.yr_wind_direction
+            - sensor.yr_cloudiness
+            - sensor.yr_fog
+            - sensor.yr_pressure
+      - type: vertical-stack
+        cards:
+        - type: weather-forecast
+          entity: weather.dark_sky
+        - type: glance
+          entities:
+            - entity: sensor.ute_temperature
+              name: Ute
+            - entity: sensor.daikin_outdoor
+              name: Daikin
+            - entity: sensor.point_home_temperature
+              name: Point
+            - entity: sensor.daikin_indoor
+              name: Daikin
+              icon: mdi:home
+            - entity: sensor.vit_inne_temperature
+              name: Inne 
+            - entity: sensor.vit_inne_humidity
+              name: Inne 
+            - sensor.badtemp_tallholmen
+            - entity: sensor.krypgrund_temperature
+              name: Krypgrund
+            - entity: sensor.krypgrund_humidity
+              name: Krypgrund
+            - sensor.regnmatare_rain_rate
+            - binary_sensor.altandorren
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - climate.mjovik
+
+          - type: glance
+            column_width: 25%
+            show_state: false
+            entities:
+              - entity: switch.barnensrum
+                tap_action: toggle
+              - entity: switch.kok_uppe
+                tap_action: toggle
+              - entity: switch.koksfonster
+                tap_action: toggle
+              - entity: switch.sovrummet
+                tap_action: toggle
+              - entity: switch.stereo 
+                tap_action: toggle
+              - entity: light.fonster_vardagsrum
+              - entity: light.glodlampan
+              - entity: light.utebelysning
+  - title: Control
+    icon: mdi:cursor-pointer
+    id: control
+    cards:
+      - type: entities
+        entities:
+          - climate.mjovik
+
+      - type: glance
+        column_width: 25%
+        show_state: false
+        entities:
+          - entity: switch.barnensrum
+            tap_action: toggle
+          - entity: switch.kok_uppe
+            tap_action: toggle
+          - entity: switch.koksfonster
+            tap_action: toggle
+          - entity: switch.sovrummet
+            tap_action: toggle
+          - entity: switch.stereo 
+            tap_action: toggle
+          - entity: light.fonster_vardagsrum
+          - entity: light.glodlampan
+          - entity: light.utebelysning
+
+  - title: Sensors
+    icon: mdi:chart-line
+    id: sensors
+    cards:
+      - type: glance
+        entities:
+        - entity: sensor.ute_temperature
+          name: Ute
+        - entity: sensor.daikin_outdoor
+          name: Daikin
+        - entity: sensor.point_home_temperature
+          name: Point
+        - entity: sensor.daikin_indoor
+          name: Daikin
+          icon: mdi:home
+        - entity: sensor.vit_inne_temperature
+          name: Inne 
+        - entity: sensor.vit_inne_humidity
+          name: Inne 
+        - sensor.badtemp_tallholmen
+        - entity: sensor.krypgrund_temperature
+          name: Krypgrund
+        - entity: sensor.krypgrund_humidity
+          name: Krypgrund
+        - sensor.regnmatare_rain_rate
+        - binary_sensor.altandorren
+      - type: iframe
+        url: 'https://grafana.erlandsson.myds.me/d-solo/A-PiyQgmk/temperatures-degc?orgId=1&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&panelId=2&theme=light'
+        aspect_ratio: 100%
+
+  - title: Energy
+    icon: mdi:flash-circle
+    id: energy
+    cards:
+    - title: Energy usage
+      type: glance
+      column_width: 25%
+      entities:
+      - entity: sensor.sparsnas_energy_consumption_momentary
+        name: Total
+      - sensor.iotawatt_total
+      - sensor.sparsnas_iotawatt
+      - entity: sensor.kwh_today
+        name: Today
+      - entity: sensor.kwh_current_month
+        name: Monthly
+    - type: iframe
+      url: 'https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light'
+      aspect_ratio: 100%
+
