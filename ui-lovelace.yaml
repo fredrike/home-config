@@ -148,4 +148,29 @@ views:
     - type: iframe
       url: 'https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light'
       aspect_ratio: 100%
+  - title: Media Players
+    icon: mdi:television
+    id: media
+    cards:
+    - type: media-control
+      entity: media_player.lg_webos_smart_tv
+    - type: media-control
+      entity: media_player.spotify
+    - type: media-control
+      entity: media_player.chrome_4
+
+  - title: Automation 
+    icon: mdi:home-automation
+    id: auto
+    cards:
+    - title: Auto
+      type: glance
+      column_width: 25%
+      entities:
+      - entity:  input_boolean.auto_ac
+        name: Auto AC
+      - input_boolean.vacation_mode
+      - input_boolean.trip_mode
+      - entity: input_number.trip_temp_high
+      - entity: input_number.trip_temp_low
 
