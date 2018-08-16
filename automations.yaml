@@ -8,20 +8,21 @@
     to: not_home
     from: home
   condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: group.tracking
-      state: not_home
-    - condition: time
-      after: 07:15:00
-      before: '15:00:00'
-      weekday:
-      - sun
-      - mon
-      - tue
-      - wed
-      - thu
+  - condition: state
+    entity_id: group.tracking
+    state: not_home
+  - condition: time
+    after: 07:15:00
+    before: '15:00:00'
+  - condition: state
+    entity_id: input_boolean.auto_ac
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.trip_mode
+    state: 'off'
   action:
   - service: climate.set_temperature
     data:
@@ -31,18 +32,21 @@
   - service: climate.set_fan_mode
     data:
       fan_mode: Auto
+  id: 32e9a04e7a5b428885c5f42f50fe9db4
 - alias: AC weekday morning (heat 23)
   trigger:
     platform: time
     at: '5:50:00'
   condition:
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: input_boolean.auto_ac
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.trip_mode
+    state: 'off'
   action:
   - service: climate.set_temperature
     data:
@@ -51,50 +55,194 @@
   - service: climate.set_fan_mode
     data:
       fan_mode: Auto
-- alias: AC weekday afternoon (heat 23)
+  id: 2b8a666493414996b86d91bfb82f7a63
+- id: 6c7d7b4527c243ada790a57ff40abada
+  alias: AC weekday afternoon (heat 23)
   trigger:
+  - at: '15:00:00'
     platform: time
-    at: '15:00:00'
   condition:
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: input_boolean.auto_ac
+    state: 'on'
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.trip_mode
+    state: 'off'
   action:
-  - service: climate.set_temperature
-    data:
-      temperature: 23
+  - data:
       operation_mode: Hot
-  - service: climate.set_fan_mode
-    data:
+      temperature: 23
+    service: climate.set_temperature
+  - data:
       fan_mode: Auto
-- alias: Sleep
+    service: climate.set_fan_mode
+- id: 73d5ba997ef54e3287519482183ff550
+  alias: Sleep
   trigger:
+  - at: '22:30:00'
     platform: time
-    at: '22:30:00'
   condition:
-    condition: time
+  - condition: time
     weekday:
     - sun
     - mon
     - tue
     - wed
     - thu
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'off'
   action:
-    service: script.goodnight
-- alias: 'Patio door opened'
-  # https://community.home-assistant.io/t/time-since-a-sensor-last-updated-in-a-condition/14503/5
+  - service: script.goodnight
+- alias: Patio door opened
   trigger:
-    - platform: state
-      entity_id: binary_sensor.altandorren
-      to: 'on'
+  - platform: state
+    entity_id: binary_sensor.altandorren
+    to: 'on'
   condition:
     condition: template
-    value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.patio_door_opened.attributes.last_triggered) | int > 10 }}'
+    value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.patio_door_opened.attributes.last_triggered)
+      | int > 10 }}'
   action:
     service: notify.notify
     data:
-      message: "Patio door opened 10s ago."
+      message: Patio door opened 10s ago.
+  id: ea98115788cd4f0db6aad83c2a3c8f98
+- id: '1532938767682'
+  alias: Turn off "stereo" when TV is off
+  trigger:
+  - entity_id: media_player.lg_webos_smart_tv
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.stereo
+    service: switch.turn_off
+- id: '1534408728662'
+  alias: AC Automations (off)
+  trigger:
+  - entity_id: input_boolean.auto_ac
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id:
+      - automation.ac_weekday_afternoon_heat_23
+      - automation.ac_weekday_heat_18
+      - automation.ac_weekday_morning_heat_23
+    service: automation.turn_off
+- id: '1534408728663'
+  alias: AC Automations (on)
+  trigger:
+  - entity_id: input_boolean.auto_ac
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id:
+      - automation.ac_weekday_afternoon_heat_23
+      - automation.ac_weekday_heat_18
+      - automation.ac_weekday_morning_heat_23
+    service: automation.turn_on
+- id: '1534411228039'
+  alias: Automatic "Vi är lediga" (on)
+  trigger:
+  - entity_id: binary_sensor.workday_sensor
+    platform: state
+    to: 'off'
+  - entity_id: calendar.lediga
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id: input_boolean.vacation_mode
+    service: input_boolean.turn_on
+- id: '1534411228139'
+  alias: Automatic "Vi är lediga" (off)
+  trigger:
+  - entity_id: binary_sensor.workday_sensor
+    platform: state
+    to: 'on'
+  - entity_id: calendar.lediga
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id: input_boolean.vacation_mode
+    service: input_boolean.turn_off
+- id: '23'
+  alias: Trip temp low (ac-heat)
+  trigger:
+  - minutes: /10
+    platform: time
+    seconds: 2
+  condition:
+  - condition: template
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int < states.input_number.trip_temp_low.state|int
+      }}'
+  - condition: state
+    entity_id: input_boolean.trip_mode
+    state: 'on'
+  action:
+  - data:
+      entity_id: climate.mjovik
+      operation_mode: Hot
+      temperature: '{{ states.input_number.trip_temp_low.state|int + 2  }}'
+    service: climate.set_temperature
+  - data:
+      fan_mode: Auto
+    service: climate.set_fan_mode
+- id: '231'
+  alias: Trip temp high (ac-cool)
+  trigger:
+  - minutes: /10
+    platform: time
+    seconds: 2
+  condition:
+  - condition: template
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_high.state|int
+      }}'
+  - condition: state
+    entity_id: input_boolean.trip_mode
+    state: 'on'
+  action:
+  - data:
+      entity_id: climate.mjovik
+      operation_mode: Cool
+      temperature: '{{ states.input_number.trip_temp_low.state|int }}'
+    service: climate.set_temperature
+  - data:
+      fan_mode: Auto
+    service: climate.set_fan_mode
+- id: '2312'
+  alias: Trip temp OK (AC-off)
+  trigger:
+  - minutes: /10
+    platform: time
+    seconds: 2
+  condition:
+  - condition: template
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_low.state|int
+      + 5 }}'
+  - condition: template
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int < states.input_number.trip_temp_high.state|int
+      - 5 }}'
+  - condition: state
+    entity_id: input_boolean.trip_mode
+    state: 'on'
+  action:
+  - data:
+      entity_id: climate.mjovik
+    service: climate.turn_off

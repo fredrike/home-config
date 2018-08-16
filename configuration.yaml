@@ -197,6 +197,13 @@ sensor:
     unit_of_measurement: °C
     value_template: '{{ value_json|selectattr("name", "equalto", "Tallholmen")|map(attribute="temperature")|first|round(1) }}'
 
+binary_sensor:
+  - platform: workday
+    country: SE
+
+google:
+  client_id:     !secret google_client_id
+  client_secret: !secret google_client_secret
 
 weather:
   - platform: darksky
@@ -218,7 +225,25 @@ input_boolean:
   trip_mode:
     name: Vi är på turné
     icon: mdi:tent
+  auto_ac:
+    name: Automatic AC
+    icon: mdi:air-conditioner
 
+input_number:
+  trip_temp_low:
+    name: Lägsta temp
+    unit_of_measurement: °C
+    min: 5
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+  trip_temp_high:
+    name: Högsta temp
+    unit_of_measurement: °C
+    min: 15
+    max: 35
+    step: 1
+    icon: mdi:thermometer
 
 history_graph:
   #gr1:
