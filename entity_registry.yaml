@@ -1,60 +1,95 @@
 media_player.shield_android_tv:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 724b83b588dd0308-com-plexapp-android
 media_player.plex_web_chrome:
+  config_entry_id:
   name:
   platform: plex
   unique_id: vuz4h07ce58fpjwlmy1u6vzh
 media_player.j__f_ipad_mini_4:
+  config_entry_id:
   name: Plex - JoF
   platform: plex
   unique_id: E9423957-A39C-40AF-92FD-567185BEF264
 media_player.plex_web_chrome_2:
+  config_entry_id:
   name:
   platform: plex
   unique_id: mtlrtmzp0eekh4ml1dnzlmbp
 media_player.living_room_tv:
+  config_entry_id: bf77f2ef018c44a5aef263b0a3fc8e02
   name: LG tv
   platform: cast
   unique_id: f3716017-b86b-1b18-a14d-daf790e90fbe
 media_player.erlandssons_sheild:
+  config_entry_id:
   name:
   platform: cast
   unique_id: ffde8a70-6644-21a9-9de4-320603c0f5a4
 media_player.unnamed_device:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 2pg7xjm9id6uhaorukbgvmpc
 media_player.chrome:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 0lii33c2nk0pdf8ldp3cryoy
 media_player.diddcom0002dapbthse:
+  config_entry_id:
   name: Plex - Fredrik
   platform: plex
   unique_id: e50ce3d4-f096-4b4a-a498-8f49be2b3553
 media_player.chrome_2:
+  config_entry_id:
   name:
   platform: plex
   unique_id: eg3o1u13987t17h6d25v9zq8
 media_player.fredrikerlandssonsmacbookpro2017:
+  config_entry_id:
   name:
   platform: plex
   unique_id: f0f535a6-48a1-46a4-bd43-733829677d0f
 media_player.fredrik_erlandssons_macbook_pro_2017:
+  config_entry_id:
   name:
   platform: plex
   unique_id: w7y5wy0y8p31tf8d9d5s1c3d
 media_player.fredriksmbp2017:
+  config_entry_id:
   name:
   platform: plex
   unique_id: be0e2702-3b14-47d4-8410-56f00738dec7
 media_player.fredriksmbp2017_2:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 87abe972-7dac-4923-b927-29c3a7373418
 media_player.fredriks_mbp:
+  config_entry_id:
   name:
   platform: plex
   unique_id: a8bef847-2dbb-456e-837b-9a8c50407a0d
+media_player.chrome_3:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: 3vic90x3xzwd0a4i
+media_player.chromecast:
+  config_entry_id:
+  name: ChromeCast Living Room
+  platform: plex
+  unique_id: 89luoc1mi4ndpdjlysxjg1ra
+media_player.orange_ipad:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: 80FF849F-C892-49E3-AB20-5C47581EACDE
+media_player.chrome_5:
+  config_entry_id:
+  name:
+  platform: plex
+  unique_id: e5nzbk06hvf976qufqr0ql6p
