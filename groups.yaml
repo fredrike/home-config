@@ -13,6 +13,7 @@ climate:
   - sensor.ute_temperature
   - sensor.vit_inne_temperature
   - sensor.vit_inne_humidity
+  - sensor.badtemp_tallholmen
   - sensor.krypgrund_temperature
   - sensor.krypgrund_humidity
   - sensor.regnmatare_rain_rate
@@ -68,7 +69,10 @@ tracking:
 
 control:
   name: Control
+  control: hidden
   entities:
+  - script.goodnight
+  - input_boolean.auto_ac
   - input_boolean.vacation_mode
   - input_boolean.trip_mode
   - script.goodnight
@@ -100,11 +104,6 @@ dark_sky:
   name: Dark Sky
   view: no
   entities:
-  - sensor.dark_sky
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_temperature
-  - sensor.dark_sky_hourly_summary
-  - sensor.dark_sky_daily_summary
   - sensor.dark_sky_cloud_coverage
   - sensor.dark_sky_wind_speed
   - sensor.dark_sky_nearest_storm_distance

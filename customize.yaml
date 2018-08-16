@@ -7,6 +7,7 @@ sensor.christian_2_humidity:
 sensor.christian_2_temperature:
   hidden: true
 switch.stereo:
+  friendly_name: Stereo
   icon: mdi:speaker
 switch.cupevarmare:
   icon: mdi:car
@@ -30,13 +31,15 @@ sensor.krypgrund_dew_point:
   unit_of_measurement: °C
   hidden: true
 sensor.daikin_indoor:
+  friendly_name: Daikin Inne
   hidden: true
-  icon: mdi:home-heart
+  icon: mdi:home
+  unit_of_measurement: °C
 sensor.daikin_outdoor:
+  friendly_name: Daikin Ute
   hidden: true
   icon: mdi:home-outline
-group.control:
-  control: hidden
+  unit_of_measurement: °C
 switch.goodnight:
   hidden: true
 switch.altandorr:
@@ -149,3 +152,26 @@ sensor.dark_sky:
   extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
     + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
     + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
+sensor.badtemp_tallholmen:
+  icon: mdi:swim
+sensor.iotawatt_total:
+  friendly_name: IoTaWatt
+  show_last_changed: true
+sensor.sparsnas_iotawatt:
+  show_last_changed: true
+binary_sensor.altandorren:
+  device_class: door
+switch.barnensrum:
+  icon: mdi:lamp
+switch.kok_uppe:
+  icon: mdi:lightbulb-outline
+switch.koksfonster:
+  icon: mdi:lamp
+switch.sovrum:
+  icon: mdi:hotel
+switch.julgranen:
+  icon: mdi:pine-tree
+switch.ljusslingor:
+  icon: mdi:lightbulb-outline
+media_player.living_room_tv:
+  hidden: true
