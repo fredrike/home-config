@@ -178,20 +178,6 @@ sensor:
     api_key: !secret sonarr_api_key
     host: 192.168.1.2
     days: 3
-  #- platform: snmp
-  #  name: "Wan in"
-  #  host: 192.168.1.1
-  #  baseoid: 1.3.6.1.2.1.2.2.1.10.4
-  #  accept_errors: true
-  #  unit_of_measurement: kB
-  #  value_template: '{{((value | int) / 1024) | int}}'
-  #- platform: snmp
-  #  name: "Wan out"
-  #  host: 192.168.1.1
-  #  baseoid: 1.3.6.1.2.1.2.2.1.16.4
-  #  accept_errors: true
-  #  unit_of_measurement: kB
-  #  value_template: '{{((value | int) / 1024) | int}}'
   - platform: darksky #https://pastebin.com/iX7u4ZSg
     api_key: !secret darksky_api_key
     update_interval: '00:03'

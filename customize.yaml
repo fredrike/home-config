@@ -91,19 +91,6 @@ automation.sleep:
 group.net_monitor:
   state_card_mode: badges
 sensor.sonarr_upcoming: {}
-group.snmp_monitor:
-  hidden: true
-  state_card_mode: badges
-sensor.internet_speed_in: {}
-sensor.internet_speed_out: {}
-sensor.wan_traffic_in_mean:
-  state_card_mode: badges
-sensor.wan_traffic_out_mean:
-  state_card_mode: badges
-sensor.traffic_in_stats_mean:
-  hidden: true
-sensor.traffic_out_stats_mean:
-  hidden: true
 sun.sun:
   extra_data_template: 'Elevation ${attributes.elevation}°, ${(attributes.elevation
     > 0) ? ( (((Date.parse(attributes.next_setting) - Date.now()) / 3600000) < 0)

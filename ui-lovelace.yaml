@@ -138,4 +138,12 @@ views:
         name: "Turné max temp"
       - entity: input_number.trip_temp_low
         name: "Turné min temp"
+    - title: Internet traffic
+      type: glance
+      column_width: 25%
+      entities:
+      - entity: sensor.snmp_wan_in
+      - entity: sensor.snmp_wan_out
+      - entity: sensor.snmp_lan_in
+      - entity: sensor.snmp_lan_out
 
