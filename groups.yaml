@@ -3,6 +3,7 @@ climate:
   view: no
   entities:
   - sun.sun
+  - sensor.point_home_temperature
   - sensor.dark_sky
   - sensor.yr
   - sensor.dark_sky_temperature
@@ -26,7 +27,6 @@ climate:
   - sensor.yr_cloudiness
   - sensor.yr_fog
   - sensor.yr_pressure
-
 
 default_view:
   name: Mjövik

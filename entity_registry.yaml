@@ -18,11 +18,6 @@ media_player.plex_web_chrome_2:
   name:
   platform: plex
   unique_id: mtlrtmzp0eekh4ml1dnzlmbp
-media_player.living_room_tv:
-  config_entry_id: bf77f2ef018c44a5aef263b0a3fc8e02
-  name: LG tv
-  platform: cast
-  unique_id: f3716017-b86b-1b18-a14d-daf790e90fbe
 media_player.erlandssons_sheild:
   config_entry_id:
   name:
@@ -78,11 +73,26 @@ media_player.chrome_3:
   name:
   platform: plex
   unique_id: 3vic90x3xzwd0a4i
-media_player.chromecast:
+sensor.point_home_temperature:
   config_entry_id:
-  name: ChromeCast Living Room
-  platform: plex
-  unique_id: 89luoc1mi4ndpdjlysxjg1ra
+  name: Point
+  platform: point
+  unique_id: point.5b29f0839785ff249b37aa47-temperature
+sensor.point_home_sound_level:
+  config_entry_id:
+  name:
+  platform: point
+  unique_id: point.5b29f0839785ff249b37aa47-sound_level
+sensor.point_home_pressure:
+  config_entry_id:
+  name:
+  platform: point
+  unique_id: point.5b29f0839785ff249b37aa47-pressure
+sensor.point_home_humidity:
+  config_entry_id:
+  name:
+  platform: point
+  unique_id: point.5b29f0839785ff249b37aa47-humidity
 media_player.orange_ipad:
   config_entry_id:
   name:
@@ -93,3 +103,8 @@ media_player.chrome_5:
   name:
   platform: plex
   unique_id: e5nzbk06hvf976qufqr0ql6p
+media_player.living_room_chromecast:
+  config_entry_id: 2b0219b4593a487f8ffc95bbe4aafb68
+  name: Chromecast
+  platform: cast
+  unique_id: f3716017-b86b-1b18-a14d-daf790e90fbe

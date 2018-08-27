@@ -129,9 +129,11 @@ sensor:
   - platform: template
     sensors:
       krypgrund_dew_point:
-        unit_of_measurement: "%"
-        value_template: "{{ ((states.sensor.krypgrund_temperature.state | float * 1) -
-          ((100 - (states.sensor.krypgrund_humidity.state | float * 1)) / 5)) | round(2) }}"
+        friendly_name: Krypgrund Daggpunkt
+        unit_of_measurement: "°C"
+        value_template: "{{ ((states('sensor.krypgrund_temperature') | float * 1) -
+          ((100 - (states('sensor.krypgrund_humidity') | float * 1)) / 5)) | round(2) }}"
+        device_class: temperature
       uptime:
         value_template: >-
           {{ (as_timestamp(now()) - as_timestamp(states.sensor.sparsnas_energy_consumption_momentary.last_updated)) < 600 }}
@@ -145,14 +147,33 @@ sensor:
           {%- endif %}
       dark_sky:
         entity_picture_template: "{{states.sensor.dark_sky_summary.attributes.entity_picture}}"
-        value_template: "{{states.sensor.dark_sky_temperature.state}}"
+        value_template: "{{states('sensor.dark_sky_temperature')}}"
         friendly_name: "Dark Sky"
         friendly_name_template: "{{states.sensor.dark_sky_summary.state}} — ⟨Dark Sky⟩"
         unit_of_measurement: "°C"
+        device_class: temperature
       daikin_indoor:
-        value_template: "{{ states.sensor.inside_temperature_mjovik_inside_temperature.state }}"
+        value_template: "{{ states('sensor.inside_temperature_mjovik_inside_temperature') }}"
+        device_class: temperature
       daikin_outdoor:
-        value_template: "{{ states.sensor.outside_temperature_mjovik_outside_temperature.state }}"
+        value_template: "{{ states('sensor.outside_temperature_mjovik_outside_temperature') }}"
+        device_class: temperature
+      daikin_target:
+        value_template: "{{ states.climate.mjovik.attributes.temperature }}"
+        unit_of_measurement: "°C"
+        friendly_name: "AC target temperature"
+        device_class: temperature
+      daikin_status:
+        value_template: "{{ states('climate.mjovik') }}"
+        unit_of_measurement: "AC State"
+        friendly_name: "AC State"
+      skollunch:
+        value_template: "{{ states.calendar.skolmaten__nattrabyskolan.attributes.message }}"
+        friendly_name: "Skollunch Nättabyskolan"
+        icon_template: mdi:silverware-variant
+        unit_of_measurement: ""
+        
+        
   - platform: sonarr
     api_key: !secret sonarr_api_key
     host: 192.168.1.2
@@ -198,6 +219,11 @@ sensor:
 binary_sensor:
   - platform: workday
     country: SE
+  - platform: workday
+    country: SE
+    days_offset: 1
+    name: workday_tomorrow
+
 
 google:
   client_id:     !secret google_client_id
@@ -220,6 +246,8 @@ input_boolean:
   vacation_mode:
     name: Vi är lediga
     icon: mdi:bell-sleep
+  vacation_tomorrow:
+    name: Vi är lediga imorgon
   trip_mode:
     name: Vi är på turné
     icon: mdi:tent

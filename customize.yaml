@@ -28,7 +28,6 @@ history_graph.temperature_10_days:
 sensor.krypgrund_dew_point:
   friendly_name: Krypgrund Daggpunkt
   icon: mdi:thermometer-lines
-  unit_of_measurement: °C
   hidden: true
 sensor.daikin_indoor:
   friendly_name: Daikin Inne
@@ -175,3 +174,9 @@ switch.ljusslingor:
   icon: mdi:lightbulb-outline
 media_player.living_room_tv:
   hidden: true
+sensor.skollunch: {}
+binary_sensor.altandorr:
+  device_class: door
+group.tracking:
+  device_type: occupancy
+media_player.lg_webos_smart_tv: {}

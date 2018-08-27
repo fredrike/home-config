@@ -1,11 +1,4 @@
 
-- cal_id: nnvk434snrvhuubkffk5tgnhgtrhfppf@import.calendar.google.com
-  entities:
-  - device_id: skolmaten__karlskrona_sprakskola
-    ignore_availability: true
-    name: "Skolmaten - Karlskrona Spr\xE5kskola"
-    track: false
-
 - cal_id: family13826908253750248932@group.calendar.google.com
   entities:
   - device_id: family
@@ -59,13 +52,6 @@
     name: fredrik.e@gmail.com
     track: false
 
-- cal_id: uhs84d2kk6c4qikhfck47o5d7158vaev@import.calendar.google.com
-  entities:
-  - device_id: timeeditno_object_found_id_22162_1_objekt_220151001
-    ignore_availability: true
-    name: 'TimeEdit-[No object found. Id: 2216.2], +1 objekt (2)-20151001'
-    track: false
-
 - cal_id: e8ncndhk6a7a7injd72laedkq8@group.calendar.google.com
   entities:
   - device_id: fredrik__work
@@ -75,9 +61,9 @@
 
 - cal_id: l1o4p736h02nbf3rjlf5pj546j6mf195@import.calendar.google.com
   entities:
-  - device_id: timeeditfredrik_erlandsson_fer2001
+  - device_id: timeeditfredrik_erlandsson
     ignore_availability: true
-    name: TimeEdit-Fredrik Erlandsson, FER-2001
+    name: TimeEdit-Fredrik Erlandsson
     track: false
 
 - cal_id: '#contacts@group.v.calendar.google.com'
@@ -100,3 +86,10 @@
     ignore_availability: true
     name: Week Numbers
     track: false
+
+- cal_id: nko0pafjang78co5snm6ttik069qdde6@import.calendar.google.com
+  entities:
+  - device_id: skolmaten__nattrabyskolan
+    ignore_availability: true
+    name: "Skolmaten - N\xE4ttrabyskolan"
+    track: true
