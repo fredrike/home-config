@@ -297,8 +297,8 @@ media_player:
   - platform: webostv
     host: 192.168.1.12
   - platform: spotify
-    client_id: c972de83eee94413874f25f479e6a5d3
-    client_secret: da26ea3d832a4881bd72639bb2f0d39c
+    client_id:     !secret spotify_id
+    client_secret: !secret spotify_secret
 
 
 logger:
