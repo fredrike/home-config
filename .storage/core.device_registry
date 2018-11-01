@@ -1,0 +1,25 @@
+{
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "2b0219b4593a487f8ffc95bbe4aafb68"
+                ],
+                "connections": [],
+                "id": "c2647d1be76e4fe8a0b2839466a89e84",
+                "identifiers": [
+                    [
+                        "cast",
+                        "f3716017b86b1b18a14ddaf790e90fbe"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Chromecast",
+                "name": "Living Room TV",
+                "sw_version": null
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}
