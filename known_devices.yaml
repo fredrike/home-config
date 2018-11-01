@@ -295,3 +295,11 @@ galaxys8:
   name: 14c913bb1982
   picture:
   track: true
+
+smartremote76b:
+  hide_if_away: false
+  icon: mdi:remote
+  mac: 38:D7:CA:00:07:6B
+  name: Sevenhugs Smart Remote
+  picture:
+  track: true
