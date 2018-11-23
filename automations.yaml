@@ -13,7 +13,7 @@
     entity_id: group.tracking
     state: not_home
   - condition: time
-    after: '07:15:00'
+    after: 07:15:00
     before: '15:00:00'
   - condition: state
     entity_id: input_boolean.auto_ac
@@ -25,14 +25,15 @@
     entity_id: input_boolean.trip_mode
     state: 'off'
   action:
+  - service: climate.set_fan_mode
+    data:
+      entity_id: climate.mjovik
+      fan_mode: Auto
   - service: climate.set_temperature
     data:
       entity_id: climate.mjovik
       temperature: 18
-      operation_mode: Hot
-  - service: climate.set_fan_mode
-    data:
-      fan_mode: Auto
+      operation_mode: heat
 - id: 2b8a666493414996b86d91bfb82f7a63
   alias: AC weekday morning (heat 23)
   trigger:
@@ -50,12 +51,14 @@
     state: 'off'
   action:
   - data:
-      operation_mode: Hot
-      temperature: 23
-    service: climate.set_temperature
-  - data:
+      entity_id: climate.mjovik
       fan_mode: Auto
     service: climate.set_fan_mode
+  - data:
+      entity_id: climate.mjovik
+      operation_mode: heat
+      temperature: 23
+    service: climate.set_temperature
 - id: 6c7d7b4527c243ada790a57ff40abada
   alias: AC weekday afternoon (heat 22)
   trigger:
@@ -73,12 +76,14 @@
     state: 'off'
   action:
   - data:
-      operation_mode: Hot
-      temperature: 22
-    service: climate.set_temperature
-  - data:
+      entity_id: climate.mjovik
       fan_mode: Auto
     service: climate.set_fan_mode
+  - data:
+      entity_id: climate.mjovik
+      operation_mode: heat
+      temperature: 22
+    service: climate.set_temperature
 - id: 73d5ba997ef54e3287519482183ff550
   alias: Sleep
   trigger:
@@ -87,6 +92,9 @@
   condition:
   - condition: state
     entity_id: input_boolean.vacation_mode
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.vacation_tomorrow
     state: 'off'
   action:
   - service: script.goodnight
@@ -118,7 +126,8 @@
   alias: Automatic "Vi är lediga" (on)
   trigger:
   - platform: template
-    value_template: '{{ is_state("binary_sensor.workday_sensor", "off") or is_state("calendar.lediga", "on")}} '
+    value_template: '{{ is_state("binary_sensor.workday_sensor", "off") or is_state("calendar.lediga",
+      "on")}} '
   condition: []
   action:
   - alias: ''
@@ -129,7 +138,8 @@
   alias: Automatic "Vi är lediga" (off)
   trigger:
   - platform: template
-    value_template: '{{ is_state("binary_sensor.workday_sensor", "on") and is_state("calendar.lediga", "off")}} '
+    value_template: '{{ is_state("binary_sensor.workday_sensor", "on") and is_state("calendar.lediga",
+      "off")}} '
   condition: []
   action:
   - alias: ''
@@ -144,19 +154,20 @@
     seconds: 2
   condition:
   - condition: template
-    value_template: '{{ states.sensor.vit_inne_temperature.state|int < states.input_number.trip_temp_low.state|int }}'
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int < states.input_number.trip_temp_low.state|int
+      }}'
   - condition: state
     entity_id: input_boolean.trip_mode
     state: 'on'
   action:
   - data:
-      entity_id: climate.mjovik
-      operation_mode: Hot
-      temperature: '{{ states.input_number.trip_temp_low.state|int + 2 }}'
-    service: climate.set_temperature
-  - data:
       fan_mode: Auto
     service: climate.set_fan_mode
+  - data:
+      entity_id: climate.mjovik
+      operation_mode: heat
+      temperature: '{{ states.input_number.trip_temp_low.state|int + 2 }}'
+    service: climate.set_temperature
 - id: '231'
   alias: Trip temp high (ac-cool)
   trigger:
@@ -165,19 +176,20 @@
     seconds: 2
   condition:
   - condition: template
-    value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_high.state|int }}'
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_high.state|int
+      }}'
   - condition: state
     entity_id: input_boolean.trip_mode
     state: 'on'
   action:
   - data:
+      fan_mode: Auto
+    service: climate.set_fan_mode
+  - data:
       entity_id: climate.mjovik
       operation_mode: Cool
       temperature: '{{ states.input_number.trip_temp_low.state|int }}'
     service: climate.set_temperature
-  - data:
-      fan_mode: Auto
-    service: climate.set_fan_mode
 - id: '2312'
   alias: Trip temp OK (AC-off)
   trigger:
@@ -186,9 +198,11 @@
     seconds: 2
   condition:
   - condition: template
-    value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_low.state|int + 5 }}'
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_low.state|int
+      + 5 }}'
   - condition: template
-    value_template: '{{ states.sensor.vit_inne_temperature.state|int < states.input_number.trip_temp_high.state|int - 5 }}'
+    value_template: '{{ states.sensor.vit_inne_temperature.state|int < states.input_number.trip_temp_high.state|int
+      - 5 }}'
   - condition: state
     entity_id: input_boolean.trip_mode
     state: 'on'
@@ -199,12 +213,9 @@
 - id: '1536927135503'
   alias: Wakeup (sovrum on)
   trigger:
-  - at: 06:03
+  - at: 06:10
     platform: time
   condition:
-  - condition: state
-    entity_id: input_boolean.vacation_mode
-    state: 'off'
   - condition: state
     entity_id: input_boolean.vacation_mode
     state: 'off'
@@ -261,3 +272,17 @@
   - data:
       entity_id: light.glodlampan
     service: light.turn_off
+- id: '1542352771711'
+  alias: Ljusslingor (on workday)
+  trigger:
+  - at: 06:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacation_mode
+    state: 'off'
+  action:
+  - delay: 00:{{ (range(20, 40)|random|int) }}:00
+  - data:
+      entity: switch.ljusslingor
+    service: switch.turn_on
