@@ -13,107 +13,133 @@ views:
     icon: mdi:home
     id: home
     cards:
-    - type: glance
-      column_width: 25%
-      show_state: false
-      entities:
-      - entity: switch.barnensrum
-        tap_action: toggle
-      - entity: switch.kok_uppe
-        tap_action: toggle
-      - entity: switch.koksfonster
-        tap_action: toggle
-      - entity: switch.sovrummet
-        tap_action: toggle
-      - entity: switch.stereo 
-        tap_action: toggle
-      - entity: light.fonster_vardagsrum
-      - entity: light.glodlampan
-      - entity: light.utebelysning
-    - type: entities
-      entities:
-        - climate.mjovik
-    - type: conditional
-      conditions:
-      - entity: binary_sensor.workday_sensor
-        state: "on"
-      card:
+      - id: 9a1d672019d445a5b3405f2d3ea32613  # Automatically created id
+        type: glance
+        column_width: 25%
+        show_state: false
+        entities:
+          - entity: switch.barnensrum
+            tap_action: toggle
+          - entity: switch.kok_uppe
+            tap_action: toggle
+          - entity: switch.koksfonster
+            tap_action: toggle
+          - entity: switch.sovrummet
+            tap_action: toggle
+          - entity: switch.ljusslingor
+            tap_action: toggle
+            icon: mdi:road-variant
+          - entity: light.fonster_vardagsrum
+          - entity: light.glodlampan
+          - entity: light.utebelysning
+            icon: mdi:wall-sconce-variant
+
+      - type: horizontal-stack
+        cards:
+        - type: light
+          entity: light.fonster_vardagsrum
+        - type: light
+          entity: light.glodlampan
+        - type: light
+          entity: light.utebelysning
+          icon: mdi:wall-sconce-variant
+      - id: febc87877dd446d9b88f75ee439939f8  # Automatically created id
         type: entities
         entities:
-        - entity: sensor.skollunch
-          name: "Skollunch"
-          icon: mdi:silverware-variant
-    - type: glance
-      entities:
-      - entity: sensor.ute_temperature
-        name: Ute
-      - entity: sensor.daikin_outdoor
-        name: Daikin
-      - entity: sensor.point_home_temperature
-        name: Point
-      - entity: sensor.daikin_indoor
-        name: Daikin
-        icon: mdi:home
-      - entity: sensor.vit_inne_temperature
-        name: Inne 
-      - entity: sensor.vit_inne_humidity
-        name: Inne 
-      - sensor.badtemp_tallholmen
-      - entity: sensor.krypgrund_temperature
-        name: Krypgrund
-      - entity: sensor.krypgrund_humidity
-        name: Krypgrund
-      - sensor.regnmatare_rain_rate
-      - binary_sensor.altandorren
-    - type: iframe
-      url: 'https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=15m&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature'
-      aspect_ratio: 150%
+          - climate.mjovik
+          
+      - id: 8d16e9c90406446794f17c2fe1d747e3  # Automatically created id
+        type: conditional
+        conditions:
+          - entity: binary_sensor.workday_sensor
+            state: on
+        card:
+          type: entities
+          entities:
+            - entity: sensor.skollunch
+              name: Skollunch
+              icon: mdi:silverware-variant
+      - id: deb971d9ca014e93abf0255ea35f261f  # Automatically created id
+        type: glance
+        entities:
+          - entity: sensor.ute_temperature
+            name: Ute
+          - entity: sensor.daikin_outdoor
+            name: Daikin
+          - entity: sensor.point_home_temperature
+            name: Point
+          - entity: sensor.daikin_indoor
+            name: Daikin
+            icon: mdi:home
+          - entity: sensor.vit_inne_temperature
+            name: Inne
+          - entity: sensor.vit_inne_humidity
+            name: Inne
+          # - sensor.badtemp_tallholmen
+          - entity: sensor.krypgrund_temperature
+            name: Krypgrund
+          - entity: sensor.krypgrund_humidity
+            name: Krypgrund
+          - sensor.regnmatare_rain_rate
+          # - binary_sensor.altandorren
+      - id: 7a4ec3a0d8e14f2d99cad47027b3d63e  # Automatically created id
+        type: iframe
+        url: https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&kiosk=tv
+        aspect_ratio: 150%
   - title: Weather
     icon: mdi:weather-partlycloudy
     id: weather
     cards:
-    - type: vertical-stack
-      cards:
-      - type: entities
-        entities: 
-        - sun.sun
-        - sensor.dark_sky_hourly_summary
-        - sensor.dark_sky_daily_summary
-      - type: glance
-        entities:
-        - sensor.dark_sky
-        - sensor.yr
-        - sensor.dark_sky_temperature
-        - sensor.yr_dewpoint_temperature
-        - sensor.yr_precipitation
-        - sensor.yr_wind_speed
-        - sensor.yr_wind_direction
-        - sensor.yr_cloudiness
-        - sensor.yr_fog
-        - sensor.yr_pressure
-    - type: vertical-stack
-      cards:
-      - type: weather-forecast
-        entity: weather.dark_sky
+      - id: 27da5b601d164790bd7e060f72ce86f2  # Automatically created id
+        type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - sun.sun
+              - sensor.dark_sky_hourly_summary
+              - sensor.dark_sky_daily_summary
+          - type: glance
+            entities:
+              - sensor.dark_sky
+              - sensor.yr
+              - sensor.dark_sky_temperature
+              - sensor.yr_dewpoint_temperature
+              - sensor.yr_precipitation
+              - sensor.yr_wind_speed
+              - sensor.yr_wind_direction
+              - sensor.yr_cloudiness
+              - sensor.yr_fog
+              - sensor.yr_pressure
+      - id: 9bba718397a445e58517d5ca1e7d242c  # Automatically created id
+        type: vertical-stack
+        cards:
+          - type: weather-forecast
+            entity: weather.dark_sky
   - title: Energy
     icon: mdi:flash-circle
     id: energy
     cards:
-    - title: Energy usage
-      type: glance
-      column_width: 25%
-      entities:
-      - entity: sensor.sparsnas_energy_consumption_momentary
-        name: Total
-      - sensor.iotawatt_total
-      - sensor.sparsnas_iotawatt
-      - entity: sensor.kwh_today
-        name: Today
-      - entity: sensor.kwh_current_month
-        name: Monthly
-    - type: iframe
-      url: 'https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light'
-      aspect_ratio: 100%
+      - id: 5d6bfe91e2a64b4da1c0c5380d181429  # Automatically created id
+        title: Energy usage
+        type: glance
+        column_width: 25%
+        entities:
+          - entity: sensor.sparsnas_energy_consumption_momentary
+            name: Total
+          - entity: sensor.iotawatt_total
+            name: IoTaWatt
+          - entity: sensor.sparsnas_iotawatt
+            name: Others
+          - entity: sensor.kwh_today
+            name: Today
+      - id: 5a2998cfc0c646c995e417e3ba4e469e  # Automatically created id
+        type: iframe
+        url: https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light&from=now/d&to=now&refresh=10m
+        aspect_ratio: 100%
+      - id: fda38f0d67ad420d917ca4def67e16fe  # Automatically created id
+        type: iframe
+        url: https://grafana.erlandsson.myds.me/d/Sd5-ZIcmk/power-distribution?orgId=1&var-kwh_to_sek=1.41&kiosk=tv
+        aspect_ratio: 105%
   - title: Media Players
     icon: mdi:television
     id: media
@@ -158,29 +184,77 @@ views:
     icon: mdi:home-automation
     id: auto
     cards:
-    - title: Automation
-      type: glance
-      column_width: 30%
-      entities:
-      - entity:  script.goodnight
-        name: Godnatt
-        tap_action: toggle
-        show_state: false
-      - entity:  input_boolean.auto_ac
-        name: Auto AC
-        show_state: false
-      - input_boolean.vacation_mode
-      - input_boolean.trip_mode
-      - entity: input_number.trip_temp_high
-        name: "Turné max temp"
-      - entity: input_number.trip_temp_low
-        name: "Turné min temp"
-    - title: Internet traffic
-      type: glance
-      column_width: 25%
-      entities:
-      - entity: sensor.snmp_wan_in
-      - entity: sensor.snmp_wan_out
-      - entity: sensor.snmp_lan_in
-      - entity: sensor.snmp_lan_out
+      - id: 7d90773516234108b7f1d9eeb4dccab5  # Automatically created id
+        title: Automation
+        type: glance
+        columns: 4
+        entities:
+          - entity: script.goodnight
+            name: Godnatt
+            tap_action: toggle
+            hold_action: more-info
+          - entity: input_boolean.auto_ac
+            name: Auto AC
+            tap_action: toggle
+            hold_action: more-info
+          - entity: input_boolean.vacation_mode
+            tap_action: toggle
+            hold_action: more-info
+          - entity: input_boolean.trip_mode
+            tap_action: toggle
+            hold_action: more-info
+      - type: conditional
+        conditions:
+          - entity: input_boolean.trip_mode
+            state: on
+        card:
+          type: entities
+          entities:
+          - entity: input_number.trip_temp_high
+            name: Turné max temp
+          - entity: input_number.trip_temp_low
+            name: Turné min temp
+      - type: thermostat
+        entity: climate.mjovik
+      - id: c7438f76e458446e91072774841fa6c5  # Automatically created id
+        title: Internet traffic
+        type: glance
+        column_width: 25%
+        entities:
+          - entity:  sensor.asuswrt_download_speed
+          #- entity: sensor.rtac68u_mbps_in
+          #- entity: sensor.rtac68u_mbps_out
+          - entity:  sensor.asuswrt_upload_speed
+      - type: glance
+        entities:
+          - entity: sensor.indoor_lights_auto_on
+          - entity: sensor.ambient_light
+      #- entity: sensor.snmp_wan_in
+      #- entity: sensor.snmp_wan_out
+      #- entity: sensor.snmp_lan_in
+      #- entity: sensor.snmp_lan_out
 
+      - id: 434d7c830ffd44eb9c8c94fcafc26e09  # Automatically created id
+        type: vertical-stack
+        cards:
+        - type: sensor 
+          # entity: sensor.rtac68u_mbps_in
+          entity:  sensor.asuswrt_download_speed
+          accuracy: 24
+        - type: sensor
+          # entity: sensor.rtac68u_mbps_out
+          entity:  sensor.asuswrt_upload_speed
+          accuracy: 24
+      - id: 247bd46dc3df49dda8fd1c6b7f6ec256  # Automatically created id
+        type: sensor
+        entity: sensor.rtac68u_kbytesec_received
+        accuracy: 24
+      - id: 31bf95f32cc64a08a31d006aa4d81bdc  # Automatically created id
+        type: sensor
+        entity: sensor.rtac68u_kbytesec_sent
+        accuracy: 24
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker
