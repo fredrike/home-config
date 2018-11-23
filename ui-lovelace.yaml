@@ -144,27 +144,40 @@ views:
     icon: mdi:television
     id: media
     cards:
-      - id: b3c591f49e044797a37008df06b68297  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.lg_webos_smart_tv
-        power_color: true
-        show_source: true
+      - type: entities
+        entities:
+          - id: b3c591f49e044797a37008df06b68297  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.lg_webos_smart_tv
+            power_color: true
+            show_source: small
+            group: true
+            name: TV
+            artwork: none
+            icon: mdi:television
 
-      - id: 491ab905c8a5401e931a285b387326a1  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.living_room_chromecast
-        hide_power: true
-        hide_volume: true
-        show_progress: true
-
+          - type: custom:mini-media-player
+            entity: media_player.lg_43uh664vzc
+            hide_power: true
+            hide_volume: true
+            show_progress: true
+            hide_controls: true
+          - id: 491ab905c8a5401e931a285b387326a1  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.living_room_chromecast
+            hide_power: true
+            hide_volume: true
+            show_progress: true
       - id: 3aa6cc7fda7647429752a94d944aea4a  # Automatically created id
         type: custom:mini-media-player
         entity: media_player.spotify
-        artwork: cover
+        artwork: full-cover
+        hide_power: true
         power_color: true
         hide_volume: false
         show_progress: true
-        show_source: true
+        show_source: small
+
       - id: 80a7e02c48614e95a96253203fbf6a18  # Automatically created id
         type: custom:upcoming-media-card
         entity: sensor.sonarr_upcoming_media

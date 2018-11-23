@@ -5,15 +5,6 @@
                 "config_entry_id": null,
                 "device_id": null,
                 "disabled_by": null,
-                "entity_id": "media_player.shield_android_tv",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "724b83b588dd0308-com-plexapp-android"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
                 "entity_id": "media_player.plex_web_chrome",
                 "name": null,
                 "platform": "plex",
@@ -27,114 +18,6 @@
                 "name": "Plex - JoF",
                 "platform": "plex",
                 "unique_id": "E9423957-A39C-40AF-92FD-567185BEF264"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.plex_web_chrome_2",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "mtlrtmzp0eekh4ml1dnzlmbp"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.erlandssons_sheild",
-                "name": null,
-                "platform": "cast",
-                "unique_id": "ffde8a70-6644-21a9-9de4-320603c0f5a4"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.unnamed_device",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "2pg7xjm9id6uhaorukbgvmpc"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.chrome",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "0lii33c2nk0pdf8ldp3cryoy"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.diddcom0002dapbthse",
-                "name": "Plex - Fredrik",
-                "platform": "plex",
-                "unique_id": "e50ce3d4-f096-4b4a-a498-8f49be2b3553"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.chrome_2",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "eg3o1u13987t17h6d25v9zq8"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.fredrikerlandssonsmacbookpro2017",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "f0f535a6-48a1-46a4-bd43-733829677d0f"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.fredrik_erlandssons_macbook_pro_2017",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "w7y5wy0y8p31tf8d9d5s1c3d"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.fredriksmbp2017",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "be0e2702-3b14-47d4-8410-56f00738dec7"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.fredriksmbp2017_2",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "87abe972-7dac-4923-b927-29c3a7373418"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.fredriks_mbp",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "a8bef847-2dbb-456e-837b-9a8c50407a0d"
-            },
-            {
-                "config_entry_id": null,
-                "device_id": null,
-                "disabled_by": null,
-                "entity_id": "media_player.chrome_3",
-                "name": null,
-                "platform": "plex",
-                "unique_id": "3vic90x3xzwd0a4i"
             },
             {
                 "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
@@ -369,6 +252,42 @@
                 "name": null,
                 "platform": "plex",
                 "unique_id": "89luoc1mi4ndpdjlysxjg1ra"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.engelholm_audio",
+                "name": "Engelholm Audio [Plexamp]",
+                "platform": "plex",
+                "unique_id": "be0e2702-3b14-47d4-8410-56f00738dec7"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.fredrik_erlandssons_macbook_pro_2017",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "w7y5wy0y8p31tf8d9d5s1c3d"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.fredrikerlandssonsmacbookpro2017",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "f0f535a6-48a1-46a4-bd43-733829677d0f"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.lg_43uh664vzc",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "2pg7xjm9id6uhaorukbgvmpc"
             }
         ]
     },
