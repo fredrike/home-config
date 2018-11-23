@@ -303,3 +303,19 @@ smartremote76b:
   name: Sevenhugs Smart Remote
   picture:
   track: true
+
+galaxya32016:
+  hide_if_away: false
+  icon:
+  mac: 50:9E:A7:77:1A:FF
+  name: Galaxy-A3-2016
+  picture:
+  track: true
+
+24df6a33898c:
+  hide_if_away: false
+  icon:
+  mac: 24:DF:6A:33:89:8C
+  name: 24df6a33898c
+  picture:
+  track: true
