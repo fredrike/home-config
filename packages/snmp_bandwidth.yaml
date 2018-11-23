@@ -21,7 +21,7 @@ sensor:
         unit_of_measurement: Mbps
         value_template: '{{ value | round(2) }}'
         group_function: '-0.000008*'
-        where: "ifName = 'eth0' ORDER BY time DESC" 
+        where: "ifName = 'eth0' ORDER BY time DESC LIMIT 1" 
         measurement: snmp
         field: derivative(ifHCInOctets, 1s)
         database: telegraf
@@ -29,7 +29,7 @@ sensor:
         unit_of_measurement: Mbps
         value_template: '{{ value | round(2) }}'
         group_function: '-0.000008*'
-        where: "ifName = 'eth0' ORDER BY time DESC" 
+        where: "ifName = 'eth0' ORDER BY time DESC LIMIT 1" 
         measurement: snmp
         field: derivative(ifHCOutOctets, 1s)
         database: telegraf
@@ -37,7 +37,7 @@ sensor:
         unit_of_measurement: Mbps
         value_template: '{{ value | round(2) }}'
         group_function: '-0.000008*'
-        where: "ifName = 'br0' ORDER BY time DESC" 
+        where: "ifName = 'br0' ORDER BY time DESC LIMIT 1" 
         measurement: snmp
         field: derivative(ifHCInOctets, 1s)
         database: telegraf
@@ -45,7 +45,7 @@ sensor:
         unit_of_measurement: Mbps
         value_template: '{{ value | round(2) }}'
         group_function: '-0.000008*'
-        where: "ifName = 'br0' ORDER BY time DESC" 
+        where: "ifName = 'br0' ORDER BY time DESC LIMIT 1" 
         measurement: snmp
         field: derivative(ifHCOutOctets, 1s)
         database: telegraf
