@@ -167,12 +167,6 @@ sensor:
         icon_template: mdi:silverware-variant
         unit_of_measurement: ""
         
-        
-  - platform: sonarr
-    api_key: !secret sonarr_api_key
-    host: 192.168.1.2
-    days: 3
-
 binary_sensor:
   - platform: workday
     country: SE

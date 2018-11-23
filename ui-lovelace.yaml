@@ -1,3 +1,11 @@
+resources:
+  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.4
+    type: module
+  - url: /local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.3
+    type: js
+  - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
+    type: js
+
 title: Mjövik
 
 views:
@@ -110,14 +118,43 @@ views:
     icon: mdi:television
     id: media
     cards:
-    - type: media-control
-      entity: media_player.lg_webos_smart_tv
-    - type: media-control
-      entity: media_player.living_room_chromecast
-    - type: media-control
-      entity: media_player.spotify
+      - id: b3c591f49e044797a37008df06b68297  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.lg_webos_smart_tv
+        power_color: true
+        show_source: true
 
-  - title: Automation 
+      - id: 491ab905c8a5401e931a285b387326a1  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.living_room_chromecast
+        hide_power: true
+        hide_volume: true
+        show_progress: true
+
+      - id: 3aa6cc7fda7647429752a94d944aea4a  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.spotify
+        artwork: cover
+        power_color: true
+        hide_volume: false
+        show_progress: true
+        show_source: true
+      - id: 80a7e02c48614e95a96253203fbf6a18  # Automatically created id
+        type: custom:upcoming-media-card
+        entity: sensor.sonarr_upcoming_media
+        title: Sonarr upcoming
+        image_style: banner
+        clock: 24
+        max: 3
+      - type: custom:upcoming-media-card
+        entity: sensor.plex_recently_added
+        title: Recently Added
+        image_style: banner
+        clock: 24
+        date: mmdd
+        icon: none
+
+  - title: Automation
     icon: mdi:home-automation
     id: auto
     cards:
