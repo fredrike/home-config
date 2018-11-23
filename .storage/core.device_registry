@@ -6,6 +6,7 @@
                     "2b0219b4593a487f8ffc95bbe4aafb68"
                 ],
                 "connections": [],
+                "hub_device_id": null,
                 "id": "c2647d1be76e4fe8a0b2839466a89e84",
                 "identifiers": [
                     [
@@ -17,6 +18,24 @@
                 "model": "Chromecast",
                 "name": "Living Room TV",
                 "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "59890af008794f16b6cb3e2413b0d609"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "b0:f1:ec:1d:1b:70"
+                    ]
+                ],
+                "hub_device_id": null,
+                "id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "identifiers": [],
+                "manufacturer": "Minut",
+                "model": "Point v106",
+                "name": "Mj\u00f6vik",
+                "sw_version": 11091
             }
         ]
     },

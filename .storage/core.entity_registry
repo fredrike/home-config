@@ -137,8 +137,8 @@
                 "unique_id": "3vic90x3xzwd0a4i"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "disabled_by": null,
                 "entity_id": "sensor.point_home_temperature",
                 "name": "Point",
@@ -146,8 +146,8 @@
                 "unique_id": "point.5b29f0839785ff249b37aa47-temperature"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "disabled_by": null,
                 "entity_id": "sensor.point_home_sound_level",
                 "name": null,
@@ -155,8 +155,8 @@
                 "unique_id": "point.5b29f0839785ff249b37aa47-sound_level"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "disabled_by": null,
                 "entity_id": "sensor.point_home_pressure",
                 "name": null,
@@ -164,8 +164,8 @@
                 "unique_id": "point.5b29f0839785ff249b37aa47-pressure"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "disabled_by": null,
                 "entity_id": "sensor.point_home_humidity",
                 "name": null,
@@ -279,6 +279,96 @@
                 "name": null,
                 "platform": "plex",
                 "unique_id": "6geqk7dqetw3tqsdkjojesww"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_battery",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-battery"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_dry",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-dry"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_button_press",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-button_press"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_connectivity",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-connectivity"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_heat",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-heat"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_moisture",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-moisture"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_sound",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-sound"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_cold",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-cold"
+            },
+            {
+                "config_entry_id": "59890af008794f16b6cb3e2413b0d609",
+                "device_id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
+                "disabled_by": null,
+                "entity_id": "binary_sensor.mjovik_tamper",
+                "name": null,
+                "platform": "point",
+                "unique_id": "point.5b29f0839785ff249b37aa47-tamper"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "media_player.chrome_6",
+                "name": null,
+                "platform": "plex",
+                "unique_id": "89luoc1mi4ndpdjlysxjg1ra"
             }
         ]
     },
