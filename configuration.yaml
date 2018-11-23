@@ -62,7 +62,7 @@ http:
 # the developers to assist with development of Home Assistant.
 # For more information, please see:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
-updater:
+# updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
@@ -85,17 +85,18 @@ logbook:
 
 recorder:
 
-device_tracker:
-  - platform: asuswrt
-    host: 192.168.1.1
-    username: !secret asuswrt_user
-    port: 22
-    mode: router
-    ssh_key: /config/ssh_key
-
+asuswrt:
+  host: 192.168.1.1
+  username: !secret asuswrt_user
+  port: 22
+  ssh_key: /config/ssh_key
 
 tellduslive:
   host: 192.168.1.10
+
+point:
+  client_id:     !secret point_id
+  client_secret: !secret point_secret
 
 climate:
   - platform: daikin
