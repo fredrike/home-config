@@ -11,7 +11,6 @@ goodnight:
       - switch.goodnight
       - switch.julgranen
       - switch.kok_uppe
-      - switch.koksfonster
       - switch.sovrummet
       - switch.stereo
       - light.fonster_vardagsrum
@@ -20,6 +19,9 @@ goodnight:
   - condition: state
     entity_id: input_boolean.auto_ac
     state: 'on'
+  - continue_on_timeout: 'true'
+    timeout: 02:00:00
+    wait_template: '{{ {{ now().hour + now().minute/100 >= 23.00 }}'
   - data:
       entity_id: climate.mjovik
       fan_mode: '1'
