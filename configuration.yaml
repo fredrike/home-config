@@ -146,13 +146,6 @@ sensor:
           {%- else -%}
           No one is home
           {%- endif %}
-      dark_sky:
-        entity_picture_template: "{{states.sensor.dark_sky_summary.attributes.entity_picture}}"
-        value_template: "{{states('sensor.dark_sky_temperature')}}"
-        friendly_name: "Dark Sky"
-        friendly_name_template: "{{states.sensor.dark_sky_summary.state}} — ⟨Dark Sky⟩"
-        unit_of_measurement: "°C"
-        device_class: temperature
       daikin_indoor:
         value_template: "{{ states('sensor.inside_temperature_mjovik_inside_temperature') }}"
         device_class: temperature
@@ -179,29 +172,6 @@ sensor:
     api_key: !secret sonarr_api_key
     host: 192.168.1.2
     days: 3
-  - platform: darksky #https://pastebin.com/iX7u4ZSg
-    api_key: !secret darksky_api_key
-    update_interval: '00:03'
-    monitored_conditions:
-      - summary
-      - icon
-      - nearest_storm_distance
-      - temperature
-      - apparent_temperature
-      - precip_probability
-      - wind_speed
-      - pressure
-      - wind_bearing
-      - humidity
-      - cloud_cover
-      - dew_point
-      - hourly_summary
-      - daily_summary
-  - platform: rest
-    resource: https://api.ioe.allbin.se/buoys
-    name: Badtemp Tallholmen
-    unit_of_measurement: °C
-    value_template: '{{ value_json|selectattr("name", "equalto", "Tallholmen")|map(attribute="temperature")|first|round(1) }}'
 
 binary_sensor:
   - platform: workday
@@ -215,10 +185,6 @@ binary_sensor:
 google:
   client_id:     !secret google_client_id
   client_secret: !secret google_client_secret
-
-weather:
-  - platform: darksky
-    api_key: !secret darksky_api_key
 
 mqtt:
   broker: 127.0.0.1

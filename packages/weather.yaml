@@ -1,5 +1,7 @@
 homeassistant:
   customize:
+    sensor.badtemp_tallholmen:
+      icon: mdi:swim
     sensor.yr_symbol:
       hidden: true
     sensor.yr_wind_speed:
@@ -44,9 +46,51 @@ homeassistant:
         "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
     sensor.pressure:
       icon: mdi:gauge
+    sensor.dark_sky_temperature:
+      extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
+        + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
+        + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
+      hidden: true
+    sensor.dark_sky_wind_speed:
+      extra_data_template: ${entities['sensor.dark_sky_wind_bearing'].state + "°"}
+    sensor.ute_temperature:
+      extra_data_template: '${ entities["sensor.daikin_outdoor"].state == "unknown" ?
+        "" : "Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
+      friendly_name: Ute Temperatur
+    sensor.dark_sky:
+      extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
+        + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
+        + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
 
 # Weather prediction
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+
 sensor:
+  - platform: darksky #https://pastebin.com/iX7u4ZSg
+    api_key: !secret darksky_api_key
+    update_interval: '00:03'
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+      - temperature
+      - apparent_temperature
+      - precip_probability
+      - wind_speed
+      - pressure
+      - wind_bearing
+      - humidity
+      - cloud_cover
+      - dew_point
+      - hourly_summary
+      - daily_summary
+  # - platform: rest
+  #   resource: https://api.ioe.allbin.se/buoys
+  #   name: Badtemp Tallholmen
+  #   unit_of_measurement: °C
+  #   value_template: '{{ value_json|selectattr("name", "equalto", "Tallholmen")|map(attribute="temperature")|first|round(1) }}'
   - platform: yr
     monitored_conditions:
       - temperature
@@ -64,6 +108,13 @@ sensor:
       - dewpointTemperature
   - platform: template
     sensors:
+      dark_sky:
+        entity_picture_template: "{{states.sensor.dark_sky_summary.attributes.entity_picture}}"
+        value_template: "{{states('sensor.dark_sky_temperature')}}"
+        friendly_name: "Dark Sky"
+        friendly_name_template: "{{states.sensor.dark_sky_summary.state}} — ⟨Dark Sky⟩"
+        unit_of_measurement: "°C"
+        device_class: temperature
       yr:
         value_template: "{{states.sensor.yr_temperature.state}}"
         friendly_name: 'Yr - Väder'

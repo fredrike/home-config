@@ -123,23 +123,6 @@ group.all_devices:
 group.all_automations:
   friendly_name: Automations
   hidden: false
-sensor.dark_sky_temperature:
-  extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
-    + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
-    + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
-  hidden: true
-sensor.dark_sky_wind_speed:
-  extra_data_template: ${entities['sensor.dark_sky_wind_bearing'].state + "°"}
-sensor.ute_temperature:
-  extra_data_template: '${ entities["sensor.daikin_outdoor"].state == "unknown" ?
-    "" : "Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
-  friendly_name: Ute Temperatur
-sensor.dark_sky:
-  extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
-    + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
-    + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
-sensor.badtemp_tallholmen:
-  icon: mdi:swim
 sensor.iotawatt_total:
   friendly_name: IoTaWatt
   show_last_changed: true
@@ -161,9 +144,7 @@ switch.ljusslingor:
   icon: mdi:lightbulb-outline
 media_player.living_room_tv:
   hidden: true
-sensor.skollunch: {}
 binary_sensor.altandorr:
   device_class: door
 group.tracking:
   device_type: occupancy
-media_player.lg_webos_smart_tv: {}
