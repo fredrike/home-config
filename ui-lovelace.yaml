@@ -5,6 +5,12 @@ resources:
     type: js
   - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
     type: js
+  - url: /local/custom-lovelace/time-input-row.js?v=f503b7
+    type: js
+  - url: /local/custom-lovelace/weather-card.js?v=0
+    type: js
+  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.0.8
+    type: js
 
 title: Mjövik
 
@@ -115,6 +121,21 @@ views:
         cards:
           - type: weather-forecast
             entity: weather.dark_sky
+            title: Dark Sky
+          - type: weather-forecast
+            entity: weather.smhi_home
+            title: SMHI
+      - id: 9bba718397a445e58517d5ca1e7d242d  # Automatically created id
+        type: vertical-stack
+        cards:
+          - type: custom:weather-card
+            title: Dark Sky
+            entity_weather: weather.dark_sky
+            entity_sun: sun.sun
+          - type: custom:weather-card
+            title: SMHI
+            entity_weather: weather.smhi_home
+            entity_sun: sun.sun
   - title: Energy
     icon: mdi:flash-circle
     id: energy
@@ -144,7 +165,13 @@ views:
     icon: mdi:television
     id: media
     cards:
-      - type: entities
+      - type: entity-filter 
+        state_filter:
+          - on
+          - off
+          - playing
+          - paused
+          - idle
         entities:
           - id: b3c591f49e044797a37008df06b68297  # Automatically created id
             type: custom:mini-media-player
@@ -162,8 +189,7 @@ views:
             hide_volume: true
             show_progress: true
             hide_controls: true
-          - id: 491ab905c8a5401e931a285b387326a1  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.living_room_chromecast
             hide_power: true
             hide_volume: true
@@ -232,21 +258,9 @@ views:
       - id: c7438f76e458446e91072774841fa6c5  # Automatically created id
         title: Internet traffic
         type: glance
-        column_width: 25%
         entities:
           - entity:  sensor.asuswrt_download_speed
-          #- entity: sensor.rtac68u_mbps_in
-          #- entity: sensor.rtac68u_mbps_out
           - entity:  sensor.asuswrt_upload_speed
-      - type: glance
-        entities:
-          - entity: sensor.indoor_lights_auto_on
-          - entity: sensor.ambient_light
-      #- entity: sensor.snmp_wan_in
-      #- entity: sensor.snmp_wan_out
-      #- entity: sensor.snmp_lan_in
-      #- entity: sensor.snmp_lan_out
-
       - id: 434d7c830ffd44eb9c8c94fcafc26e09  # Automatically created id
         type: vertical-stack
         cards:
