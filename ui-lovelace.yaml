@@ -1,5 +1,5 @@
 resources:
-  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.4
+  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.5
     type: module
   - url: /local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.3
     type: js
@@ -9,8 +9,10 @@ resources:
     type: js
   - url: /local/custom-lovelace/weather-card.js?v=0
     type: js
-  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.0.8
-    type: js
+  - url: /local/custom-lovelace/simple-thermostat.js?v=2
+    type: module
+  # - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.0.8
+  #  type: js
 
 title: Mjövik
 
@@ -19,41 +21,70 @@ views:
     icon: mdi:home
     id: home
     cards:
-      - id: 9a1d672019d445a5b3405f2d3ea32613  # Automatically created id
-        type: glance
+      - type: glance
+        id: 9a1d672019d445a5b3405f2d3ea32613  # Automatically created id
         column_width: 25%
         show_state: false
         entities:
           - entity: switch.barnensrum
             tap_action: toggle
+            hold_action: more-info
           - entity: switch.kok_uppe
             tap_action: toggle
+            hold_action: more-info
           - entity: switch.koksfonster
             tap_action: toggle
+            hold_action: more-info
           - entity: switch.sovrummet
             tap_action: toggle
+            hold_action: more-info
+          - entity: switch.stjarnor
+            icon: mdi:star-outline
+            tap_action: toggle
+            hold_action: more-info
+          - entity: switch.julgranen
+            tap_action: toggle
+            hold_action: more-info
           - entity: switch.ljusslingor
             tap_action: toggle
+            hold_action: more-info
             icon: mdi:road-variant
+          - entity: switch.altanen
+            tap_action: toggle
+            hold_action: more-info
+            icon: mdi:lightbulb
           - entity: light.fonster_vardagsrum
+            tap_action: toggle
+            hold_action: more-info
           - entity: light.glodlampan
+            tap_action: toggle
+            hold_action: more-info
           - entity: light.utebelysning
             icon: mdi:wall-sconce-variant
-
-      - type: horizontal-stack
-        cards:
-        - type: light
-          entity: light.fonster_vardagsrum
-        - type: light
-          entity: light.glodlampan
-        - type: light
-          entity: light.utebelysning
-          icon: mdi:wall-sconce-variant
+            tap_action: toggle
+            hold_action: more-info
+        title: Lampor
+        columns: 4
+        theme: Backend-selected
       - id: febc87877dd446d9b88f75ee439939f8  # Automatically created id
         type: entities
         entities:
           - climate.mjovik
-          
+      - id: 95c053757e9c4c8497a06217b41d9ad5  # Automatically created id
+        type: custom:simple-thermostat
+        entity: climate.mjovik
+        step_size: 1
+        hide:
+          state: true
+          temperature: true
+        sensors:
+          - entity: sensor.vit_inne_temperature
+            name: Temperatur (vit)
+          - entity: sensor.iotawatt_inverter
+            name: Effekt
+          - entity: sensor.inverter_kwh
+            name: Senaste 24h
+
       - id: 8d16e9c90406446794f17c2fe1d747e3  # Automatically created id
         type: conditional
         conditions:
@@ -67,6 +98,7 @@ views:
               icon: mdi:silverware-variant
       - id: deb971d9ca014e93abf0255ea35f261f  # Automatically created id
         type: glance
+        title: Klimat
         entities:
           - entity: sensor.ute_temperature
             name: Ute
@@ -165,7 +197,8 @@ views:
     icon: mdi:television
     id: media
     cards:
-      - type: entity-filter 
+      - id: c454454d3ca24ff48139382428d87710  # Automatically created id
+        type: entity-filter
         state_filter:
           - on
           - off
@@ -211,7 +244,8 @@ views:
         image_style: banner
         clock: 24
         max: 3
-      - type: custom:upcoming-media-card
+      - id: 8907d70b6d904063b04dbd41444e2967  # Automatically created id
+        type: custom:upcoming-media-card
         entity: sensor.plex_recently_added
         title: Recently Added
         image_style: banner
@@ -242,36 +276,38 @@ views:
           - entity: input_boolean.trip_mode
             tap_action: toggle
             hold_action: more-info
-      - type: conditional
+      - id: 2ccc5e391d26426987c96438b5be24fb  # Automatically created id
+        type: conditional
         conditions:
           - entity: input_boolean.trip_mode
             state: on
         card:
           type: entities
           entities:
-          - entity: input_number.trip_temp_high
-            name: Turné max temp
-          - entity: input_number.trip_temp_low
-            name: Turné min temp
-      - type: thermostat
+            - entity: input_number.trip_temp_high
+              name: Turné max temp
+            - entity: input_number.trip_temp_low
+              name: Turné min temp
+      - id: 12a9736b7feb4cec86db24d3cc06f7d4  # Automatically created id
+        type: thermostat
         entity: climate.mjovik
       - id: c7438f76e458446e91072774841fa6c5  # Automatically created id
         title: Internet traffic
         type: glance
         entities:
-          - entity:  sensor.asuswrt_download_speed
-          - entity:  sensor.asuswrt_upload_speed
+          - entity: sensor.asuswrt_download_speed
+          - entity: sensor.asuswrt_upload_speed
       - id: 434d7c830ffd44eb9c8c94fcafc26e09  # Automatically created id
         type: vertical-stack
         cards:
-        - type: sensor 
+          - type: sensor
           # entity: sensor.rtac68u_mbps_in
-          entity:  sensor.asuswrt_download_speed
-          accuracy: 24
-        - type: sensor
+            entity: sensor.asuswrt_download_speed
+            accuracy: 24
+          - type: sensor
           # entity: sensor.rtac68u_mbps_out
-          entity:  sensor.asuswrt_upload_speed
-          accuracy: 24
+            entity: sensor.asuswrt_upload_speed
+            accuracy: 24
       - id: 247bd46dc3df49dda8fd1c6b7f6ec256  # Automatically created id
         type: sensor
         entity: sensor.rtac68u_kbytesec_received
@@ -280,7 +316,8 @@ views:
         type: sensor
         entity: sensor.rtac68u_kbytesec_sent
         accuracy: 24
-      - type: custom:tracker-card
+      - id: a24510066b6c4436aa2c665e7662de7e  # Automatically created id
+        type: custom:tracker-card
         title:
         trackers:
           - sensor.custom_card_tracker
