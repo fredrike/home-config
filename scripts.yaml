@@ -28,6 +28,6 @@ goodnight:
     service: climate.set_fan_mode
   - data:
       entity_id: climate.mjovik
-      operation_mode: Hot
+      operation_mode: heat
       temperature: 19
     service: climate.set_temperature
