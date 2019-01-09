@@ -19,3 +19,7 @@ sensor:
     port: 32400
     download_images: true
     max: 5
+    section_types:
+    - movie
+    - show
+
