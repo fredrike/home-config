@@ -305,7 +305,14 @@
                     "title": "Weather"
                 },
                 {
-                    "badges": [],
+                    "badges": [
+                        "sensor.sparsnas_energy_consumption_momentary",
+                        "sensor.iotawatt_total",
+                        "sensor.iotawatt_inverter",
+                        "sensor.sparsnas_iotawatt",
+                        "sensor.inverter_kwh",
+                        "sensor.kwh_today"
+                    ],
                     "cards": [
                         {
                             "columns": 4,
@@ -398,11 +405,9 @@
                             "type": "entity-filter"
                         },
                         {
-                            "artwork": "full-cover",
                             "entity": "media_player.spotify",
                             "hide_power": true,
                             "hide_volume": false,
-                            "id": "3aa6cc7fda7647429752a94d944aea4a",
                             "power_color": true,
                             "show_progress": true,
                             "show_source": "small",
@@ -532,38 +537,6 @@
                     "icon": "mdi:home-automation",
                     "id": "auto",
                     "title": "Automation"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entity": "media_player.spotify",
-                            "hide_power": "true",
-                            "hide_volume": "false",
-                            "power_color": "true",
-                            "show_progress": "true",
-                            "show_source": "small",
-                            "type": "custom:mini-media-player"
-                        },
-                        {
-                            "clock": 24,
-                            "entity": "sensor.sonarr_upcoming_media",
-                            "image_style": "banner",
-                            "max": 3,
-                            "title": "Sonarr upcoming",
-                            "type": "custom:upcoming-media-card"
-                        },
-                        {
-                            "clock": 24,
-                            "date": "mmdd",
-                            "entity": "sensor.sonarr_upcoming_media",
-                            "icon": "none",
-                            "image_style": "banner",
-                            "title": "Recently Added",
-                            "type": "custom:upcoming-media-card"
-                        }
-                    ],
-                    "title": "T"
                 }
             ]
         }

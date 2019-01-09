@@ -11,6 +11,7 @@ homeassistant:
         group.sparsnas:
           friendly_name: Today
       icon: mdi:flash-circle
+      friendly_name: Today
     sensor.kwh_current_month:
       group:
         group.sparsnas:
@@ -30,6 +31,7 @@ homeassistant:
         group.sparsnas:
           friendly_name: Power usage
       icon: mdi:flash-circle
+      friendly_name: "Energy total"
     sensor.iotawatt_total:
       icon: mdi:flash-circle
       friendly_name: IoTaWatt
@@ -102,7 +104,7 @@ sensor:
         measurement: '"Watts"'
         field: value
         database: iotawatt
-      - name: iotawatt inverter
+      - name: Iotawatt inverter
         unit_of_measurement: W
         value_template: '{{ value | round(1) }}'
         group_function: last
@@ -110,7 +112,7 @@ sensor:
         measurement: '"Watts"'
         field: value
         database: iotawatt
-      - name: inverter kWh
+      - name: Inverter kWh
         unit_of_measurement: kWh
         value_template: '{{ (value|float / 1000.0) | round(2) }}'
         group_function: integral

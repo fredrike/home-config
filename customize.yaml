@@ -70,7 +70,8 @@ input_boolean.vacation_mode:
 input_boolean.trip_mode:
   show_last_changed: true
 sensor.krypgrund_humidity:
-  hidden: true
+  device_class: humidity
+  friendly_name: Krypgrund luftfuktighet
 sensor.utebelysning_power_2:
   hidden: true
 sensor.utebelysning_power:
@@ -148,3 +149,14 @@ binary_sensor.altandorr:
   device_class: door
 group.tracking:
   device_type: occupancy
+sensor.krypgrund_humidity_: {}
+sensor.sparsnas_energy_consumption_momentary:
+  friendly_name: Energy total
+sensor.iotawatt_inverter:
+  friendly_name: Inverter
+  icon: mdi:flash-circle
+sensor.inverter_kwh:
+  friendly_name: Inverter today
+  icon: mdi:flash-circle
+sensor.kwh_today:
+  friendly_name: Today total
