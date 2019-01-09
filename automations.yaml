@@ -284,5 +284,7 @@
   action:
   - delay: 00:{{ (range(20, 40)|random|int) }}:00
   - data:
-      entity: switch.ljusslingor
+      entity_id:
+      - switch.ljusslingor
+      - light.utebelysning
     service: switch.turn_on
