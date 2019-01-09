@@ -35,7 +35,30 @@
                 "manufacturer": "Minut",
                 "model": "Point v106",
                 "name": "Mj\u00f6vik",
-                "sw_version": 11091
+                "sw_version": 11339
+            },
+            {
+                "config_entries": [
+                    "1ac46d632d3741108075c1e62ac8b79e"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "ac:ca:54:01:b5:ea"
+                    ]
+                ],
+                "hub_device_id": null,
+                "id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "ACCA5401B5EA"
+                    ]
+                ],
+                "manufacturer": "Telldus Technologies",
+                "model": "tellstick-znet-lite-v2",
+                "name": "telldus",
+                "sw_version": "1.0.12-52-gf0aaf75"
             }
         ]
     },
