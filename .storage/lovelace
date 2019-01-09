@@ -1,0 +1,573 @@
+{
+    "data": {
+        "config": {
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/mini-media-player-bundle.js?v=0.9.5"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.3"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/custom-lovelace/tracker-card.js?v=0.1.5"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/custom-lovelace/time-input-row.js?v=f503b7"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/custom-lovelace/weather-card.js?v=0"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/simple-thermostat.js?v=2"
+                }
+            ],
+            "title": "Mj\u00f6vik",
+            "views": [
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "columns": 4,
+                            "entities": [
+                                {
+                                    "entity": "switch.sovrummet",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.barnensrum",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.koksfonster",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.kok_uppe",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.stjarnor",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:star-outline",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.julgranen",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.ljusslingor",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:road-variant",
+                                    "name": "Ljusslingor",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "switch.altanen",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:car",
+                                    "name": "Cup\u00e9v\u00e4rmare",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
+                                },
+                                {
+                                    "entity": "light.fonster_vardagsrum"
+                                },
+                                {
+                                    "entity": "light.glodlampan"
+                                },
+                                {
+                                    "entity": "light.utebelysning",
+                                    "icon": "mdi:wall-sconce-variant"
+                                }
+                            ],
+                            "show_state": false,
+                            "theme": "Backend-selected",
+                            "title": "Lampor",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                "climate.mjovik"
+                            ],
+                            "id": "febc87877dd446d9b88f75ee439939f8",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "climate.mjovik",
+                            "hide": {
+                                "state": true,
+                                "temperature": true
+                            },
+                            "id": "95c053757e9c4c8497a06217b41d9ad5",
+                            "sensors": [
+                                {
+                                    "entity": "sensor.vit_inne_temperature",
+                                    "name": "Temperatur (vit)"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_inverter",
+                                    "name": "Effekt"
+                                },
+                                {
+                                    "entity": "sensor.inverter_kwh",
+                                    "name": "Senaste 24h"
+                                }
+                            ],
+                            "step_size": 1,
+                            "type": "custom:simple-thermostat"
+                        },
+                        {
+                            "card": {
+                                "entities": [
+                                    {
+                                        "entity": "sensor.skollunch",
+                                        "icon": "mdi:silverware-variant",
+                                        "name": "Skollunch"
+                                    }
+                                ],
+                                "type": "entities"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "binary_sensor.workday_sensor",
+                                    "state": "on"
+                                }
+                            ],
+                            "id": "8d16e9c90406446794f17c2fe1d747e3",
+                            "type": "conditional"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.ute_temperature",
+                                    "name": "Ute"
+                                },
+                                {
+                                    "entity": "sensor.daikin_outdoor",
+                                    "name": "Daikin"
+                                },
+                                {
+                                    "entity": "sensor.point_home_temperature",
+                                    "name": "Point"
+                                },
+                                {
+                                    "entity": "sensor.daikin_indoor",
+                                    "icon": "mdi:home",
+                                    "name": "Daikin"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_temperature",
+                                    "name": "Inne"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_humidity",
+                                    "name": "Inne"
+                                },
+                                {
+                                    "entity": "sensor.krypgrund_temperature",
+                                    "name": "Krypgrund"
+                                },
+                                {
+                                    "entity": "sensor.krypgrund_humidity",
+                                    "name": "Krypgrund"
+                                },
+                                "sensor.regnmatare_rain_rate"
+                            ],
+                            "id": "deb971d9ca014e93abf0255ea35f261f",
+                            "title": "Klimat",
+                            "type": "glance"
+                        },
+                        {
+                            "aspect_ratio": "170%",
+                            "id": "7a4ec3a0d8e14f2d99cad47027b3d63e",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&theme=dark&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&kiosk=tv"
+                        }
+                    ],
+                    "icon": "mdi:home",
+                    "id": "home",
+                    "theme": "dark-green",
+                    "title": "Monitor"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        "sun.sun",
+                                        "sensor.dark_sky_hourly_summary",
+                                        "sensor.dark_sky_daily_summary"
+                                    ],
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        "sensor.dark_sky",
+                                        "sensor.yr",
+                                        "sensor.dark_sky_temperature",
+                                        "sensor.yr_dewpoint_temperature",
+                                        "sensor.yr_precipitation",
+                                        "sensor.yr_wind_speed",
+                                        "sensor.yr_wind_direction",
+                                        "sensor.yr_cloudiness",
+                                        "sensor.yr_fog",
+                                        "sensor.yr_pressure"
+                                    ],
+                                    "type": "glance"
+                                }
+                            ],
+                            "id": "27da5b601d164790bd7e060f72ce86f2",
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "weather.dark_sky",
+                                    "title": "Dark Sky",
+                                    "type": "weather-forecast"
+                                },
+                                {
+                                    "entity": "weather.smhi_home",
+                                    "title": "SMHI",
+                                    "type": "weather-forecast"
+                                }
+                            ],
+                            "id": "9bba718397a445e58517d5ca1e7d242c",
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity_sun": "sun.sun",
+                                    "entity_weather": "weather.dark_sky",
+                                    "title": "Dark Sky",
+                                    "type": "custom:weather-card"
+                                },
+                                {
+                                    "entity_sun": "sun.sun",
+                                    "entity_weather": "weather.smhi_home",
+                                    "title": "SMHI",
+                                    "type": "custom:weather-card"
+                                }
+                            ],
+                            "id": "9bba718397a445e58517d5ca1e7d242d",
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:weather-partlycloudy",
+                    "id": "weather",
+                    "theme": "light-navy_blue",
+                    "title": "Weather"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "columns": 4,
+                            "entities": [
+                                {
+                                    "entity": "sensor.sparsnas_energy_consumption_momentary",
+                                    "name": "Total"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_total",
+                                    "name": "IoTaWatt"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_inverter",
+                                    "name": "Inverter"
+                                },
+                                {
+                                    "entity": "sensor.sparsnas_iotawatt",
+                                    "name": "Others"
+                                },
+                                {
+                                    "entity": "sensor.inverter_kwh",
+                                    "name": "Inverter Today"
+                                },
+                                {
+                                    "entity": "sensor.kwh_today",
+                                    "name": "Today"
+                                }
+                            ],
+                            "show_name": true,
+                            "show_state": true,
+                            "title": "Energy usage",
+                            "type": "glance"
+                        },
+                        {
+                            "aspect_ratio": "100%",
+                            "id": "5a2998cfc0c646c995e417e3ba4e469e",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=dark&from=now/d&to=now&refresh=10m"
+                        },
+                        {
+                            "aspect_ratio": "105%",
+                            "id": "fda38f0d67ad420d917ca4def67e16fe",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d/Sd5-ZIcmk/power-distribution?theme=dark&orgId=1&var-kwh_to_sek=1.41&kiosk=tv"
+                        }
+                    ],
+                    "icon": "mdi:flash-circle",
+                    "id": "energy",
+                    "theme": "dark-green",
+                    "title": "Energy"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "artwork": "none",
+                                    "entity": "media_player.lg_webos_smart_tv",
+                                    "group": true,
+                                    "icon": "mdi:television",
+                                    "name": "TV",
+                                    "power_color": true,
+                                    "show_source": "small",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entity": "media_player.lg_43uh664vzc",
+                                    "hide_controls": true,
+                                    "hide_power": true,
+                                    "hide_volume": true,
+                                    "show_progress": true,
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entity": "media_player.living_room_chromecast",
+                                    "hide_power": true,
+                                    "hide_volume": true,
+                                    "show_progress": true,
+                                    "type": "custom:mini-media-player"
+                                }
+                            ],
+                            "state_filter": [
+                                "on",
+                                "off",
+                                "playing",
+                                "paused",
+                                "idle"
+                            ],
+                            "type": "entity-filter"
+                        },
+                        {
+                            "artwork": "full-cover",
+                            "entity": "media_player.spotify",
+                            "hide_power": true,
+                            "hide_volume": false,
+                            "id": "3aa6cc7fda7647429752a94d944aea4a",
+                            "power_color": true,
+                            "show_progress": true,
+                            "show_source": "small",
+                            "type": "custom:mini-media-player"
+                        },
+                        {
+                            "clock": 24,
+                            "entity": "sensor.sonarr_upcoming_media",
+                            "id": "80a7e02c48614e95a96253203fbf6a18",
+                            "image_style": "banner",
+                            "max": 3,
+                            "title": "Sonarr upcoming",
+                            "type": "custom:upcoming-media-card"
+                        },
+                        {
+                            "clock": 24,
+                            "date": "mmdd",
+                            "entity": "sensor.plex_recently_added",
+                            "icon": "none",
+                            "id": "8907d70b6d904063b04dbd41444e2967",
+                            "image_style": "banner",
+                            "title": "Recently Added",
+                            "type": "custom:upcoming-media-card"
+                        }
+                    ],
+                    "icon": "mdi:television",
+                    "id": "media",
+                    "title": "Media Players"
+                },
+                {
+                    "badges": [
+                        "device_tracker.404e36221e29",
+                        "device_tracker.ac3743a16232"
+                    ],
+                    "cards": [
+                        {
+                            "columns": 4,
+                            "entities": [
+                                {
+                                    "entity": "script.goodnight",
+                                    "hold_action": "more-info",
+                                    "name": "Godnatt",
+                                    "tap_action": "toggle"
+                                },
+                                {
+                                    "entity": "input_boolean.auto_ac",
+                                    "name": "Auto AC"
+                                },
+                                {
+                                    "entity": "input_boolean.vacation_mode"
+                                },
+                                {
+                                    "entity": "input_boolean.trip_mode"
+                                }
+                            ],
+                            "id": "7d90773516234108b7f1d9eeb4dccab5",
+                            "title": "Automation",
+                            "type": "glance"
+                        },
+                        {
+                            "card": {
+                                "entities": [
+                                    {
+                                        "entity": "input_number.trip_temp_high",
+                                        "name": "Turn\u00e9 max temp"
+                                    },
+                                    {
+                                        "entity": "input_number.trip_temp_low",
+                                        "name": "Turn\u00e9 min temp"
+                                    }
+                                ],
+                                "type": "entities"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "input_boolean.trip_mode",
+                                    "state": "on"
+                                }
+                            ],
+                            "id": "2ccc5e391d26426987c96438b5be24fb",
+                            "type": "conditional"
+                        },
+                        {
+                            "entity": "climate.mjovik",
+                            "id": "12a9736b7feb4cec86db24d3cc06f7d4",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.asuswrt_download_speed"
+                                },
+                                {
+                                    "entity": "sensor.asuswrt_upload_speed"
+                                }
+                            ],
+                            "id": "c7438f76e458446e91072774841fa6c5",
+                            "title": "Internet traffic",
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "accuracy": 24,
+                                    "entity": "sensor.asuswrt_download_speed",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "accuracy": 24,
+                                    "entity": "sensor.asuswrt_upload_speed",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "id": "434d7c830ffd44eb9c8c94fcafc26e09",
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "id": "a24510066b6c4436aa2c665e7662de7e",
+                            "title": null,
+                            "trackers": [
+                                "sensor.custom_card_tracker",
+                                "sensor.custom_component_tracker"
+                            ],
+                            "type": "custom:tracker-card"
+                        }
+                    ],
+                    "icon": "mdi:home-automation",
+                    "id": "auto",
+                    "title": "Automation"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "media_player.spotify",
+                            "hide_power": "true",
+                            "hide_volume": "false",
+                            "power_color": "true",
+                            "show_progress": "true",
+                            "show_source": "small",
+                            "type": "custom:mini-media-player"
+                        },
+                        {
+                            "clock": 24,
+                            "entity": "sensor.sonarr_upcoming_media",
+                            "image_style": "banner",
+                            "max": 3,
+                            "title": "Sonarr upcoming",
+                            "type": "custom:upcoming-media-card"
+                        },
+                        {
+                            "clock": 24,
+                            "date": "mmdd",
+                            "entity": "sensor.sonarr_upcoming_media",
+                            "icon": "none",
+                            "image_style": "banner",
+                            "title": "Recently Added",
+                            "type": "custom:upcoming-media-card"
+                        }
+                    ],
+                    "title": "T"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}
