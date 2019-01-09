@@ -60,15 +60,6 @@ a06faa48ed64:
   track: true
   vendor: AzureWave Technology Inc.
 
-3c15c2067185:
-  hide_if_away: false
-  icon: mdi:tablet-ipad
-  mac: 3C:15:C2:06:71:85
-  name: Lila iPad
-  picture:
-  track: true
-  vendor: Apple, Inc.
-
 9cf387c11dd2:
   hide_if_away: false
   icon: mdi:tablet-ipad
@@ -77,15 +68,6 @@ a06faa48ed64:
   picture:
   track: true
   vendor: unknown
-
-9c04ebc79e72:
-  hide_if_away: false
-  icon: mdi:tablet-ipad
-  mac: 9C:04:EB:C7:9E:72
-  name: Orange iPad
-  picture:
-  track: true
-  vendor: Apple, Inc.
 
 3412986c3e80:
   hide_if_away: false
@@ -317,5 +299,37 @@ galaxya32016:
   icon:
   mac: 24:DF:6A:33:89:8C
   name: 24df6a33898c
+  picture:
+  track: true
+
+loattasipad:
+  hide_if_away: true
+  icon: mdi:tablet-ipad
+  mac: 08:E6:89:E5:A9:46
+  name: Lottas-ipad
+  picture:
+  track: true
+
+galaxynote9:
+  hide_if_away: true
+  icon:
+  mac: 08:C5:E1:D7:F0:A9
+  name: Galaxy-Note9 Lotta
+  picture:
+  track: true
+
+leasipad:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 58:E6:BA:7D:AB:9B
+  name: Leas-iPad
+  picture:
+  track: true
+
+emmasipad:
+  hide_if_away: false
+  icon: mdi:tablet-ipad
+  mac: 8C:FE:57:B2:BE:71
+  name: Emmas-iPad
   picture:
   track: true
