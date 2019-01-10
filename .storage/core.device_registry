@@ -59,6 +59,605 @@
                 "model": "tellstick-znet-lite-v2",
                 "name": "telldus",
                 "sw_version": "1.0.12-52-gf0aaf75"
+            },
+            {
+                "config_entries": [
+                    "7ac5429ad53f45318f29149a97904b08"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "a4:08:ea:f0:7a:fe"
+                    ]
+                ],
+                "hub_device_id": null,
+                "id": "d924eeb397f34450890701267c289158",
+                "identifiers": [],
+                "manufacturer": "Daikin",
+                "model": "NOTSUPPORT",
+                "name": "Mj\u00f6vik",
+                "sw_version": "3.3.6"
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "c30b2ec880cd430f9e51198be9393477",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "23"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "K\u00f6ksf\u00f6nster",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "5b82f34dc3a34bc9b5fae4cb417fe5c1",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "19"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Sovrummet",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "ed138f85b0054f23b1301eaa081b302b",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "103"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Stj\u00e4rnor",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "aa9c84bf08e340b6bd3b7d53b07056ed",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "2"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "Utebelysning",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "bcd5f777c231454baebb5bfd57fbd338",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "18"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Dimmer:Nexa",
+                "name": "Gl\u00f6dlampan",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "ac8c2b0e673a475f9175f16628d51be2",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_2"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "Utebelysning",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "8fef9200a2f54a1dad0c13937bf302f1",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_11"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperature",
+                "name": "Ute",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "4987aed04044448fb5eea4a98285c247",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_73"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "Christian",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "35704ba4eef04928818dd49b86df9f1a",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "27"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Barnensrum",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "ca7c0713d9894036af1c38412a95f6ad",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_5"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Krypgrund",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "6a4b53b3a40042688b605af990d480d2",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_1"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "F\u00f6nster vardagsrum",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "ea31dded50fd40d3a474049f576ffbbc",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_71"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "Christian",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "1ef08170cea446fabd6dd55af44db07e",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "25"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Stereo",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "09a7c4fbe63a456893d56f789400f884",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "20"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Julgranen",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "b5d62d0579844cceb9e8ef0800461b91",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_72"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "Christian",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "14aea19c773e4aa89baf0ae9bc8a995b",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_6"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Vit Inne",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "8cc5a81fd57940d29df03d0a6d98d9f4",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "21"
+                    ]
+                ],
+                "manufacturer": "Kangtai",
+                "model": "Selflearning:Clasohlson",
+                "name": "Altanen",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "68b1fd227f404fae9f92513f9d25db97",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_99"
+                    ]
+                ],
+                "manufacturer": "Oregon",
+                "model": "2914",
+                "name": "Regnm\u00e4tare",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "6edd4381e0cb447a8cd9050f9b73e424",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "22"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "K\u00f6k (uppe)",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "f772cf5f8df64899b0135af11be3838d",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "4"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "019A-0003-0003",
+                "name": "Altand\u00f6rr",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "d80afbb634224a1d9afe984001cfb30b",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "24"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Ljusslingor",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "27f110718d954a11ac5645bb9f1fa812",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "1"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "F\u00f6nster vardagsrum",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "2650f5ed87f14feab5d27a08ba56d7e3",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "_98"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Vinden",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858"
+                    ]
+                ],
+                "hub_device_id": null,
+                "id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858"
+                    ]
+                ],
+                "manufacturer": "ASUSTek",
+                "model": null,
+                "name": "RT-AC68U",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "cdac3f48677146bcaa83e24589122230",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U kbyte/sec sent",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "a059d98d4fae462da11efc5a46f915de",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U packets/sec received",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "a57bd6e0a5fb458ea00abf976c94b0a1",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U packets sent",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "a19f370b92b94bc39a7cddaece56de3a",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U kbyte/sec received",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "26cf0031451f495cacba55bad35a5d1b",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U packets/sec sent",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "f80c5d253eae4dbaa7d2618b163c4fcb",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U bytes received",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "b328ed1391d146c3aa128e8991fab610",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U packets received",
+                "sw_version": null
+            },
+            {
+                "config_entries": [
+                    "16d87fc9f9264370b5d339c8dd508180"
+                ],
+                "connections": [],
+                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "id": "5fdfdab53dd146fdb3fc2810369e2117",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
+                    ]
+                ],
+                "manufacturer": null,
+                "model": null,
+                "name": "RT-AC68U bytes sent",
+                "sw_version": null
             }
         ]
     },

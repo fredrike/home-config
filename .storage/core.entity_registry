@@ -83,8 +83,8 @@
                 "unique_id": "f3716017-b86b-1b18-a14d-daf790e90fbe"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "a57bd6e0a5fb458ea00abf976c94b0a1",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_packets_sent",
                 "name": null,
@@ -92,8 +92,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "cdac3f48677146bcaa83e24589122230",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_kbytesec_sent",
                 "name": null,
@@ -101,8 +101,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "a19f370b92b94bc39a7cddaece56de3a",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_kbytesec_received",
                 "name": null,
@@ -110,8 +110,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "5fdfdab53dd146fdb3fc2810369e2117",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_bytes_sent",
                 "name": null,
@@ -119,8 +119,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "f80c5d253eae4dbaa7d2618b163c4fcb",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_bytes_received",
                 "name": null,
@@ -128,8 +128,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "26cf0031451f495cacba55bad35a5d1b",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_packetssec_sent",
                 "name": null,
@@ -137,8 +137,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "b328ed1391d146c3aa128e8991fab610",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_packets_received",
                 "name": null,
@@ -146,8 +146,8 @@
                 "unique_id": "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "16d87fc9f9264370b5d339c8dd508180",
+                "device_id": "a059d98d4fae462da11efc5a46f915de",
                 "disabled_by": null,
                 "entity_id": "sensor.rtac68u_packetssec_received",
                 "name": null,
@@ -308,8 +308,8 @@
                 "unique_id": "D10B2452-EC32-43DD-BC68-7FBA44945481"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "7ac5429ad53f45318f29149a97904b08",
+                "device_id": "d924eeb397f34450890701267c289158",
                 "disabled_by": null,
                 "entity_id": "climate.mjovik",
                 "name": null,
@@ -317,8 +317,8 @@
                 "unique_id": "A408EAF07AFE"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "5b82f34dc3a34bc9b5fae4cb417fe5c1",
                 "disabled_by": null,
                 "entity_id": "switch.sovrummet_tellduslive",
                 "name": null,
@@ -326,8 +326,8 @@
                 "unique_id": "19"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "09a7c4fbe63a456893d56f789400f884",
                 "disabled_by": null,
                 "entity_id": "switch.julgranen_tellduslive",
                 "name": null,
@@ -335,8 +335,8 @@
                 "unique_id": "20"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "8cc5a81fd57940d29df03d0a6d98d9f4",
                 "disabled_by": null,
                 "entity_id": "switch.altanen_tellduslive",
                 "name": null,
@@ -344,8 +344,8 @@
                 "unique_id": "21"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "6edd4381e0cb447a8cd9050f9b73e424",
                 "disabled_by": null,
                 "entity_id": "switch.kok_uppe_tellduslive",
                 "name": null,
@@ -353,8 +353,8 @@
                 "unique_id": "22"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "c30b2ec880cd430f9e51198be9393477",
                 "disabled_by": null,
                 "entity_id": "switch.koksfonster_tellduslive",
                 "name": null,
@@ -362,8 +362,8 @@
                 "unique_id": "23"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "d80afbb634224a1d9afe984001cfb30b",
                 "disabled_by": null,
                 "entity_id": "switch.ljusslingor_tellduslive",
                 "name": null,
@@ -371,8 +371,8 @@
                 "unique_id": "24"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "1ef08170cea446fabd6dd55af44db07e",
                 "disabled_by": null,
                 "entity_id": "switch.stereo_tellduslive",
                 "name": null,
@@ -380,8 +380,8 @@
                 "unique_id": "25"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "35704ba4eef04928818dd49b86df9f1a",
                 "disabled_by": null,
                 "entity_id": "switch.barnensrum_tellduslive",
                 "name": null,
@@ -389,8 +389,8 @@
                 "unique_id": "27"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "bcd5f777c231454baebb5bfd57fbd338",
                 "disabled_by": null,
                 "entity_id": "light.glodlampan_tellduslive",
                 "name": null,
@@ -398,8 +398,8 @@
                 "unique_id": "18"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "27f110718d954a11ac5645bb9f1fa812",
                 "disabled_by": null,
                 "entity_id": "light.fonster_vardagsrum_tellduslive",
                 "name": null,
@@ -407,8 +407,8 @@
                 "unique_id": "1"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "aa9c84bf08e340b6bd3b7d53b07056ed",
                 "disabled_by": null,
                 "entity_id": "light.utebelysning_tellduslive",
                 "name": null,
@@ -416,130 +416,130 @@
                 "unique_id": "2"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ea31dded50fd40d3a474049f576ffbbc",
                 "disabled_by": null,
                 "entity_id": "sensor.christian_temperature_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_71-temp"
+                "unique_id": "_71-temp-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ea31dded50fd40d3a474049f576ffbbc",
                 "disabled_by": null,
                 "entity_id": "sensor.christian_humidity_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_71-humidity"
+                "unique_id": "_71-humidity-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "b5d62d0579844cceb9e8ef0800461b91",
                 "disabled_by": null,
                 "entity_id": "sensor.christian_temperature_2_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_72-temp"
+                "unique_id": "_72-temp-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "b5d62d0579844cceb9e8ef0800461b91",
                 "disabled_by": null,
                 "entity_id": "sensor.christian_humidity_2_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_72-humidity"
+                "unique_id": "_72-humidity-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "4987aed04044448fb5eea4a98285c247",
                 "disabled_by": null,
                 "entity_id": "sensor.christian_temperature_3_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_73-temp"
+                "unique_id": "_73-temp-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "4987aed04044448fb5eea4a98285c247",
                 "disabled_by": null,
                 "entity_id": "sensor.christian_humidity_3_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_73-humidity"
+                "unique_id": "_73-humidity-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "2650f5ed87f14feab5d27a08ba56d7e3",
                 "disabled_by": null,
                 "entity_id": "sensor.vinden_temperature_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_98-temp"
+                "unique_id": "_98-temp-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "2650f5ed87f14feab5d27a08ba56d7e3",
                 "disabled_by": null,
                 "entity_id": "sensor.vinden_humidity_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_98-humidity"
+                "unique_id": "_98-humidity-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "68b1fd227f404fae9f92513f9d25db97",
                 "disabled_by": null,
                 "entity_id": "sensor.regnmatare_rain_total_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_99-rtot"
+                "unique_id": "_99-rtot-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "68b1fd227f404fae9f92513f9d25db97",
                 "disabled_by": null,
                 "entity_id": "sensor.regnmatare_rain_rate_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_99-rrate"
+                "unique_id": "_99-rrate-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ca7c0713d9894036af1c38412a95f6ad",
                 "disabled_by": null,
                 "entity_id": "sensor.krypgrund_temperature_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_5-temp"
+                "unique_id": "_5-temp-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "14aea19c773e4aa89baf0ae9bc8a995b",
                 "disabled_by": null,
                 "entity_id": "sensor.vit_inne_humidity_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_6-humidity"
+                "unique_id": "_6-humidity-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "6a4b53b3a40042688b605af990d480d2",
                 "disabled_by": null,
                 "entity_id": "sensor.fonster_vardagsrum_power_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_1-watt"
+                "unique_id": "_1-watt-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ac8c2b0e673a475f9175f16628d51be2",
                 "disabled_by": null,
                 "entity_id": "sensor.utebelysning_power_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_2-watt"
+                "unique_id": "_2-watt-0"
             },
             {
                 "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
@@ -614,13 +614,13 @@
                 "unique_id": "telldus_2_256_0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ca7c0713d9894036af1c38412a95f6ad",
                 "disabled_by": null,
                 "entity_id": "sensor.krypgrund_humidity_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_5-humidity"
+                "unique_id": "_5-humidity-0"
             },
             {
                 "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
@@ -632,13 +632,13 @@
                 "unique_id": "telldus_6_1_0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "14aea19c773e4aa89baf0ae9bc8a995b",
                 "disabled_by": null,
                 "entity_id": "sensor.vit_inne_temperature_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_6-temp"
+                "unique_id": "_6-temp-0"
             },
             {
                 "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
@@ -650,17 +650,17 @@
                 "unique_id": "telldus_11_1_0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "8fef9200a2f54a1dad0c13937bf302f1",
                 "disabled_by": null,
                 "entity_id": "sensor.ute_temperature_tellduslive",
                 "name": null,
                 "platform": "tellduslive",
-                "unique_id": "_11-temp"
+                "unique_id": "_11-temp-0"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "7ac5429ad53f45318f29149a97904b08",
+                "device_id": "d924eeb397f34450890701267c289158",
                 "disabled_by": null,
                 "entity_id": "sensor.inside_temperature_mjovik_inside_temperature",
                 "name": "Daikin indoor",
@@ -668,8 +668,8 @@
                 "unique_id": "A408EAF07AFE-inside_temperature"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "7ac5429ad53f45318f29149a97904b08",
+                "device_id": "d924eeb397f34450890701267c289158",
                 "disabled_by": null,
                 "entity_id": "sensor.outside_temperature_mjovik_outside_temperature",
                 "name": "Daikin outdoor",
@@ -812,8 +812,8 @@
                 "unique_id": "telldus_4_battery"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "f772cf5f8df64899b0135af11be3838d",
                 "disabled_by": null,
                 "entity_id": "binary_sensor.altandorr_tellduslive",
                 "name": null,
@@ -1271,8 +1271,8 @@
                 "unique_id": "telldus_25"
             },
             {
-                "config_entry_id": null,
-                "device_id": null,
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ed138f85b0054f23b1301eaa081b302b",
                 "disabled_by": null,
                 "entity_id": "switch.stjarnor_tellduslive",
                 "name": null,
@@ -1290,7 +1290,7 @@
             },
             {
                 "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
-                "device_id": null,
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
                 "disabled_by": null,
                 "entity_id": "light.fonster_vardagsrum",
                 "name": null,
@@ -1299,7 +1299,7 @@
             },
             {
                 "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
-                "device_id": null,
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
                 "disabled_by": null,
                 "entity_id": "light.glodlampan",
                 "name": null,
@@ -1308,12 +1308,219 @@
             },
             {
                 "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
-                "device_id": null,
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
                 "disabled_by": null,
                 "entity_id": "light.utebelysning",
                 "name": null,
                 "platform": "mqtt",
                 "unique_id": "telldus_2"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor.__battery_12",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_123_battery"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rtot__mm_10",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_123_8_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rrate__mmh_10",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_123_4_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor.__battery_13",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_124_battery"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rtot__mm_11",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_124_8_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rrate__mmh_11",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_124_4_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor.__battery_14",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_125_battery"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rtot__mm_12",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_125_8_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rrate__mmh_12",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_125_4_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor.__battery_15",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_126_battery"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rtot__mm_13",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_126_8_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rrate__mmh_13",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_126_4_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor.__battery_16",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_127_battery"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rtot__mm_14",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_127_8_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rrate__mmh_14",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_127_4_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor.__battery_17",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_128_battery"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rtot__mm_15",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_128_8_0"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "disabled_by": null,
+                "entity_id": "sensor._rrate__mmh_15",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "telldus_128_4_0"
+            },
+            {
+                "config_entry_id": "893ad5604a9542d886a176ea9799d25b",
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "weather.smhi_home",
+                "name": null,
+                "platform": "smhi",
+                "unique_id": "56.184086, 15.533938"
+            },
+            {
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ac8c2b0e673a475f9175f16628d51be2",
+                "disabled_by": null,
+                "entity_id": "sensor.utebelysning_power_2_tellduslive",
+                "name": null,
+                "platform": "tellduslive",
+                "unique_id": "_2-watt-2"
+            },
+            {
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "ac8c2b0e673a475f9175f16628d51be2",
+                "disabled_by": null,
+                "entity_id": "sensor.utebelysning_power_6_tellduslive",
+                "name": null,
+                "platform": "tellduslive",
+                "unique_id": "_2-watt-6"
+            },
+            {
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "6a4b53b3a40042688b605af990d480d2",
+                "disabled_by": null,
+                "entity_id": "sensor.fonster_vardagsrum_power_3_tellduslive",
+                "name": null,
+                "platform": "tellduslive",
+                "unique_id": "_1-watt-3"
+            },
+            {
+                "config_entry_id": "5e64457d58ac45cd83b7ae78e76475ce",
+                "device_id": "6a4b53b3a40042688b605af990d480d2",
+                "disabled_by": null,
+                "entity_id": "sensor.fonster_vardagsrum_power_2_tellduslive",
+                "name": null,
+                "platform": "tellduslive",
+                "unique_id": "_1-watt-2"
             }
         ]
     },
