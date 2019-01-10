@@ -125,7 +125,13 @@ influxdb:
       - group
 
 sensor:
-  #https://home-assistant.io/components/sensor.template/
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'time_date'
+  # https://home-assistant.io/components/sensor.template/
   - platform: template
     sensors:
       krypgrund_dew_point:
