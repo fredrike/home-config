@@ -1521,6 +1521,24 @@
                 "name": null,
                 "platform": "tellduslive",
                 "unique_id": "_1-watt-2"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "8bdd8b08505a4da8a467894f25ea389b",
+                "disabled_by": null,
+                "entity_id": "sensor.sparsnas_energy_consumption_momentary",
+                "name": null,
+                "platform": "mqtt",
+                "unique_id": "sparsnas_602064_watt"
+            },
+            {
+                "config_entry_id": "1ac46d632d3741108075c1e62ac8b79e",
+                "device_id": "8bdd8b08505a4da8a467894f25ea389b",
+                "disabled_by": null,
+                "entity_id": "sensor.sparsnas_energy_consumption_over_time",
+                "name": "Sparsn\u00e4s energy consumption over time",
+                "platform": "mqtt",
+                "unique_id": "sparsnas_602064_kwh"
             }
         ]
     },

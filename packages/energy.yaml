@@ -43,18 +43,38 @@ homeassistant:
 sensor:
   - platform: mqtt
     state_topic: !secret sparsnas_sensor
-    name: "Sparsnäs energy consumption momentary"
+    name: "Sparsnäs energy consumption momentary conf"
     unit_of_measurement: "W"
     value_template: '{{ value_json.Watt | round(1) }}'
     icon: mdi:flash-circle
+    # mosq_pub -t "home/sensor/sparsnas/602064_Watt/config" -m '{"device":
+    # {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
+    # "602064", "model": "Sparsnäs", "manufacturer": "IKEA"},
+    # "unit_of_measurement": "W", "json_attributes": ["Sequence",
+    # "FreqErr","Effect", "Data4", "Sensor", "battery"], "command_topic":
+    # "sparsnas/602064", "name": "Sparsnäs Watt", "unique_id":
+    # "sparsnas_602064_watt", "state_topic": "sparsnas/602064",
+    # "value_template": "{{ value_json.Watt | round(1) }}", "icon":
+    # "mdi:flash-circle"}'
+    # sensor.sparsnas_energy_consumption_momentary
 # Note that the sensor below will be resetted if you remove/reinstall the batteries in the Sparsnäs transmitter
   - platform: mqtt
     state_topic: !secret sparsnas_sensor
-    name: "Sparsnäs energy consumption over time"
+    name: "Sparsnäs energy consumption over time conf"
     unit_of_measurement: "kWh"
     value_template: '{{ value_json.kWh | round(1) }}'
     hidden: true
     icon: mdi:flash-circle
+    # mosq_pub -t "home/sensor/sparsnas/602064_kwh/config" -m '{"device":
+    # {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
+    # "602064", "model": "Sparsnäs", "manufacturer": "IKEA"},
+    # "unit_of_measurement": "kWh", "json_attributes": ["Sequence", "FreqErr",
+    # "Effect", "Data4", "Sensor", "battery"], "command_topic":
+    # "sparsnas/602064", "name": "Sparsnäs kWh", "unique_id":
+    # "sparsnas_602064_kwh", "state_topic": "sparsnas/602064",
+    # "value_template": "{{ value_json.kWh | round(2) }}", "icon":
+    # "mdi:flash-circle"}'
+    #  sensor.sparsnas_energy_consumption_over_time
   - platform: mqtt
     state_topic: !secret sparsnas_sensor
     name: "Sparsnäs Battery remaining"
