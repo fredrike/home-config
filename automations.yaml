@@ -273,7 +273,7 @@
       entity_id: light.glodlampan
     service: light.turn_off
 - id: '1542352771711'
-  alias: Ljusslingor (on workday)
+  alias: Ljusslingor, Utebelysning (on workday)
   trigger:
   - at: 06:00
     platform: time
@@ -286,5 +286,8 @@
   - data:
       entity_id:
       - switch.ljusslingor
-      - light.utebelysning
     service: switch.turn_on
+  - data:
+      brightness: 255
+      entity_id: light.utebelysning
+    service: light.turn_on
