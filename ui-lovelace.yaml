@@ -2,7 +2,7 @@ title: Mjövik
 resources:
   - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.8
     type: module
-  - url: /local/custom-lovelace/simple-thermostat.js?v=3
+  - url: /local/custom-lovelace/simple-thermostat.js?v=0.13.0
     type: module
   - url: /local/custom-lovelace/weather-card.js?v=0
     type: module

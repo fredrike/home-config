@@ -78,6 +78,11 @@ logbook:
 # Enables a map showing the location of tracked devices
 #map:
 
+notify:
+  - platform: pushover
+    api_key: !secret pushover_api
+    user_key: !secret pushover_user
+
 recorder:
 
 asuswrt:
