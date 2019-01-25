@@ -163,7 +163,7 @@ sensor:
         unit_of_measurement: "AC State"
         friendly_name: "AC State"
       skollunch:
-        value_template: "{{ states.calendar.skolmaten__nattrabyskolan.attributes.message }}"
+        value_template: "{{ states.calendar.skolmaten_nattrabyskolan.attributes.message }}"
         friendly_name: "Skollunch Nättabyskolan"
         icon_template: mdi:silverware-variant
         unit_of_measurement: ""
@@ -267,7 +267,6 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-
 media_player:
   - platform: plex
   - platform: webostv
@@ -275,7 +274,6 @@ media_player:
   - platform: spotify
     client_id:     !secret spotify_id
     client_secret: !secret spotify_secret
-
 
 logger:
   # default: warning
