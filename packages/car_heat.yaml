@@ -3,7 +3,7 @@ automation:
   - alias: "heater ak minus 10"
     initial_state: True
     trigger:
-     - platform: time
+     - platform: time_pattern
        minutes: '/5'
        seconds: 2
     condition:
@@ -26,7 +26,7 @@ automation:
   - alias: "heater ak plus 1"
     initial_state: True
     trigger:
-     - platform: time
+     - platform: time_pattern
        minutes: '/5'
        seconds: 2
     condition:
@@ -49,7 +49,7 @@ automation:
   - alias: "heater ak plus 5"
     initial_state: True
     trigger:
-     - platform: time
+     - platform: time_pattern
        minutes: '/5'
        seconds: 2
     condition:
@@ -83,7 +83,7 @@ automation:
   - alias: "heater ak off"
     initial_state: False
     trigger:
-     - platform: time
+     - platform: time_pattern
        minutes: '/5'
        seconds: 2
     condition:

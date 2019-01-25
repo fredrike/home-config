@@ -1,7 +1,7 @@
 - id: 32e9a04e7a5b428885c5f42f50fe9db4
   alias: AC weekday (heat 18)
   trigger:
-  - platform: time
+  - platform: time_pattern
     minutes: /5
     seconds: 0
   - platform: state
@@ -150,7 +150,7 @@
   alias: Trip temp low (ac-heat)
   trigger:
   - minutes: /10
-    platform: time
+    platform: time_pattern
     seconds: 2
   condition:
   - condition: template
@@ -172,7 +172,7 @@
   alias: Trip temp high (ac-cool)
   trigger:
   - minutes: /10
-    platform: time
+    platform: time_pattern
     seconds: 2
   condition:
   - condition: template
@@ -194,7 +194,7 @@
   alias: Trip temp OK (AC-off)
   trigger:
   - minutes: /10
-    platform: time
+    platform: time_pattern
     seconds: 2
   condition:
   - condition: template
