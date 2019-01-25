@@ -4,27 +4,23 @@
             "resources": [
                 {
                     "type": "module",
-                    "url": "/local/custom-lovelace/mini-media-player-bundle.js?v=0.9.5"
+                    "url": "/local/custom-lovelace/mini-media-player-bundle.js?v=0.9.8"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/simple-thermostat.js?v=3"
+                },
+                {
+                    "type": "module",
+                    "url": "https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/weather-card/weather-card.min.js"
                 },
                 {
                     "type": "js",
-                    "url": "/local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.3"
+                    "url": "/local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.4"
                 },
                 {
                     "type": "js",
                     "url": "/local/custom-lovelace/tracker-card.js?v=0.1.5"
-                },
-                {
-                    "type": "js",
-                    "url": "/local/custom-lovelace/time-input-row.js?v=f503b7"
-                },
-                {
-                    "type": "js",
-                    "url": "/local/custom-lovelace/weather-card.js?v=0"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-lovelace/simple-thermostat.js?v=2"
                 }
             ],
             "title": "Mj\u00f6vik",
@@ -229,7 +225,7 @@
                     ],
                     "icon": "mdi:home",
                     "id": "home",
-                    "theme": "dark-green",
+                    "theme": "default",
                     "title": "Monitor"
                 },
                 {
@@ -487,24 +483,25 @@
                                     "state": "on"
                                 }
                             ],
-                            "id": "2ccc5e391d26426987c96438b5be24fb",
                             "type": "conditional"
                         },
                         {
                             "entity": "climate.mjovik",
-                            "id": "12a9736b7feb4cec86db24d3cc06f7d4",
                             "type": "thermostat"
                         },
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.asuswrt_download_speed"
+                                    "entity": "sensor.rtac68u_kbytesec_received",
+                                    "icon": "mdi:arrow-down"
                                 },
                                 {
-                                    "entity": "sensor.asuswrt_upload_speed"
+                                    "entity": "sensor.rtac68u_kbytesec_sent",
+                                    "icon": "mdi:arrow-up"
                                 }
                             ],
-                            "id": "c7438f76e458446e91072774841fa6c5",
+                            "show_name": false,
+                            "show_state": true,
                             "title": "Internet traffic",
                             "type": "glance"
                         },
@@ -512,16 +509,15 @@
                             "cards": [
                                 {
                                     "accuracy": 24,
-                                    "entity": "sensor.asuswrt_download_speed",
+                                    "entity": "sensor.rtac68u_kbytesec_received",
                                     "type": "sensor"
                                 },
                                 {
                                     "accuracy": 24,
-                                    "entity": "sensor.asuswrt_upload_speed",
+                                    "entity": "sensor.rtac68u_kbytesec_sent",
                                     "type": "sensor"
                                 }
                             ],
-                            "id": "434d7c830ffd44eb9c8c94fcafc26e09",
                             "type": "vertical-stack"
                         },
                         {
