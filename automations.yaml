@@ -291,3 +291,52 @@
       brightness: 255
       entity_id: light.utebelysning
     service: light.turn_on
+- id: '1548404931395'
+  alias: Point button press binary_sensor
+  trigger:
+  - entity_id: binary_sensor.mjovik_button_press
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      message: Point was pressed
+      title: Point press
+    service: notify.notify
+  - data:
+      message: Point was pressed (binary sensor)
+      title: Point press 123
+    service: persistent_notification.create
+- id: '1548405307847'
+  alias: Point event
+  trigger:
+  - event_data: {}
+    event_type: point_webhook_received
+    platform: event
+  condition: []
+  action:
+  - data_template:
+      message: 'Point event: {{ trigger.event.data.event.type }}, event data: {{ trigger.event.data }}'
+      title: 'Point, {{ trigger.event.data.event.type }}'
+    service: notify.notify
+  - data_template:
+      message: '{{ trigger.event.data.event }}'
+      title: Point webhook received
+    service: persistent_notification.create
+  - data_template:
+      message: 'Point event: {{ trigger.event.data.event.type }}, point id: {{ trigger.event.data.event.device_name }}'
+      title: Point event
+    service: persistent_notification.create
+- id: point_button
+  alias: Point button press
+  trigger:
+  - event_type: point_webhook_received
+    platform: event
+  condition:
+    condition: template
+    value_template: '{{ trigger.event.data.event.type == ''short_button_press'' }}'
+  action:
+  - data_template:
+      message: Button press on Point {{ trigger.event.data.event.device_id }} {{ trigger.event.data.event.device_name }}
+      title: Point button press
+    service: persistent_notification.create
