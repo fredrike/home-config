@@ -2,6 +2,7 @@
     "data": {
         "devices": [
             {
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
                 "config_entries": [
                     "2b0219b4593a487f8ffc95bbe4aafb68"
                 ],
@@ -20,6 +21,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
                 "config_entries": [
                     "59890af008794f16b6cb3e2413b0d609"
                 ],
@@ -34,10 +36,11 @@
                 "identifiers": [],
                 "manufacturer": "Minut",
                 "model": "Point v106",
-                "name": "Mj\u00f6vik",
+                "name": "Point ",
                 "sw_version": 11339
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "1ac46d632d3741108075c1e62ac8b79e"
                 ],
@@ -61,6 +64,7 @@
                 "sw_version": "1.0.12-52-gf0aaf75"
             },
             {
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
                 "config_entries": [
                     "7ac5429ad53f45318f29149a97904b08"
                 ],
@@ -79,11 +83,12 @@
                 "sw_version": "3.3.6"
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "c30b2ec880cd430f9e51198be9393477",
                 "identifiers": [
                     [
@@ -97,11 +102,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "5b82f34dc3a34bc9b5fae4cb417fe5c1",
                 "identifiers": [
                     [
@@ -115,11 +121,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "ed138f85b0054f23b1301eaa081b302b",
                 "identifiers": [
                     [
@@ -133,11 +140,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "aa9c84bf08e340b6bd3b7d53b07056ed",
                 "identifiers": [
                     [
@@ -151,11 +159,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "bcd5f777c231454baebb5bfd57fbd338",
                 "identifiers": [
                     [
@@ -169,11 +178,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "ac8c2b0e673a475f9175f16628d51be2",
                 "identifiers": [
                     [
@@ -187,11 +197,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "8fef9200a2f54a1dad0c13937bf302f1",
                 "identifiers": [
                     [
@@ -205,11 +216,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "4987aed04044448fb5eea4a98285c247",
                 "identifiers": [
                     [
@@ -223,11 +235,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "35704ba4eef04928818dd49b86df9f1a",
                 "identifiers": [
                     [
@@ -241,11 +254,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "ca7c0713d9894036af1c38412a95f6ad",
                 "identifiers": [
                     [
@@ -259,11 +273,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "6a4b53b3a40042688b605af990d480d2",
                 "identifiers": [
                     [
@@ -277,11 +292,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "ea31dded50fd40d3a474049f576ffbbc",
                 "identifiers": [
                     [
@@ -295,11 +311,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "1ef08170cea446fabd6dd55af44db07e",
                 "identifiers": [
                     [
@@ -313,11 +330,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "09a7c4fbe63a456893d56f789400f884",
                 "identifiers": [
                     [
@@ -331,6 +349,7 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
@@ -349,11 +368,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "14aea19c773e4aa89baf0ae9bc8a995b",
                 "identifiers": [
                     [
@@ -367,11 +387,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "8cc5a81fd57940d29df03d0a6d98d9f4",
                 "identifiers": [
                     [
@@ -385,11 +406,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "68b1fd227f404fae9f92513f9d25db97",
                 "identifiers": [
                     [
@@ -403,11 +425,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "6edd4381e0cb447a8cd9050f9b73e424",
                 "identifiers": [
                     [
@@ -421,11 +444,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "f772cf5f8df64899b0135af11be3838d",
                 "identifiers": [
                     [
@@ -439,11 +463,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "d80afbb634224a1d9afe984001cfb30b",
                 "identifiers": [
                     [
@@ -457,11 +482,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "27f110718d954a11ac5645bb9f1fa812",
                 "identifiers": [
                     [
@@ -475,11 +501,12 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
                     "5e64457d58ac45cd83b7ae78e76475ce"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
                 "id": "2650f5ed87f14feab5d27a08ba56d7e3",
                 "identifiers": [
                     [
@@ -493,8 +520,9 @@
                 "sw_version": null
             },
             {
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [
                     [
@@ -516,8 +544,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -534,8 +563,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -552,8 +582,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -570,8 +601,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -588,8 +620,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -606,8 +639,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -624,8 +658,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -642,8 +677,9 @@
                 "sw_version": null
             },
             {
+                "area_id": null,
                 "config_entries": [
-                    "16d87fc9f9264370b5d339c8dd508180"
+                    "d0b00eb479af4139ba8b03efaed7c038"
                 ],
                 "connections": [],
                 "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
@@ -660,6 +696,7 @@
                 "sw_version": null
             },
             {
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
                 "config_entries": [
                     "1ac46d632d3741108075c1e62ac8b79e"
                 ],
@@ -676,6 +713,44 @@
                 "model": "Sparsn\u00e4s",
                 "name": "Sparsn\u00e4s 602064",
                 "sw_version": "215a4aa"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
+                "id": "b8123b1de9ad48bbadf6cc36d6152e62",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "140"
+                    ]
+                ],
+                "manufacturer": "Group",
+                "model": "N/A",
+                "name": "Ute",
+                "sw_version": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "5e64457d58ac45cd83b7ae78e76475ce"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "ba88d2f545824c92aa90f004b80a5bb2",
+                "identifiers": [
+                    [
+                        "tellduslive",
+                        "ACCA5401B5EA"
+                    ]
+                ],
+                "manufacturer": "Telldus",
+                "model": "TellstickZnetLiteV2",
+                "name": "192.168.1.10",
+                "sw_version": "1.0.12-52-gf0aaf75"
             }
         ]
     },
