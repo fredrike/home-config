@@ -16,15 +16,15 @@ sensor:
   - platform: template
     sensors: 
         rtac68u_mbitsec_sent:
-          value_template: "{{ states('sensor.rtac68u_kbytesec_sent')|float * 0.008|round(2) }}"
+          value_template: "{{ (states('sensor.rtac68u_kbytesec_sent')|float * 0.008)|round(2) }}"
           unit_of_measurement: "Mbit/sec"
           friendly_name: "RT-AC68U sent"
-          icon: mdi:upload-network
+          icon_template: mdi:upload-network
         rtac68u_mbitsec_received:
-          value_template: "{{ states('sensor.rtac68u_kbytesec_received')|float * 0.008|round(2) }}"
+          value_template: "{{ (states('sensor.rtac68u_kbytesec_received')|float * 0.008)|round(2) }}"
           unit_of_measurement: "Mbit/sec"
           friendly_name: "RT-AC68U received"
-          icon: mdi:download-network
+          icon_template: mdi:download-network
   - platform: influxdb
     host: 192.168.1.2
     queries:
