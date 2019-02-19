@@ -36,6 +36,7 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
+                                    "icon": "mdi:hotel",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -45,6 +46,7 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
+                                    "icon": "mdi:lamp",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -54,6 +56,7 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
+                                    "icon": "mdi:lamp",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -63,6 +66,7 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
+                                    "icon": "mdi:lightbulb-outline",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -72,7 +76,8 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
-                                    "icon": "mdi:star-outline",
+                                    "icon": "mdi:floor-lamp",
+                                    "name": "Vardagsrums-pendel",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -82,6 +87,7 @@
                                     "hold_action": {
                                         "action": "more-info"
                                     },
+                                    "icon": "mdi:pine-tree",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -117,19 +123,22 @@
                                 {
                                     "entity": "light.utebelysning",
                                     "icon": "mdi:wall-sconce-variant"
+                                },
+                                {
+                                    "entity": "light.glodlampan_mqtt",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:lamp",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    }
                                 }
                             ],
                             "show_state": false,
                             "theme": "Backend-selected",
                             "title": "Lampor",
                             "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                "climate.mjovik"
-                            ],
-                            "id": "febc87877dd446d9b88f75ee439939f8",
-                            "type": "entities"
                         },
                         {
                             "entity": "climate.mjovik",
@@ -177,6 +186,13 @@
                         },
                         {
                             "entities": [
+                                "climate.mjovik"
+                            ],
+                            "id": "febc87877dd446d9b88f75ee439939f8",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
                                 {
                                     "entity": "sensor.ute_temperature",
                                     "name": "Ute"
@@ -210,9 +226,13 @@
                                     "entity": "sensor.krypgrund_humidity",
                                     "name": "Krypgrund"
                                 },
-                                "sensor.regnmatare_rain_rate"
+                                {
+                                    "entity": "sensor.regnmatare_rain_rate"
+                                },
+                                {
+                                    "entity": "binary_sensor.mjovik_button_press"
+                                }
                             ],
-                            "id": "deb971d9ca014e93abf0255ea35f261f",
                             "title": "Klimat",
                             "type": "glance"
                         },
@@ -220,7 +240,7 @@
                             "aspect_ratio": "170%",
                             "id": "7a4ec3a0d8e14f2d99cad47027b3d63e",
                             "type": "iframe",
-                            "url": "https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&theme=dark&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&kiosk=tv"
+                            "url": "https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&theme=light&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&kiosk=tv"
                         }
                     ],
                     "icon": "mdi:home",
@@ -347,18 +367,18 @@
                             "aspect_ratio": "100%",
                             "id": "5a2998cfc0c646c995e417e3ba4e469e",
                             "type": "iframe",
-                            "url": "https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=dark&from=now/d&to=now&refresh=10m"
+                            "url": "https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light&from=now/d&to=now&refresh=10m"
                         },
                         {
                             "aspect_ratio": "105%",
                             "id": "fda38f0d67ad420d917ca4def67e16fe",
                             "type": "iframe",
-                            "url": "https://grafana.erlandsson.myds.me/d/Sd5-ZIcmk/power-distribution?theme=dark&orgId=1&var-kwh_to_sek=1.41&kiosk=tv"
+                            "url": "https://grafana.erlandsson.myds.me/d/Sd5-ZIcmk/power-distribution?theme=light&orgId=1&var-kwh_to_sek=1.41&kiosk=tv"
                         }
                     ],
                     "icon": "mdi:flash-circle",
                     "id": "energy",
-                    "theme": "dark-green",
+                    "theme": "Backend-selected",
                     "title": "Energy"
                 },
                 {
@@ -445,6 +465,7 @@
                                 {
                                     "entity": "script.goodnight",
                                     "hold_action": "more-info",
+                                    "icon": "mdi:sleep",
                                     "name": "Godnatt",
                                     "tap_action": "toggle"
                                 },
