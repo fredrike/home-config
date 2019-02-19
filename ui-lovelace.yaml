@@ -1,14 +1,14 @@
 title: Mjövik
 resources:
-  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.8
+  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=1.0.1
     type: module
-  - url: /local/custom-lovelace/simple-thermostat.js?v=0.13.0
+  - url: /local/custom-lovelace/simple-thermostat.js?v=0.17.0
     type: module
   - url: /local/custom-lovelace/weather-card.js?v=0
     type: module
   - url: /local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.4
     type: js
-  - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
+  - url: /local/custom-lovelace/tracker-card.js?v=0.3.2
     type: js
 views:
   - badges: []

@@ -4,11 +4,11 @@
             "resources": [
                 {
                     "type": "module",
-                    "url": "/local/custom-lovelace/mini-media-player-bundle.js?v=0.9.8"
+                    "url": "/local/custom-lovelace/mini-media-player-bundle.js?v=1.0.1"
                 },
                 {
                     "type": "module",
-                    "url": "/local/custom-lovelace/simple-thermostat.js?v=0.13.0"
+                    "url": "/local/custom-lovelace/simple-thermostat.js?v=0.17.0"
                 },
                 {
                     "type": "module",
@@ -20,7 +20,7 @@
                 },
                 {
                     "type": "js",
-                    "url": "/local/custom-lovelace/tracker-card.js?v=0.1.5"
+                    "url": "/local/custom-lovelace/tracker-card.js?v=0.3.2"
                 }
             ],
             "title": "Mj\u00f6vik",
