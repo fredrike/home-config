@@ -63,6 +63,8 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
 
+system_health:
+
 # Discover some devices automatically
 discovery:
 
@@ -82,6 +84,10 @@ notify:
   - platform: pushover
     api_key: !secret pushover_api
     user_key: !secret pushover_user
+  - platform: html5
+    name: html5
+    gcm_api_key: !secret gcm_api
+    gcm_sender_id: !secret gcm_sender
 
 recorder:
 
@@ -97,17 +103,6 @@ tellduslive:
 point:
   client_id:     !secret point_id
   client_secret: !secret point_secret
-
-climate:
-  - platform: daikin
-    host: 192.168.1.15
-
-daikin:
-  hosts:
-  - 192.168.1.15
-
-# customizer:
-#  custom_ui: local
 
 # Track the sun
 sun:
@@ -152,12 +147,6 @@ sensor:
           {%- else -%}
           No one is home
           {%- endif %}
-      daikin_indoor:
-        value_template: "{{ states('sensor.inside_temperature_mjovik_inside_temperature') }}"
-        device_class: temperature
-      daikin_outdoor:
-        value_template: "{{ states('sensor.outside_temperature_mjovik_outside_temperature') }}"
-        device_class: temperature
       daikin_target:
         value_template: "{{ states.climate.mjovik.attributes.temperature }}"
         unit_of_measurement: "°C"
@@ -223,44 +212,6 @@ input_number:
     max: 35
     step: 1
     icon: mdi:thermometer
-
-history_graph:
-  #gr1:
-  #  name: Temperature 5 days
-  #  hours_to_show: 120
-  #  refresh: 60
-  #  entities:
-  #    - sensor.vit_inne_temperature
-  #    - sensor.krypgrund_temperature
-  #    - sensor.ute_temperature
-  #    - sensor.daikin_outdoor
-  #gr2:
-  #  name: Temperature 10 days
-  #  hours_to_show: 240
-  #  refresh: 60
-  #  entities:
-  #    - sensor.vit_inne_temperature
-  #    - sensor.krypgrund_temperature
-  #    - sensor.ute_temperature
-  #    - sensor.daikin_outdoor
-  #gr3:
-  #  name: Temperature 30 days
-  #  hours_to_show: 720
-  #  refresh: 60
-  #  entities:
-  #    - sensor.vit_inne_temperature
-  #    - sensor.krypgrund_temperature
-  #    - sensor.ute_temperature
-  #    - sensor.daikin_outdoor
-  #gr4:
-  #  name: Temperature year
-  #  hours_to_show: 8760
-  #  refresh: 60
-  #  entities:
-  #    - sensor.vit_inne_temperature
-  #    - sensor.krypgrund_temperature
-  #    - sensor.ute_temperature
-  #    - sensor.daikin_outdoor
 
 # Text to speech
 tts:
