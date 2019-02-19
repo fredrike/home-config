@@ -490,35 +490,23 @@
                             "type": "thermostat"
                         },
                         {
-                            "entities": [
-                                {
-                                    "entity": "sensor.rtac68u_kbytesec_received",
-                                    "icon": "mdi:arrow-down"
-                                },
-                                {
-                                    "entity": "sensor.rtac68u_kbytesec_sent",
-                                    "icon": "mdi:arrow-up"
-                                }
-                            ],
-                            "show_name": false,
-                            "show_state": true,
-                            "title": "Internet traffic",
-                            "type": "glance"
-                        },
-                        {
                             "cards": [
                                 {
-                                    "accuracy": 24,
-                                    "entity": "sensor.rtac68u_kbytesec_received",
+                                    "entity": "sensor.rtac68u_mbitsec_received",
+                                    "graph": "line",
+                                    "icon": "mdi:download-network",
+                                    "name": "Downlink",
                                     "type": "sensor"
                                 },
                                 {
-                                    "accuracy": 24,
-                                    "entity": "sensor.rtac68u_kbytesec_sent",
+                                    "entity": "sensor.rtac68u_mbitsec_sent",
+                                    "graph": "line",
+                                    "icon": "mdi:upload-network",
+                                    "name": "Uplink",
                                     "type": "sensor"
                                 }
                             ],
-                            "type": "vertical-stack"
+                            "type": "horizontal-stack"
                         },
                         {
                             "id": "a24510066b6c4436aa2c665e7662de7e",
