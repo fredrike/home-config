@@ -122,6 +122,21 @@ influxdb:
       - automation
       - group
 
+rss_feed_template:
+  uptime:
+    requires_api_password: false
+    title: "Uptime"
+    items:
+    - title: "Sparsnäs"
+      description: >-
+        {%- if (as_timestamp(now()) -
+        as_timestamp(states.sensor.sparsnas_energy_consumption_momentary.last_updated))
+        < 600 -%}
+        Sparsnas is up
+        {%- else -%}
+        Sparsnas is down
+        {%- endif -%}
+
 sensor:
   - platform: time_date
     display_options:
