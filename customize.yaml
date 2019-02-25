@@ -149,7 +149,6 @@ binary_sensor.altandorr:
   device_class: door
 group.tracking:
   device_type: occupancy
-sensor.krypgrund_humidity_: {}
 sensor.sparsnas_energy_consumption_momentary:
   friendly_name: Energy total
 sensor.iotawatt_inverter:
