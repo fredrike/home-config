@@ -178,7 +178,7 @@ sensor:
         friendly_name: "Skollunch Nättabyskolan"
         icon_template: mdi:silverware-variant
         unit_of_measurement: ""
-        
+
 binary_sensor:
   - platform: workday
     country: SE
@@ -248,18 +248,7 @@ media_player:
     client_id:     !secret spotify_id
     client_secret: !secret spotify_secret
 
-logger:
-  # default: warning
-  default: error
-  logs:
-    #netdisco: debug
-    #requests: debug
-    #tellduslive: debug
-    lg_webos_smart_tv: info
-    #daikin: debug
-    asuswrt: debug
-    device_tracker: debug
-    homeassistant.components.sensor.rest: critical
+logger: !include logger.yaml
 
 #https://community.home-assistant.io/t/spotify-playlist-player/2249
 #https://github.com/Aksinder/Home-Assistant1
