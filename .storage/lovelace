@@ -20,7 +20,7 @@
                 },
                 {
                     "type": "js",
-                    "url": "/local/custom-lovelace/tracker-card.js?v=1.2.2"
+                    "url": "/local/custom-lovelace/tracker-card.js?v=1.2.6"
                 }
             ],
             "title": "Mj\u00f6vik",
