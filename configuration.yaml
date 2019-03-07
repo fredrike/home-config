@@ -80,6 +80,31 @@ history:
 
 # View all events in a logbook
 logbook:
+  exclude:
+    entities:
+      - sensor.sonarr_upcoming_media
+      - sensor.plex_recently_added
+      - sensor.time
+      - sensor.time_date
+      - sensor.sun_elev
+    domains:
+      - sun
+
+
+recorder:
+  purge_interval: 7
+  exclude:
+    entities:
+      - sensor.sonarr_upcoming_media
+      - sensor.plex_recently_added
+      - sensor.time
+      - sensor.time_date
+      - sensor.sun_elev
+      - sensor.fonster_vardagsrum_power
+      - sensor.washer_runtime
+      - sensor.sparsnas_frequency_error
+    domains:
+      - weather
 
 # Enables a map showing the location of tracked devices
 #map:
@@ -92,8 +117,6 @@ notify:
     name: html5
     gcm_api_key: !secret gcm_api
     gcm_sender_id: !secret gcm_sender
-
-recorder:
 
 asuswrt:
   host: 192.168.1.1
