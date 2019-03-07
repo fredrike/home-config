@@ -67,6 +67,8 @@ updater:
 
 system_health:
 
+person:
+
 # Discover some devices automatically
 discovery:
 
@@ -153,9 +155,6 @@ sensor:
         value_template: "{{ ((states('sensor.krypgrund_temperature') | float * 1) -
           ((100 - (states('sensor.krypgrund_humidity') | float * 1)) / 5)) | round(2) }}"
         device_class: temperature
-      uptime:
-        value_template: >-
-          {{ (as_timestamp(now()) - as_timestamp(states.sensor.sparsnas_energy_consumption_momentary.last_updated)) < 600 }}
       hemma:
         value_template: >-
           {% if is_state("device_tracker.78f882cf23d5", "home") or
