@@ -1,20 +1,20 @@
 - id: 32e9a04e7a5b428885c5f42f50fe9db4
-  alias: AC weekday (heat 18)
+  alias: AC weekday (heat 20)
   trigger:
-  - platform: time_pattern
-    minutes: /5
-    seconds: 0
-  - platform: state
-    entity_id: group.tracking
-    to: not_home
+  - minutes: /5
+    platform: time_pattern
+    seconds: '0'
+  - entity_id: group.tracking
     from: home
+    platform: state
+    to: not_home
   condition:
   - condition: state
     entity_id: group.tracking
     state: not_home
-  - condition: time
-    after: 07:15:00
+  - after: 07:15:00
     before: '15:00:00'
+    condition: time
   - condition: state
     entity_id: input_boolean.auto_ac
     state: 'on'
@@ -25,15 +25,15 @@
     entity_id: input_boolean.trip_mode
     state: 'off'
   action:
-  - service: climate.set_fan_mode
-    data:
+  - data:
       entity_id: climate.mjovik
       fan_mode: Auto
-  - service: climate.set_temperature
-    data:
+    service: climate.set_fan_mode
+  - data:
       entity_id: climate.mjovik
-      temperature: 18
       operation_mode: heat
+      temperature: 20
+    service: climate.set_temperature
 - id: 2b8a666493414996b86d91bfb82f7a63
   alias: AC weekday morning (heat 23)
   trigger:
@@ -60,7 +60,7 @@
       temperature: 23
     service: climate.set_temperature
 - id: 6c7d7b4527c243ada790a57ff40abada
-  alias: AC weekday afternoon (heat 22)
+  alias: AC weekday afternoon (heat 23)
   trigger:
   - at: '15:30:00'
     platform: time
@@ -82,7 +82,7 @@
   - data:
       entity_id: climate.mjovik
       operation_mode: heat
-      temperature: 22
+      temperature: 23
     service: climate.set_temperature
 - id: 73d5ba997ef54e3287519482183ff550
   alias: Sleep
@@ -101,17 +101,15 @@
 - id: ea98115788cd4f0db6aad83c2a3c8f98
   alias: Patio door opened
   trigger:
-  - platform: state
-    entity_id: binary_sensor.altandorren
+  - entity_id: binary_sensor.altandorren
+    for: 00:00:10
+    platform: state
     to: 'on'
-  condition:
-    condition: template
-    value_template: '{{ as_timestamp(now()) - as_timestamp(states.automation.patio_door_opened.attributes.last_triggered)
-      | int > 10 }}'
+  condition: []
   action:
-    service: notify.notify
-    data:
+  - data:
       message: Patio door opened 10s ago.
+    service: persistent_notification.create
 - id: '1532938767682'
   alias: Turn off "stereo" when TV is off
   trigger:
@@ -281,6 +279,9 @@
   - condition: state
     entity_id: input_boolean.vacation_mode
     state: 'off'
+  - before: sunrise
+    before_offset: -00:20:00
+    condition: sun
   action:
   - delay: 00:{{ (range(20, 40)|random|int) }}:00
   - data:
@@ -317,7 +318,7 @@
   action:
   - data_template:
       message: 'Point event: {{ trigger.event.data.event.type }}, event data: {{ trigger.event.data }}'
-      title: 'Point, {{ trigger.event.data.event.type }}'
+      title: Point, {{ trigger.event.data.event.type }}
     service: notify.notify
   - data_template:
       message: '{{ trigger.event.data.event }}'
