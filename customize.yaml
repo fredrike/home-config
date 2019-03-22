@@ -124,11 +124,6 @@ group.all_devices:
 group.all_automations:
   friendly_name: Automations
   hidden: false
-sensor.iotawatt_total:
-  friendly_name: IoTaWatt
-  show_last_changed: true
-sensor.sparsnas_iotawatt:
-  show_last_changed: true
 binary_sensor.altandorren:
   device_class: door
 switch.barnensrum:
@@ -149,13 +144,3 @@ binary_sensor.altandorr:
   device_class: door
 group.tracking:
   device_type: occupancy
-sensor.sparsnas_energy_consumption_momentary:
-  friendly_name: Energy total
-sensor.iotawatt_inverter:
-  friendly_name: Inverter
-  icon: mdi:flash-circle
-sensor.inverter_kwh:
-  friendly_name: Inverter today
-  icon: mdi:flash-circle
-sensor.kwh_today:
-  friendly_name: Today total

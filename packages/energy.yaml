@@ -1,105 +1,34 @@
 homeassistant:
   customize:
-    sensor.sparsnas_battery_remaining:
-      hidden: true
-      icon: mdi:battery-outline
-    sensor.sparsnas_frequency_error:
-      hidden: true
-      icon: mdi:signal
-    sensor.kwh_today:
-      icon: mdi:flash-circle
-      friendly_name: Today
-    sensor.kwh_current_month:
-      icon: mdi:flash-circle
-    sensor.sparsnas_template_kwh_sensor_day:
-      hidden: true
-    sensor.sparsnas_template_kwh_sensor_month:
-      hidden: true
-    sensor.sparsnas_energy_consumption_over_time:
-      hidden: true
-      icon: mdi:flash-circle
+    sensor.iotawatt_total:
+      friendly_name: IoTaWatt
     sensor.sparsnas_energy_consumption_momentary:
       icon: mdi:flash-circle
       friendly_name: "Energy total"
     sensor.iotawatt_total:
       icon: mdi:flash-circle
       friendly_name: IoTaWatt
-      show_last_changed: true
     sensor.sparsnas_iotawatt:
       icon: mdi:flash-circle
-      show_last_changed: true
+    sensor.sparsnas_energy_consumption_momentary:
+      friendly_name: Energy total
+    sensor.iotawatt_inverter:
+      friendly_name: Inverter
+      icon: mdi:flash-circle
+    sensor.inverter_kwh:
+      icon: mdi:flash-circle
+    sensor.kwh_today:
+      friendly_name: Today total
+    sensor.inverter_daily:
+      friendly_name: Inverter Today
+    sensor.sparsnas_daily:
+      friendly_name: Sparsnas Today
+    sensor.sparsnas_monthly:
+      friendly_name: Sparsnas this month
+    sensor.sparsnas_yearly:
+      friendly_name: Sparsnas this year
 
 sensor:
-  - platform: mqtt
-    state_topic: !secret sparsnas_sensor
-    name: "Sparsnäs energy consumption momentary conf"
-    unit_of_measurement: "W"
-    value_template: '{{ value_json.Watt | round(1) }}'
-    icon: mdi:flash-circle
-    # mosq_pub -t "home/sensor/sparsnas/602064_Watt/config" -m '{"device":
-    # {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
-    # "602064", "model": "Sparsnäs", "manufacturer": "IKEA"},
-    # "unit_of_measurement": "W", "json_attributes": ["Sequence",
-    # "FreqErr","Effect", "Data4", "Sensor", "battery"], "command_topic":
-    # "sparsnas/602064", "name": "Sparsnäs Watt", "unique_id":
-    # "sparsnas_602064_watt", "state_topic": "sparsnas/602064",
-    # "value_template": "{{ value_json.Watt | round(1) }}", "icon":
-    # "mdi:flash-circle"}'
-    # sensor.sparsnas_energy_consumption_momentary
-# Note that the sensor below will be resetted if you remove/reinstall the batteries in the Sparsnäs transmitter
-  - platform: mqtt
-    state_topic: !secret sparsnas_sensor
-    name: "Sparsnäs energy consumption over time conf"
-    unit_of_measurement: "kWh"
-    value_template: '{{ value_json.kWh | round(1) }}'
-    icon: mdi:flash-circle
-    # mosq_pub -t "home/sensor/sparsnas/602064_kwh/config" -m '{"device":
-    # {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
-    # "602064", "model": "Sparsnäs", "manufacturer": "IKEA"},
-    # "unit_of_measurement": "kWh", "json_attributes": ["Sequence", "FreqErr",
-    # "Effect", "Data4", "Sensor", "battery"], "command_topic":
-    # "sparsnas/602064", "name": "Sparsnäs kWh", "unique_id":
-    # "sparsnas_602064_kwh", "state_topic": "sparsnas/602064",
-    # "value_template": "{{ value_json.kWh | round(2) }}", "icon":
-    # "mdi:flash-circle"}'
-    #  sensor.sparsnas_energy_consumption_over_time
-  - platform: mqtt
-    state_topic: !secret sparsnas_sensor
-    name: "Sparsnäs Battery remaining"
-    unit_of_measurement: "%"
-    value_template: '{{ value_json.battery | round(1) }}'
-    icon: mdi:battery-outline
-  - platform: mqtt
-    state_topic: !secret sparsnas_sensor
-    name: "Sparsnäs Frequency Error"
-    unit_of_measurement: "%"
-    value_template: '{{ value_json.FreqErr }}'
-    icon: mdi:signal
-  - platform: mqtt
-    name: "Sparsnäs template kwh sensor day"
-    state_topic: "template/kwh/day"
-    icon: mdi:flash-circle
-  - platform: mqtt
-    name: "Sparsnäs template kwh sensor month"
-    state_topic: "template/kwh/month"
-    icon: mdi:flash-circle
-  - platform: template
-    sensors:
-      kwh_current_month:
-        friendly_name: "Sparsnäs current month"
-        unit_of_measurement: "kWh"
-        value_template: >-
-          {% if states('sensor.sparsnas_energy_consumption_over_time') != "unknown" and states('sensor.sparsnas_template_kwh_sensor_month') != "unknown" %}
-          {{ (float(states.sensor.sparsnas_energy_consumption_over_time.state) - float(states.sensor.sparsnas_template_kwh_sensor_month.state)) | round(1) }}
-          {%- endif %}
-      kwh_today:
-        friendly_name: "Sparsnäs current day"
-        unit_of_measurement: "kWh"
-        value_template: >-
-          {% if states('sensor.sparsnas_energy_consumption_over_time') != "unknown" and states('sensor.sparsnas_template_kwh_sensor_day') != "unknown" %}
-          {{ (float(states.sensor.sparsnas_energy_consumption_over_time.state) - float(states.sensor.sparsnas_template_kwh_sensor_day.state)) | round(1) }}
-          {%- endif %}
-
 #IoTaWatt config
   - platform: influxdb
     host: 192.168.1.2
@@ -119,14 +48,6 @@ sensor:
         where: '"entity_id" = ''Inverter'''
         measurement: '"Watts"'
         field: value
-        database: iotawatt
-      - name: Inverter kWh
-        unit_of_measurement: kWh
-        value_template: '{{ (value|float / 1000.0) | round(2) }}'
-        group_function: integral
-        where: '"entity_id" = ''Inverter'' and time > now()-24h' 
-        measurement: '"Watts"'
-        field: '"value",1h'
         database: iotawatt
   - platform: template
     sensors:
@@ -180,85 +101,16 @@ sensor:
           {% else %}
             {{''}}
           {% endif %}
+  - platform: integration
+    source: sensor.iotawatt_inverter
+    name: Inverter kWh
+    unit_prefix: k
+    round: 2
           
 
-# Thanks to @bhaap and @naestrom for the monthly and daily automation below
 automation:
-- action:
-  - data:
-      payload_template: '{{ states(''sensor.sparsnas_energy_consumption_over_time'') }}'
-      retain: True
-      topic: template/kwh/month
-    service: mqtt.publish
-  alias: Sparsnäs monthly consumption
-  trigger:
-    platform: time
-    at: '00:00:01'
-  condition:
-    condition: and
-    conditions:
-      - condition: template
-        value_template: '{{ now().day | string == "1" }}'
-      - condition: or
-        conditions:
-          - condition: template
-            value_template: '{{ now().month | string == "1" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "2" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "3" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "4" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "5" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "6" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "7" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "8" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "9" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "10" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "11" }}'
-          - condition: template
-            value_template: '{{ now().month | string == "12" }}'
-  id: '1516722867362'
-
-- action:
-  - data:
-      payload_template: "{{ states('sensor.sparsnas_energy_consumption_over_time')}}"
-      retain: True
-      topic: template/kwh/day
-    service: mqtt.publish
-  alias: Sparsnäs daily consumption
-  condition: []
-  id: '1516806539856'
-  trigger:
-  - at: 00:00:02
-    platform: time
-
-- action:
-  - data:
-      entity_id: automation.sparsnas_daily_consumption
-    service: automation.trigger
-  - data:
-      entity_id: automation.sparsnas_monthly_consumption
-    service: automation.trigger
-  alias: trigger-sparsnas-if-unknown
-  condition:
-  - condition: state
-    entity_id: sensor.sparsnas_template_kwh_sensor_month
-    state: Unknown
-  id: '1519996400010'
-  trigger:
-  - entity_id: sensor.sparsnas_energy_consumption_over_time
-    from: unknown
-    platform: state
-- id: '1549527071770'
-  alias: Sparsnäs startup
+- id: 'sparsnas_setup'
+  alias: Sparsnäs setup
   trigger:
   - event: start
     platform: homeassistant
@@ -283,18 +135,17 @@ automation:
       topic: home/sensor/sparsnas/602064_Watt/config
     service: mqtt.publish
 
+utility_meter:
+  sparsnas_yearly:
+    source: sensor.sparsnas_energy_consumption_over_time 
+    cycle: yearly
+  sparsnas_monthly:
+    source: sensor.sparsnas_energy_consumption_over_time
+    cycle: monthly
+  sparsnas_daily:
+    source: sensor.sparsnas_energy_consumption_over_time
+    cycle: daily
+  inverter_daily:
+    source: sensor.inverter_kwh
+    cycle: daily
 
-group:
-  sparsnas:
-    name: Energy Consumption
-    view: no
-    icon: mdi:flash-circle
-    entities:
-      - sensor.sparsnas_energy_consumption_momentary
-      - sensor.iotawatt_total
-      - sensor.sparsnas_iotawatt
-      - sensor.sparsnas_energy_consumption_over_time
-      - sensor.sparsnas_battery_remaining
-      - sensor.sparsnas_frequency_error
-      - sensor.kwh_today
-      - sensor.kwh_current_month
