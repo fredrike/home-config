@@ -101,6 +101,10 @@ recorder:
       - sensor.plex_recently_added
       - sensor.time
       - sensor.time_date
+      - sensor.date_time
+      - sensor.date
+      - sensor.ambient_light
+      - sensor.ambient_light_10
       - sensor.sun_elev
       - sensor.fonster_vardagsrum_power
       - sensor.washer_runtime
