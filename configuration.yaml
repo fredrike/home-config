@@ -25,6 +25,13 @@
   # Customization file
   customize: !include customize.yaml
   packages: !include_dir_named packages
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 127.0.0.1
+        - 192.168.1.0/24
+        - 194.47.137.69
 
 # Show links to resources in log and frontend
 #introduction:
@@ -41,7 +48,6 @@ config:
 http:
   # Add the following modification: https://github.com/orobardet/dsm-reverse-proxy-websocket
   base_url: https://hass.erlandsson.myds.me
-  api_password: !secret api_password
   cors_allowed_origins:
     - https://google.com
     - https://home-assistant.io
@@ -51,10 +57,6 @@ http:
   trusted_proxies:
     - 127.0.0.1
     - 192.168.1.2
-  trusted_networks:
-    - 127.0.0.1
-    - 192.168.1.0/24
-    - 194.47.137.69
 
 # Checks for available updates
 # Note: This component will send some information about your system to
