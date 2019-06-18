@@ -158,7 +158,7 @@ rss_feed_template:
     requires_api_password: false
     title: "Uptime"
     items:
-    - title: "Sparsnäs"
+    - title: "Sparsnäs_old"
       description: >-
         {%- if (as_timestamp(now()) -
         as_timestamp(states.sensor.sparsnas_energy_consumption_momentary.last_updated))
@@ -167,6 +167,14 @@ rss_feed_template:
         {%- else -%}
         Sparsnas is down
         {%- endif -%}
+    - title: 'Sparsnäs'
+      description: >-
+        {{- 'Sparsnäs is up' 
+        if (now() - states.sensor.sparsnas_energy_consumption_momentary.last_updated).seconds < 600 else
+         'Sparsnäs is down' 
+           if states('sensor.sparsnas_energy_consumption_momentary') != 'unknown'  else
+              'Sparsnäs is down' 
+        }}
 
 sensor:
   - platform: time_date
