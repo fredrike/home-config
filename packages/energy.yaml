@@ -2,16 +2,12 @@ homeassistant:
   customize:
     sensor.iotawatt_total:
       friendly_name: IoTaWatt
+      icon: mdi:flash-circle
     sensor.sparsnas_energy_consumption_momentary:
       icon: mdi:flash-circle
-      friendly_name: "Energy total"
-    sensor.iotawatt_total:
-      icon: mdi:flash-circle
-      friendly_name: IoTaWatt
+      friendly_name: Energy total
     sensor.sparsnas_iotawatt:
       icon: mdi:flash-circle
-    sensor.sparsnas_energy_consumption_momentary:
-      friendly_name: Energy total
     sensor.iotawatt_inverter:
       friendly_name: Inverter
       icon: mdi:flash-circle
@@ -124,6 +120,7 @@ automation:
         "sparsnas/602064", "value_template": "{{ value_json.kWh | round(2) }}", "icon":
         "mdi:flash-circle"}'
       topic: home/sensor/sparsnas/602064_kwh/config
+      retain: true
     service: mqtt.publish
   - data:
       payload: '{"device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
@@ -133,6 +130,7 @@ automation:
         "state_topic": "sparsnas/602064", "value_template": "{{ value_json.Watt |
         round(1) }}", "icon": "mdi:flash-circle"}'
       topic: home/sensor/sparsnas/602064_Watt/config
+      retain: true
     service: mqtt.publish
 
 utility_meter:
