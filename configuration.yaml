@@ -48,11 +48,7 @@ config:
 http:
   # Add the following modification: https://github.com/orobardet/dsm-reverse-proxy-websocket
   base_url: https://hass.erlandsson.myds.me
-  cors_allowed_origins:
-    - https://google.com
-    - https://home-assistant.io
-    - https://github.com
-    - https://raw.githubusercontent.com
+  server_port: 8124
   use_x_forwarded_for: true
   trusted_proxies:
     - 127.0.0.1
@@ -121,8 +117,10 @@ notify:
     user_key: !secret pushover_user
   - platform: html5
     name: html5
-    gcm_api_key: !secret gcm_api
-    gcm_sender_id: !secret gcm_sender
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_priv_key
+    vapid_email: !secret fredrik_gravatar
+    
 
 asuswrt:
   host: 192.168.1.1
@@ -158,15 +156,6 @@ rss_feed_template:
     requires_api_password: false
     title: "Uptime"
     items:
-    - title: "Sparsnäs_old"
-      description: >-
-        {%- if (as_timestamp(now()) -
-        as_timestamp(states.sensor.sparsnas_energy_consumption_momentary.last_updated))
-        < 600 -%}
-        Sparsnas is up
-        {%- else -%}
-        Sparsnas is down
-        {%- endif -%}
     - title: 'Sparsnäs'
       description: >-
         {{- 'Sparsnäs is up' 
@@ -267,8 +256,9 @@ input_number:
     icon: mdi:thermometer
 
 # Text to speech
-tts:
-  - platform: google
+# tts:
+#  - platform: google_translate
+#    service_name: google_say
 
 cloud:
 
@@ -289,8 +279,3 @@ logger: !include logger.yaml
 #https://community.home-assistant.io/t/spotify-playlist-player/2249
 #https://github.com/Aksinder/Home-Assistant1
 
-#https://gist.github.com/randellhodges/96a0cd9bafa03fb90ada49040d65f1b0
-#group_globber:
-#  groups:
-#    group.devices:
-#      - device_tracker.*
