@@ -1,19 +1,9 @@
-custom_updater:
-  track:
-    - cards
-    - components
-  card_urls:
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
-    - https://raw.githubusercontent.com/nervetattoo/simple-thermostat/master/tracker.json
-
-
 sensor:
   - platform: sonarr_upcoming_media
     api_key: !secret sonarr_api_key
     host: 192.168.1.2
     port: 8989
-    days: 12
+    days: 60
   - platform: plex_recently_added
     token: !secret plex_token
     host: 192.168.1.2
