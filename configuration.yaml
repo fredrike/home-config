@@ -120,6 +120,9 @@ notify:
     vapid_pub_key: !secret vapid_pub_key
     vapid_prv_key: !secret vapid_priv_key
     vapid_email: !secret fredrik_gravatar
+  - platform: webostv
+    host: 192.168.1.12
+    name: livingroom_tv
     
 
 asuswrt:
@@ -158,11 +161,19 @@ rss_feed_template:
     items:
     - title: 'Sparsnäs'
       description: >-
-        {{- 'Sparsnäs is up' 
-        if (now() - states.sensor.sparsnas_energy_consumption_momentary.last_updated).seconds < 600 else
-         'Sparsnäs is down' 
-           if states('sensor.sparsnas_energy_consumption_momentary') != 'unknown'  else
-              'Sparsnäs is down' 
+        Sparsnäs is {{ 'up' 
+         if states('sensor.sparsnas_energy_consumption_momentary') != 'unknown'  else
+           'down' 
+         if (now() - states.sensor.sparsnas_energy_consumption_momentary.last_updated).seconds < 600 else
+           'down' 
+        }}
+    - title: 'IoTaWatt'
+      description: >-
+        IoTaWatt is {{ 'up'
+        if states('sensor.iotawatt') != 'unknown'  else
+          'down'
+        if states('sensor.iotawatt') != 'unavailable' else
+          'down' 
         }}
 
 sensor:
