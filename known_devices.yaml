@@ -341,3 +341,67 @@ lennarts_ipad:
   name: Lennarts-iPad
   picture:
   track: true
+
+android_7c7d9f390472c18a:
+  hide_if_away: false
+  icon:
+  mac: E0:A3:AC:76:7A:92
+  name: android-7c7d9f390472c18a
+  picture:
+  track: true
+
+ist_dev:
+  hide_if_away: false
+  icon:
+  mac: B4:8B:19:84:7A:6A
+  name: Ist-dev
+  picture:
+  track: true
+
+ddsm1:
+  hide_if_away: false
+  icon:
+  mac: 02:11:32:14:BF:A1
+  name: DDSM1
+  picture:
+  track: true
+
+96_1a_39_d3_68_9a:
+  hide_if_away: false
+  icon:
+  mac: 96:1A:39:D3:68:9A
+  name: 96 1a 39 d3 68 9a
+  picture:
+  track: true
+
+galaxy_a8_2018:
+  hide_if_away: false
+  icon:
+  mac: 58:B1:0F:B0:5F:EE
+  name: Galaxy-A8-2018
+  picture:
+  track: true
+
+rebeccas_iphone:
+  hide_if_away: false
+  icon:
+  mac: 38:71:DE:7C:DA:D8
+  name: Rebeccas-iPhone
+  picture:
+  track: true
+
+test:
+  hide_if_away: false
+  icon:
+  mac: 2C:3A:E8:35:9F:E7
+  name: test
+  picture:
+  track: true
+
+led_strip:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:74:65:0D
+  name: led strip
+  picture:
+  track: true
