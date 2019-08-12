@@ -144,3 +144,5 @@ binary_sensor.altandorr:
   device_class: door
 group.tracking:
   device_type: occupancy
+person.fredrik:
+  gravatar: !secret fredrik_gravatar
