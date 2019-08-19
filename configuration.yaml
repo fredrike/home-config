@@ -12,8 +12,6 @@
   time_zone: Europe/Stockholm
 
   customize_glob:
-    "*.*":
-        custom_ui_state_card: state-card-custom-ui
     "light.*":
       assumed_state: false
     "switch.*":
