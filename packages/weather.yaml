@@ -38,7 +38,7 @@ weather:
 sensor:
   - platform: darksky #https://pastebin.com/iX7u4ZSg
     api_key: !secret darksky_api_key
-    scan_interval: '00:03'
+    scan_interval: '00:05'
     monitored_conditions:
       - summary
       - icon
