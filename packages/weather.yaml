@@ -2,65 +2,32 @@ homeassistant:
   customize:
     sensor.badtemp_tallholmen:
       icon: mdi:swim
-    sensor.yr_symbol:
-      hidden: true
     sensor.yr_wind_speed:
-      extra_data_template: ${entities['sensor.yr_wind_direction'].state + "°"}
       icon: mdi:weather-windy-variant
     sensor.yr_wind_direction:
-      hidden: true
       icon: mdi:weather-windy
     sensor.yr_precipitation:
       icon: mdi:weather-pouring
     sensor.yr_fog:
       icon: mdi:weather-fog
     sensor.yr_cloudiness:
-      extra_data_template: '${"H: " + entities[''sensor.yr_high_clouds''].state + "%,
-        M: " + entities[''sensor.yr_medium_clouds''].state +"%, L: " + entities[''sensor.yr_low_clouds''].state
-        + "%"}'
       icon: mdi:weather-cloudy
     sensor.yr_high_clouds:
-      hidden: true
       icon: mdi:weather-cloudy
     sensor.yr_medium_clouds:
-      hidden: true
       icon: mdi:weather-cloudy
     sensor.yr_low_clouds:
-      hidden: true
       icon: mdi:weather-cloudy
     sensor.yr_dewpoint_temperature:
-      hidden: true
       icon: mdi:thermometer-lines
     sensor.yr_humidity:
-      hidden: true
       icon: mdi:water-percent
     sensor.yr_pressure:
       icon: mdi:gauge
     sensor.yr_temperature:
-      hidden: true
-      extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
-        "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
       icon: mdi:thermometer
-    sensor.yr:
-      extra_data_template: '${"Humidity: " + entities[''sensor.yr_humidity''].state +
-        "% (" + entities[''sensor.yr_dewpoint_temperature''].state +"°C)"}'
     sensor.pressure:
       icon: mdi:gauge
-    sensor.dark_sky_temperature:
-      extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
-        + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
-        + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
-      hidden: true
-    sensor.dark_sky_wind_speed:
-      extra_data_template: ${entities['sensor.dark_sky_wind_bearing'].state + "°"}
-    sensor.ute_temperature:
-      extra_data_template: '${ entities["sensor.daikin_outdoor"].state == "unknown" ?
-        "" : "Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
-      friendly_name: Ute Temperatur
-    sensor.dark_sky:
-      extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
-        + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
-        + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
 
 # Weather prediction
 weather:
@@ -107,6 +74,7 @@ sensor:
       - mediumClouds
       - highClouds
       - dewpointTemperature
+
   - platform: template
     sensors:
       dark_sky:
