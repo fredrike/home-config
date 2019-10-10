@@ -38,16 +38,16 @@ sensor:
         entity_id: sensor.time
         value_template: >-
           {% set weather = {
-            "clear-day": "",
-            "clear-night": "",
-            "cloudy": "",
-            "rain": "",
-            "sleet": "",
-            "snow": "ｓ",
-            "wind": "",
-            "fog": "",
-            "partly-cloudy-day": "",
-            "partly-cloudy-night": "ｎ"
+            "clear-day": "", # mdi-weather-sunny
+            "clear-night": "", # mdi-weather-night
+            "cloudy": "", # mdi-weather-cloudy
+            "rain": "", # mdi-weather-pouring
+            "sleet": "", # mdi-weather-snowy-rainy
+            "snow": "ｓ", # mdi-weather-snowy-heavy
+            "wind": "", # mdi-weather-windy-variant
+            "fog": "", # mdi-weather-fog
+            "partly-cloudy-day": "", # mdi-weather-partly-cloudy
+            "partly-cloudy-night": "ｎ" # mdi-weather-night-partly-cloudy
           } %}
           {% set base = 'sensor.dark_sky_forecast_' %}
 
@@ -100,16 +100,16 @@ sensor:
             "partly-cloudy-night": "mdi:weather-night-partly-cloudy"
           } %}
           {% set weather = {
-            "clear-day": "",
-            "clear-night": "",
-            "cloudy": "",
-            "rain": "",
-            "sleet": "",
-            "snow": "ｓ",
-            "wind": "",
-            "fog": "",
-            "partly-cloudy-day": "",
-            "partly-cloudy-night": "ｎ"
+            "clear-day": "", # mdi-weather-sunny
+            "clear-night": "", # mdi-weather-night
+            "cloudy": "", # mdi-weather-cloudy
+            "rain": "", # mdi-weather-pouring
+            "sleet": "", # mdi-weather-snowy-rainy
+            "snow": "ｓ", # mdi-weather-snowy-heavy
+            "wind": "", # mdi-weather-windy-variant
+            "fog": "", # mdi-weather-fog
+            "partly-cloudy-day": "", # mdi-weather-partly-cloudy
+            "partly-cloudy-night": "ｎ" # mdi-weather-night-partly-cloudy
           } %}
 
           {% set base = 'sensor.dark_sky_forecast_' %}
