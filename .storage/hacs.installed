@@ -1,0 +1,50 @@
+{
+    "data": {
+        "atomic7777/atomic_calendar": {
+            "version_type": "version",
+            "version_installed": "v0.8.9",
+            "version_available": "v0.8.9"
+        },
+        "thomasloven/lovelace-markdown-mod": {
+            "version_type": "version",
+            "version_installed": "0.3",
+            "version_available": "0.3"
+        },
+        "bramkragten/weather-card": {
+            "version_type": "version",
+            "version_installed": "v1.3.2",
+            "version_available": "v1.3.2"
+        },
+        "kalkih/mini-graph-card": {
+            "version_type": "version",
+            "version_installed": "v0.7.0",
+            "version_available": "v0.7.0"
+        },
+        "kalkih/mini-media-player": {
+            "version_type": "version",
+            "version_installed": "v1.4.1",
+            "version_available": "v1.4.1"
+        },
+        "nervetattoo/simple-thermostat": {
+            "version_type": "version",
+            "version_installed": "0.25.0",
+            "version_available": "0.25.0"
+        },
+        "custom-cards/upcoming-media-card": {
+            "version_type": "version",
+            "version_installed": "0.4.0",
+            "version_available": "0.4.0"
+        },
+        "custom-components/sensor.plex_recently_added": {
+            "version_type": "version",
+            "version_installed": "0.2.9",
+            "version_available": "0.2.9"
+        },
+        "custom-components/sensor.sonarr_upcoming_media": {
+            "version_type": "version",
+            "version_installed": "0.2.1",
+            "version_available": "0.2.1"
+        }
+    },
+    "schema": "5"
+}
