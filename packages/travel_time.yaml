@@ -1,0 +1,34 @@
+sensor:
+- platform: here_travel_time
+  name: Work to Solna S, by foot
+  mode: pedestrian
+  app_id: !secret here_id
+  app_code: !secret here_code 
+  origin_entity_id: zone.fredrik_work
+  destination_latitude: 59.3687
+  destination_longitude: 18.0084
+  scan_interval: 2678400 # 1 month
+- platform: here_travel_time
+  name: Work to Solna S, by bus
+  mode: publicTransportTimeTable
+  app_id: !secret here_id
+  app_code: !secret here_code 
+  origin_entity_id: zone.fredrik_work
+  destination_entity_id: zone.solna_station
+  scan_interval: 2678400 # 1 month
+- platform: here_travel_time
+  name: Solna S to Gnesta C
+  mode: publicTransportTimeTable
+  app_id: !secret here_id
+  app_code: !secret here_code 
+  origin_entity_id: zone.fredrik_work
+  destination_entity_id: zone.gnesta_c
+  scan_interval: 2678400 # 1 month
+- platform: here_travel_time
+  name: Work to Gnesta
+  mode: publicTransportTimeTable
+  app_id: !secret here_id
+  app_code: !secret here_code 
+  origin_entity_id: zone.fredrik_work
+  destination_entity_id: zone.gnesta_c
+  scan_interval: 2678400 # 1 month
