@@ -1,0 +1,47 @@
+volvooncall:
+  username: !secret fredrik_gravatar
+  password: !secret voc_password
+
+utility_meter:
+  krz81s_daily_km:
+    cycle: daily
+    source: sensor.krz81s_odometer
+  krz81s_weekly_km:
+    cycle: weekly
+    source: sensor.krz81s_odometer
+  krz81s_monthly_km:
+    cycle: monthly
+    source: sensor.krz81s_odometer
+  krz81s_yearly_km:
+    cycle: yearly
+    source: sensor.krz81s_odometer
+  krz81s_daily_fuel_1:
+    cycle: daily
+    source: sensor.krz81s_fuel_amount
+  krz81s_weekly_fuel_1:
+    cycle: weekly
+    source: sensor.krz81s_fuel_amount
+  krz81s_daily_fuel:
+    net_consumption: true
+    cycle: daily
+    source: sensor.krz81s_fuel_amount
+  krz81s_weekly_fuel:
+    net_consumption: true
+    cycle: weekly
+    source: sensor.krz81s_fuel_amount
+  krz81s_monthly_fuel:
+    net_consumption: true
+    cycle: monthly
+    source: sensor.krz81s_fuel_amount
+  krz81s_yearly_fuel:
+    net_consumption: true
+    cycle: yearly
+    source: sensor.krz81s_fuel_amount
+
+sensor:
+- platform: template
+  sensors:
+    krs81s_daily_l_km:
+      friendly_name: "Daily fuel consumption"
+      unit_of_measurement: "l/km"
+      value_template: "{{ states('sensor.krz81s_daily_fuel')|float / states('sensor.krz81s_daily_km')|float }}"
