@@ -25,6 +25,24 @@ homeassistant:
       friendly_name: Sparsnas this year
 
 sensor:
+  - platform: rest
+    resource: 'http://192.168.1.2:8086/query?db=iotawatt&q=SELECT%20entity_id,%20max(mean)%20from%20(SELECT%20mean(%22value%22)%20FROM%20%22Watts%22%20WHERE%20(%22entity_id%22%20!=%20%27Total%27)%20AND%20time%20%3E=%20NOW()%20-%201m%20GROUP%20BY%20%22entity_id%22)'
+    name: IoTaWatt top usage
+    value_template: '{{ value_json["results"][0]["series"][0]["values"][0][2] |
+    round(0) }}'
+    json_attributes: 'results'
+  - platform: template
+    sensors:
+      iotawatt_top_consumer:
+        friendly_name: IoTaWatt top consumer
+        icon_template: mdi:flash-circle
+        unit_of_measurement: W
+        value_template: "{% set v = states.sensor.iotawatt_top_usage.attributes.results[0].series[0]['values'][0]
+        %} 
+        {% if v[2] < (states('sensor.chargeamps_watt') | float) %}
+          {% set v = ['', 'CharegeAmps', (states('sensor.chargeamps_watt') | float)] %}
+        {% endif %}
+        {{'%s @ %d' % ('Dehumidifier' if states('climate.mjovik') == 'off' and v[1] == 'Inverter' else v[1] | replace('_', ' '), v[2]) }}" 
 #IoTaWatt config
   - platform: influxdb
     host: 192.168.1.2
@@ -57,48 +75,8 @@ sensor:
           {% else %}
           {{ value }}
           {% endif %}
-  - platform: rest
-    resource: 'http://192.168.1.22/status?outputs=yes&inputs=yes'
-    name: iotawatt
-    value_template: '{{ value_json.outputs[2].value | float | round(1) }}'
-    unit_of_measurement: "W"
-    json_attributes:
-      - outputs
-      - inputs
-  - platform: template
-    sensors:
-      iotawatt_appliences:
-        value_template: '{{ states.sensor.iotawatt.attributes.outputs[0].value }}'
-        friendly_name_template: '{{ states.sensor.iotawatt.attributes.outputs[0].name }}'
-        unit_of_measurement: "W"
-      iotawatt_inverter:
-        value_template: '{{ states.sensor.iotawatt.attributes.outputs[1].value | round(1) }}'
-        friendly_name_template: '{{ states.sensor.iotawatt.attributes.outputs[1].name }}'
-        unit_of_measurement: "W"
-      iotawatt_total:
-        value_template: '{{ states.sensor.iotawatt.attributes.outputs[2].value | round(1) }}'
-        friendly_name_template: '{{ states.sensor.iotawatt.attributes.outputs[2].name }}'
-        unit_of_measurement: "W"
-      dishwasher_runtime:
-        device_class: timestamp
-        value_template: >
-          {% if is_state('sensor.washer_runtime', None)  and
-          state_attr('sensor.iotawatt', 'inputs')[9].Watts|float > 3 %}
-            {{ now() }}
-          {% else %}
-            {{ None }}
-          {% endif %}
-      washer_runtime:
-        device_class: timestamp
-        value_template: >
-          {% if is_state('sensor.washer_runtime', '')  and
-          state_attr('sensor.iotawatt', 'inputs')[1].Watts|float > 3 %}
-            {{ now() }}
-          {% else %}
-            {{''}}
-          {% endif %}
   - platform: integration
-    source: sensor.iotawatt_inverter
+    source: sensor.iotawatt_input_inverter
     name: Inverter kWh
     unit_prefix: k
     round: 2
@@ -111,57 +89,57 @@ sensor:
   - platform: template
     sensors:
       iotawatt_input_bathroom:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bathroom" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bathroom" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Bathroom'
       iotawatt_input_bedroom_1:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bedroom_1" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bedroom_1" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Bedroom 1'
       iotawatt_input_bedroom_2:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bedroom_2" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bedroom_2" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Bedroom 2'
       iotawatt_input_dishwasher:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Dishwasher" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Dishwasher" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Dishwasher'
       iotawatt_input_fridge:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Fridge" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Fridge" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Fridge'
       iotawatt_input_inverter:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Inverter" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Inverter" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Inverter'
       iotawatt_input_kitchen:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Kitchen" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Kitchen" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Kitchen'
       iotawatt_input_living_room:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Living_room" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Living_room" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Living room'
       iotawatt_input_total:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Total" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Total" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Total'
       iotawatt_input_vvb:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "VVB" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "VVB" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'VVB'
       iotawatt_input_washer:
-        value_template: '{% for row in state_attr("sensor.iotawatt_2", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Washer" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
+        value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Washer" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Washer'
