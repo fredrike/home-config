@@ -104,7 +104,7 @@ sensor:
     round: 2
   - platform: rest
     name: IoTaWatt
-    resource: 'http://192.168.1.2:8086/query?db=iotawatt&q=SELECT%20last(value)%20FROM%20Watts%20WHERE%20time%20>%20NOW()-10m%20GROUP%20BY%20entity_id'
+    resource: 'http://192.168.1.2:8086/query?db=iotawatt&q=SELECT%20last(%22value%22)%20FROM%20%22Watts%22%20WHERE%20time%20%3E%20NOW()-10m%20GROUP%20BY%20%22entity_id%22'
     value_template: 'OK'
     json_attributes:
       - results
