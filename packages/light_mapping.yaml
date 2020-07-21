@@ -1,0 +1,22 @@
+light:
+  - platform: switch
+    name: Sovrum
+    entity_id: switch.sovrummet
+  - platform: switch
+    name: Ljusslingor
+    entity_id: switch.ljusslingor
+  - platform: switch
+    name: Bollarna
+    entity_id: switch.bollarna
+  - platform: switch
+    name: Köksfönster
+    entity_id: switch.koksfonster
+  - platform: switch
+    name: Kök (uppe)
+    entity_id: switch.kok_uppe
+  - platform: switch
+    name: Vadagsrum
+    entity_id: switch.stjarnor
+  - platform: switch
+    name: Grön Lampa
+    entity_id: switch.gron_lampa

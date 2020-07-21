@@ -1,0 +1,16 @@
+google_assistant:
+  project_id: home-assistant-229710
+  service_account: !include google_assistant_service_account.json
+  report_state: true
+  secure_devices_pin: "0"
+  # exposed_domains:
+  # - switch
+  # - scenes
+  # - sensors
+  # - climate
+  # - media_player
+  # - script
+  # - input_bolean
+  # - alarm_control_panel
+  # - lock
+
