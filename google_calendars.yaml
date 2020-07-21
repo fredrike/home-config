@@ -19,6 +19,7 @@
     ignore_availability: true
     name: Johanna & Fredrik
     track: true
+    max_results: 15
   - device_id: lediga
     track: true
     name: Vi är lediga
@@ -57,7 +58,8 @@
   - device_id: fredrik__work
     ignore_availability: true
     name: Fredrik @ Work
-    track: false
+    max_results: 15
+    track: true
 
 - cal_id: l1o4p736h02nbf3rjlf5pj546j6mf195@import.calendar.google.com
   entities:
@@ -93,10 +95,26 @@
     ignore_availability: true
     name: "Skolmaten - N\xE4ttrabyskolan"
     track: true
+    max_results: 15
 
 - cal_id: addressbook#contacts@group.v.calendar.google.com
   entities:
   - device_id: contacts
     ignore_availability: true
     name: Contacts
+    track: false
+    max_results: 15
+
+- cal_id: iujghlr97446sfrj48gbc7ig79bpthom@import.calendar.google.com
+  entities:
+  - device_id: calendar
+    ignore_availability: true
+    name: Calendar
+    track: true
+
+- cal_id: 0ft67dafta2ihqbn5r4i9tj3k0gcjaae@import.calendar.google.com
+  entities:
+  - device_id: calendar_2
+    ignore_availability: true
+    name: Calendar
     track: true

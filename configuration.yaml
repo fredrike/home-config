@@ -12,10 +12,6 @@
   time_zone: Europe/Stockholm
 
   customize_glob:
-    "light.*":
-      assumed_state: false
-    "switch.*":
-      assumed_state: false
     "device_tracker.*":
       show_last_changed: true
       # hidden: true
@@ -34,6 +30,8 @@
 # Show links to resources in log and frontend
 #introduction:
 
+map:
+
 # Enables the frontend
 frontend:
   themes: !include_dir_named themes
@@ -45,7 +43,7 @@ config:
 
 http:
   # Add the following modification: https://github.com/orobardet/dsm-reverse-proxy-websocket
-  base_url: https://hass.erlandsson.myds.me
+  external_url: https://hass.erlandsson.myds.me
   server_port: 8124
   use_x_forwarded_for: true
   trusted_proxies:
@@ -88,7 +86,6 @@ logbook:
 
 
 recorder:
-  purge_interval: 7
   exclude:
     entities:
       - sensor.sonarr_upcoming_media
@@ -111,6 +108,7 @@ recorder:
 
 notify:
   - platform: pushover
+    name: pushover
     api_key: !secret pushover_api
     user_key: !secret pushover_user
   - platform: html5
@@ -118,9 +116,6 @@ notify:
     vapid_pub_key: !secret vapid_pub_key
     vapid_prv_key: !secret vapid_priv_key
     vapid_email: !secret fredrik_gravatar
-  - platform: webostv
-    host: 192.168.1.12
-    name: livingroom_tv
     
 
 asuswrt:
@@ -129,8 +124,8 @@ asuswrt:
   port: 22
   ssh_key: /config/ssh_key
 
-tellduslive:
-  host: 192.168.1.10
+# tellduslive:
+#  host: 192.168.1.10
 
 point:
   client_id:     !secret point_id
@@ -269,21 +264,44 @@ input_number:
 #  - platform: google_translate
 #    service_name: google_say
 
-cloud:
+# cloud:
+
+mobile_app:
 
 automation: !include automations.yaml
 script: !include scripts.yaml
+scene: !include scenes.yaml
+
+wake_on_lan:
+
+webostv:
+  host: 192.168.1.12
+  name: Living Room TV
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: a0-6f-aa-48-ed-64
+
 
 media_player:
   - platform: plex
-  - platform: webostv
-    host: 192.168.1.12
-  - platform: spotify
-    client_id:     !secret spotify_id
-    client_secret: !secret spotify_secret
+spotify:
+  client_id:     !secret spotify_id
+  client_secret: !secret spotify_secret
 
+device_tracker:
+  - platform: google_maps
+    username: !secret google_loc
+    
 logger: !include logger.yaml
 
 #https://community.home-assistant.io/t/spotify-playlist-player/2249
 #https://github.com/Aksinder/Home-Assistant1
+
+
+shelly:
+
+
+shell_command:
+  restart_mqtt: curl --unix-socket /var/run/docker.sock -X POST http:/v1.39/containers/da7172d8590b/restart
 

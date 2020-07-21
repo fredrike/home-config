@@ -25,6 +25,13 @@ sensor:
           unit_of_measurement: "Mbit/sec"
           friendly_name: "RT-AC68U received"
           icon_template: mdi:download-network
+        rtac68u_mbitsec_total:
+          value_template: "{{ (states('sensor.rtac68u_mbitsec_received') |
+          float + states('sensor.rtac68u_mbitsec_sent') | float ) | round(2) }}"
+          unit_of_measurement: "Mbit/sec"
+          friendly_name: "RT-AC68U total"
+          icon_template: mdi:server
+
   - platform: influxdb
     host: 192.168.1.2
     queries:

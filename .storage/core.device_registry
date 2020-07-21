@@ -1,5 +1,6 @@
 {
     "data": {
+        "deleted_devices": [],
         "devices": [
             {
                 "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
@@ -7,7 +8,7 @@
                     "2b0219b4593a487f8ffc95bbe4aafb68"
                 ],
                 "connections": [],
-                "hub_device_id": null,
+                "entry_type": null,
                 "id": "c2647d1be76e4fe8a0b2839466a89e84",
                 "identifiers": [
                     [
@@ -18,10 +19,12 @@
                 "manufacturer": "Google Inc.",
                 "model": "Chromecast",
                 "name": "Living Room TV",
-                "sw_version": null
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
             },
             {
-                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
                 "config_entries": [
                     "59890af008794f16b6cb3e2413b0d609"
                 ],
@@ -31,18 +34,624 @@
                         "b0:f1:ec:1d:1b:70"
                     ]
                 ],
-                "hub_device_id": null,
+                "entry_type": null,
                 "id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "identifiers": [],
                 "manufacturer": "Minut",
                 "model": "Point v106",
                 "name": "Point ",
-                "sw_version": 11339
+                "name_by_user": null,
+                "sw_version": 13299,
+                "via_device_id": "608156697c2f4785aa0a07cfa703327a"
+            },
+            {
+                "area_id": "24c649c1b79740168928f2a7c16609ce",
+                "config_entries": [
+                    "d0b00eb479af4139ba8b03efaed7c038"
+                ],
+                "connections": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858"
+                    ]
+                ],
+                "entry_type": null,
+                "id": "55d9747d0e3e4c4693708ed20b01ae7a",
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858"
+                    ]
+                ],
+                "manufacturer": "ASUSTek",
+                "model": "RT-AC68U",
+                "name": "RT-AC68U",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
+            },
+            {
+                "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
+                "config_entries": [
+                    "59890af008794f16b6cb3e2413b0d609"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "608156697c2f4785aa0a07cfa703327a",
+                "identifiers": [
+                    [
+                        "point",
+                        "5b29f05217c17013cf35f886"
+                    ]
+                ],
+                "manufacturer": "Minut",
+                "model": null,
+                "name": "Mj\u00f6vik",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
             },
             {
                 "area_id": null,
                 "config_entries": [
-                    "1ac46d632d3741108075c1e62ac8b79e"
+                    "f4a6d0b6ca6245e89dba938aaefee7f4"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "60:01:94:74:65:0d"
+                    ]
+                ],
+                "entry_type": null,
+                "id": "cbc7dd036ecc4074a556d3e708df5ab9",
+                "identifiers": [],
+                "manufacturer": "espressif",
+                "model": "PLATFORMIO_D1_MINI",
+                "name": "led_strip",
+                "name_by_user": null,
+                "sw_version": "1.13.6 (Aug  7 2019, 10:59:34)",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "75ffc70832d241b9972db743eb1097ce"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "fdf813a6bf914f57ae9615c786a6edbd",
+                "identifiers": [
+                    [
+                        "hacs",
+                        "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+                    ]
+                ],
+                "manufacturer": "hacs.xyz",
+                "model": "",
+                "name": "HACS",
+                "name_by_user": null,
+                "sw_version": "1.1.2",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "38c24daa495d4a7c902727b474f93f90"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "2c:3a:e8:35:9f:e7"
+                    ]
+                ],
+                "entry_type": null,
+                "id": "0229ae557d0246c7a8f95520f300d359",
+                "identifiers": [],
+                "manufacturer": "espressif",
+                "model": "PLATFORMIO_D1_MINI",
+                "name": "light_sensor",
+                "name_by_user": null,
+                "sw_version": "1.13.6 (Aug 21 2019, 12:49:40)",
+                "via_device_id": null
+            },
+            {
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "config_entries": [
+                    "0d563b7869354082b003e7fde3a77fff"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "cc:50:e3:af:87:a8"
+                    ]
+                ],
+                "entry_type": null,
+                "id": "cc0f1fdd51ad4a8ba1533d2900dd776a",
+                "identifiers": [],
+                "manufacturer": "espressif",
+                "model": "Espressif ESP32 Dev Module",
+                "name": "display_node",
+                "name_by_user": null,
+                "sw_version": "1.13.6 (Apr 26 2020, 20:33:09)",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "1c10343aafa04147bf17c5d836eae380"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "630df80f2e5a4bb3bf15bb018fb310fb",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "ef12e09b0d7540c188b1725cb33cb1b3"
+                    ]
+                ],
+                "manufacturer": "Google",
+                "model": "Pixel",
+                "name": "Fredrik Erlandsson 's Pixel",
+                "name_by_user": null,
+                "sw_version": "10",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "fe21ce14a9214a0caa43b049de5e5e51"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "ccab8c6a614148629a63b058619c7a44",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "4434777298c7278b"
+                    ]
+                ],
+                "manufacturer": "Google",
+                "model": "Pixel 3a",
+                "name": "Pixel 3a",
+                "name_by_user": null,
+                "sw_version": "29",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "b492c54fa6924f5c930f02cbf0ff9bd9"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "3a3076e1accc4fa8b5333d9bedc5c376",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "32127bcb738e9b28"
+                    ]
+                ],
+                "manufacturer": "Google",
+                "model": "Pixel",
+                "name": "Pixel",
+                "name_by_user": null,
+                "sw_version": "29",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "identifiers": [
+                    [
+                        "plex",
+                        "4ad4dbaf5647e7fb98a5de206f00ada6e9b4217f"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex Media Server",
+                "name": "Activity Sensor",
+                "name_by_user": null,
+                "sw_version": "1.19.3.2843-e3c1f7bcd",
+                "via_device_id": null
+            },
+            {
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "263c20d580db4a7493dc6f4492a64ca5",
+                "identifiers": [
+                    [
+                        "plex",
+                        "a5jq2ygbpf2edn29uyvaf77d"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for LG",
+                "name": "Plex (Plex for LG - LG 43UH664V-ZC)",
+                "name_by_user": null,
+                "sw_version": "4.29.7",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": "1c23e83cbade491baee05e147348f807",
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "52aee96733a24ba683ff248d94854bbd",
+                "identifiers": [
+                    [
+                        "shelly",
+                        "D0AF99"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly Dimmer",
+                "name": "Shelly Dimmer - D0AF99",
+                "name_by_user": null,
+                "sw_version": "1.6.0 (200309)",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "18f15f1dc4b544a9844ded5a20dca79a",
+                "identifiers": [
+                    [
+                        "plex",
+                        "w7y5wy0y8p31tf8d9d5s1c3d"
+                    ]
+                ],
+                "manufacturer": "Konvergo",
+                "model": "Plex Media Player",
+                "name": "Plex (Plex Media Player - Fredrik Erlandssons MacBook Pro 2017)",
+                "name_by_user": null,
+                "sw_version": "2.52.2.1056-29c49026",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "392d0454821747c6a3900435fee4ee41"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "9f3ea0ca7f07492bbbd56a8d32d10d83",
+                "identifiers": [
+                    [
+                        "spotify",
+                        "fredrike0"
+                    ]
+                ],
+                "manufacturer": "Spotify AB",
+                "model": "Spotify premium",
+                "name": "Spotify fredrike0",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "4747767cdb5f463f99b9f3f41b3fb385",
+                "identifiers": [
+                    [
+                        "plex",
+                        "eawqix99h3ii6wmosbbxpswj"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Mac",
+                "name": "Plex (Plex for Mac - FredriksMBP2017)",
+                "name_by_user": null,
+                "sw_version": "1.6.3.1009-57cf57c8",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "00c9afaf752f45e9a048bf77d63c94c8",
+                "identifiers": [
+                    [
+                        "plex",
+                        "jx626sazn2htwnxmus87ko9u"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex Web",
+                "name": "Plex (Plex Web - Chrome)",
+                "name_by_user": null,
+                "sw_version": "4.35.1",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "f67dfd61e4e24ad992ed8be67449e45b"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "df45d667667040e18895f51f3931a969",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "df2341e3c1734e898af5d041fcda1454"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPad Mini 4",
+                "name": "J & F iPad mini 4",
+                "name_by_user": null,
+                "sw_version": "13.3.1",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "c6c2258e3d31421299a820c799ee8680",
+                "identifiers": [
+                    [
+                        "plex",
+                        "wdf2d68p7nfjencktn4wd2lf2y"
+                    ]
+                ],
+                "manufacturer": "HTML%20TV%20App",
+                "model": "XPlay",
+                "name": "Plex (XPlay - LG 43UH664V-ZC)",
+                "name_by_user": null,
+                "sw_version": "2.715.841",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "ddd77abb118441c787f5147880433ce3",
+                "identifiers": [
+                    [
+                        "plex",
+                        "A99112AD-6424-445A-82B7-FAFF838BF3C6"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for iOS",
+                "name": "Plex (Plex for iOS - Emmas iPad)",
+                "name_by_user": null,
+                "sw_version": "7.0",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "756c6dde33774829a02833e63f754cba",
+                "identifiers": [
+                    [
+                        "plex",
+                        "6665237F-D459-409F-90D3-93DEA1AF52A9"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for iOS",
+                "name": "Plex (Plex for iOS - Leas iPad)",
+                "name_by_user": null,
+                "sw_version": "7.2.1",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "5c647738db224c9282951487d2b5b2b6",
+                "identifiers": [
+                    [
+                        "plex",
+                        "b06067788267b9a3-com-plexapp-android"
+                    ]
+                ],
+                "manufacturer": "Android",
+                "model": "Plex for Android (Mobile)",
+                "name": "Plex (Plex for Android (Mobile) - Pixel)",
+                "name_by_user": null,
+                "sw_version": "7.29.2.16071",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "2b0219b4593a487f8ffc95bbe4aafb68"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "7ae9af55b7524410a536634d7669ec9a",
+                "identifiers": [
+                    [
+                        "cast",
+                        "576750d5907db0b8a77e13d24e522a19"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "Google Nest Hub",
+                "name": "Family Room display",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "68c7cfaa11a2405e90d5a338ffdb5bb4",
+                "identifiers": [
+                    [
+                        "plex",
+                        "e3db956a-eef8-4563-a17b-7ff95130a7b2"
+                    ]
+                ],
+                "manufacturer": "Android",
+                "model": "Plexamp",
+                "name": "Plex (Plexamp - Android)",
+                "name_by_user": null,
+                "sw_version": "3.0.3",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "e2d2185904a8410e8eb325d3f6ffdd32",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "77e395b7-fcc2-4d00-bafb-fffdfc650166"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "04ad8f813e5a4ae48c59b32579c26344",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "0eeda3a3-1a94-4e1b-b6ee-6f0f2cf7ba32"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "86a53da94d0b4745b351eb9c5c0ad362",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "48afc83d-ac89-4347-a9fc-7cb1b318b063"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "8e8cf0c9976c41158beac6b136861d07",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "c1c32690-2fad-4c8e-bbf0-9c3a6a22203c"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
                 ],
                 "connections": [
                     [
@@ -50,8 +659,8 @@
                         "ac:ca:54:01:b5:ea"
                     ]
                 ],
-                "hub_device_id": null,
-                "id": "9671987b31294e3b8f6eb2846dbd5b0a",
+                "entry_type": null,
+                "id": "e1d53cad90374791acb8f9c2a39e4cc3",
                 "identifiers": [
                     [
                         "mqtt",
@@ -59,12 +668,476 @@
                     ]
                 ],
                 "manufacturer": "Telldus Technologies",
-                "model": "tellstick-znet-lite-v2",
-                "name": "telldus",
-                "sw_version": "1.0.12-52-gf0aaf75"
+                "model": "Tellstick_Znet_Lite_V2",
+                "name": "TellstickZnetLite",
+                "name_by_user": null,
+                "sw_version": "1.3.1",
+                "via_device_id": null
             },
             {
-                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "f5b481459f664f5f94d2b8ccb57ae95c",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "EspSparsnasGateway602064"
+                    ]
+                ],
+                "manufacturer": "IKEA",
+                "model": "EspSparsnasGateway",
+                "name": "EspSparsnasGateway 602064",
+                "name_by_user": null,
+                "sw_version": "13:38:10 Apr  1 2020",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "fa35e61db2fd43e4b064bfd89556b1d5",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "e7659946-b9c4-47a4-a509-9aaf5bd3e9ff"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Sovrummet",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "77d20c46d1364fd185ffdb16e7ae71a0",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "dd7e8f28-6992-4d8b-af31-95306df91ca5"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Julgranen",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "a676cab262ad44108753cb60680114f5",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "9e477b85-c61e-4245-b76f-8b97316e17c6"
+                    ]
+                ],
+                "manufacturer": "Kangtai",
+                "model": "Selflearning:Clasohlson",
+                "name": "Extra (ute)",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "cf77c86bc40d434a8920bd363d879ad5",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "2fbb896b-61b4-4a63-8840-e7f7a6852b90"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "K\u00f6k (uppe)",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "209782652f2e425a847dbd8c59e3516f",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "0e93e28a-1df9-46b9-961f-f59c8bc4401c"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "K\u00f6ksf\u00f6nster",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "df61adb5b4a446d08560a7c018b79c8f",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "2a8bf48e-1893-4d58-8ca1-fa2ada818d88"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Ljusslingor",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "0df255a945624669808dd023fe9f35d2",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a2c7ac4c-b84f-4a4b-b6e3-db5139d42210"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Gr\u00f6na lampan",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "6fd8e87dccb74c5da21fca39558c5e12",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a4102659-310f-4d5d-be5e-54af3ac91657"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "Christian",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "0e2ac01d5d4349f8b2b254110974ebee",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "ecfdbc48-6224-45c8-8c48-998cc5cb4291"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Stj\u00e4rnorna",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "fa07fe1f262f48789c13b20a11c52891",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "1470e821-6de5-4061-bb64-16aad01386c0"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Bollarna",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "3e39d1e5aa6047e48a488dc58613955b",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "d2e77607-162f-4be0-bb49-f45b2bce154c"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperature",
+                "name": "Ute",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "79c942903a77432087c6d590768619cb",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "ca4e3dd2-8cd3-4b30-b234-90b0dd775234"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Dimmer:Nexa",
+                "name": "Gl\u00f6dlampan",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "1fd13af0f84f4ecea013891eeff338aa",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "c9b87457-5d57-4364-ac0c-803ae2360869"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "F\u00f6nster vardagsrum",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "2d48f79748c4427f984e75b18be0bd1a",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a99e0b99-42e0-418e-a9a1-41cafd9fd147"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "Utebelysning",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "a81319cf9fe24281a32b98df13df9a03",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "90d03311-23c9-4f67-a937-b86d89d707e4"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Krypgrund",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "d30e695425ce4f39b102a8e2ce846cc5",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "61d67723-4f0f-4720-94c2-59d3f4c11c7c"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Vinden",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "579213370c454567b5e0d2dd6cf0572e",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "600aab9d-1fc0-4e03-9bee-328cfddecd3a"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Vinden ext.",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "c6e5f83b5c9a4975867b33b624cfafdf",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "207aacf7-092b-4afa-a092-068875893b99"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "Vit Inne",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "962f5073e8244688b7c4a70023231225",
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "6a362bbb-13f3-41ba-b869-ee619dd28725"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "019A-0003-0003",
+                "name": "Altand\u00f6rr",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3"
+            },
+            {
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "d39fd1efcc4b46cdb3caf4c36f394249",
+                "identifiers": [
+                    [
+                        "shelly",
+                        "D0EE05"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly Dimmer",
+                "name": "Shelly Dimmer - D0EE05",
+                "name_by_user": null,
+                "sw_version": "1.6.0 (200309)",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "entry_type": null,
+                "id": "b7efeef8554f486a81e87ebedaaa0ca7",
+                "identifiers": [
+                    [
+                        "plex",
+                        "jidlqvdfsfbnxbvplr3pkjpp"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex Web",
+                "name": "Plex (Plex Web - Chrome)",
+                "name_by_user": null,
+                "sw_version": "4.35.1",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
+            },
+            {
+                "area_id": null,
                 "config_entries": [
                     "7ac5429ad53f45318f29149a97904b08"
                 ],
@@ -74,635 +1147,24 @@
                         "a4:08:ea:f0:7a:fe"
                     ]
                 ],
-                "hub_device_id": null,
-                "id": "d924eeb397f34450890701267c289158",
+                "entry_type": null,
+                "id": "61ecca2ba33e4f4aa0d8f6bdc1215e20",
                 "identifiers": [],
                 "manufacturer": "Daikin",
                 "model": "NOTSUPPORT",
                 "name": "Mj\u00f6vik",
-                "sw_version": "3.3.6"
+                "name_by_user": null,
+                "sw_version": "3.3.6",
+                "via_device_id": null
             },
             {
                 "area_id": null,
                 "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
+                    "706f675d770742d1831003ae1fd10058"
                 ],
                 "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "c30b2ec880cd430f9e51198be9393477",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "23"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "K\u00f6ksf\u00f6nster",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "5b82f34dc3a34bc9b5fae4cb417fe5c1",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "19"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Sovrummet",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "ed138f85b0054f23b1301eaa081b302b",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "103"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Stj\u00e4rnor",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "aa9c84bf08e340b6bd3b7d53b07056ed",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "2"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "0159-0001-0051",
-                "name": "Utebelysning",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "bcd5f777c231454baebb5bfd57fbd338",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "18"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Dimmer:Nexa",
-                "name": "Gl\u00f6dlampan",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "ac8c2b0e673a475f9175f16628d51be2",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_2"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "0159-0001-0051",
-                "name": "Utebelysning",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "8fef9200a2f54a1dad0c13937bf302f1",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_11"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperature",
-                "name": "Ute",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "4987aed04044448fb5eea4a98285c247",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_73"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "Christian",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "35704ba4eef04928818dd49b86df9f1a",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "27"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Barnensrum",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "ca7c0713d9894036af1c38412a95f6ad",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_5"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "Krypgrund",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "6a4b53b3a40042688b605af990d480d2",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_1"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "0159-0001-0051",
-                "name": "F\u00f6nster vardagsrum",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "ea31dded50fd40d3a474049f576ffbbc",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_71"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "Christian",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "1ef08170cea446fabd6dd55af44db07e",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "25"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Stereo",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "09a7c4fbe63a456893d56f789400f884",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "20"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Julgranen",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": null,
-                "id": "b5d62d0579844cceb9e8ef0800461b91",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_72"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "Christian",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "14aea19c773e4aa89baf0ae9bc8a995b",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_6"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "Vit Inne",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "8cc5a81fd57940d29df03d0a6d98d9f4",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "21"
-                    ]
-                ],
-                "manufacturer": "Kangtai",
-                "model": "Selflearning:Clasohlson",
-                "name": "Altanen",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "68b1fd227f404fae9f92513f9d25db97",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_99"
-                    ]
-                ],
-                "manufacturer": "Oregon",
-                "model": "2914",
-                "name": "Regnm\u00e4tare",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "6edd4381e0cb447a8cd9050f9b73e424",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "22"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "K\u00f6k (uppe)",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "f772cf5f8df64899b0135af11be3838d",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "4"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "019A-0003-0003",
-                "name": "Altand\u00f6rr",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "d80afbb634224a1d9afe984001cfb30b",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "24"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Ljusslingor",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "27f110718d954a11ac5645bb9f1fa812",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "1"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "0159-0001-0051",
-                "name": "F\u00f6nster vardagsrum",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "2650f5ed87f14feab5d27a08ba56d7e3",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "_98"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "Vinden",
-                "sw_version": null
-            },
-            {
-                "area_id": "e893c1251d52478bb8de5f2a438edd55",
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858"
-                    ]
-                ],
-                "hub_device_id": null,
-                "id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858"
-                    ]
-                ],
-                "manufacturer": "ASUSTek",
-                "model": null,
-                "name": "RT-AC68U",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "cdac3f48677146bcaa83e24589122230",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U kbyte/sec sent",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "a059d98d4fae462da11efc5a46f915de",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U packets/sec received",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "a57bd6e0a5fb458ea00abf976c94b0a1",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U packets sent",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "a19f370b92b94bc39a7cddaece56de3a",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U kbyte/sec received",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "26cf0031451f495cacba55bad35a5d1b",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U packets/sec sent",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "f80c5d253eae4dbaa7d2618b163c4fcb",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U bytes received",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "b328ed1391d146c3aa128e8991fab610",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U packets received",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "d0b00eb479af4139ba8b03efaed7c038"
-                ],
-                "connections": [],
-                "hub_device_id": "55d9747d0e3e4c4693708ed20b01ae7a",
-                "id": "5fdfdab53dd146fdb3fc2810369e2117",
-                "identifiers": [
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
-                    ]
-                ],
-                "manufacturer": null,
-                "model": null,
-                "name": "RT-AC68U bytes sent",
-                "sw_version": null
-            },
-            {
-                "area_id": "e893c1251d52478bb8de5f2a438edd55",
-                "config_entries": [
-                    "1ac46d632d3741108075c1e62ac8b79e"
-                ],
-                "connections": [],
-                "hub_device_id": null,
-                "id": "8bdd8b08505a4da8a467894f25ea389b",
+                "entry_type": null,
+                "id": "f5ef8df5d0254f51a986b0b7300f0bff",
                 "identifiers": [
                     [
                         "mqtt",
@@ -712,45 +1174,30 @@
                 "manufacturer": "IKEA",
                 "model": "Sparsn\u00e4s",
                 "name": "Sparsn\u00e4s 602064",
-                "sw_version": "215a4aa"
+                "name_by_user": null,
+                "sw_version": "215a4aa",
+                "via_device_id": null
             },
             {
                 "area_id": null,
                 "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
+                    "686151ec6e2e4a5592025de56f551939"
                 ],
                 "connections": [],
-                "hub_device_id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "id": "b8123b1de9ad48bbadf6cc36d6152e62",
+                "entry_type": null,
+                "id": "4aff8d2434444132868dd540ce1c2c88",
                 "identifiers": [
                     [
-                        "tellduslive",
-                        "140"
+                        "plex",
+                        "CFB0FEE0-E0EB-4213-8CE1-A847DC9A7726"
                     ]
                 ],
-                "manufacturer": "Group",
-                "model": "N/A",
-                "name": "Ute",
-                "sw_version": null
-            },
-            {
-                "area_id": null,
-                "config_entries": [
-                    "5e64457d58ac45cd83b7ae78e76475ce"
-                ],
-                "connections": [],
-                "hub_device_id": null,
-                "id": "ba88d2f545824c92aa90f004b80a5bb2",
-                "identifiers": [
-                    [
-                        "tellduslive",
-                        "ACCA5401B5EA"
-                    ]
-                ],
-                "manufacturer": "Telldus",
-                "model": "TellstickZnetLiteV2",
-                "name": "192.168.1.10",
-                "sw_version": "1.0.12-52-gf0aaf75"
+                "manufacturer": "Plex",
+                "model": "Plex for iOS",
+                "name": "Plex (Plex for iOS - J & F iPad mini 4)",
+                "name_by_user": null,
+                "sw_version": "7.2.1",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8"
             }
         ]
     },

@@ -17,10 +17,16 @@ utility_meter:
     source: sensor.krz81s_odometer
   krz81s_daily_fuel_1:
     cycle: daily
-    source: sensor.krz81s_fuel_amount
+    source: sensor.krz81s_fuel_usage
   krz81s_weekly_fuel_1:
     cycle: weekly
-    source: sensor.krz81s_fuel_amount
+    source: sensor.krz81s_fuel_usage
+  krz81s_monthly_fuel_1:
+    cycle: monthly
+    source: sensor.krz81s_fuel_usage
+  krz81s_yearly_fuel_1:
+    cycle: yearly
+    source: sensor.krz81s_fuel_usage
   krz81s_daily_fuel:
     net_consumption: true
     cycle: daily
@@ -41,7 +47,17 @@ utility_meter:
 sensor:
 - platform: template
   sensors:
+    krz81s_fuel_fix:
+      value_template: "{{ 60 - (states('sensor.krz81s_fuel_amount') | float) }}"
+      unit_of_measurement: L
     krs81s_daily_l_km:
       friendly_name: "Daily fuel consumption"
       unit_of_measurement: "l/km"
       value_template: "{{ states('sensor.krz81s_daily_fuel')|float / states('sensor.krz81s_daily_km')|float }}"
+- platform: rest
+  resource: "http://192.168.1.2:8086/query?db=hass&q=SELECT%20sum(F)%20FROM(SELECT%20non_negative_difference(val)%20AS%20F%20FROM%20(SELECT%20(60%20-%20max(value))%20AS%20val%20FROM%20L%20WHERE%20(entity_id%20%3D%20%27krz81s_fuel_amount%27)%20GROUP%20BY%20time(1m)%20fill(previous)))"
+  value_template: '{{ (value_json["results"][0]["series"][0]["values"][0][1]) | float }}'
+  name: KRZ81S fuel usage
+  unit_of_measurement: L
+  json_attributes: '{{ value_json["results"][0]["series"][0]["values"][0][0] }}'
+
