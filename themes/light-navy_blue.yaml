@@ -1,3 +1,5 @@
+  # Background image
+  background-image: 'center / cover no-repeat url("/local/day.jpg") fixed'
   ### Main Interface Colors ###
   primary-color: "#395274"
   light-primary-color: "#5F81B0"

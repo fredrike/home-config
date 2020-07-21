@@ -1,114 +1,75 @@
 """HACS Configuration."""
+import attr
+from integrationhelper import Logger
+from custom_components.hacs.hacsbase.exceptions import HacsException
 
 
+@attr.s(auto_attribs=True)
 class Configuration:
     """Configuration class."""
 
-    def __init__(self, config, options):
-        """Initialize."""
-        self.config = config
-        self.options = options
-        self.frontend_mode = "Grid"
-        self.config_type = None
-        self.config_entry = None
+    # Main configuration:
+    appdaemon_path: str = "appdaemon/apps/"
+    appdaemon: bool = False
+    netdaemon_path: str = "netdaemon/apps/"
+    netdaemon: bool = False
+    config: dict = {}
+    config_entry: dict = {}
+    config_type: str = None
+    debug: bool = False
+    dev: bool = False
+    frontend_mode: str = "Grid"
+    frontend_compact: bool = False
+    frontend_repo: str = ""
+    frontend_repo_url: str = ""
+    options: dict = {}
+    onboarding_done: bool = False
+    plugin_path: str = "www/community/"
+    python_script_path: str = "python_scripts/"
+    python_script: bool = False
+    sidepanel_icon: str = "hacs:hacs"
+    sidepanel_title: str = "HACS"
+    theme_path: str = "themes/"
+    theme: bool = False
+    token: str = None
 
-    @property
-    def token(self):
-        """GitHub Access token."""
-        if self.config.get("token") is not None:
-            return self.config["token"]
-        return None
+    # Config options:
+    country: str = "ALL"
+    experimental: bool = False
+    release_limit: int = 5
 
-    @property
-    def sidepanel_title(self):
-        """Sidepanel title."""
-        if self.config.get("sidepanel_title") is not None:
-            return self.config["sidepanel_title"]
-        return "Community"
+    def to_json(self):
+        """Return a dict representation of the configuration."""
+        return self.__dict__
 
-    @property
-    def sidepanel_icon(self):
-        """Sidepanel icon."""
-        if self.config.get("sidepanel_icon") is not None:
-            return self.config["sidepanel_icon"]
-        return "mdi:alpha-c-box"
+    def print(self):
+        """Print the current configuration to the log."""
+        logger = Logger("hacs.configuration")
+        config = self.to_json()
+        for key in config:
+            if key in ["config", "config_entry", "options", "token"]:
+                continue
+            logger.debug(f"{key}: {config[key]}")
 
-    @property
-    def dev(self):
-        """Dev mode active."""
-        if self.config.get("dev") is not None:
-            return self.config["dev"]
-        return False
+    @staticmethod
+    def from_dict(configuration: dict, options: dict = None):
+        """Set attributes from dicts."""
+        if isinstance(options, bool) or isinstance(configuration.get("options"), bool):
+            raise HacsException("Configuration is not valid.")
 
-    @property
-    def plugin_path(self):
-        """Plugin path."""
-        if self.config.get("plugin_path") is not None:
-            return self.config["plugin_path"]
-        return "www/community/"
+        if options is None:
+            options = {}
 
-    @property
-    def appdaemon(self):
-        """Enable appdaemon."""
-        if self.config.get("appdaemon") is not None:
-            return self.config["appdaemon"]
-        return False
+        if not configuration:
+            raise HacsException("Configuration is not valid.")
 
-    @property
-    def appdaemon_path(self):
-        """Appdaemon apps path."""
-        if self.config.get("appdaemon_path") is not None:
-            return self.config["appdaemon_path"]
-        return "appdaemon/apps/"
+        config = Configuration()
 
-    @property
-    def python_script(self):
-        """Enable python_script."""
-        if self.config.get("python_script") is not None:
-            return self.config["python_script"]
-        return False
+        config.config = configuration
+        config.options = options
 
-    @property
-    def python_script_path(self):
-        """python_script path."""
-        if self.config.get("python_script_path") is not None:
-            return self.config["python_script_path"]
-        return "python_scripts/"
+        for conf_type in [configuration, options]:
+            for key in conf_type:
+                setattr(config, key, conf_type[key])
 
-    @property
-    def theme(self):
-        """Enable theme."""
-        if self.config.get("theme") is not None:
-            return self.config["theme"]
-        return False
-
-    @property
-    def theme_path(self):
-        """Themes path."""
-        if self.config.get("theme_path") is not None:
-            return self.config["theme_path"]
-        return "themes/"
-
-    @property
-    def option_country(self):
-        """Return the country filter (or None if blank)"""
-        if self.options is None:
-            return None
-        country = self.options.get("country")
-        if country == "ALL" or country is None:
-            return None
-        return country
-
-    @property
-    def release_limit(self):
-        """Return release limit"""
-        if self.options is None:
-            return 5
-        return self.options.get("release_limit", 5)
-
-    @property
-    def experimental(self):
-        """Return experimental"""
-        if self.options is None:
-            return False
-        return self.options.get("experimental", False)
+        return config

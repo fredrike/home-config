@@ -1,6 +1,9 @@
 {
     "data": {
+        "compact": false,
+        "onboarding_done": true,
         "view": "Grid"
     },
-    "schema": "5"
+    "key": "hacs.hacs",
+    "version": "6"
 }
