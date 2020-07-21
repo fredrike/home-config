@@ -43,33 +43,43 @@ sensor:
           {% set v = ['', 'CharegeAmps', (states('sensor.chargeamps_watt') | float)] %}
         {% endif %}
         {{'%s @ %d' % ('Dehumidifier' if states('climate.mjovik') == 'off' and v[1] == 'Inverter' else v[1] | replace('_', ' '), v[2]) }}" 
-#IoTaWatt config
-  - platform: influxdb
-    host: 192.168.1.2
-    queries:
-      - name: Iotawatt Total (old)
-        unit_of_measurement: W
-        value_template: '{{ value | round(1) }}'
-        group_function: last
-        where: '"entity_id" = ''Total'''
-        measurement: '"Watts"'
-        field: value
-        database: iotawatt
-      - name: Iotawatt inverter (old)
-        unit_of_measurement: W
-        value_template: '{{ value | round(1) }}'
-        group_function: last
-        where: '"entity_id" = ''Inverter'''
-        measurement: '"Watts"'
-        field: value
-        database: iotawatt
+
+  - platform: rest
+    resource: 'http://192.168.1.22/query?header=yes&select=[z_Total,L1.Amps,L2.Amps,L3.Amps]&begin=s-30s&end=s&group=all'
+    name: IoTaWatt Total usage
+    value_template: '{{ value_json["data"][0][0] }}'
+    json_attributes: 'data'
+    device_class: power
+    unit_of_measurement: "W"
+    scan_interval: 30
+  - platform: template
+    sensors:
+      iotawatt_l1:
+        value_template: '{{ state_attr("sensor.iotawatt_total_usage", "data")[0][1] }}'
+        unit_of_measurement: "A"
+        device_class: power
+        friendly_name: L1
+      iotawatt_l2:
+        value_template: '{{ state_attr("sensor.iotawatt_total_usage", "data")[0][2] }}'
+        unit_of_measurement: "A"
+        device_class: power
+        friendly_name: L2
+      iotawatt_l3:
+        value_template: '{{ state_attr("sensor.iotawatt_total_usage", "data")[0][3] }}'
+        unit_of_measurement: "A"
+        device_class: power
+        friendly_name: L3
   - platform: template
     sensors:
       sparsnas_iotawatt:
         friendly_name: "Others"
         unit_of_measurement: W
         value_template: >-
-          {% set value = (states("sensor.sparsnas_energy_consumption_momentary") | float -  (states("sensor.iotawatt") | float)) | round(1) %}
+          {% set value =
+          (states("sensor.sparsnas_w") | float -
+          ((states("sensor.iotawatt_total_usage") | float) +
+          (states("sensor.chargeamps_watt") | float))
+          ) | round(1) %}
           {% if value < 0 %}
           {{ states("sensor.sparsnas_iotawatt") }}
           {% else %}
@@ -155,34 +165,42 @@ automation:
   action:
   - data:
       payload: '{"device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
-        "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, "unit_of_measurement":
-        "kWh", "json_attributes": ["Sequence", "FreqErr", "Effect", "Data4", "Sensor",
-        "battery"], "name": "Sparsnäs kWh", "unique_id": "sparsnas_602064_kwh", "state_topic":
-        "sparsnas/602064", "value_template": "{{ value_json.kWh | round(2) }}", "icon":
-        "mdi:flash-circle"}'
+        "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, 
+        "device_class": "power",
+        "unit_of_measurement": "kWh", 
+        "name": "Sparsnäs kWh", 
+        "unique_id": "sparsnas_602064_kwh",
+        "state_topic": "sparsnas/602064", 
+        "json_attributes_topic": "sparsnas/602064", 
+				"value_template": "{{ value_json.kWh | round(2) }}",
+        "icon": "mdi:flash-circle"}'
       topic: home/sensor/sparsnas/602064_kwh/config
       retain: true
     service: mqtt.publish
   - data:
       payload: '{"device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
-        "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, "unit_of_measurement":
-        "W", "json_attributes": ["Sequence", "FreqErr","Effect", "Data4", "Sensor",
-        "battery"], "name": "Sparsnäs Watt", "unique_id": "sparsnas_602064_watt",
-        "state_topic": "sparsnas/602064", "value_template": "{{ value_json.Watt |
-        round(1) }}", "icon": "mdi:flash-circle"}'
+        "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, 
+        "device_class": "power",
+        "unit_of_measurement": "W", 
+        "name": "Sparsnäs Watt", 
+        "unique_id": "sparsnas_602064_watt",
+        "state_topic": "sparsnas/602064", 
+        "json_attributes_topic": "sparsnas/602064", 
+        "value_template": "{{ value_json.Watt | round(1) }}",
+        "icon": "mdi:flash-circle"}'
       topic: home/sensor/sparsnas/602064_Watt/config
       retain: true
     service: mqtt.publish
 
 utility_meter:
   sparsnas_yearly:
-    source: sensor.sparsnas_energy_consumption_over_time 
+    source: sensor.sparsnas_kwh
     cycle: yearly
   sparsnas_monthly:
-    source: sensor.sparsnas_energy_consumption_over_time
+    source: sensor.sparsnas_kwh
     cycle: monthly
   sparsnas_daily:
-    source: sensor.sparsnas_energy_consumption_over_time
+    source: sensor.sparsnas_kwh
     cycle: daily
   inverter_daily:
     source: sensor.inverter_kwh
