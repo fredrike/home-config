@@ -153,20 +153,7 @@ rss_feed_template:
     items:
     - title: 'Sparsnäs'
       description: >-
-        Sparsnäs is {{ 'up' 
-         if states('sensor.sparsnas_energy_consumption_momentary') != 'unknown'  else
-           'down' 
-         if (now() - states.sensor.sparsnas_energy_consumption_momentary.last_updated).seconds < 600 else
-           'down' 
-        }}
-    - title: 'IoTaWatt'
-      description: >-
-        IoTaWatt is {{ 'up'
-        if states('sensor.iotawatt') != 'unknown'  else
-          'down'
-        if states('sensor.iotawatt') != 'unavailable' else
-          'down' 
-        }}
+        Sparsnäs is {{ 'up' if states('sensor.sparsnas_w') != 'unknown' and (now() - states.sensor.sparsnas_w.last_updated).seconds < 600 else 'down' }}
 
 sensor:
   - platform: time_date
