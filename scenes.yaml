@@ -1,0 +1,96 @@
+- id: '1601147875955'
+  name: Evening
+  entities:
+    light.fonster_vardagsrum_mqtt:
+      brightness: 26
+      friendly_name: Fönster vardagsrum
+      state: 'on'
+      supported_features: 41
+    light.glodlampan_mqtt:
+      brightness: 102
+      friendly_name: Glödlampan
+      state: 'on'
+      supported_features: 41
+    light.shelly_shdm_1_d0ee05:
+      brightness: 73
+      cloud_status: disabled
+      current_consumption: 1 W
+      firmware_version: 1.8.4
+      friendly_name: Vardagsrumsfönster
+      has_firmware_update: true
+      ip_address: 192.168.1.23
+      over_temp: 0
+      protocols:
+      - CoAP-discovery
+      - CoAP-msg
+      - poll
+      shelly_id: D0EE05
+      shelly_type: Shelly Dimmer
+      state: 'on'
+      supported_features: 1
+      switch_1: false
+      switch_2: false
+    light.utebelysning_mqtt:
+      brightness: 113
+      friendly_name: Utebelysning
+      state: 'on'
+      supported_features: 41
+    switch.koksfonster:
+      friendly_name: Köksfönster
+      state: 'on'
+    switch.sovrummet:
+      friendly_name: Sovrummet
+      state: 'on'
+  icon: mdi:moon
+- id: '1601148153903'
+  name: 'Sleep '
+  entities:
+    light.bollarna:
+      friendly_name: Bollarna
+      state: 'off'
+      supported_features: 0
+    light.fonster_vardagsrum_mqtt:
+      friendly_name: Fönster vardagsrum
+      state: 'off'
+      supported_features: 41
+    light.glodlampan_mqtt:
+      friendly_name: Glödlampan
+      state: 'off'
+      supported_features: 41
+    light.kok_uppe:
+      friendly_name: Kök (uppe)
+      state: 'off'
+      supported_features: 0
+    light.shelly_shdm_1_d0ee05:
+      cloud_status: disabled
+      current_consumption: 0 W
+      firmware_version: 1.8.4
+      friendly_name: Vardagsrumsfönster
+      has_firmware_update: true
+      ip_address: 192.168.1.23
+      over_temp: 0
+      protocols:
+      - CoAP-discovery
+      - CoAP-msg
+      - poll
+      shelly_id: D0EE05
+      shelly_type: Shelly Dimmer
+      state: 'off'
+      supported_features: 1
+      switch_1: false
+      switch_2: false
+    light.sovrum:
+      friendly_name: Sovrum
+      state: 'off'
+      supported_features: 0
+    light.utebelysning_mqtt:
+      brightness: 36
+      friendly_name: Utebelysning
+      state: 'on'
+      supported_features: 41
+    switch.kok_uppe:
+      friendly_name: Kök (uppe)
+      state: 'off'
+    switch.koksfonster:
+      friendly_name: Köksfönster
+      state: 'off'
