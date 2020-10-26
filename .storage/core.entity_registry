@@ -1361,7 +1361,7 @@
                 "device_class": "battery",
                 "unit_of_measurement": "%",
                 "original_name": "Pixel 3a Battery Level",
-                "original_icon": "mdi:battery-30"
+                "original_icon": "mdi:battery-40"
             },
             {
                 "entity_id": "sensor.wifi_connection",
@@ -1377,7 +1377,7 @@
                 "device_class": null,
                 "unit_of_measurement": null,
                 "original_name": "Pixel 3a Wifi Connection",
-                "original_icon": "mdi:wifi-off"
+                "original_icon": "mdi:wifi"
             },
             {
                 "entity_id": "sensor.geocoded_location",
@@ -1408,7 +1408,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel",
+                "original_name": "Pixel 4a",
                 "original_icon": null
             },
             {
@@ -1424,8 +1424,8 @@
                 "supported_features": 0,
                 "device_class": "battery",
                 "unit_of_measurement": "%",
-                "original_name": "Pixel Battery Level",
-                "original_icon": "mdi:battery-charging-90"
+                "original_name": "Pixel 4a Battery Level",
+                "original_icon": "mdi:battery-70"
             },
             {
                 "entity_id": "sensor.wifi_connection_2",
@@ -1440,24 +1440,8 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Wifi Connection",
+                "original_name": "Pixel 4a Wifi Connection",
                 "original_icon": "mdi:wifi"
-            },
-            {
-                "entity_id": "zone.t",
-                "config_entry_id": null,
-                "device_id": null,
-                "unique_id": "t",
-                "platform": "zone",
-                "name": null,
-                "icon": null,
-                "disabled_by": null,
-                "capabilities": {},
-                "supported_features": 0,
-                "device_class": null,
-                "unit_of_measurement": null,
-                "original_name": "T",
-                "original_icon": "mdi:map-marker"
             },
             {
                 "entity_id": "sensor.geocoded_location_2",
@@ -1472,7 +1456,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Geocoded Location",
+                "original_name": "Pixel 4a Geocoded Location",
                 "original_icon": "mdi:map"
             },
             {
@@ -2752,8 +2736,8 @@
                 "supported_features": 0,
                 "device_class": "battery",
                 "unit_of_measurement": null,
-                "original_name": "Pixel Battery State",
-                "original_icon": "mdi:battery-plus"
+                "original_name": "Pixel 4a Battery State",
+                "original_icon": "mdi:battery-minus"
             },
             {
                 "entity_id": "sensor.pixel_3a_battery_state",
@@ -4129,7 +4113,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": "connection(s)",
-                "original_name": "Pixel Bluetooth Connection",
+                "original_name": "Pixel 4a Bluetooth Connection",
                 "original_icon": "mdi:bluetooth"
             },
             {
@@ -4145,7 +4129,7 @@
                 "supported_features": 0,
                 "device_class": "illuminance",
                 "unit_of_measurement": "lx",
-                "original_name": "Pixel Light Sensor",
+                "original_name": "Pixel 4a Light Sensor",
                 "original_icon": "mdi:brightness-5"
             },
             {
@@ -4161,7 +4145,7 @@
                 "supported_features": 0,
                 "device_class": "timestamp",
                 "unit_of_measurement": null,
-                "original_name": "Pixel Next Alarm",
+                "original_name": "Pixel 4a Next Alarm",
                 "original_icon": "mdi:alarm"
             },
             {
@@ -4177,7 +4161,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": "%",
-                "original_name": "Pixel Storage Sensor",
+                "original_name": "Pixel 4a Storage Sensor",
                 "original_icon": "mdi:harddisk"
             },
             {
@@ -4241,7 +4225,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Audio Sensor",
+                "original_name": "Pixel 4a Audio Sensor",
                 "original_icon": "mdi:vibrate"
             },
             {
@@ -4257,7 +4241,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Do Not Disturb Sensor",
+                "original_name": "Pixel 4a Do Not Disturb Sensor",
                 "original_icon": "mdi:do-not-disturb"
             },
             {
@@ -4273,7 +4257,7 @@
                 "supported_features": 0,
                 "device_class": "timestamp",
                 "unit_of_measurement": null,
-                "original_name": "Pixel Last Reboot",
+                "original_name": "Pixel 4a Last Reboot",
                 "original_icon": "mdi:restart"
             },
             {
@@ -4433,8 +4417,8 @@
                 "supported_features": 0,
                 "device_class": "plug",
                 "unit_of_measurement": null,
-                "original_name": "Pixel Is Charging",
-                "original_icon": "mdi:power-plug"
+                "original_name": "Pixel 4a Is Charging",
+                "original_icon": "mdi:power-plug-off"
             },
             {
                 "entity_id": "sensor.pixel_charger_type",
@@ -4449,8 +4433,8 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Charger Type",
-                "original_icon": "mdi:power-plug"
+                "original_name": "Pixel 4a Charger Type",
+                "original_icon": "mdi:battery"
             },
             {
                 "entity_id": "sensor.pixel_battery_health",
@@ -4465,7 +4449,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Battery Health",
+                "original_name": "Pixel 4a Battery Health",
                 "original_icon": "mdi:battery-charging-30"
             },
             {
@@ -4481,7 +4465,7 @@
                 "supported_features": 0,
                 "device_class": "pressure",
                 "unit_of_measurement": "hPa",
-                "original_name": "Pixel Pressure Sensor",
+                "original_name": "Pixel 4a Pressure Sensor",
                 "original_icon": "mdi:gauge"
             },
             {
@@ -4497,7 +4481,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Pixel Proximity Sensor",
+                "original_name": "Pixel 4a Proximity Sensor",
                 "original_icon": "mdi:leak"
             },
             {
@@ -4513,7 +4497,7 @@
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": "steps",
-                "original_name": "Pixel Steps Sensor",
+                "original_name": "Pixel 4a Steps Sensor",
                 "original_icon": "mdi:walk"
             },
             {
@@ -5501,20 +5485,36 @@
                 "original_icon": null
             },
             {
-                "entity_id": "switch.shelly_shdm_1_d0ee05_beta_firmware_update",
-                "config_entry_id": "459bc201a2884c3ea0b6e737ded40e39",
-                "device_id": "d39fd1efcc4b46cdb3caf4c36f394249",
-                "unique_id": "shelly_shdm_1_d0ee05_beta_firmware_update",
-                "platform": "shelly",
+                "entity_id": "zone.consid_karlskrona",
+                "config_entry_id": null,
+                "device_id": null,
+                "unique_id": "consid_karlskrona",
+                "platform": "zone",
                 "name": null,
                 "icon": null,
                 "disabled_by": null,
-                "capabilities": null,
+                "capabilities": {},
                 "supported_features": 0,
                 "device_class": null,
                 "unit_of_measurement": null,
-                "original_name": "Upgrade BETA firmware Shelly Dimmer - D0EE05",
-                "original_icon": null
+                "original_name": "Consid Karlskrona",
+                "original_icon": "mdi:display"
+            },
+            {
+                "entity_id": "sensor.pixel_4a_total_rx_gb",
+                "config_entry_id": "b492c54fa6924f5c930f02cbf0ff9bd9",
+                "device_id": "3a3076e1accc4fa8b5333d9bedc5c376",
+                "unique_id": "eb6c214713a46f732d3e1fe2f706b2cb0679a9416f40d232331b54765c33eed5_total_rx_gb",
+                "platform": "mobile_app",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": {},
+                "supported_features": 0,
+                "device_class": null,
+                "unit_of_measurement": "GB",
+                "original_name": "Pixel 4a Total Rx GB",
+                "original_icon": "mdi:radio-tower"
             },
             {
                 "entity_id": "switch.shelly_shdm_1_d0af99_beta_firmware_update",
@@ -5530,6 +5530,22 @@
                 "device_class": null,
                 "unit_of_measurement": null,
                 "original_name": "Upgrade BETA firmware Shelly Dimmer - D0AF99",
+                "original_icon": null
+            },
+            {
+                "entity_id": "switch.shelly_shdm_1_d0ee05_beta_firmware_update",
+                "config_entry_id": "459bc201a2884c3ea0b6e737ded40e39",
+                "device_id": "d39fd1efcc4b46cdb3caf4c36f394249",
+                "unique_id": "shelly_shdm_1_d0ee05_beta_firmware_update",
+                "platform": "shelly",
+                "name": null,
+                "icon": null,
+                "disabled_by": null,
+                "capabilities": null,
+                "supported_features": 0,
+                "device_class": null,
+                "unit_of_measurement": null,
+                "original_name": "Upgrade BETA firmware Shelly Dimmer - D0EE05",
                 "original_icon": null
             }
         ]

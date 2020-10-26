@@ -568,10 +568,14 @@
                                     "entity": "person.johanna"
                                 },
                                 {
+                                    "entity": "person.fredrik"
+                                },
+                                {
                                     "entity": "person.krz81s"
                                 }
                             ],
-                            "type": "map"
+                            "type": "map",
+                            "hours_to_show": 2
                         },
                         {
                             "entity": "sensor.krz81s_battery_level",
@@ -1463,6 +1467,37 @@
                     "path": "demo",
                     "theme": "default",
                     "title": "Demo"
+                },
+                {
+                    "panel": true,
+                    "title": "Map",
+                    "path": "map",
+                    "icon": "",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "map",
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.android2c3c68e2b6856433"
+                                },
+                                {
+                                    "entity": "device_tracker.78f882cf23d5"
+                                },
+                                {
+                                    "entity": "person.johanna"
+                                },
+                                {
+                                    "entity": "person.fredrik"
+                                },
+                                {
+                                    "entity": "zone.consid_karlskrona"
+                                }
+                            ],
+                            "hours_to_show": 0,
+                            "default_zoom": 14
+                        }
+                    ]
                 }
             ]
         }

@@ -3,7 +3,7 @@ android2c3c68e2b6856433:
   hide_if_away: false
   mac: 2C:59:8A:70:70:82
   name: Nexus 5X (Fredrik)
-  gravatar: !secret fredrik_gravatar
+  picture: !secret fredrik_picture
   track: true
   vendor: LG Electronics (Mobile Communications)
 
@@ -12,7 +12,7 @@ android2c3c68e2b6856433:
   icon: mdi:cellphone-android
   mac: 78:F8:82:CF:23:D5
   name: Nexus 5X (Fredrik old)
-  gravatar: !secret fredrik_gravatar
+  picture: !secret fredrik_picture
   track: true
 
 ac3743a16232:
@@ -266,8 +266,8 @@ galaxys8:
 404e36221e29:
   hide_if_away: false
   mac: 40:4E:36:22:1E:29
-  name: Fredrik
-  gravatar: !secret fredrik_gravatar
+  name: Fredrik's Pixel
+  picture: !secret fredrik_picture
   track: true
 
 14c913bb1982:
@@ -396,12 +396,342 @@ test:
   mac: 2C:3A:E8:35:9F:E7
   name: test
   picture:
-  track: true
+  track: false
 
 led_strip:
   hide_if_away: false
   icon:
   mac: 60:01:94:74:65:0D
   name: led strip
+  picture:
+  track: false
+
+c6_49_03_aa_c9_e1:
+  hide_if_away: false
+  icon:
+  mac: C6:49:03:AA:C9:E1
+  name: c6 49 03 aa c9 e1
+  picture:
+  track: false
+
+stolx0560:
+  hide_if_away: false
+  icon:
+  mac: CC:2F:71:5C:CB:28
+  name: Fredrik's STOLX0560
+  picture:
+  track: true
+
+galaxy_a8_2018_2:
+  hide_if_away: false
+  icon:
+  mac: A8:34:6A:60:FC:1A
+  name: Fredrik's Galaxy-A8-2018
+  picture:
+  track: true
+
+display_node:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:AF:87:A8
+  name: display node
+  picture:
+  track: false
+
+google_maps_joferlandsson_gmail_com:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Fredrik @ google maps
+  picture: !secret fredrik_picture
+  track: true
+
+google_maps_105279642947500708897:
+  hide_if_away: false
+  icon:
+  mac:
+  name: google maps 105279642947500708897
+  picture: https://lh3.googleusercontent.com/a-/AAuE7mCtBLEpmoG8Rut3kjqc8yHb8kt1DY1an3AjV9DH7eo
+  track: true
+
+ella_iphone:
+  hide_if_away: false
+  icon:
+  mac: 0C:51:01:1A:00:4D
+  name: Ella--iPhone
+  picture:
+  track: true
+
+ista_vccyv1zwbmtdk1330514:
+  hide_if_away: false
+  icon:
+  mac: 00:10:02:42:40:08
+  name: ISTA-VCCYV1ZWBMTDK1330514
+  picture:
+  track: true
+
+volvo_krz81s:
+  hide_if_away: false
+  icon: mdi:car
+  mac:
+  name: KRZ81S
+  picture:
+  track: true
+
+google_maps_104065646185363141038:
+  hide_if_away: false
+  icon:
+  mac:
+  name: google maps 104065646185363141038
+  picture: https://lh6.googleusercontent.com/-MAKZ23O92Lw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3req8k0W9-nbkyPEEfb-ip5QNtRQAQ/photo.jpg
+  track: true
+
+esp_ae8ea1:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:AE:8E:A1
+  name: ESP AE8EA1
+  picture:
+  track: true
+
+2e_87_ea_62_1f_21:
+  hide_if_away: false
+  icon:
+  mac: 2E:87:EA:62:1F:21
+  name: 2e 87 ea 62 1f 21
+  picture:
+  track: true
+
+ae_07_7c_7f_3e_86:
+  hide_if_away: false
+  icon:
+  mac: AE:07:7C:7F:3E:86
+  name: ae 07 7c 7f 3e 86
+  picture:
+  track: true
+
+shellydimmer_d0af99:
+  hide_if_away: false
+  icon:
+  mac: 98:F4:AB:D0:AF:99
+  name: shellydimmer-D0AF99
+  picture:
+  track: true
+
+inv001000080371:
+  hide_if_away: false
+  icon:
+  mac: 60:F2:62:F2:AF:EE
+  name: INV001000080371
+  picture:
+  track: true
+
+moode_2:
+  icon:
+  mac: A6:9E:53:3B:35:6F
+  name: moode
+  picture:
+  track: true
+
+moode_3:
+  icon:
+  mac: 52:25:56:BE:CF:C1
+  name: moode
+  picture:
+  track: true
+
+moode_4:
+  icon:
+  mac: 16:53:BA:C1:D8:B1
+  name: moode
+  picture:
+  track: true
+
+moode_5:
+  icon:
+  mac: C2:7E:42:30:41:34
+  name: moode
+  picture:
+  track: true
+
+moode_6:
+  icon:
+  mac: 6E:2F:F0:FE:39:8F
+  name: moode
+  picture:
+  track: true
+
+moode_7:
+  icon:
+  mac: EA:8B:D2:AB:8E:A3
+  name: moode
+  picture:
+  track: true
+
+moode_8:
+  icon:
+  mac: 1E:D6:41:A4:13:4C
+  name: moode
+  picture:
+  track: true
+
+3c_91_80_9a_72_65:
+  icon:
+  mac: 3C:91:80:9A:72:65
+  name: 3c_91_80_9a_72_65
+  picture:
+  track: true
+
+google_nest_hub:
+  icon:
+  mac: 7C:2E:BD:28:A9:6D
+  name: Google-Nest-Hub
+  picture:
+  track: true
+
+shellydimmer_d0ee05:
+  icon:
+  mac: 98:F4:AB:D0:EE:05
+  name: shellydimmer-D0EE05
+  picture:
+  track: true
+
+2a_2b_91_f3_42_82:
+  icon:
+  mac: 2A:2B:91:F3:42:82
+  name: 2a_2b_91_f3_42_82
+  picture:
+  track: true
+
+leia_s_ipad:
+  icon:
+  mac: 10:29:59:54:B2:67
+  name: Leia-s-iPad
+  picture:
+  track: true
+
+iphone:
+  icon:
+  mac: 7C:9A:1D:E1:6F:49
+  name: iPhone
+  picture:
+  track: true
+
+ac_37_43_50_72_fb:
+  icon:
+  mac: AC:37:43:50:72:FB
+  name: ac_37_43_50_72_fb
+  picture:
+  track: true
+
+iduns_ipad:
+  icon:
+  mac: 8C:FE:57:86:04:D9
+  name: Iduns-iPad
+  picture:
+  track: true
+
+vickys_ipad:
+  icon:
+  mac: F0:F6:1C:DB:B6:FC
+  name: Vickys-iPad
+  picture:
+  track: true
+
+macbook_air:
+  icon:
+  mac: 14:7D:DA:52:B4:28
+  name: MacBook-Air
+  picture:
+  track: true
+
+oneplus5t:
+  icon:
+  mac: 94:65:2D:41:DF:86
+  name: OnePlus5T
+  picture:
+  track: true
+
+00_13_d4_10_3b_37:
+  icon:
+  mac: 00:13:D4:10:3B:37
+  name: 00_13_d4_10_3b_37
+  picture:
+  track: true
+
+00_13_d4_10_3b_35:
+  icon:
+  mac: 00:13:D4:10:3B:35
+  name: 00_13_d4_10_3b_35
+  picture:
+  track: true
+
+46_19_46_d4_49_e4:
+  icon:
+  mac: 46:19:46:D4:49:E4
+  name: 46_19_46_d4_49_e4
+  picture:
+  track: true
+
+b2_f4_93_48_8d_ba:
+  icon:
+  mac: B2:F4:93:48:8D:BA
+  name: b2_f4_93_48_8d_ba
+  picture:
+  track: true
+
+e0_63_da_06_66_f7:
+  icon:
+  mac: E0:63:DA:06:66:F7
+  name: e0_63_da_06_66_f7
+  picture:
+  track: true
+
+macbook_pro:
+  icon:
+  mac: 14:7D:DA:7A:BD:1B
+  name: MacBook-Pro
+  picture:
+  track: true
+
+9e_26_cf_04_d1_77:
+  icon:
+  mac: 9E:26:CF:04:D1:77
+  name: 9e_26_cf_04_d1_77
+  picture:
+  track: true
+
+66_40_5b_b8_20_8b:
+  icon:
+  mac: 66:40:5B:B8:20:8B
+  name: 66_40_5b_b8_20_8b
+  picture:
+  track: true
+
+ae_19_82_10_08_ce:
+  icon:
+  mac: AE:19:82:10:08:CE
+  name: ae_19_82_10_08_ce
+  picture:
+  track: true
+
+60_b7_6e_2f_31_76:
+  name: 60_b7_6e_2f_31_76
+  mac: 60:B7:6E:2F:31:76
+  icon:
+  picture:
+  track: true
+
+hp4e169890:
+  name: HP4E169890
+  mac: B8:08:CF:D2:82:BE
+  icon:
+  picture:
+  track: true
+
+ekorrbo_esp:
+  name: ekorrbo_esp
+  mac: 48:3F:DA:59:35:D0
+  icon:
   picture:
   track: true

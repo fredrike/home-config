@@ -58,27 +58,11 @@
                 "identifiers": [
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
-                    ],
-                    [
-                        "upnp",
                         "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
                     ],
                     [
                         "upnp",
@@ -90,7 +74,23 @@
                     ],
                     [
                         "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
+                    ],
+                    [
+                        "upnp",
                         "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
                     ]
                 ],
                 "manufacturer": "ASUSTek",
@@ -221,7 +221,7 @@
                 ],
                 "manufacturer": "Google",
                 "model": "Pixel 4a",
-                "name": "Pixel",
+                "name": "Pixel 4a",
                 "sw_version": "30",
                 "entry_type": null,
                 "id": "3a3076e1accc4fa8b5333d9bedc5c376",
