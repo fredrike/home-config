@@ -107,14 +107,21 @@
 
 - cal_id: iujghlr97446sfrj48gbc7ig79bpthom@import.calendar.google.com
   entities:
-  - device_id: calendar
+  - device_id: calendar_sas
     ignore_availability: true
-    name: Calendar
-    track: true
+    name: Fredrik @ SAS
+    track: false
 
 - cal_id: 0ft67dafta2ihqbn5r4i9tj3k0gcjaae@import.calendar.google.com
   entities:
-  - device_id: calendar_2
+  - device_id: calendar_sas2
     ignore_availability: true
-    name: Calendar
+    name: Fredrik @ SAS
+    track: false
+
+- cal_id: 03pvj3rdt2n3po7duuo8h6obn51jtef7@import.calendar.google.com
+  entities:
+  - device_id: consid
+    ignore_availability: true
+    name: Fredrik @ Consid 
     track: true

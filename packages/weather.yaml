@@ -2,32 +2,23 @@ homeassistant:
   customize:
     sensor.badtemp_tallholmen:
       icon: mdi:swim
-    sensor.yr_wind_speed:
-      icon: mdi:weather-windy-variant
-    sensor.yr_wind_direction:
-      icon: mdi:weather-windy
-    sensor.yr_precipitation:
-      icon: mdi:weather-pouring
-    sensor.yr_fog:
-      icon: mdi:weather-fog
-    sensor.yr_cloudiness:
-      icon: mdi:weather-cloudy
-    sensor.yr_high_clouds:
-      icon: mdi:weather-cloudy
-    sensor.yr_medium_clouds:
-      icon: mdi:weather-cloudy
-    sensor.yr_low_clouds:
-      icon: mdi:weather-cloudy
-    sensor.yr_dewpoint_temperature:
-      icon: mdi:thermometer-lines
-    sensor.yr_humidity:
-      icon: mdi:water-percent
-    sensor.yr_pressure:
-      icon: mdi:gauge
-    sensor.yr_temperature:
-      icon: mdi:thermometer
     sensor.pressure:
       icon: mdi:gauge
+    sensor.dark_sky_temperature:
+      extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
+        + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
+        + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
+      hidden: true
+    sensor.dark_sky_wind_speed:
+      extra_data_template: ${entities['sensor.dark_sky_wind_bearing'].state + "°"}
+    sensor.ute_temperature:
+      extra_data_template: '${ entities["sensor.daikin_outdoor"].state == "unknown" ?
+        "" : "Daikin: " + entities["sensor.daikin_outdoor"].state + "°C"}'
+      friendly_name: Ute Temperatur
+    sensor.dark_sky:
+      extra_data_template: '${"Feels like: " + entities["sensor.dark_sky_apparent_temperature"].state
+        + "°C,  " + "Humidity: " + entities["sensor.dark_sky_humidity"].state + "% ("
+        + entities["sensor.dark_sky_dew_point"].state +"°C)"}'
 
 # Weather prediction
 weather:
@@ -36,6 +27,26 @@ weather:
     mode: daily
 
 sensor:
+  - platform: darksky #https://pastebin.com/iX7u4ZSg
+    api_key: !secret darksky_api_key
+    name: dark_sky_forecast
+    scan_interval:
+      hours: 1
+    forecast:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+    monitored_conditions:
+      - icon
+      - precip_probability
+      - temperature
+      - temperature_high
+      - temperature_low
+      - apparent_temperature
+      - precip_probability
+      - precip_intensity
   - platform: darksky #https://pastebin.com/iX7u4ZSg
     api_key: !secret darksky_api_key
     scan_interval: '00:05'
@@ -59,24 +70,39 @@ sensor:
   #   name: Badtemp Tallholmen
   #   unit_of_measurement: °C
   #   value_template: '{{ value_json|selectattr("name", "equalto", "Tallholmen")|map(attribute="temperature")|first|round(1) }}'
-  - platform: yr
-    monitored_conditions:
-      - temperature
-      - symbol
-      - precipitation
-      - windSpeed
-      - pressure
-      - windDirection
-      - humidity
-      - fog
-      - cloudiness
-      - lowClouds
-      - mediumClouds
-      - highClouds
-      - dewpointTemperature
-
   - platform: template
     sensors:
+      dark_sky_fc:
+        value_template: >-
+          {% set dow = {
+           0: "Mon",
+           1: "Tis",
+           2: "Ons",
+           3: "Tor",
+           4: "Fre",
+           5: "Lör",
+           6: "Sön"
+          } %}
+          {% set weather = {
+            "clear-day": "mdi:weather-sunny",
+            "clear-night": "mdi:weather-night",
+            "cloudy": "mdi:weather-cloudy",
+            "rain": "mdi:weather-pouring",
+            "sleet": "mdi:weather-snowy-rainy",
+            "snow": "mdi:weather-snowy",
+            "wind": "mdi:weather-windy",
+            "fog": "mdi:weather-fog",
+            "partly-cloudy-day": "mdi:weather-partly-cloudy",
+            "partly-cloudy-night": "mdi:weather-night-partly-cloudy"
+          } %}
+          {% set base = 'sensor.dark_sky_forecast_' %}
+          {%- for i in [ 1, 2, 3, 4] -%}
+            {{ dow[now().isoweekday() + i - 1]  }}:
+            {{- weather[states('{}icon_{}d'.format(base, i))] -}}:
+            {{- states('{}daytime_high_temperature_{}d'.format(base, i)) -}}°:
+            {{- states('{}precip_probability_{}d'.format(base, i)) -}}%
+            {%- if not loop.last %}:{% endif %}
+          {%- endfor %}
       dark_sky:
         entity_picture_template: "{{states.sensor.dark_sky_summary.attributes.entity_picture}}"
         value_template: "{{states('sensor.dark_sky_temperature')}}"
@@ -84,69 +110,12 @@ sensor:
         friendly_name_template: "{{states.sensor.dark_sky_summary.state}} — ⟨Dark Sky⟩"
         unit_of_measurement: "°C"
         device_class: temperature
-      yr:
-        value_template: "{{states.sensor.yr_temperature.state}}"
-        friendly_name: 'Yr - Väder'
-        unit_of_measurement: "°C"
-        friendly_name_template: >-
-          {% if states.sensor.yr_symbol.state | int==1%}Klart
-          {% elif states.sensor.yr_symbol.state | int==2%}Lätt monlighet
-          {% elif states.sensor.yr_symbol.state | int==3%}Halvklart till mulet
-          {% elif states.sensor.yr_symbol.state | int==4%}Moln
-          {% elif states.sensor.yr_symbol.state | int==5%}Sol med inslag skurar
-          {% elif states.sensor.yr_symbol.state | int==6%}Sol med inslag av åska och skurar
-          {% elif states.sensor.yr_symbol.state | int==7%}Sol med inslag av snöblandat regn
-          {% elif states.sensor.yr_symbol.state | int==8%}Sol med inslag av snö
-          {% elif states.sensor.yr_symbol.state | int==9%}Duggregn
-          {% elif states.sensor.yr_symbol.state | int==10%}Regn
-          {% elif states.sensor.yr_symbol.state | int==11%}Regn och åska
-          {% elif states.sensor.yr_symbol.state | int==12%}Snöblandat regn
-          {% elif states.sensor.yr_symbol.state | int==13%}Snö
-          {% elif states.sensor.yr_symbol.state | int==14%}SnowThunder
-          {% elif states.sensor.yr_symbol.state | int==15%}Dimma
-          {% elif states.sensor.yr_symbol.state | int==16%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==17%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==18%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==19%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==20%}Snöblandat regn och åska
-          {% elif states.sensor.yr_symbol.state | int==21%}Sol och snö med inslag av åska
-          {% elif states.sensor.yr_symbol.state | int==22%}Lätt regn
-          {% elif states.sensor.yr_symbol.state | int==23%}SleetThunder
-          {% elif states.sensor.yr_symbol.state | int==24%}DrizzleThunderSun
-          {% elif states.sensor.yr_symbol.state | int==25%}RainThunderSun
-          {% elif states.sensor.yr_symbol.state | int==26%}LightSleetThunderSun
-          {% elif states.sensor.yr_symbol.state | int==27%}HeavySleetThunderSun
-          {% elif states.sensor.yr_symbol.state | int==28%}LightSnowThunderSun
-          {% elif states.sensor.yr_symbol.state | int==29%}HeavySnowThunderSun
-          {% elif states.sensor.yr_symbol.state | int==30%}DrizzleThunder
-          {% elif states.sensor.yr_symbol.state | int==31%}LightSleetThunder
-          {% elif states.sensor.yr_symbol.state | int==32%}HeavySleetThunder
-          {% elif states.sensor.yr_symbol.state | int==33%}LightSnowThunder
-          {% elif states.sensor.yr_symbol.state | int==34%}HeavySnowThunder
-          {% elif states.sensor.yr_symbol.state | int==35%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==36%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==37%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==38%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==39%}Titta ut!
-          {% elif states.sensor.yr_symbol.state | int==40%}DrizzleSun
-          {% elif states.sensor.yr_symbol.state | int==41%}Regnskurar
-          {% elif states.sensor.yr_symbol.state | int==42%}LightSleetSun
-          {% elif states.sensor.yr_symbol.state | int==43%}HeavySleetSun
-          {% elif states.sensor.yr_symbol.state | int==44%}LightSnowSun
-          {% elif states.sensor.yr_symbol.state | int==45%}HeavysnowSun
-          {% elif states.sensor.yr_symbol.state | int==46%}Duggregn
-          {% elif states.sensor.yr_symbol.state | int==47%}Lätt snöblandat regn
-          {% elif states.sensor.yr_symbol.state | int==48%}Kraftigt snöblandat regn
-          {% elif states.sensor.yr_symbol.state | int==49%}Lätt snöfall
-          {% elif states.sensor.yr_symbol.state | int==50%}Kraftigt snöfall
-          {% endif %}
-          — ⟨Yr⟩
-        entity_picture_template: >-
-          {% if is_state('sun.sun', 'above_horizon') %}
-          //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=0;content_type=image/svg%2Bxml
-          {% else %}
-          //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=1;content_type=image/svg%2Bxml
-          {% endif %}
+        # entity_picture_template: >-
+        #   {% if is_state('sun.sun', 'above_horizon') %}
+        #   //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=0;content_type=image/svg%2Bxml
+        #   {% else %}
+        #   //api.met.no/weatherapi/weathericon/1.1/?symbol={{states.sensor.yr_symbol.state}};is_night=1;content_type=image/svg%2Bxml
+        #   {% endif %}
       pressure:
-        value_template: "{{  (float(states.sensor.yr_pressure.state) + float(states.sensor.dark_sky_pressure.state))/2|round(2) }}"
+        value_template: "{{  (float(states.sensor.dark_sky_pressure.state) + float(states.sensor.dark_sky_pressure.state))/2|round(2) }}"
         unit_of_measurement: hPa

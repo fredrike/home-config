@@ -3,7 +3,7 @@ sensor:
   - platform: template
     sensors:
       moon_tpl:
-        entity_id: sensor.moon
+        unique_id: moon_tpl
         value_template: >-
           {% set map = {
             "new_moon": "ﾁ",
@@ -25,27 +25,27 @@ sensor:
   - platform: template
     sensors:
       moon_rise:
-        entity_id: sensor.moon_rest
+        unique_id: sensor_moon_rise
         value_template: '{{ state_attr("sensor.moon_rest", "moon").get("rise", {}).get("time") }}'
       moon_set:
-        entity_id: sensor.moon_rest
+        unique_id: sensor_moon_set
         value_template: '{{ state_attr("sensor.moon_rest", "moon").get("set", {}).get("time") }}'
   - platform: template
     sensors:
       forecast_today:
-        entity_id: sensor.time
+        unique_id: tpl_forecast_today
         value_template: >-
           {% set weather = {
-            "clear-day": "", 
-            "clear-night": "", 
-            "cloudy": "", 
-            "rain": "", 
-            "sleet": "", 
-            "snow": "ｓ", 
-            "wind": "", 
-            "fog": "", 
-            "partly-cloudy-day": "", 
-            "partly-cloudy-night": "ｎ" 
+            "clear-day": "",
+            "clear-night": "",
+            "cloudy": "",
+            "rain": "",
+            "sleet": "",
+            "snow": "ｓ",
+            "wind": "",
+            "fog": "",
+            "partly-cloudy-day": "",
+            "partly-cloudy-night": "ｎ"
           } %}
           {% set base = 'sensor.dark_sky_forecast_' %}
 
@@ -73,7 +73,6 @@ sensor:
   - platform: template
     sensors:
       forecast:
-        entity_id: sensor.time
         value_template: >-
           {% set dow = {
            0: "Mån",
@@ -98,16 +97,16 @@ sensor:
             "partly-cloudy-night": "mdi:weather-night-partly-cloudy"
           } %}
           {% set weather = {
-            "clear-day": "", 
-            "clear-night": "", 
-            "cloudy": "", 
-            "rain": "", 
-            "sleet": "", 
-            "snow": "ｓ", 
-            "wind": "", 
-            "fog": "", 
-            "partly-cloudy-day": "", 
-            "partly-cloudy-night": "ｎ" 
+            "clear-day": "",
+            "clear-night": "",
+            "cloudy": "",
+            "rain": "",
+            "sleet": "",
+            "snow": "ｓ",
+            "wind": "",
+            "fog": "",
+            "partly-cloudy-day": "",
+            "partly-cloudy-night": "ｎ"
           } %}
 
           {% set base = 'sensor.dark_sky_forecast_' %}

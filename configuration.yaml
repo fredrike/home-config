@@ -35,15 +35,12 @@ map:
 # Enables the frontend
 frontend:
   themes: !include_dir_named themes
-  extra_html_url:
-    - /local/hass-fontawesome-regular.html
 
 # Enables configuration UI
 config:
 
 http:
   # Add the following modification: https://github.com/orobardet/dsm-reverse-proxy-websocket
-  external_url: https://hass.erlandsson.myds.me
   server_port: 8124
   use_x_forwarded_for: true
   trusted_proxies:
@@ -86,6 +83,8 @@ logbook:
 
 
 recorder:
+  auto_purge: true
+  purge_keep_days: 14
   exclude:
     entities:
       - sensor.sonarr_upcoming_media
@@ -282,16 +281,10 @@ webostv:
     data:
       mac: a0-6f-aa-48-ed-64
 
-
-media_player:
-  - platform: plex
 spotify:
   client_id:     !secret spotify_id
   client_secret: !secret spotify_secret
 
-device_tracker:
-  - platform: google_maps
-    username: !secret google_loc
     
 logger: !include logger.yaml
 

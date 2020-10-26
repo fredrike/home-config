@@ -34,6 +34,7 @@ sensor:
   - platform: template
     sensors:
       iotawatt_top_consumer:
+        unique_id: iotawatt_top_consumer
         friendly_name: IoTaWatt top consumer
         icon_template: mdi:flash-circle
         unit_of_measurement: W
@@ -55,16 +56,19 @@ sensor:
   - platform: template
     sensors:
       iotawatt_l1:
+        unique_id: iotawatt_l1
         value_template: '{{ state_attr("sensor.iotawatt_total_usage", "data")[0][1] }}'
         unit_of_measurement: "A"
         device_class: power
         friendly_name: L1
       iotawatt_l2:
+        unique_id: iotawatt_l2
         value_template: '{{ state_attr("sensor.iotawatt_total_usage", "data")[0][2] }}'
         unit_of_measurement: "A"
         device_class: power
         friendly_name: L2
       iotawatt_l3:
+        unique_id: iotawatt_l3
         value_template: '{{ state_attr("sensor.iotawatt_total_usage", "data")[0][3] }}'
         unit_of_measurement: "A"
         device_class: power
@@ -72,6 +76,7 @@ sensor:
   - platform: template
     sensors:
       sparsnas_iotawatt:
+        unique_id: sparsnas_iotawatt
         friendly_name: "Others"
         unit_of_measurement: W
         value_template: >-
@@ -99,56 +104,67 @@ sensor:
   - platform: template
     sensors:
       iotawatt_input_bathroom:
+        unique_id: iotawatt_input_bathroom
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bathroom" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Bathroom'
       iotawatt_input_bedroom_1:
+        unique_id: iotawatt_input_bedroom_1
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bedroom_1" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Bedroom 1'
       iotawatt_input_bedroom_2:
+        unique_id: iotawatt_input_bedroom_2
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Bedroom_2" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Bedroom 2'
       iotawatt_input_dishwasher:
+        unique_id:       iotawatt_input_dishwasher
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Dishwasher" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Dishwasher'
       iotawatt_input_fridge:
+        unique_id:       iotawatt_input_fridge
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Fridge" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Fridge'
       iotawatt_input_inverter:
+        unique_id:       iotawatt_input_inverter
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Inverter" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Inverter'
       iotawatt_input_kitchen:
+        unique_id:       iotawatt_input_kitchen
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Kitchen" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Kitchen'
       iotawatt_input_living_room:
+        unique_id:       iotawatt_input_living_room
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Living_room" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Living room'
       iotawatt_input_total:
+        unique_id:       iotawatt_input_total
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Total" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'Total'
       iotawatt_input_vvb:
+        unique_id:       iotawatt_input_vvb
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "VVB" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
         friendly_name: 'VVB'
       iotawatt_input_washer:
+        unique_id:       iotawatt_input_washer
         value_template: '{% for row in state_attr("sensor.iotawatt", "results")[0]["series"] -%}{% if row["tags"]["entity_id"] == "Washer" -%}{{ row["values"][0][1] | float }}{% endif -%}{% endfor -%}'
         unit_of_measurement: W
         device_class: power
@@ -164,8 +180,9 @@ automation:
   condition: []
   action:
   - data:
-      payload: '{"device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
-        "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, 
+      payload: '{% raw -%}
+      {
+        "device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers": "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, 
         "device_class": "power",
         "unit_of_measurement": "kWh", 
         "name": "Sparsnäs kWh", 
@@ -173,13 +190,16 @@ automation:
         "state_topic": "sparsnas/602064", 
         "json_attributes_topic": "sparsnas/602064", 
 				"value_template": "{{ value_json.kWh | round(2) }}",
-        "icon": "mdi:flash-circle"}'
+        "icon": "mdi:flash-circle"
+      }
+      {%- endraw %}'
       topic: home/sensor/sparsnas/602064_kwh/config
       retain: true
     service: mqtt.publish
   - data:
-      payload: '{"device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers":
-        "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, 
+      payload: '{% raw -%}
+      {
+        "device": {"sw_version": "215a4aa", "name": "Sparsnäs 602064", "identifiers": "602064", "model": "Sparsnäs", "manufacturer": "IKEA"}, 
         "device_class": "power",
         "unit_of_measurement": "W", 
         "name": "Sparsnäs Watt", 
@@ -187,7 +207,9 @@ automation:
         "state_topic": "sparsnas/602064", 
         "json_attributes_topic": "sparsnas/602064", 
         "value_template": "{{ value_json.Watt | round(1) }}",
-        "icon": "mdi:flash-circle"}'
+        "icon": "mdi:flash-circle"
+      }
+      {%- endraw %}'
       topic: home/sensor/sparsnas/602064_Watt/config
       retain: true
     service: mqtt.publish

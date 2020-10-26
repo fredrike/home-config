@@ -1,33 +1,1148 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
-            "resources": [
-                {
-                    "type": "js",
-                    "url": "/local/custom-lovelace/tracker-card.js?v=1.2.6"
-                },
-                {
-                    "type": "js",
-                    "url": "/local/custom-lovelace/upcoming-media-card/upcoming-media-card.js?v=0.3.9"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-lovelace/mini-media-player-bundle.js?v=1.1.3"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-lovelace/simple-thermostat.js?v=0.25.0"
-                },
-                {
-                    "type": "module",
-                    "url": "/local/custom-lovelace/weather-card.js?v=0"
-                }
-            ],
             "title": "Mj\u00f6vik",
             "views": [
                 {
+                    "background": "var(--background-image)",
+                    "icon": "mdi:home",
+                    "id": "home",
+                    "path": "main",
+                    "theme": "default",
+                    "title": "Monitor",
                     "badges": [],
                     "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "columns": 3,
+                                    "entities": [
+                                        {
+                                            "entity": "switch.sovrummet",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:bed",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "switch.ljusslingor",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:road-variant",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "switch.bollarna",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:flash",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "switch.koksfonster",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "switch.kok_uppe",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:lightbulb-outline",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "entity": "light.shelly_shdm_1_d0ee05",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "icon": "mdi:ceiling-light",
+                                            "name": "Vardagsrum",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        }
+                                    ],
+                                    "show_state": false,
+                                    "title": "Lampor",
+                                    "type": "glance"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "light.fonster_vardagsrum_mqtt",
+                                            "icon": "mdi:window-closed-variant",
+                                            "name": "Vardagsrum",
+                                            "type": "light"
+                                        },
+                                        {
+                                            "entity": "light.glodlampan_mqtt",
+                                            "icon": "mdi:lamp",
+                                            "name": "Gl\u00f6dlampan",
+                                            "type": "light"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "light.shelly_barnens_fonster",
+                                            "icon": "mdi:window-closed-variant",
+                                            "name": "Barnensrum",
+                                            "type": "light"
+                                        },
+                                        {
+                                            "entity": "light.utebelysning_mqtt",
+                                            "icon": "mdi:coach-lamp",
+                                            "type": "light"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entity": "climate.mjovik",
+                            "name": "Luftv\u00e4rmepump",
+                            "sensors": [
+                                {
+                                    "attribute": "fan_mode",
+                                    "name": "Fl\u00e4kt"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_temperature",
+                                    "name": "Temp inne"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_input_inverter",
+                                    "name": "Effekt"
+                                },
+                                {
+                                    "entity": "sensor.inverter_daily",
+                                    "name": "Idag"
+                                }
+                            ],
+                            "step_size": 1,
+                            "type": "custom:simple-thermostat",
+                            "decimals": 0,
+                            "hide": {
+                                "temperature": true
+                            },
+                            "step_layout": "row",
+                            "control": {
+                                "hvac": {
+                                    "heat": {
+                                        "name": false
+                                    },
+                                    "fan_only": false,
+                                    "heat_cool": false,
+                                    "dry": false,
+                                    "off": {
+                                        "name": false
+                                    },
+                                    "cool": {
+                                        "name": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "card": {
+                                "entities": [
+                                    {
+                                        "entity": "sensor.skollunch",
+                                        "icon": "mdi:silverware-variant",
+                                        "name": "Skollunch"
+                                    }
+                                ],
+                                "type": "entities"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "binary_sensor.workday_sensor",
+                                    "state": "on"
+                                }
+                            ],
+                            "id": "8d16e9c90406446794f17c2fe1d747e3",
+                            "type": "conditional"
+                        },
+                        {
+                            "entity": "alarm_control_panel.mjovik",
+                            "name": "Point larm",
+                            "states": [
+                                "arm_away"
+                            ],
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "card": {
+                                        "columns": 4,
+                                        "show_icon": false,
+                                        "title": "Klimat",
+                                        "type": "glance"
+                                    },
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.ute_temperature",
+                                            "name": "Ute"
+                                        },
+                                        {
+                                            "entity": "sensor.daikin_outdoor",
+                                            "name": "Daikin out"
+                                        },
+                                        {
+                                            "entity": "sensor.daikin_indoor",
+                                            "icon": "mdi:home",
+                                            "name": "Daikin in"
+                                        },
+                                        {
+                                            "entity": "sensor.point_home_temperature",
+                                            "name": "Point"
+                                        },
+                                        {
+                                            "entity": "sensor.vit_inne_temperature",
+                                            "name": "Inne"
+                                        },
+                                        {
+                                            "entity": "sensor.vit_inne_humidity",
+                                            "name": "Inne"
+                                        },
+                                        {
+                                            "entity": "sensor.krypgrund_temperature",
+                                            "name": "Krypgrund"
+                                        },
+                                        {
+                                            "entity": "sensor.krypgrund_humidity",
+                                            "name": "Krypgrund"
+                                        },
+                                        {
+                                            "entity": "sensor.vinden_temperature",
+                                            "name": "Vinden"
+                                        },
+                                        {
+                                            "entity": "sensor.point_home_pressure",
+                                            "name": "Lufttryck"
+                                        },
+                                        {
+                                            "entity": "sensor.ekorrbo_temperature"
+                                        },
+                                        {
+                                            "entity": "sensor.ekorrbo_humidity"
+                                        }
+                                    ],
+                                    "show_name": true,
+                                    "state_filter": [
+                                        {
+                                            "operator": "regex",
+                                            "value": "^[0-9,\\-]"
+                                        }
+                                    ],
+                                    "type": "entity-filter"
+                                },
+                                {
+                                    "custom": [
+                                        {
+                                            "temp": "sensor.ute_temperature"
+                                        },
+                                        {
+                                            "pressure": "sensor.point_home_pressure"
+                                        },
+                                        {
+                                            "high": "sensor.vinden_temperature"
+                                        },
+                                        {
+                                            "low": "sensor.krypgrund_temperature"
+                                        }
+                                    ],
+                                    "entity": "weather.smhi_home",
+                                    "name": "Home",
+                                    "primary_info": [
+                                        "pressure",
+                                        "extrema"
+                                    ],
+                                    "type": "custom:simple-weather-card"
+                                },
+                                {
+                                    "entity": "weather.smhi_home",
+                                    "secondary_info": [
+                                        "precipitation",
+                                        "precipitation_probability"
+                                    ],
+                                    "type": "custom:simple-weather-card"
+                                },
+                                {
+                                    "entity": "weather.dark_sky",
+                                    "secondary_info": [
+                                        "precipitation",
+                                        "precipitation_probability"
+                                    ],
+                                    "type": "custom:simple-weather-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "aspect_ratio": "180%",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&theme=light&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&var-temp_id=vinden_temperature&var-temp_id=ekorrbo_temperature&kiosk=tv"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.mjovik"
+                        }
+                    ]
+                },
+                {
+                    "background": "var(--background-image)",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        "sun.sun",
+                                        "sensor.dark_sky_hourly_summary",
+                                        "sensor.dark_sky_daily_summary"
+                                    ],
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        "sensor.dark_sky",
+                                        "sensor.yr",
+                                        "sensor.dark_sky_temperature",
+                                        "sensor.yr_dewpoint_temperature",
+                                        "sensor.yr_precipitation",
+                                        "sensor.yr_wind_speed",
+                                        "sensor.yr_wind_direction",
+                                        "sensor.yr_cloudiness",
+                                        "sensor.yr_fog",
+                                        "sensor.yr_pressure"
+                                    ],
+                                    "type": "glance"
+                                }
+                            ],
+                            "id": "27da5b601d164790bd7e060f72ce86f2",
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "weather.dark_sky",
+                                    "type": "weather-forecast"
+                                },
+                                {
+                                    "entity": "weather.smhi_home",
+                                    "type": "weather-forecast"
+                                },
+                                {
+                                    "entity": "weather.dark_sky",
+                                    "type": "custom:simple-weather-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:weather-partly-cloudy",
+                    "id": "weather",
+                    "theme": "light-navy_blue",
+                    "title": "Weather"
+                },
+                {
+                    "background": "var(--background-image)",
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "artwork": "none",
+                                    "entity": "media_player.living_room_tv",
+                                    "group": true,
+                                    "icon": "mdi:television",
+                                    "name": "TV",
+                                    "power_color": true,
+                                    "show_source": "small",
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entity": "media_player.plex_lg_43uh664v_zc",
+                                    "hide_controls": true,
+                                    "hide_power": true,
+                                    "hide_volume": true,
+                                    "show_progress": true,
+                                    "type": "custom:mini-media-player"
+                                },
+                                {
+                                    "entity": "media_player.living_room_chromecast",
+                                    "hide_power": true,
+                                    "hide_volume": true,
+                                    "show_progress": true,
+                                    "type": "custom:mini-media-player"
+                                }
+                            ],
+                            "state_filter": [
+                                "on",
+                                "off",
+                                "playing",
+                                "paused",
+                                "idle"
+                            ],
+                            "type": "entity-filter"
+                        },
+                        {
+                            "entity": "media_player.spotify_fredrike0",
+                            "hide_power": true,
+                            "hide_volume": false,
+                            "power_color": true,
+                            "show_progress": true,
+                            "show_source": "small",
+                            "type": "custom:mini-media-player"
+                        },
+                        {
+                            "clock": 24,
+                            "date": "ddmm",
+                            "entity": "sensor.sonarr_upcoming_media",
+                            "image_style": "fanart",
+                            "max": 3,
+                            "title": "Sonarr upcoming",
+                            "type": "custom:upcoming-media-card"
+                        },
+                        {
+                            "clock": 24,
+                            "date": "ddmm",
+                            "entity": "sensor.plex_recently_added",
+                            "icon": "none",
+                            "id": "8907d70b6d904063b04dbd41444e2967",
+                            "image_style": "fanart",
+                            "title": "Plex Recently Added",
+                            "type": "custom:upcoming-media-card"
+                        },
+                        {
+                            "entity": "media_player.family_room_display",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "device_tracker.a06faa48ed64",
+                            "type": "entity"
+                        }
+                    ],
+                    "icon": "mdi:television",
+                    "id": "media",
+                    "title": "Media Players"
+                },
+                {
+                    "badges": [
+                        {
+                            "entity": "binary_sensor.krz81s_battery_charging"
+                        },
+                        {
+                            "entity": "person.krz81s"
+                        },
+                        {
+                            "entity": "sensor.krz81s_fuel_amount"
+                        },
+                        {
+                            "entity": "sensor.krz81s_fuel_usage"
+                        },
+                        {
+                            "entity": "sensor.chargeamps"
+                        },
+                        {
+                            "entity": "sensor.chargeamps_watt"
+                        },
+                        {
+                            "entity": "sensor.krz81s_last_trip"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "content": "{% if states(\"sensor.chargeamps_watt\") |float > 0.0 %}  The car is currently charging via **{{ state_attr(\"sensor.chargeamps_watt\", \"active_phase\") }}**  @ {{state_attr(\"switch.chargeamps\", \"max_current\") | int }} Amp ({{ states(\"sensor.chargeamps_watt\")|round(-2)|int }}W). Will finish in {{states(\"sensor.krz81s_time_to_fully_charged\") }} min ({{states(\"sensor.krz81s_battery_level\")}}%).{% else %} The car is not charging. ChargeAmps is configured to charge from **{{ state_attr(\"sensor.chargeamps_watt\", \"active_phase\") or \"-\" }}** @ {{state_attr(\"switch.chargeamps\", \"max_current\") | int }} Amp. {% endif %} \n\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "entity": "light.chargeamps_current",
+                                    "icon": "mdi:car-electric",
+                                    "type": "light"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.chargeamps",
+                                            "icon": "mdi:power-plug",
+                                            "name": "L1",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "chargeamps.change_settings",
+                                                "service-data": "{\"connectors\": [{\"installationPhase\": \"L1\"}]}"
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.chargeamps",
+                                            "icon": "mdi:power-plug",
+                                            "name": "L2",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "chargeamps.change_settings",
+                                                "service-data": "{\"connectors\": [{\"installationPhase\": \"L2\"}]}"
+                                            },
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "sensor.chargeamps",
+                                            "icon": "mdi:power-plug",
+                                            "name": "L3",
+                                            "tap_action": {
+                                                "action": "call-service",
+                                                "service": "chargeamps.change_settings",
+                                                "service-data": "{\"connectors\": [{\"installationPhase\": \"L3\"}]}"
+                                            },
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "columns": 3,
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.iotawatt_l1"
+                                        },
+                                        {
+                                            "entity": "sensor.iotawatt_l2"
+                                        },
+                                        {
+                                            "entity": "sensor.iotawatt_l3"
+                                        }
+                                    ],
+                                    "show_icon": false,
+                                    "show_name": false,
+                                    "type": "glance"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.charge_amps_plugged"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.charge_amps_charging"
+                                        },
+                                        {
+                                            "entity": "sensor.chargeamps_watt"
+                                        },
+                                        {
+                                            "entity": "sensor.chargeamps"
+                                        }
+                                    ],
+                                    "type": "glance"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "default_zoom": 15,
+                            "entities": [
+                                {
+                                    "entity": "person.johanna"
+                                },
+                                {
+                                    "entity": "person.krz81s"
+                                }
+                            ],
+                            "type": "map"
+                        },
+                        {
+                            "entity": "sensor.krz81s_battery_level",
+                            "max": 100,
+                            "min": 0,
+                            "theme": "Backend-selected",
+                            "type": "gauge"
+                        },
+                        {
+                            "entity": "sensor.krz81s_battery_range",
+                            "max": 40,
+                            "min": 0,
+                            "severity": {
+                                "green": 38,
+                                "red": 10,
+                                "yellow": 15
+                            },
+                            "theme": "default",
+                            "type": "gauge"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.mjovik"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_odometer"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_amount"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_usage"
+                                }
+                            ],
+                            "hours_to_show": 336,
+                            "refresh_interval": 10,
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.krz81s_heater"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_odometer"
+                                },
+                                {
+                                    "entity": "device_tracker.volvo_krz81s"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_time_to_fully_charged"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_amount"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_consumption"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_range"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "KRZ81S",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:car",
+                    "panel": false,
+                    "path": "krz81s",
+                    "theme": "Backend-selected",
+                    "title": "KRZ81S"
+                },
+                {
+                    "badges": [
+                        {
+                            "entity": "sensor.sparsnas_w"
+                        },
+                        {
+                            "entity": "sensor.iotawatt_input_total"
+                        },
+                        {
+                            "entity": "sensor.iotawatt_input_inverter"
+                        },
+                        {
+                            "entity": "sensor.chargeamps_watt"
+                        },
+                        {
+                            "entity": "sensor.sparsnas_iotawatt"
+                        },
+                        {
+                            "entity": "sensor.inverter_kwh"
+                        },
+                        {
+                            "entity": "sensor.inverter_daily"
+                        },
+                        {
+                            "entity": "sensor.sparsnas_daily"
+                        },
+                        {
+                            "entity": "sensor.sparsnas_monthly"
+                        },
+                        {
+                            "entity": "sensor.sparsnas_yearly"
+                        },
+                        {
+                            "entity": "binary_sensor.krz81s_battery_charging"
+                        },
+                        {
+                            "entity": "sensor.krz81s_time_to_fully_charged"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "aspect_ratio": "115%",
+                            "title": "Today",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light&from=now/d&to=now&refresh=10m"
+                        },
+                        {
+                            "aspect_ratio": "130%",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d/Sd5-ZIcmk/power-distribution?theme=light&orgId=1&var-kwh_to_sek=1.41&kiosk=tv"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.iotawatt_total_usage"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_l1"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_l2"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_l3"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt"
+                                }
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "aspect_ratio": "83%",
+                            "type": "iframe",
+                            "url": "https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?theme=light&orgId=1&var-kwh_to_sek=1.41&kiosk=tv&refresh=30s&from=now-120m&panelId=10&fullscreen"
+                        },
+                        {
+                            "entities": [
+                                "sensor.sparsnas_kwh",
+                                "sensor.sparsnas_w"
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.iotawatt_l1"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_l2"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_l3"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_total_usage"
+                                },
+                                {
+                                    "entity": "sensor.sparsnas_w"
+                                },
+                                {
+                                    "entity": "sensor.chargeamps_watt"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "type": "history-graph"
+                        }
+                    ],
+                    "icon": "mdi:flash-circle",
+                    "id": "energy",
+                    "theme": "Backend-selected",
+                    "title": "Energy"
+                },
+                {
+                    "badges": [
+                        {
+                            "entity": "person.fredrik"
+                        },
+                        {
+                            "entity": "person.johanna"
+                        },
+                        {
+                            "entity": "person.krz81s"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "columns": 4,
+                            "entities": [
+                                {
+                                    "entity": "script.goodnight",
+                                    "hold_action": "more-info",
+                                    "icon": "mdi:sleep",
+                                    "name": "Godnatt",
+                                    "tap_action": "toggle"
+                                },
+                                {
+                                    "entity": "input_boolean.auto_ac",
+                                    "name": "Auto AC"
+                                },
+                                {
+                                    "entity": "input_boolean.vacation_mode"
+                                },
+                                {
+                                    "entity": "input_boolean.trip_mode"
+                                }
+                            ],
+                            "id": "7d90773516234108b7f1d9eeb4dccab5",
+                            "show_state": false,
+                            "title": "Automation",
+                            "type": "glance"
+                        },
+                        {
+                            "card": {
+                                "entities": [
+                                    {
+                                        "entity": "input_number.trip_temp_high",
+                                        "name": "Turn\u00e9 max temp"
+                                    },
+                                    {
+                                        "entity": "input_number.trip_temp_low",
+                                        "name": "Turn\u00e9 min temp"
+                                    }
+                                ],
+                                "type": "entities"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "input_boolean.trip_mode",
+                                    "state": "on"
+                                }
+                            ],
+                            "type": "conditional"
+                        },
+                        {
+                            "entity": "climate.mjovik",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "climate.mjovik"
+                            ],
+                            "id": "febc87877dd446d9b88f75ee439939f8",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.altandorr"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.rtac68u_mbitsec_total",
+                                    "index": 0,
+                                    "name": "Total"
+                                },
+                                {
+                                    "entity": "sensor.rtac68u_mbitsec_sent",
+                                    "index": 1,
+                                    "name": "Sent"
+                                },
+                                {
+                                    "entity": "sensor.rtac68u_mbitsec_received",
+                                    "index": 2,
+                                    "name": "Received"
+                                }
+                            ],
+                            "graph": "line",
+                            "hour24": true,
+                            "icon": "mdi:server",
+                            "line_width": 3,
+                            "name": "Throughput",
+                            "points_per_hour": 5,
+                            "show": {
+                                "extrema": true
+                            },
+                            "type": "custom:mini-graph-card"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.krz81s_heater"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_odometer"
+                                },
+                                {
+                                    "entity": "device_tracker.volvo_krz81s"
+                                },
+                                {
+                                    "entity": "binary_sensor.krz81s_battery_charging"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_time_to_fully_charged"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_amount"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_consumption"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_daily_km"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_daily_fuel"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_weekly_km"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_weekly_fuel"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_monthly_km"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_monthly_fuel"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_battery_range"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_battery_level"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "KRZ81S",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.time"
+                                },
+                                {
+                                    "entity": "sensor.ute_temperature"
+                                },
+                                {
+                                    "entity": "switch.krz81s_heater"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Cup\u00e9v\u00e4rmare",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.krz81s_battery_range",
+                                "sensor.krz81s_battery_level"
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "switch.koksfonster",
+                                    "type": "button"
+                                },
+                                {
+                                    "entity": "automation.vattna_grunden",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "show_icon": true,
+                                    "show_name": true,
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "button"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [],
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "type": "history-graph"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "cards": [
+                                        {
+                                            "card": {
+                                                "entities": [
+                                                    {
+                                                        "entity": "timer.vattna",
+                                                        "name": "Vattnar om:"
+                                                    }
+                                                ],
+                                                "type": "entities"
+                                            },
+                                            "conditions": [
+                                                {
+                                                    "entity": "timer.vattna",
+                                                    "state_not": "idle"
+                                                }
+                                            ],
+                                            "type": "conditional"
+                                        },
+                                        {
+                                            "card": {
+                                                "entities": [
+                                                    {
+                                                        "entity": "timer.vattnar",
+                                                        "name": "Vattnar i:"
+                                                    }
+                                                ],
+                                                "type": "entities"
+                                            },
+                                            "conditions": [
+                                                {
+                                                    "entity": "timer.vattnar",
+                                                    "state_not": "idle"
+                                                }
+                                            ],
+                                            "type": "conditional"
+                                        },
+                                        {
+                                            "entity": "automation.vattna",
+                                            "hold_action": {
+                                                "action": "more-info"
+                                            },
+                                            "name": "Automatiskt",
+                                            "show_icon": true,
+                                            "show_name": true,
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "type": "button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "entity": "switch.koksfonster",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "show_icon": true,
+                                    "show_name": true,
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "button"
+                                }
+                            ],
+                            "title": "Vattning",
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:home-automation",
+                    "id": "auto",
+                    "panel": false,
+                    "title": "Automation"
+                },
+                {
+                    "badges": [
+                        {
+                            "entity": "device_tracker.google_maps_joferlandsson_gmail_com"
+                        },
+                        {
+                            "entity": "device_tracker.esp_ae8ea1"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "elements": [
+                                {
+                                    "entity": "switch.barnensrum",
+                                    "style": {
+                                        "left": "83%",
+                                        "top": "20%"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "light.fonster_vardagsrum",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "left": "26%",
+                                        "top": "10%"
+                                    },
+                                    "tap_action": {
+                                        "action": "more_info"
+                                    },
+                                    "type": "icon"
+                                },
+                                {
+                                    "entity": "light.glodlampan",
+                                    "icon": "mdi:lightbulb",
+                                    "style": {
+                                        "left": "38.8%",
+                                        "top": "18%"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "icon"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_temperature",
+                                    "style": {
+                                        "font-weight": "bold",
+                                        "left": "50%",
+                                        "top": "60%"
+                                    },
+                                    "type": "state-label"
+                                },
+                                {
+                                    "entity": "sensor.ute_temperature",
+                                    "style": {
+                                        "font-weight": "bold",
+                                        "left": "50%",
+                                        "top": "04%"
+                                    },
+                                    "type": "state-label"
+                                },
+                                {
+                                    "entity": "sensor.daikin_outdoor",
+                                    "style": {
+                                        "font-weight": "bold",
+                                        "left": "5%",
+                                        "top": "95%"
+                                    },
+                                    "type": "state-label"
+                                },
+                                {
+                                    "entity": "climate.mjovik",
+                                    "style": {
+                                        "left": "61.5%",
+                                        "top": "70%"
+                                    },
+                                    "tap_action": {
+                                        "action": "more_info"
+                                    },
+                                    "type": "state-icon"
+                                }
+                            ],
+                            "image": "/local/floorplan.jpg",
+                            "type": "picture-elements"
+                        },
                         {
                             "columns": 4,
                             "entities": [
@@ -37,16 +1152,6 @@
                                         "action": "more-info"
                                     },
                                     "icon": "mdi:hotel",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "switch.barnensrum",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "icon": "mdi:lamp",
                                     "tap_action": {
                                         "action": "toggle"
                                     }
@@ -104,27 +1209,6 @@
                                     }
                                 },
                                 {
-                                    "entity": "switch.altanen",
-                                    "hold_action": {
-                                        "action": "more-info"
-                                    },
-                                    "icon": "mdi:car",
-                                    "name": "Cup\u00e9v\u00e4rmare",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    }
-                                },
-                                {
-                                    "entity": "light.fonster_vardagsrum"
-                                },
-                                {
-                                    "entity": "light.glodlampan"
-                                },
-                                {
-                                    "entity": "light.utebelysning",
-                                    "icon": "mdi:wall-sconce-variant"
-                                },
-                                {
                                     "entity": "light.glodlampan_mqtt",
                                     "hold_action": {
                                         "action": "more-info"
@@ -136,379 +1220,224 @@
                                 }
                             ],
                             "show_state": false,
-                            "theme": "Backend-selected",
                             "title": "Lampor",
                             "type": "glance"
                         },
                         {
-                            "entity": "climate.mjovik",
-                            "hide": {
-                                "state": true,
-                                "temperature": true
-                            },
-                            "id": "95c053757e9c4c8497a06217b41d9ad5",
-                            "sensors": [
+                            "entities": [
                                 {
-                                    "entity": "sensor.vit_inne_temperature",
-                                    "name": "Temperatur (vit)"
+                                    "entity": "sensor.iotawatt_top_consumer",
+                                    "icon": "mdi:flash-circle",
+                                    "name": "IoTaWatt Top Consumer"
                                 },
                                 {
-                                    "entity": "sensor.iotawatt_inverter",
-                                    "name": "Effekt"
+                                    "label": "Momentary",
+                                    "type": "section"
                                 },
                                 {
-                                    "entity": "sensor.inverter_kwh",
-                                    "name": "Senaste 24h"
+                                    "entity": "sensor.sparsnas_w",
+                                    "name": "Sparsn\u00e4s",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_input_total",
+                                    "name": "IoTaWatt",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_input_inverter",
+                                    "name": "Inverter",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "entity": "sensor.sparsnas_iotawatt",
+                                    "name": "Others",
+                                    "secondary_info": "last-changed"
+                                },
+                                {
+                                    "label": "Over time",
+                                    "type": "section"
+                                },
+                                {
+                                    "entity": "sensor.sparsnas_daily"
+                                },
+                                {
+                                    "entity": "sensor.inverter_daily",
+                                    "secondary_info": "last_period"
+                                },
+                                {
+                                    "entity": "sensor.sparsnas_monthly"
+                                },
+                                {
+                                    "entity": "sensor.sparsnas_yearly"
                                 }
                             ],
-                            "step_size": 1,
-                            "type": "custom:simple-thermostat"
+                            "show_header_toggle": false,
+                            "show_name": true,
+                            "show_state": true,
+                            "title": "Energy usage",
+                            "type": "entities"
                         },
                         {
-                            "card": {
-                                "entities": [
-                                    {
-                                        "entity": "sensor.skollunch",
-                                        "icon": "mdi:silverware-variant",
-                                        "name": "Skollunch"
-                                    }
-                                ],
-                                "type": "entities"
-                            },
-                            "conditions": [
+                            "entity": "alarm_control_panel.mjovik",
+                            "states": [
+                                "arm_home",
+                                "arm_away"
+                            ],
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "dateColor": "black",
+                            "dateSize": 90,
+                            "dimFinishedEvents": true,
+                            "entities": [
                                 {
-                                    "entity": "binary_sensor.workday_sensor",
-                                    "state": "on"
+                                    "entity": "calendar.johanna_fredrik",
+                                    "titleColor": "darkgreen"
+                                },
+                                {
+                                    "entity": "calendar.fredrik_work",
+                                    "titleColor": "purple"
+                                },
+                                {
+                                    "entity": "calendar.skolmaten_nattrabyskolan",
+                                    "titleColor": "gray"
                                 }
                             ],
-                            "id": "8d16e9c90406446794f17c2fe1d747e3",
-                            "type": "conditional"
+                            "eventBarColor": "blue",
+                            "finishedEventFilter": "grayscale(100%)",
+                            "finishedEventOpacity": 0.6,
+                            "locationIconColor": "rgb(230, 124, 115)",
+                            "locationLinkColor": "darkgray",
+                            "maxDaysToShow": 5,
+                            "progressBarColor": "blue",
+                            "showColors": true,
+                            "showProgressBar": false,
+                            "timeColor": "darkgray",
+                            "timeSize": 90,
+                            "titleSize": 110,
+                            "type": "custom:atomic-calendar"
                         },
                         {
                             "entities": [
-                                "climate.mjovik"
+                                {
+                                    "entity": "light.displaynode_onboard_led"
+                                },
+                                {
+                                    "entity": "sensor.displaynode_wifi_signal_sensor"
+                                }
                             ],
-                            "id": "febc87877dd446d9b88f75ee439939f8",
+                            "show_header_toggle": false,
+                            "title": "Display Node",
                             "type": "entities"
                         },
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.ute_temperature",
-                                    "name": "Ute"
+                                    "entity": "automation.ac_weekday_afternoon_heat_23"
                                 },
                                 {
-                                    "entity": "sensor.daikin_outdoor",
-                                    "name": "Daikin"
+                                    "entity": "automation.ac_weekday_heat_20"
                                 },
                                 {
-                                    "entity": "sensor.point_home_temperature",
-                                    "name": "Point"
+                                    "entity": "automation.ac_weekday_morning_heat_23"
                                 },
                                 {
-                                    "entity": "sensor.daikin_indoor",
-                                    "icon": "mdi:home",
-                                    "name": "Daikin"
+                                    "entity": "automation.automatic_vi_ar_lediga_off"
                                 },
                                 {
-                                    "entity": "sensor.vit_inne_temperature",
-                                    "name": "Inne"
+                                    "entity": "automation.automatic_vi_ar_lediga_on"
                                 },
                                 {
-                                    "entity": "sensor.vit_inne_humidity",
-                                    "name": "Inne"
+                                    "entity": "automation.goodnight"
                                 },
+                                {
+                                    "entity": "automation.trip_temp_high_ac_cool"
+                                },
+                                {
+                                    "entity": "automation.trip_temp_low_ac_heat"
+                                },
+                                {
+                                    "entity": "automation.trip_temp_ok_ac_off"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.tsl2561_ambient_light",
+                                "sensor.dsw_illuminance"
+                            ],
+                            "graph": "line",
+                            "hour24": true,
+                            "icon": "mdi:brightness-7",
+                            "line_width": 3,
+                            "points_per_hour": 5,
+                            "show": {
+                                "extrema": true
+                            },
+                            "type": "custom:mini-graph-card"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.ute_temperature"
+                                },
+                                "sensor.daikin_outdoor",
+                                "sensor.point_home_temperature",
+                                "sensor.daikin_indoor",
+                                "sensor.vit_inne_temperature",
                                 {
                                     "entity": "sensor.krypgrund_temperature",
                                     "name": "Krypgrund"
                                 },
                                 {
-                                    "entity": "sensor.krypgrund_humidity",
-                                    "name": "Krypgrund"
-                                },
-                                {
-                                    "entity": "sensor.regnmatare_rain_rate"
-                                },
-                                {
-                                    "entity": "binary_sensor.mjovik_button_press"
+                                    "entity": "sensor.vinden_temperature",
+                                    "name": "Vinden"
                                 }
                             ],
-                            "title": "Klimat",
-                            "type": "glance"
-                        },
-                        {
-                            "aspect_ratio": "170%",
-                            "id": "7a4ec3a0d8e14f2d99cad47027b3d63e",
-                            "type": "iframe",
-                            "url": "https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&theme=light&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&kiosk=tv"
-                        }
-                    ],
-                    "icon": "mdi:home",
-                    "id": "home",
-                    "theme": "default",
-                    "title": "Monitor"
-                },
-                {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        "sun.sun",
-                                        "sensor.dark_sky_hourly_summary",
-                                        "sensor.dark_sky_daily_summary"
-                                    ],
-                                    "type": "entities"
-                                },
-                                {
-                                    "entities": [
-                                        "sensor.dark_sky",
-                                        "sensor.yr",
-                                        "sensor.dark_sky_temperature",
-                                        "sensor.yr_dewpoint_temperature",
-                                        "sensor.yr_precipitation",
-                                        "sensor.yr_wind_speed",
-                                        "sensor.yr_wind_direction",
-                                        "sensor.yr_cloudiness",
-                                        "sensor.yr_fog",
-                                        "sensor.yr_pressure"
-                                    ],
-                                    "type": "glance"
-                                }
-                            ],
-                            "id": "27da5b601d164790bd7e060f72ce86f2",
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entity": "weather.dark_sky",
-                                    "title": "Dark Sky",
-                                    "type": "weather-forecast"
-                                },
-                                {
-                                    "entity": "weather.smhi_home",
-                                    "title": "SMHI",
-                                    "type": "weather-forecast"
-                                }
-                            ],
-                            "id": "9bba718397a445e58517d5ca1e7d242c",
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entity_sun": "sun.sun",
-                                    "entity_weather": "weather.dark_sky",
-                                    "title": "Dark Sky",
-                                    "type": "custom:weather-card"
-                                },
-                                {
-                                    "entity_sun": "sun.sun",
-                                    "entity_weather": "weather.smhi_home",
-                                    "title": "SMHI",
-                                    "type": "custom:weather-card"
-                                }
-                            ],
-                            "id": "9bba718397a445e58517d5ca1e7d242d",
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:weather-partlycloudy",
-                    "id": "weather",
-                    "theme": "light-navy_blue",
-                    "title": "Weather"
-                },
-                {
-                    "badges": [
-                        "sensor.sparsnas_energy_consumption_momentary",
-                        "sensor.iotawatt_total",
-                        "sensor.iotawatt_inverter",
-                        "sensor.sparsnas_iotawatt",
-                        "sensor.inverter_kwh",
-                        "sensor.kwh_today"
-                    ],
-                    "cards": [
-                        {
-                            "columns": 4,
-                            "entities": [
-                                {
-                                    "entity": "sensor.sparsnas_energy_consumption_momentary",
-                                    "name": "Total"
-                                },
-                                {
-                                    "entity": "sensor.iotawatt_total",
-                                    "name": "IoTaWatt"
-                                },
-                                {
-                                    "entity": "sensor.iotawatt_inverter",
-                                    "name": "Inverter"
-                                },
-                                {
-                                    "entity": "sensor.sparsnas_iotawatt",
-                                    "name": "Others"
-                                },
-                                {
-                                    "entity": "sensor.inverter_kwh",
-                                    "name": "Inverter Today"
-                                },
-                                {
-                                    "entity": "sensor.kwh_today",
-                                    "name": "Today"
-                                }
-                            ],
-                            "show_name": true,
-                            "show_state": true,
-                            "title": "Energy usage",
-                            "type": "glance"
-                        },
-                        {
-                            "aspect_ratio": "100%",
-                            "id": "5a2998cfc0c646c995e417e3ba4e469e",
-                            "type": "iframe",
-                            "url": "https://grafana.erlandsson.myds.me/d-solo/Sd5-ZIcmk/power-distribution?orgId=1&panelId=4&theme=light&from=now/d&to=now&refresh=10m"
-                        },
-                        {
-                            "aspect_ratio": "105%",
-                            "id": "fda38f0d67ad420d917ca4def67e16fe",
-                            "type": "iframe",
-                            "url": "https://grafana.erlandsson.myds.me/d/Sd5-ZIcmk/power-distribution?theme=light&orgId=1&var-kwh_to_sek=1.41&kiosk=tv"
-                        }
-                    ],
-                    "icon": "mdi:flash-circle",
-                    "id": "energy",
-                    "theme": "Backend-selected",
-                    "title": "Energy"
-                },
-                {
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "artwork": "none",
-                                    "entity": "media_player.lg_webos_smart_tv",
-                                    "group": true,
-                                    "icon": "mdi:television",
-                                    "name": "TV",
-                                    "power_color": true,
-                                    "show_source": "small",
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "entity": "media_player.lg_43uh664vzc",
-                                    "hide_controls": true,
-                                    "hide_power": true,
-                                    "hide_volume": true,
-                                    "show_progress": true,
-                                    "type": "custom:mini-media-player"
-                                },
-                                {
-                                    "entity": "media_player.living_room_chromecast",
-                                    "hide_power": true,
-                                    "hide_volume": true,
-                                    "show_progress": true,
-                                    "type": "custom:mini-media-player"
-                                }
-                            ],
-                            "state_filter": [
-                                "on",
-                                "off",
-                                "playing",
-                                "paused",
-                                "idle"
-                            ],
-                            "type": "entity-filter"
-                        },
-                        {
-                            "entity": "media_player.spotify",
-                            "hide_power": true,
-                            "hide_volume": false,
-                            "power_color": true,
-                            "show_progress": true,
-                            "show_source": "small",
-                            "type": "custom:mini-media-player"
-                        },
-                        {
-                            "clock": 24,
-                            "entity": "sensor.sonarr_upcoming_media",
-                            "id": "80a7e02c48614e95a96253203fbf6a18",
-                            "image_style": "banner",
-                            "max": 3,
-                            "title": "Sonarr upcoming",
-                            "type": "custom:upcoming-media-card"
-                        },
-                        {
-                            "clock": 24,
-                            "date": "mmdd",
-                            "entity": "sensor.plex_recently_added",
-                            "icon": "none",
-                            "id": "8907d70b6d904063b04dbd41444e2967",
-                            "image_style": "banner",
-                            "title": "Recently Added",
-                            "type": "custom:upcoming-media-card"
-                        }
-                    ],
-                    "icon": "mdi:television",
-                    "id": "media",
-                    "title": "Media Players"
-                },
-                {
-                    "badges": [
-                        "device_tracker.404e36221e29",
-                        "device_tracker.ac3743a16232"
-                    ],
-                    "cards": [
-                        {
-                            "columns": 4,
-                            "entities": [
-                                {
-                                    "entity": "script.goodnight",
-                                    "hold_action": "more-info",
-                                    "icon": "mdi:sleep",
-                                    "name": "Godnatt",
-                                    "tap_action": "toggle"
-                                },
-                                {
-                                    "entity": "input_boolean.auto_ac",
-                                    "name": "Auto AC"
-                                },
-                                {
-                                    "entity": "input_boolean.vacation_mode"
-                                },
-                                {
-                                    "entity": "input_boolean.trip_mode"
-                                }
-                            ],
-                            "id": "7d90773516234108b7f1d9eeb4dccab5",
-                            "title": "Automation",
-                            "type": "glance"
-                        },
-                        {
-                            "card": {
-                                "entities": [
-                                    {
-                                        "entity": "input_number.trip_temp_high",
-                                        "name": "Turn\u00e9 max temp"
-                                    },
-                                    {
-                                        "entity": "input_number.trip_temp_low",
-                                        "name": "Turn\u00e9 min temp"
-                                    }
-                                ],
-                                "type": "entities"
+                            "hour24": true,
+                            "line_width": 3,
+                            "name": "Temperature",
+                            "points_per_hour": 5,
+                            "show": {
+                                "extrema": true,
+                                "points": "hover"
                             },
-                            "conditions": [
-                                {
-                                    "entity": "input_boolean.trip_mode",
-                                    "state": "on"
-                                }
-                            ],
-                            "type": "conditional"
+                            "type": "custom:mini-graph-card"
                         },
                         {
-                            "entity": "climate.mjovik",
-                            "type": "thermostat"
+                            "cards": [
+                                {
+                                    "entities": [
+                                        "sensor.tsl2561_ambient_light"
+                                    ],
+                                    "font_size": 75,
+                                    "hour24": true,
+                                    "line_color": "blue",
+                                    "line_width": 5,
+                                    "points_per_hour": 5,
+                                    "show": {
+                                        "extrema": true
+                                    },
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "entities": [
+                                        "sensor.dsw_illuminance"
+                                    ],
+                                    "font_size": 75,
+                                    "hour24": true,
+                                    "line_color": "red",
+                                    "line_width": 5,
+                                    "points_per_hour": 5,
+                                    "show": {
+                                        "extrema": true
+                                    },
+                                    "type": "custom:mini-graph-card"
+                                }
+                            ],
+                            "type": "horizontal-stack"
                         },
                         {
                             "cards": [
@@ -528,24 +1457,14 @@
                                 }
                             ],
                             "type": "horizontal-stack"
-                        },
-                        {
-                            "id": "a24510066b6c4436aa2c665e7662de7e",
-                            "title": null,
-                            "trackers": [
-                                "sensor.custom_card_tracker",
-                                "sensor.custom_component_tracker"
-                            ],
-                            "type": "custom:tracker-card"
                         }
                     ],
-                    "icon": "mdi:home-automation",
-                    "id": "auto",
-                    "title": "Automation"
+                    "panel": false,
+                    "path": "demo",
+                    "theme": "default",
+                    "title": "Demo"
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }

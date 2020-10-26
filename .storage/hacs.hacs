@@ -1,9 +1,9 @@
 {
-    "data": {
-        "compact": false,
-        "onboarding_done": true,
-        "view": "Grid"
-    },
+    "version": "6",
     "key": "hacs.hacs",
-    "version": "6"
+    "data": {
+        "view": "Grid",
+        "compact": false,
+        "onboarding_done": true
+    }
 }
