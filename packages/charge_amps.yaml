@@ -1,0 +1,75 @@
+chargeamps:
+  username: !secret fredrik_gravatar
+  password: !secret chargeamps
+  api_key: 4iFrjUUcbJFyMr5bCOstGg==
+
+
+sensor:
+  - platform: template
+    sensors:
+      chargeamps_phase:
+        unique_id:       chargeamps_phase
+        friendly_name: "Charge Amps Phase"
+        value_template: "{{ state_attr('sensor.chargeamps', 'installationPhase') }}"
+
+binary_sensor:
+  - platform: template
+    sensors:
+      charge_amps_plugged:
+        unique_id:       charge_amps_plugged
+        friendly_name: "Charge Amps plug"
+        device_class: plug
+        value_template: "{{ is_state_attr('sensor.chargeamps', 'Connector 0 state',
+        'B2Connected') or is_state_attr('sensor.chargeamps', 'Connector 0 state', 'C2ConnectedCharging') }}"
+      charge_amps_charging:
+        unique_id:       charge_amps_charging
+        friendly_name: "Charge Amps charge"
+        device_class: battery_charging
+        icon_template: mdi:car
+        value_template: "{{ is_state_attr('sensor.chargeamps', 'Connector 0 state', 'C2ConnectedCharging') }}"
+
+switch:
+  - platform: template
+    switches:
+      chargeamps_socket:
+        unique_id:       chargeamps_socket
+        friendly_name: "Charge Amp's Socket"
+        icon_template: mdi:car
+        value_template: "{{  is_state_attr('sensor.chargeamps', 'Connector 1', 'On') }}"
+        turn_off:
+          service: chargeamps.change_settings
+          data:
+            entity_id: none.none
+            setting: '{"connectors": [{},{"mode": "Off"}]}'
+        turn_on:
+          service: chargeamps.change_settings
+          data:
+            entity_id: none.none
+            setting: '{"connectors": [{},{"mode": "On"}]}'
+
+light:
+  - platform: template
+    lights:
+      chargeamps_current:
+        unique_id:       chargeamps_current
+        friendly_name: "Charge Amp's Charger"
+        icon_template: mdi:car
+        value_template: "{{  is_state('switch.chargeamps', 'on') }}"
+        level_template: "{{  ((state_attr('switch.chargeamps', 'max_current') | int) - 10) * 41.5 |int  }}"
+        turn_off:
+          service: chargeamps.disable
+          data:
+            chargepoint: 1706001294
+            connector: 1
+        turn_on:
+          service: chargeamps.enable
+          data:
+            chargepoint: 1706001294
+            connector: 1
+        set_level: 
+          service: chargeamps.set_max_current
+          data_template:
+            chargepoint: 1706001294
+            connector: 1
+            max_current: "{{ (brightness / 41.5 | round(0) + 10) | int | string }}"
+
