@@ -8,17 +8,17 @@
   divider-color: "#D6DFEB"
   ### Text ###
   primary-text-color: "#395274"
-  secondary-text-color: "#FF6262"
+  secondary-text-color: "#6586b3" #"#FF6262"
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#88A1C4"
   ### Sidebar Menu ###
   sidebar-icon-color: "#395274"
   sidebar-text-color: var(--sidebar-icon-color)
   sidebar-selected-background-color: var(--primary-background-color)
-  sidebar-selected-icon-color: "#FF6262"
+  sidebar-selected-icon-color: var(--primary-color) #"#6586b3" #FF6262"
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
   ### States and Badges ###
-  state-icon-color: "#FF6262"
+  state-icon-color: "#436089" #var(--primary-color) #"#6586b3" #FF6262"
   state-icon-active-color: "#FBCD41"
   state-icon-unavailable-color: var(--disabled-text-color)
   ### Sliders ###
