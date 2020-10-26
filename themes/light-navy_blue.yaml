@@ -1,4 +1,4 @@
-  # Background image
+light-navy_blue:  # Background image
   background-image: 'center / cover no-repeat url("/local/day.jpg") fixed'
   ### Main Interface Colors ###
   primary-color: "#395274"

@@ -1,0 +1,44 @@
+{
+    "data": {
+        "areas": [
+            {
+                "id": "e893c1251d52478bb8de5f2a438edd55",
+                "name": "Mj\u00f6vik"
+            },
+            {
+                "id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name": "Vardagsrum"
+            },
+            {
+                "id": "506ad41c1c7e4918a8345ac0aa613b81",
+                "name": "K\u00f6k"
+            },
+            {
+                "id": "25402a4469504932b40ffaf8de999275",
+                "name": "Ute"
+            },
+            {
+                "id": "d82c1410fa024dca9545153715fe91e3",
+                "name": "Sovrum 1"
+            },
+            {
+                "id": "1c23e83cbade491baee05e147348f807",
+                "name": "Sovrum 2"
+            },
+            {
+                "id": "50dfb66fe9524442aaa886d866722fea",
+                "name": "KRZ81S"
+            },
+            {
+                "id": "24c649c1b79740168928f2a7c16609ce",
+                "name": "Network"
+            },
+            {
+                "id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name": "Ekorrbo"
+            }
+        ]
+    },
+    "key": "core.area_registry",
+    "version": 1
+}
