@@ -28,11 +28,13 @@
   - data:
       entity_id: climate.mjovik
       fan_mode: Auto
+    entity_id: climate.mjovik
     service: climate.set_fan_mode
   - data:
       entity_id: climate.mjovik
-      operation_mode: heat
+      hvac_mode: heat
       temperature: 20
+    entity_id: climate.mjovik
     service: climate.set_temperature
 - id: 2b8a666493414996b86d91bfb82f7a63
   alias: AC weekday morning (heat 23)
@@ -49,6 +51,9 @@
   - condition: state
     entity_id: input_boolean.trip_mode
     state: 'off'
+  - below: '21'
+    condition: numeric_state
+    entity_id: sensor.vit_inne_temperature
   action:
   - data:
       entity_id: climate.mjovik
@@ -56,9 +61,12 @@
     service: climate.set_fan_mode
   - data:
       entity_id: climate.mjovik
-      operation_mode: heat
+      hvac_mode: heat
       temperature: 23
     service: climate.set_temperature
+  - data:
+      entity_id: climate.mjovik
+    service: climate.turn_on
 - id: 6c7d7b4527c243ada790a57ff40abada
   alias: AC weekday afternoon (heat 23)
   trigger:
@@ -74,6 +82,12 @@
   - condition: state
     entity_id: input_boolean.trip_mode
     state: 'off'
+  - condition: state
+    entity_id: binary_sensor.altandorr
+    state: 'off'
+  - below: '19'
+    condition: numeric_state
+    entity_id: sensor.vit_inne_temperature
   action:
   - data:
       entity_id: climate.mjovik
@@ -81,8 +95,8 @@
     service: climate.set_fan_mode
   - data:
       entity_id: climate.mjovik
-      operation_mode: heat
-      temperature: 23
+      hvac_mode: heat
+      temperature: 22
     service: climate.set_temperature
 - id: 73d5ba997ef54e3287519482183ff550
   alias: Sleep
@@ -97,19 +111,44 @@
     entity_id: input_boolean.vacation_tomorrow
     state: 'off'
   action:
-  - service: script.goodnight
-- id: ea98115788cd4f0db6aad83c2a3c8f98
+- id: ea98115788cd4f0d
   alias: Patio door opened
   trigger:
-  - entity_id: binary_sensor.altandorren
-    for: 00:00:10
+  - entity_id: binary_sensor.altandorr
     platform: state
     to: 'on'
-  condition: []
+  condition:
+  - condition: template
+    value_template: '{{ is_state("device_tracker.404e36221e29", "away") and is_state("device_tracker.ac3743a16232",
+      "away")}}'
   action:
   - data:
-      message: Patio door opened 10s ago.
-    service: persistent_notification.create
+      message: Altandörren är öppen!
+      title: Öppen altandörr
+    service: notify.notify
+- id: ea98115788cd4f0db6aad83c2a3c8f98
+  alias: Patio door opened (AC)
+  trigger:
+  - entity_id: binary_sensor.altandorr
+    for: '30'
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ not is_state("climate.mjovik", "off") }}'
+  action:
+  - data:
+      message: Altandörren är öppen! (för 30 sekunder sedan), stäger av ACn.
+      title: Öppen altandörr
+    service: notify.notify
+  - data:
+      entity_id: climate.mjovik
+    service: climate.turn_off
+  - data:
+      entity_id: automation.patio_door_closed
+    service: automation.turn_on
+  mode: restart
 - id: '1532938767682'
   alias: Turn off "stereo" when TV is off
   trigger:
@@ -193,7 +232,7 @@
   trigger:
   - minutes: /10
     platform: time_pattern
-    seconds: 2
+    seconds: '2'
   condition:
   - condition: template
     value_template: '{{ states.sensor.vit_inne_temperature.state|int > states.input_number.trip_temp_low.state|int
@@ -237,7 +276,7 @@
   - event: sunset
     platform: sun
   condition:
-  - before: '22:00'
+  - before: '22:00:00'
     condition: time
   action:
   - data:
@@ -280,18 +319,19 @@
     entity_id: input_boolean.vacation_mode
     state: 'off'
   - before: sunrise
-    before_offset: -00:20:00
+    before_offset: -00:30:01
     condition: sun
   action:
-  - delay: 00:{{ (range(20, 40)|random|int) }}:00
+  - delay: 00:{{ (range(20, 30)|random|int) }}:00
   - data:
       entity_id:
       - switch.ljusslingor
     service: switch.turn_on
   - data:
       brightness: 255
-      entity_id: light.utebelysning
+      entity_id: light.utebelysning_mqtt
     service: light.turn_on
+  mode: single
 - id: '1548404931395'
   alias: Point button press binary_sensor
   trigger:
@@ -317,7 +357,8 @@
   condition: []
   action:
   - data_template:
-      message: 'Point event: {{ trigger.event.data.event.type }}, event data: {{ trigger.event.data }}'
+      message: 'Point event: {{ trigger.event.data.event.type }}, event data: {{ trigger.event.data
+        }}'
       title: Point, {{ trigger.event.data.event.type }}
     service: notify.notify
   - data_template:
@@ -325,7 +366,8 @@
       title: Point webhook received
     service: persistent_notification.create
   - data_template:
-      message: 'Point event: {{ trigger.event.data.event.type }}, point id: {{ trigger.event.data.event.device_name }}'
+      message: 'Point event: {{ trigger.event.data.event.type }}, point id: {{ trigger.event.data.event.device_name
+        }}'
       title: Point event
     service: persistent_notification.create
 - id: point_button
@@ -338,6 +380,369 @@
     value_template: '{{ trigger.event.data.event.type == ''short_button_press'' }}'
   action:
   - data_template:
-      message: Button press on Point {{ trigger.event.data.event.device_id }} {{ trigger.event.data.event.device_name }}
+      message: Button press on Point {{ trigger.event.data.event.device_id }} {{ trigger.event.data.event.device_name
+        }}
       title: Point button press
     service: persistent_notification.create
+- id: '1553767595938'
+  alias: Sparsnas auto-conf
+  trigger:
+  - platform: mqtt
+    topic: sparsnas/602064
+  condition: []
+  action:
+  - data_template:
+      payload: '{"device": {"sw_version": "215a4aa", "name": "Sparsnäs new", "identifiers":
+        "NEW {{trigger.payload_json.Sensor}}", "model": "Sparsnäs", "manufacturer":
+        "IKEA"}, "unit_of_measurement": "kWh", "name": "Sparsnäs {{ trigger.payload_json.Sensor
+        }} kWh", "unique_id": "sparsnas_new_{{trigger.payload_json.Sensor}}_kwh",
+        "json_attributes_topic": "sparsnas/{{trigger.payload_json.Sensor}}", "state_topic":
+        "sparsnas/{{trigger.payload_json.Sensor}}", "value_template": "{{''{{ value_json.kWh
+        }}''}}", "icon": "mdi:flash-circle"} '
+      topic: home/sensor/sparsnas/{{ trigger.payload_json.Sensor }}/config
+    service: mqtt.publish
+- id: '1554357795931'
+  alias: Sunrise
+  trigger:
+  - event: sunrise
+    offset: 00:10:00
+    platform: sun
+  condition: []
+  action:
+  - service: switch.turn_off
+    data:
+      entity_id:
+      - switch.ljusslingor
+  - service: light.turn_off
+    data:
+      entity_id: light.utebelysning_mqtt
+- id: '1555403365697'
+  alias: Trip mode
+  trigger:
+  - entity_id: input_boolean.trip_mode
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: alarm_control_panel.mjovik
+    service: alarm_control_panel.alarm_arm_away
+- id: '1561531169515'
+  alias: 'Patio door closed (re-start AC) '
+  trigger:
+  - entity_id: binary_sensor.altandorr
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      entity_id: climate.mjovik
+    service: climate.turn_on
+  - data:
+      entity_id: automation.patio_door_closed
+    entity_id: automation.patio_door_closed
+    service: automation.turn_off
+  mode: single
+- id: '1565003849185'
+  alias: 'Goodnight '
+  trigger:
+  - at: '21:50'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_tomorrow
+    state: 'on'
+  action:
+  - alias: ''
+    data:
+      data:
+        icon: /usr/local/lib/python3.7/site-packages/hass_frontend/static/icons/favicon-192x192.png
+      message: Klockan är tio i tio och vi ska jobba imorgon, kanske bäst att stänga
+        av nu.
+    service: notify.living_room_tv
+- id: '1566134831795'
+  alias: Light sensor unavailable
+  trigger:
+  - entity_id: sensor.tsl2561_ambient_light
+    for: 10s
+    platform: state
+    to: unavailable
+  condition: []
+  action:
+  - data:
+      message: Light sensor is 'unavailable'
+    service: notify.notify
+- id: '1566135138329'
+  alias: Getting dark
+  trigger:
+  - below: '5'
+    entity_id: sensor.tsl2561_ambient_light
+    platform: numeric_state
+  condition:
+  - condition: template
+    value_template: '{{ as_timestamp(now()) - (as_timestamp(state_attr("automation.getting_dark",
+      "last_triggered")) or 0) > 1800 }}'
+  - condition: template
+    value_template: '{{ as_timestamp(now()) - (as_timestamp(state_attr("light.fonster_vardagsrum_mqtt",
+      "last_changed")) or 0) > 180 }}'
+  action:
+  - data:
+      message: It's getting dark.
+    service: notify.notify
+- id: '1570707745502'
+  alias: IFTTT consumer
+  trigger:
+  - event_data:
+      action: call_service
+    event_type: ifttt_webhook_received
+    platform: event
+  condition: []
+  action:
+  - data:
+      message: IFTTT consumer
+      title: IFTTT
+    service: persistent_notification.create
+  - data_template:
+      entity_id: '{{ trigger.event.data.entity_id }}'
+    service_template: '{{ trigger.event.data.service }}'
+- id: '1570707745503'
+  alias: IFTTT consumer script
+  trigger:
+  - event_data:
+      action: call_script
+    event_type: ifttt_webhook_received
+    platform: event
+  condition: []
+  action:
+  - data:
+      message: IFTTT script
+      title: IFTTT
+    service: persistent_notification.create
+  - service_template: '{{ trigger.event.data.service }}'
+- id: '1575202164060'
+  alias: Cupévärmare auto off
+  description: ''
+  trigger:
+  - entity_id: switch.altanen
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.pushover
+    data_template:
+      message: 'Motorvärmaren är på i 120 min från {{now().strftime("%H:%M:%S")}}
+        Temp ute: {{ states.sensor.ute_temperature.state}}°C'
+  - delay: '2:00'
+  - data:
+      entity_id: switch.altanen
+    service: switch.turn_off
+  - service: notify.pushover
+    data_template:
+      message: 'Motorvärmaren Stängs nu av {{now().strftime("%H:%M:%S")}} Temp ute:
+        {{ states.sensor.ute_temperature.state}}°C'
+- id: '1576334464454'
+  alias: KRZ81S Charging
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.krz81s_battery_charging
+    for: 00:00:05
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.krz81s_battery_charging
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data_template:
+      message: "{% if is_state('binary_sensor.krz81s_battery_charging', 'on') %}\n\
+        \  KRZ81S is currently charging, will finish at\n  {{- (now() | as_timestamp()\
+        \ + (states('sensor.krz81s_time_to_fully_charged')|int * 60)) | timestamp_custom(\"\
+        \ %H:%M\", True) }}\n  {{- (-3600 + (states('sensor.krz81s_time_to_fully_charged')|int*60))\
+        \ | timestamp_custom(\" (%-H h %-M min).\", True) }}\n{%- else %}\n  KRZ81S\
+        \ finished charging, battery at {{states('sensor.krz81s_battery_level')}}%\
+        \ ({{ states('sensor.krz81s_battery_range')}} km). \n{%- endif %}"
+      title: KRZ81S charging time
+    service: notify.pushover
+- id: '1584388288192'
+  alias: Sunset
+  description: ''
+  trigger:
+  - event: sunset
+    offset: 00:20
+    platform: sun
+  condition:
+  - before: '19:00'
+    condition: time
+  action:
+  - device_id: 14c91c66ab2f442d90bd2a10c3dbccfb
+    domain: switch
+    entity_id: switch.bollarna_2
+    type: turn_on
+  - device_id: 52aee96733a24ba683ff248d94854bbd
+    domain: light
+    entity_id: light.shelly_barnens_fonster
+    type: turn_on
+- id: '1584973333388'
+  alias: MQTT unavailable
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.altandorr
+    for: 00:02:00
+    platform: state
+    to: unavailable
+  condition: []
+  action:
+  - data:
+      message: MQTT unavailable again..
+      title: MQTT issue
+    service: notify.pushover
+  - data:
+      message: MQTT unavailable again..
+      title: MQTT issue
+    service: persistent_notification.create
+  - service: shell_command.restart_mqtt
+- id: '1588582200435'
+  alias: Follow "Stjärnorna"
+  description: ''
+  trigger:
+  - entity_id: switch.stjarnor
+    platform: state
+  - entity_id: switch.stjarnorna
+    platform: state
+  condition:
+  - condition: template
+    value_template: "{% if trigger.to_state.state == \"on\" or \n  trigger.to_state.state\
+      \ == \"off\" %} True {% else %} False {% endif %}"
+  action:
+  - data:
+      entity_id: light.shelly_shdm_1_d0ee05
+    service_template: '{% if trigger.to_state.state == "on" %} light.turn_on {% elif
+      trigger.to_state.state == "off" %} light.turn_off {% endif %}'
+  mode: single
+- id: '1593196389036'
+  alias: AC kyl på natten
+  description: ''
+  trigger:
+  - at: '23:30'
+    platform: time
+  condition:
+  - above: '25'
+    condition: numeric_state
+    entity_id: sensor.vinden_temperature
+  action:
+  - device_id: 61ecca2ba33e4f4aa0d8f6bdc1215e20
+    domain: climate
+    entity_id: climate.mjovik
+    hvac_mode: cool
+    type: set_hvac_mode
+  - delay: 01:30
+  - device_id: 61ecca2ba33e4f4aa0d8f6bdc1215e20
+    domain: climate
+    entity_id: climate.mjovik
+    hvac_mode: 'off'
+    type: set_hvac_mode
+- id: '1594755811672'
+  alias: AC off @ 3a.m.
+  description: ''
+  trigger:
+  - at: 03:00
+    platform: time
+  condition: []
+  action:
+  - device_id: 61ecca2ba33e4f4aa0d8f6bdc1215e20
+    domain: climate
+    entity_id: climate.mjovik
+    hvac_mode: 'off'
+    type: set_hvac_mode
+- id: '1594835570486'
+  alias: Vattna grunden
+  description: ''
+  trigger:
+  - device_id: 209782652f2e425a847dbd8c59e3516f
+    domain: switch
+    entity_id: switch.koksfonster
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 20
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.koksfonster
+    service: switch.turn_off
+  - delay: 00:16:40
+  - data: {}
+    entity_id: switch.koksfonster
+    service: switch.turn_on
+- id: '1594902680025'
+  alias: Vattnar
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.vattna
+    event_type: timer.finished
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.koksfonster
+    service: switch.turn_on
+  - data:
+      duration: 00:03:30
+    entity_id: timer.vattnar
+    service: timer.start
+- id: '1594902680026'
+  alias: Vattna (off)
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.vattnar
+    event_type: timer.finished
+    platform: event
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.koksfonster
+    service: switch.turn_off
+  - data:
+      duration: 00:16:30
+    entity_id: timer.vattna
+    service: timer.start
+- id: '1602840201369'
+  alias: Barnen ska sova
+  description: ''
+  trigger:
+  - platform: event
+    event_type: shelly_switch_click
+    event_data:
+      entity_id: light.shelly_barnens_fonster
+      click_cnt: 2
+      state: false
+  condition: []
+  action:
+  - service: persistent_notification.create
+    data:
+      message: Barnen ska sova..
+  mode: single
+- id: '1603380456794'
+  alias: Chargeamps current
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:00
+  condition:
+  - condition: numeric_state
+    entity_id: switch.chargeamps
+    attribute: max_current
+    above: '12'
+  action:
+  - service: chargeamps.set_max_current
+    data:
+      chargepoint: 1706001294
+      connector: 1
+      max_current: 12
+  mode: single
