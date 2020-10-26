@@ -578,7 +578,7 @@
   action:
   - device_id: 14c91c66ab2f442d90bd2a10c3dbccfb
     domain: switch
-    entity_id: switch.bollarna_2
+    entity_id: switch.bollarna
     type: turn_on
   - device_id: 52aee96733a24ba683ff248d94854bbd
     domain: light
