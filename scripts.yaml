@@ -2,19 +2,17 @@ goodnight:
   alias: Goodnight
   sequence:
   - data:
+      message: Goodnight
+    service: persistent_notification.create
+  - data:
       entity_id:
-      - switch.barnensrum
-      - light.fonster_vardagsrum
-      - light.glodlampan
-      - switch.barnensrum
-      - switch.cupevarmare
-      - switch.goodnight
-      - switch.julgranen
-      - switch.kok_uppe
+      - light.glodlampan_mqtt
+      - light.fonster_vardagsrum_mqtt
       - switch.sovrummet
-      - switch.stereo
-      - light.fonster_vardagsrum
-      - light.glodlampan
+      - switch.koksfonster
+      - switch.kok_uppe
+      - switch.stjarnor
+      - switch.barnensrum
     service: homeassistant.turn_off
   - condition: state
     entity_id: input_boolean.auto_ac
@@ -31,3 +29,24 @@ goodnight:
       operation_mode: heat
       temperature: 19
     service: climate.set_temperature
+'1580833145991':
+  alias: Evening
+  sequence:
+  - data:
+      brightness: 13
+    entity_id: light.fonster_vardagsrum_mqtt
+    service: light.turn_on
+  - data:
+      brightness: 23
+    entity_id: light.glodlampan
+    service: light.turn_on
+  - entity_id: switch.stjarnor
+    service: switch.turn_on
+'1586867807497':
+  alias: Show Home Assistant
+  sequence:
+  - data:
+      dashboard_path: lovelace
+      entity_id: media_player.family_room_display
+      view_path: main
+    service: cast.show_lovelace_view
