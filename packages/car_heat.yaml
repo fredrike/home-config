@@ -10,16 +10,16 @@ automation:
       condition: and
       conditions: 
         - condition: numeric_state
-          entity_id: sensor.netatmo_utomhus_norra_husgaveln_temperature
+          entity_id: sensor.ute_temperature
           below: -10
         - condition: template
           value_template: '{{ ((now().strftime("%s") | int + 7200) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'
     action:
        - service: script.turn_on
          entity_id: script.heater_ak_on
-       - service: notify.telegram
+       - service: notify.pushover
          data_template:
-           message: 'Motorvärmaren (-10°) är på i 2h från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+           message: 'Motorvärmaren (-10°) är på i 2h från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.ute_temperature.state}}°C'
        - service: homeassistant.turn_off
          entity_id: automation.heater_ak_minus_10, automation.heater_ak_plus_1, automation.heater_ak_plus_5
   
@@ -33,16 +33,16 @@ automation:
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.netatmo_utomhus_norra_husgaveln_temperature
+          entity_id: sensor.ute_temperature
           below: 1.0 
         - condition: template
           value_template: '{{ ((now().strftime("%s") | int + 3600) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'        
     action:
        - service: script.turn_on
          entity_id: script.heater_ak_on
-       - service: notify.telegram
+       - service: notify.pushover
          data_template:
-           message: 'Motorvärmaren (+1°) är på i 1h från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+           message: 'Motorvärmaren (+1°) är på i 1h från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.ute_temperature.state}}°C'
        - service: homeassistant.turn_off
          entity_id: automation.heater_ak_plus_1, automation.heater_ak_plus_5, automation.heater_ak_minus_10
   
@@ -56,16 +56,16 @@ automation:
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.netatmo_utomhus_norra_husgaveln_temperature
+          entity_id: sensor.ute_temperature
           below: 5.0 
         - condition: template
           value_template: '{{ ((now().strftime("%s") | int + 1800) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'        
     action:
        - service: script.turn_on
          entity_id: script.heater_ak_on
-       - service: notify.telegram
+       - service: notify.pushover
          data_template:
-           message: 'Motorvärmaren (+5°) är på i 30 min från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
+           message: 'Motorvärmaren (+5°) är på i 30 min från {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.ute_temperature.state}}°C'
        - service: homeassistant.turn_off
          entity_id: automation.heater_ak_plus_5, automation.heater_ak_plus_1, automation.heater_ak_minus_10
 
@@ -92,10 +92,21 @@ automation:
     action:
        - service: homeassistant.turn_off
          entity_id: switch.carheater_ak_plug_switch, automation.heater_ak_off
-       - service: notify.telegram
+       - service: notify.pushover
          data_template:
-           message: 'Motorvärmaren Stängs nu av {{now().strftime("%H:%M:%S")}} Temp ute: {{ states.sensor.netatmo_utomhus_norra_husgaveln_temperature.state}}°C'
-
+           message: 'Motorvärmaren Stängs nu av {{now().strftime("%H:%M:%S")}} Temp ute: 
+           {{ states.sensor.ute_temperature.state}}°C'
+#  - id: 'cupevarmare_auto'
+#    alias: "Automatisk Cupévärmare"
+#    trigger:
+#      platform: template
+#      value_template: "{{ states('sensor.time') == 
+#  (state_attr('input_datetime.heater_time', 'timestamp') | int | timestamp_custom('%H:%M', True)) }}"
+#    action:
+#      service: switch.turn_on
+#    - data:
+#      entity_id: switch.altanen
+#      entity_id: switch.bedroom
 
 # Input section
 input_number:
@@ -114,6 +125,10 @@ input_number:
     min: 0
     max: 55
     step: 5
+input_datetime:
+  heater_time:
+    name: Cupévärmare tid
+    has_time: true
 
 # Sensor section
 sensor:
@@ -122,27 +137,7 @@ sensor:
       departuretime_ak:
         friendly_name: 'Avresetid'
         value_template: '{% if states.input_number.heater_ak_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_hour.state|round(0)|string }}:{% if states.input_number.heater_ak_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_minutes.state|round(0)|string }}'
-        #entity_id: 
-        # - input_number.heater_ak_minutes
-        # - input_number.heater_ak_hour
 
-# Group section
-group:
-  heaterak:
-    name: Heater
-    icon: mdi:alarm
-    view: yes
-    entities:
-      - group.mvak
-  mvak:
-    name: "Motorvärmare"
-    entities:
-      - sensor.departuretime_ak
-      - sensor.heater_start_time_ak
-      - input_number.heater_ak_hour
-      - input_number.heater_ak_minutes
-      - sensor.ute_temperature
-      - switch.cupevarmare
 
 # Script section
 script:
