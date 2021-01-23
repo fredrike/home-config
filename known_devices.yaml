@@ -735,3 +735,87 @@ ekorrbo_esp:
   icon:
   picture:
   track: true
+
+raspberrypi:
+  name: raspberrypi
+  mac: B8:27:EB:DB:A6:69
+  icon:
+  picture:
+  track: true
+
+emmas_ipad:
+  name: Emmas-iPad
+  mac: 36:67:F4:52:B2:CF
+  icon:
+  picture:
+  track: true
+
+leas_ipad:
+  name: Leas-iPad
+  mac: 4E:43:B2:9D:EE:E1
+  icon:
+  picture:
+  track: true
+
+ekorrbo_esp_2:
+  name: ekorrbo_esp
+  mac: 48:3F:DA:58:4F:76
+  icon:
+  picture:
+  track: true
+
+emmas_ipad_2:
+  name: Emmas-iPad
+  mac: DE:EC:01:4B:D0:01
+  icon:
+  picture:
+  track: true
+
+6c_0b_84_1b_25_34:
+  name: 6c_0b_84_1b_25_34
+  mac: 6C:0B:84:1B:25:34
+  icon:
+  picture:
+  track: true
+
+ipad:
+  name: iPad
+  mac: 28:EC:95:7B:36:27
+  icon:
+  picture:
+  track: true
+
+emmas_ipad_3:
+  name: Emmas-iPad
+  mac: EE:8C:48:C3:1B:1A
+  icon:
+  picture:
+  track: true
+
+emmas_ipad_4:
+  name: Emmas-iPad
+  mac: 8E:63:77:9F:06:02
+  icon:
+  picture:
+  track: true
+
+ipad_2:
+  name: iPad
+  mac: FA:A9:E7:A5:CA:FE
+  icon:
+  picture:
+  track: true
+
+86_34_98_f9_06_16:
+  name: 86_34_98_f9_06_16
+  mac: 86:34:98:F9:06:16
+  icon:
+  picture:
+  track: true
+
+emmas_ipad_2_2:
+  name: Emmas-iPad-2
+  mac: EA:3C:56:1A:1B:6F
+  icon:
+  picture:
+  track: true

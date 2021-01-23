@@ -82,8 +82,15 @@
                                     ],
                                     "show_state": false,
                                     "title": "Lampor",
-                                    "type": "glance"
-                                },
+                                    "type": "glance",
+                                    "state_color": true
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
                                 {
                                     "cards": [
                                         {
@@ -117,81 +124,7 @@
                                     ],
                                     "type": "horizontal-stack"
                                 }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entity": "climate.mjovik",
-                            "name": "Luftv\u00e4rmepump",
-                            "sensors": [
-                                {
-                                    "attribute": "fan_mode",
-                                    "name": "Fl\u00e4kt"
-                                },
-                                {
-                                    "entity": "sensor.vit_inne_temperature",
-                                    "name": "Temp inne"
-                                },
-                                {
-                                    "entity": "sensor.iotawatt_input_inverter",
-                                    "name": "Effekt"
-                                },
-                                {
-                                    "entity": "sensor.inverter_daily",
-                                    "name": "Idag"
-                                }
-                            ],
-                            "step_size": 1,
-                            "type": "custom:simple-thermostat",
-                            "decimals": 0,
-                            "hide": {
-                                "temperature": true
-                            },
-                            "step_layout": "row",
-                            "control": {
-                                "hvac": {
-                                    "heat": {
-                                        "name": false
-                                    },
-                                    "fan_only": false,
-                                    "heat_cool": false,
-                                    "dry": false,
-                                    "off": {
-                                        "name": false
-                                    },
-                                    "cool": {
-                                        "name": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "card": {
-                                "entities": [
-                                    {
-                                        "entity": "sensor.skollunch",
-                                        "icon": "mdi:silverware-variant",
-                                        "name": "Skollunch"
-                                    }
-                                ],
-                                "type": "entities"
-                            },
-                            "conditions": [
-                                {
-                                    "entity": "binary_sensor.workday_sensor",
-                                    "state": "on"
-                                }
-                            ],
-                            "id": "8d16e9c90406446794f17c2fe1d747e3",
-                            "type": "conditional"
-                        },
-                        {
-                            "entity": "alarm_control_panel.mjovik",
-                            "name": "Point larm",
-                            "states": [
-                                "arm_away"
-                            ],
-                            "type": "alarm-panel"
+                            ]
                         },
                         {
                             "cards": [
@@ -284,6 +217,124 @@
                                     "type": "custom:simple-weather-card"
                                 },
                                 {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "custom:mini-graph-card",
+                                            "name": "Temperatur inne",
+                                            "color_thresholds": [
+                                                {
+                                                    "value": -15,
+                                                    "color": "#112266"
+                                                },
+                                                {
+                                                    "value": 0,
+                                                    "color": "#00CED1"
+                                                },
+                                                {
+                                                    "value": 25,
+                                                    "color": "#590000"
+                                                }
+                                            ],
+                                            "entities": [
+                                                "sensor.vit_inne_temperature"
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:mini-graph-card",
+                                            "name": "Fukt inne",
+                                            "color_thresholds": [
+                                                {
+                                                    "value": 80,
+                                                    "color": "#112266"
+                                                },
+                                                {
+                                                    "value": 60,
+                                                    "color": "#00CED1"
+                                                },
+                                                {
+                                                    "value": 40,
+                                                    "color": "#590000"
+                                                }
+                                            ],
+                                            "entities": [
+                                                "sensor.vit_inne_humidity"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entity": "climate.mjovik",
+                            "name": "Luftv\u00e4rmepump",
+                            "sensors": [
+                                {
+                                    "attribute": "fan_mode",
+                                    "name": "Fl\u00e4kt"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_temperature",
+                                    "name": "Temp inne"
+                                },
+                                {
+                                    "entity": "sensor.iotawatt_input_inverter",
+                                    "name": "Effekt"
+                                },
+                                {
+                                    "entity": "sensor.inverter_daily",
+                                    "name": "Idag"
+                                }
+                            ],
+                            "step_size": 1,
+                            "type": "custom:simple-thermostat",
+                            "decimals": 0,
+                            "hide": {
+                                "temperature": true
+                            },
+                            "step_layout": "row",
+                            "control": {
+                                "hvac": {
+                                    "heat": {
+                                        "name": false
+                                    },
+                                    "fan_only": false,
+                                    "heat_cool": false,
+                                    "dry": false,
+                                    "off": {
+                                        "name": false
+                                    },
+                                    "cool": {
+                                        "name": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "card": {
+                                "entities": [
+                                    {
+                                        "entity": "sensor.skollunch",
+                                        "icon": "mdi:silverware-variant",
+                                        "name": "Skollunch"
+                                    }
+                                ],
+                                "type": "entities"
+                            },
+                            "conditions": [
+                                {
+                                    "entity": "binary_sensor.workday_sensor",
+                                    "state": "on"
+                                }
+                            ],
+                            "id": "8d16e9c90406446794f17c2fe1d747e3",
+                            "type": "conditional"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
                                     "entity": "weather.smhi_home",
                                     "secondary_info": [
                                         "precipitation",
@@ -299,17 +350,20 @@
                                     ],
                                     "type": "custom:simple-weather-card"
                                 }
-                            ],
-                            "type": "vertical-stack"
+                            ]
                         },
                         {
-                            "aspect_ratio": "180%",
+                            "entity": "alarm_control_panel.mjovik",
+                            "name": "Point larm",
+                            "states": [
+                                "arm_away"
+                            ],
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "aspect_ratio": "140%",
                             "type": "iframe",
                             "url": "https://grafana.erlandsson.myds.me/d/A-PiyQgmk/temperatures-degc?refresh=5m&theme=light&orgId=1&from=now-7d&to=now&var-temp_id=badtemp_tallholmen&var-temp_id=daikin&var-temp_id=daikin_indoor&var-temp_id=daikin_outdoor&var-temp_id=krypgrund_temperature&var-temp_id=ute_temperature&var-temp_id=vit_inne_temperature&var-temp_id=point_home_temperature&var-temp_id=vinden_temperature&var-temp_id=ekorrbo_temperature&kiosk=tv"
-                        },
-                        {
-                            "type": "thermostat",
-                            "entity": "climate.mjovik"
                         }
                     ]
                 },
@@ -317,6 +371,71 @@
                     "background": "var(--background-image)",
                     "badges": [],
                     "cards": [
+                        {
+                            "card": {
+                                "columns": 4,
+                                "show_icon": false,
+                                "title": "Klimat",
+                                "type": "glance"
+                            },
+                            "entities": [
+                                {
+                                    "entity": "sensor.ute_temperature",
+                                    "name": "Ute"
+                                },
+                                {
+                                    "entity": "sensor.daikin_outdoor",
+                                    "name": "Daikin out"
+                                },
+                                {
+                                    "entity": "sensor.daikin_indoor",
+                                    "icon": "mdi:home",
+                                    "name": "Daikin in"
+                                },
+                                {
+                                    "entity": "sensor.point_home_temperature",
+                                    "name": "Point"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_temperature",
+                                    "name": "Inne"
+                                },
+                                {
+                                    "entity": "sensor.vit_inne_humidity",
+                                    "name": "Inne"
+                                },
+                                {
+                                    "entity": "sensor.krypgrund_temperature",
+                                    "name": "Krypgrund"
+                                },
+                                {
+                                    "entity": "sensor.krypgrund_humidity",
+                                    "name": "Krypgrund"
+                                },
+                                {
+                                    "entity": "sensor.vinden_temperature",
+                                    "name": "Vinden"
+                                },
+                                {
+                                    "entity": "sensor.point_home_pressure",
+                                    "name": "Lufttryck"
+                                },
+                                {
+                                    "entity": "sensor.ekorrbo_temperature"
+                                },
+                                {
+                                    "entity": "sensor.ekorrbo_humidity"
+                                }
+                            ],
+                            "show_name": true,
+                            "state_filter": [
+                                {
+                                    "operator": "regex",
+                                    "value": "^[0-9,\\-]"
+                                }
+                            ],
+                            "type": "entity-filter"
+                        },
                         {
                             "cards": [
                                 {
@@ -330,20 +449,11 @@
                                 {
                                     "entities": [
                                         "sensor.dark_sky",
-                                        "sensor.yr",
-                                        "sensor.dark_sky_temperature",
-                                        "sensor.yr_dewpoint_temperature",
-                                        "sensor.yr_precipitation",
-                                        "sensor.yr_wind_speed",
-                                        "sensor.yr_wind_direction",
-                                        "sensor.yr_cloudiness",
-                                        "sensor.yr_fog",
-                                        "sensor.yr_pressure"
+                                        "sensor.dark_sky_temperature"
                                     ],
                                     "type": "glance"
                                 }
                             ],
-                            "id": "27da5b601d164790bd7e060f72ce86f2",
                             "type": "vertical-stack"
                         },
                         {
@@ -359,6 +469,704 @@
                                 {
                                     "entity": "weather.dark_sky",
                                     "type": "custom:simple-weather-card"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "animate": true,
+                                    "color_thresholds": [
+                                        {
+                                            "color": "#a55eea",
+                                            "value": -6.9
+                                        },
+                                        {
+                                            "color": "#8854d0",
+                                            "value": -3.9
+                                        },
+                                        {
+                                            "color": "#3867d6",
+                                            "value": -1.2
+                                        },
+                                        {
+                                            "color": "#4b7bec",
+                                            "value": 1.6
+                                        },
+                                        {
+                                            "color": "#2d98da",
+                                            "value": 4.3
+                                        },
+                                        {
+                                            "color": "#45aaf2",
+                                            "value": 7.1
+                                        },
+                                        {
+                                            "color": "#0fb9b1",
+                                            "value": 9.9
+                                        },
+                                        {
+                                            "color": "#2bcbba",
+                                            "value": 12.7
+                                        },
+                                        {
+                                            "color": "#20bf6b",
+                                            "value": 15.5
+                                        },
+                                        {
+                                            "color": "#26de81",
+                                            "value": 18.2
+                                        },
+                                        {
+                                            "color": "#fed330",
+                                            "value": 21
+                                        },
+                                        {
+                                            "color": "#f7b731",
+                                            "value": 23.8
+                                        },
+                                        {
+                                            "color": "#fd9644",
+                                            "value": 26.6
+                                        },
+                                        {
+                                            "color": "#fa8231",
+                                            "value": 29.3
+                                        },
+                                        {
+                                            "color": "#fc5c65",
+                                            "value": 32.1
+                                        },
+                                        {
+                                            "color": "#eb3b5a",
+                                            "value": 35.9
+                                        }
+                                    ],
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.ute_temperature",
+                                            "index": 0,
+                                            "name": "Temp",
+                                            "show_state": true,
+                                            "state_adaptive_color": true
+                                        },
+                                        {
+                                            "color": "#666666",
+                                            "entity": "sensor.sun_elev",
+                                            "line_width": 1,
+                                            "show_fill": false,
+                                            "show_legend": false,
+                                            "show_state": false,
+                                            "y_axis": "secondary"
+                                        }
+                                    ],
+                                    "hour24": true,
+                                    "hours_to_show": 24,
+                                    "line_width": 2,
+                                    "lower_bound_secondary": 0,
+                                    "name": "Temperatur",
+                                    "points_per_hour": 12,
+                                    "show": {
+                                        "extrema": true,
+                                        "graph": "line",
+                                        "points": false
+                                    },
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "animate": true,
+                                    "color_thresholds": [
+                                        {
+                                            "color": "#a55eea",
+                                            "value": -6.9
+                                        },
+                                        {
+                                            "color": "#8854d0",
+                                            "value": -3.9
+                                        },
+                                        {
+                                            "color": "#3867d6",
+                                            "value": -1.2
+                                        },
+                                        {
+                                            "color": "#4b7bec",
+                                            "value": 1.6
+                                        },
+                                        {
+                                            "color": "#2d98da",
+                                            "value": 4.3
+                                        },
+                                        {
+                                            "color": "#45aaf2",
+                                            "value": 7.1
+                                        },
+                                        {
+                                            "color": "#0fb9b1",
+                                            "value": 9.9
+                                        },
+                                        {
+                                            "color": "#2bcbba",
+                                            "value": 12.7
+                                        },
+                                        {
+                                            "color": "#20bf6b",
+                                            "value": 15.5
+                                        },
+                                        {
+                                            "color": "#26de81",
+                                            "value": 18.2
+                                        },
+                                        {
+                                            "color": "#fed330",
+                                            "value": 21
+                                        },
+                                        {
+                                            "color": "#f7b731",
+                                            "value": 23.8
+                                        },
+                                        {
+                                            "color": "#fd9644",
+                                            "value": 26.6
+                                        },
+                                        {
+                                            "color": "#fa8231",
+                                            "value": 29.3
+                                        },
+                                        {
+                                            "color": "#fc5c65",
+                                            "value": 32.1
+                                        },
+                                        {
+                                            "color": "#eb3b5a",
+                                            "value": 35.9
+                                        }
+                                    ],
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.ute_temperature",
+                                            "index": 0,
+                                            "name": "Balkon",
+                                            "show_state": false,
+                                            "state_adaptive_color": true
+                                        },
+                                        {
+                                            "color": "#666666",
+                                            "entity": "sensor.sun_elev",
+                                            "show_fill": false,
+                                            "show_legend": false,
+                                            "show_state": false,
+                                            "y_axis": "secondary"
+                                        }
+                                    ],
+                                    "hour24": true,
+                                    "hours_to_show": 168,
+                                    "line_width": 2,
+                                    "lower_bound_secondary": 0,
+                                    "name": "Temperatur",
+                                    "points_per_hour": 1,
+                                    "show": {
+                                        "extrema": true,
+                                        "points": false,
+                                        "state": false
+                                    },
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "animate": true,
+                                            "color_thresholds": [
+                                                {
+                                                    "color": "#3498db",
+                                                    "value": 70
+                                                },
+                                                {
+                                                    "color": "#2fde75",
+                                                    "value": 50
+                                                },
+                                                {
+                                                    "color": "#f39c12",
+                                                    "value": 30
+                                                }
+                                            ],
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.dark_sky_humidity",
+                                                    "index": 0,
+                                                    "name": "Ute",
+                                                    "show_state": true,
+                                                    "state_adaptive_color": true
+                                                },
+                                                {
+                                                    "color": "#666666",
+                                                    "entity": "sensor.sun_elev",
+                                                    "show_fill": false,
+                                                    "show_legend": false,
+                                                    "show_state": false,
+                                                    "y_axis": "secondary"
+                                                }
+                                            ],
+                                            "hour24": true,
+                                            "hours_to_show": 24,
+                                            "line_width": 2,
+                                            "lower_bound_secondary": 0,
+                                            "name": "Luftfuktighet",
+                                            "points_per_hour": 12,
+                                            "show": {
+                                                "extrema": true,
+                                                "points": false
+                                            },
+                                            "type": "custom:mini-graph-card"
+                                        },
+                                        {
+                                            "animate": true,
+                                            "color_thresholds": [
+                                                {
+                                                    "color": "#a55eea",
+                                                    "value": -6.7
+                                                },
+                                                {
+                                                    "color": "#8854d0",
+                                                    "value": -3.9
+                                                },
+                                                {
+                                                    "color": "#3867d6",
+                                                    "value": -1.2
+                                                },
+                                                {
+                                                    "color": "#4b7bec",
+                                                    "value": 1.6
+                                                },
+                                                {
+                                                    "color": "#2d98da",
+                                                    "value": 4.3
+                                                },
+                                                {
+                                                    "color": "#45aaf2",
+                                                    "value": 7.1
+                                                },
+                                                {
+                                                    "color": "#0fb9b1",
+                                                    "value": 9.9
+                                                },
+                                                {
+                                                    "color": "#2bcbba",
+                                                    "value": 12.7
+                                                },
+                                                {
+                                                    "color": "#20bf6b",
+                                                    "value": 15.5
+                                                },
+                                                {
+                                                    "color": "#26de81",
+                                                    "value": 18.2
+                                                },
+                                                {
+                                                    "color": "#fed330",
+                                                    "value": 21
+                                                },
+                                                {
+                                                    "color": "#f7b731",
+                                                    "value": 23.8
+                                                },
+                                                {
+                                                    "color": "#fd9644",
+                                                    "value": 26.6
+                                                },
+                                                {
+                                                    "color": "#fa8231",
+                                                    "value": 29.3
+                                                },
+                                                {
+                                                    "color": "#fc5c65",
+                                                    "value": 32.1
+                                                },
+                                                {
+                                                    "color": "#eb3b5a",
+                                                    "value": 35.9
+                                                }
+                                            ],
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.dark_sky_dew_point",
+                                                    "index": 0,
+                                                    "name": "Balkon",
+                                                    "show_state": true,
+                                                    "state_adaptive_color": true
+                                                },
+                                                {
+                                                    "color": "#666666",
+                                                    "entity": "sensor.sun_elev",
+                                                    "show_fill": false,
+                                                    "show_legend": false,
+                                                    "show_state": false,
+                                                    "y_axis": "secondary"
+                                                }
+                                            ],
+                                            "hour24": true,
+                                            "hours_to_show": 24,
+                                            "line_width": 2,
+                                            "lower_bound_secondary": 0,
+                                            "name": "Daggpunkt",
+                                            "points_per_hour": 12,
+                                            "show": {
+                                                "extrema": true,
+                                                "points": false
+                                            },
+                                            "type": "custom:mini-graph-card"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "animate": true,
+                                    "color_thresholds": [
+                                        {
+                                            "color": "#a55eea",
+                                            "value": -6.9
+                                        },
+                                        {
+                                            "color": "#8854d0",
+                                            "value": -3.9
+                                        },
+                                        {
+                                            "color": "#3867d6",
+                                            "value": -1.2
+                                        },
+                                        {
+                                            "color": "#4b7bec",
+                                            "value": 1.6
+                                        },
+                                        {
+                                            "color": "#2d98da",
+                                            "value": 4.3
+                                        },
+                                        {
+                                            "color": "#45aaf2",
+                                            "value": 7.1
+                                        },
+                                        {
+                                            "color": "#0fb9b1",
+                                            "value": 9.9
+                                        },
+                                        {
+                                            "color": "#2bcbba",
+                                            "value": 12.7
+                                        },
+                                        {
+                                            "color": "#20bf6b",
+                                            "value": 15.5
+                                        },
+                                        {
+                                            "color": "#26de81",
+                                            "value": 18.2
+                                        },
+                                        {
+                                            "color": "#fed330",
+                                            "value": 21
+                                        },
+                                        {
+                                            "color": "#f7b731",
+                                            "value": 23.8
+                                        },
+                                        {
+                                            "color": "#fd9644",
+                                            "value": 26.6
+                                        },
+                                        {
+                                            "color": "#fa8231",
+                                            "value": 29.3
+                                        },
+                                        {
+                                            "color": "#fc5c65",
+                                            "value": 32.1
+                                        },
+                                        {
+                                            "color": "#eb3b5a",
+                                            "value": 35.9
+                                        }
+                                    ],
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.krypgrund_temperature",
+                                            "index": 0,
+                                            "name": "Temp",
+                                            "show_state": true,
+                                            "state_adaptive_color": true
+                                        },
+                                        {
+                                            "color": "#666666",
+                                            "entity": "sensor.sun_elev",
+                                            "line_width": 1,
+                                            "show_fill": false,
+                                            "show_legend": false,
+                                            "show_state": false,
+                                            "y_axis": "secondary"
+                                        }
+                                    ],
+                                    "hour24": true,
+                                    "hours_to_show": 24,
+                                    "line_width": 2,
+                                    "lower_bound_secondary": 0,
+                                    "name": "Krypgrund",
+                                    "points_per_hour": 12,
+                                    "show": {
+                                        "extrema": true,
+                                        "graph": "line",
+                                        "points": false
+                                    },
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "animate": true,
+                                    "color_thresholds": [
+                                        {
+                                            "color": "#a55eea",
+                                            "value": -6.9
+                                        },
+                                        {
+                                            "color": "#8854d0",
+                                            "value": -3.9
+                                        },
+                                        {
+                                            "color": "#3867d6",
+                                            "value": -1.2
+                                        },
+                                        {
+                                            "color": "#4b7bec",
+                                            "value": 1.6
+                                        },
+                                        {
+                                            "color": "#2d98da",
+                                            "value": 4.3
+                                        },
+                                        {
+                                            "color": "#45aaf2",
+                                            "value": 7.1
+                                        },
+                                        {
+                                            "color": "#0fb9b1",
+                                            "value": 9.9
+                                        },
+                                        {
+                                            "color": "#2bcbba",
+                                            "value": 12.7
+                                        },
+                                        {
+                                            "color": "#20bf6b",
+                                            "value": 15.5
+                                        },
+                                        {
+                                            "color": "#26de81",
+                                            "value": 18.2
+                                        },
+                                        {
+                                            "color": "#fed330",
+                                            "value": 21
+                                        },
+                                        {
+                                            "color": "#f7b731",
+                                            "value": 23.8
+                                        },
+                                        {
+                                            "color": "#fd9644",
+                                            "value": 26.6
+                                        },
+                                        {
+                                            "color": "#fa8231",
+                                            "value": 29.3
+                                        },
+                                        {
+                                            "color": "#fc5c65",
+                                            "value": 32.1
+                                        },
+                                        {
+                                            "color": "#eb3b5a",
+                                            "value": 35.9
+                                        }
+                                    ],
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.krypgrund_temperature",
+                                            "index": 0,
+                                            "name": "Temp",
+                                            "show_state": false,
+                                            "state_adaptive_color": true
+                                        },
+                                        {
+                                            "color": "#666666",
+                                            "entity": "sensor.sun_elev",
+                                            "show_fill": false,
+                                            "show_legend": false,
+                                            "show_state": false,
+                                            "y_axis": "secondary"
+                                        }
+                                    ],
+                                    "hour24": true,
+                                    "hours_to_show": 168,
+                                    "line_width": 2,
+                                    "lower_bound_secondary": 0,
+                                    "name": "Krypgrund last week",
+                                    "points_per_hour": 1,
+                                    "show": {
+                                        "extrema": true,
+                                        "points": false,
+                                        "state": false
+                                    },
+                                    "type": "custom:mini-graph-card"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "animate": true,
+                                            "color_thresholds": [
+                                                {
+                                                    "color": "#3498db",
+                                                    "value": 70
+                                                },
+                                                {
+                                                    "color": "#2fde75",
+                                                    "value": 50
+                                                },
+                                                {
+                                                    "color": "#f39c12",
+                                                    "value": 30
+                                                }
+                                            ],
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.krypgrund_humidity",
+                                                    "index": 0,
+                                                    "name": "Ute",
+                                                    "show_state": true,
+                                                    "state_adaptive_color": true
+                                                },
+                                                {
+                                                    "color": "#666666",
+                                                    "entity": "sensor.sun_elev",
+                                                    "show_fill": false,
+                                                    "show_legend": false,
+                                                    "show_state": false,
+                                                    "y_axis": "secondary"
+                                                }
+                                            ],
+                                            "hour24": true,
+                                            "hours_to_show": 24,
+                                            "line_width": 2,
+                                            "lower_bound_secondary": 0,
+                                            "name": "Luftfuktighet",
+                                            "points_per_hour": 12,
+                                            "show": {
+                                                "extrema": true,
+                                                "points": false
+                                            },
+                                            "type": "custom:mini-graph-card"
+                                        },
+                                        {
+                                            "animate": true,
+                                            "color_thresholds": [
+                                                {
+                                                    "color": "#a55eea",
+                                                    "value": -6.7
+                                                },
+                                                {
+                                                    "color": "#8854d0",
+                                                    "value": -3.9
+                                                },
+                                                {
+                                                    "color": "#3867d6",
+                                                    "value": -1.2
+                                                },
+                                                {
+                                                    "color": "#4b7bec",
+                                                    "value": 1.6
+                                                },
+                                                {
+                                                    "color": "#2d98da",
+                                                    "value": 4.3
+                                                },
+                                                {
+                                                    "color": "#45aaf2",
+                                                    "value": 7.1
+                                                },
+                                                {
+                                                    "color": "#0fb9b1",
+                                                    "value": 9.9
+                                                },
+                                                {
+                                                    "color": "#2bcbba",
+                                                    "value": 12.7
+                                                },
+                                                {
+                                                    "color": "#20bf6b",
+                                                    "value": 15.5
+                                                },
+                                                {
+                                                    "color": "#26de81",
+                                                    "value": 18.2
+                                                },
+                                                {
+                                                    "color": "#fed330",
+                                                    "value": 21
+                                                },
+                                                {
+                                                    "color": "#f7b731",
+                                                    "value": 23.8
+                                                },
+                                                {
+                                                    "color": "#fd9644",
+                                                    "value": 26.6
+                                                },
+                                                {
+                                                    "color": "#fa8231",
+                                                    "value": 29.3
+                                                },
+                                                {
+                                                    "color": "#fc5c65",
+                                                    "value": 32.1
+                                                },
+                                                {
+                                                    "color": "#eb3b5a",
+                                                    "value": 35.9
+                                                }
+                                            ],
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.krypgrund_dew_point",
+                                                    "index": 0,
+                                                    "name": "Krypgrund",
+                                                    "show_state": true,
+                                                    "state_adaptive_color": true
+                                                },
+                                                {
+                                                    "color": "#666666",
+                                                    "entity": "sensor.sun_elev",
+                                                    "show_fill": false,
+                                                    "show_legend": false,
+                                                    "show_state": false,
+                                                    "y_axis": "secondary"
+                                                }
+                                            ],
+                                            "hour24": true,
+                                            "hours_to_show": 24,
+                                            "line_width": 2,
+                                            "lower_bound_secondary": 0,
+                                            "name": "Daggpunkt",
+                                            "points_per_hour": 12,
+                                            "show": {
+                                                "extrema": true,
+                                                "points": false
+                                            },
+                                            "type": "custom:mini-graph-card"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 }
                             ],
                             "type": "vertical-stack"
@@ -562,7 +1370,7 @@
                             "type": "vertical-stack"
                         },
                         {
-                            "default_zoom": 15,
+                            "default_zoom": 13,
                             "entities": [
                                 {
                                     "entity": "person.johanna"
@@ -575,7 +1383,7 @@
                                 }
                             ],
                             "type": "map",
-                            "hours_to_show": 2
+                            "hours_to_show": 12
                         },
                         {
                             "entity": "sensor.krz81s_battery_level",
@@ -651,6 +1459,10 @@
                     "title": "KRZ81S"
                 },
                 {
+                    "icon": "mdi:flash-circle",
+                    "id": "energy",
+                    "theme": "Backend-selected",
+                    "title": "Energy",
                     "badges": [
                         {
                             "entity": "sensor.sparsnas_w"
@@ -687,6 +1499,9 @@
                         },
                         {
                             "entity": "sensor.krz81s_time_to_fully_charged"
+                        },
+                        {
+                            "entity": "sensor.energy_meter_ekorrbo_monthly"
                         }
                     ],
                     "cards": [
@@ -757,12 +1572,61 @@
                             "hours_to_show": 24,
                             "refresh_interval": 0,
                             "type": "history-graph"
+                        },
+                        {
+                            "type": "sensor",
+                            "entity": "sensor.energy_meter_ekorrbo",
+                            "graph": "line",
+                            "hours_to_show": 72,
+                            "detail": 2
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.sparsnas_daily"
+                                }
+                            ],
+                            "line_color": "darkblue",
+                            "type": "custom:mini-graph-card",
+                            "hours_to_show": 168,
+                            "aggregate_func": "max",
+                            "group_by": "date",
+                            "show": {
+                                "graph": "bar"
+                            }
                         }
-                    ],
-                    "icon": "mdi:flash-circle",
-                    "id": "energy",
-                    "theme": "Backend-selected",
-                    "title": "Energy"
+                    ]
+                },
+                {
+                    "panel": true,
+                    "title": "Map",
+                    "path": "map",
+                    "icon": "mdi:google-maps",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "map",
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.android2c3c68e2b6856433"
+                                },
+                                {
+                                    "entity": "device_tracker.78f882cf23d5"
+                                },
+                                {
+                                    "entity": "person.johanna"
+                                },
+                                {
+                                    "entity": "person.fredrik"
+                                },
+                                {
+                                    "entity": "zone.consid_karlskrona"
+                                }
+                            ],
+                            "hours_to_show": 0,
+                            "default_zoom": 14
+                        }
+                    ]
                 },
                 {
                     "badges": [
@@ -778,14 +1642,11 @@
                     ],
                     "cards": [
                         {
-                            "columns": 4,
                             "entities": [
                                 {
                                     "entity": "script.goodnight",
-                                    "hold_action": "more-info",
                                     "icon": "mdi:sleep",
-                                    "name": "Godnatt",
-                                    "tap_action": "toggle"
+                                    "name": "Godnatt"
                                 },
                                 {
                                     "entity": "input_boolean.auto_ac",
@@ -795,13 +1656,19 @@
                                     "entity": "input_boolean.vacation_mode"
                                 },
                                 {
+                                    "entity": "input_boolean.vacation_tomorrow"
+                                },
+                                {
                                     "entity": "input_boolean.trip_mode"
                                 }
                             ],
-                            "id": "7d90773516234108b7f1d9eeb4dccab5",
                             "show_state": false,
                             "title": "Automation",
-                            "type": "glance"
+                            "type": "glance",
+                            "state_color": true,
+                            "columns": 5,
+                            "show_name": false,
+                            "show_icon": true
                         },
                         {
                             "card": {
@@ -901,25 +1768,37 @@
                                     "entity": "sensor.krz81s_daily_km"
                                 },
                                 {
-                                    "entity": "sensor.krz81s_daily_fuel"
+                                    "entity": "sensor.krz81s_daily_fuel_1"
                                 },
                                 {
                                     "entity": "sensor.krz81s_weekly_km"
                                 },
                                 {
-                                    "entity": "sensor.krz81s_weekly_fuel"
+                                    "entity": "sensor.krz81s_weekly_fuel_1"
                                 },
                                 {
                                     "entity": "sensor.krz81s_monthly_km"
                                 },
                                 {
-                                    "entity": "sensor.krz81s_monthly_fuel"
+                                    "entity": "sensor.krz81s_monthly_fuel_1"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_yearly_fuel_1"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_yearly_km"
                                 },
                                 {
                                     "entity": "sensor.krz81s_battery_range"
                                 },
                                 {
                                     "entity": "sensor.krz81s_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.krs81s_daily_l_km"
+                                },
+                                {
+                                    "entity": "sensor.krz81s_fuel_usage"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -930,6 +1809,9 @@
                             "entities": [
                                 {
                                     "entity": "sensor.time"
+                                },
+                                {
+                                    "entity": "input_datetime.avresetid"
                                 },
                                 {
                                     "entity": "sensor.ute_temperature"
@@ -969,16 +1851,6 @@
                                 }
                             ],
                             "type": "horizontal-stack"
-                        },
-                        {
-                            "entities": [],
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0,
-                            "type": "history-graph"
                         },
                         {
                             "cards": [
@@ -1469,33 +2341,23 @@
                     "title": "Demo"
                 },
                 {
-                    "panel": true,
-                    "title": "Map",
-                    "path": "map",
-                    "icon": "",
+                    "icon": "mdi:pine-tree",
                     "badges": [],
                     "cards": [
                         {
-                            "type": "map",
-                            "entities": [
-                                {
-                                    "entity": "device_tracker.android2c3c68e2b6856433"
-                                },
-                                {
-                                    "entity": "device_tracker.78f882cf23d5"
-                                },
-                                {
-                                    "entity": "person.johanna"
-                                },
-                                {
-                                    "entity": "person.fredrik"
-                                },
-                                {
-                                    "entity": "zone.consid_karlskrona"
-                                }
-                            ],
-                            "hours_to_show": 0,
-                            "default_zoom": 14
+                            "type": "button",
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "entity": "switch.julgran",
+                            "icon": "mdi:pine-tree"
+                        },
+                        {
+                            "type": "sensor",
+                            "entity": "sensor.xmas_tree_moist",
+                            "graph": "line",
+                            "detail": 2,
+                            "hours_to_show": 48
                         }
                     ]
                 }

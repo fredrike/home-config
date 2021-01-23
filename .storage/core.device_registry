@@ -22,7 +22,8 @@
                 "id": "c2647d1be76e4fe8a0b2839466a89e84",
                 "via_device_id": null,
                 "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -43,7 +44,8 @@
                 "id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "via_device_id": "608156697c2f4785aa0a07cfa703327a",
                 "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -58,11 +60,7 @@
                 "identifiers": [
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
                     ],
                     [
                         "upnp",
@@ -70,11 +68,7 @@
                     ],
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
                     ],
                     [
                         "upnp",
@@ -82,7 +76,15 @@
                     ],
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
                     ],
                     [
                         "upnp",
@@ -90,7 +92,7 @@
                     ],
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_sent"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
                     ]
                 ],
                 "manufacturer": "ASUSTek",
@@ -101,7 +103,8 @@
                 "id": "55d9747d0e3e4c4693708ed20b01ae7a",
                 "via_device_id": null,
                 "area_id": "24c649c1b79740168928f2a7c16609ce",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -122,7 +125,8 @@
                 "id": "608156697c2f4785aa0a07cfa703327a",
                 "via_device_id": null,
                 "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -138,12 +142,13 @@
                 "manufacturer": "hacs.xyz",
                 "model": "",
                 "name": "HACS",
-                "sw_version": "1.6.0",
+                "sw_version": "1.10.0",
                 "entry_type": "service",
                 "id": "fdf813a6bf914f57ae9615c786a6edbd",
                 "via_device_id": null,
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -164,7 +169,8 @@
                 "id": "cc0f1fdd51ad4a8ba1533d2900dd776a",
                 "via_device_id": null,
                 "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -184,8 +190,9 @@
                 "entry_type": null,
                 "id": "630df80f2e5a4bb3bf15bb018fb310fb",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": "user"
             },
             {
                 "config_entries": [
@@ -205,8 +212,9 @@
                 "entry_type": null,
                 "id": "ccab8c6a614148629a63b058619c7a44",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -226,8 +234,9 @@
                 "entry_type": null,
                 "id": "3a3076e1accc4fa8b5333d9bedc5c376",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -243,12 +252,13 @@
                 "manufacturer": "Plex",
                 "model": "Plex Media Server",
                 "name": "Activity Sensor",
-                "sw_version": "1.20.3.3483-211702a9f",
+                "sw_version": "1.21.1.3876-3c3adfcb4",
                 "entry_type": null,
                 "id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "via_device_id": null,
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -264,12 +274,13 @@
                 "manufacturer": "webOS",
                 "model": "Plex for LG",
                 "name": "Plex (Plex for LG - LG 43UH664V-ZC)",
-                "sw_version": "5.2.1",
+                "sw_version": "5.6.1",
                 "entry_type": null,
                 "id": "263c20d580db4a7493dc6f4492a64ca5",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -285,12 +296,13 @@
                 "manufacturer": "Allterco",
                 "model": "Shelly Dimmer",
                 "name": "Shelly Dimmer - D0AF99",
-                "sw_version": "1.8.5",
+                "sw_version": "1.9.0",
                 "entry_type": null,
                 "id": "52aee96733a24ba683ff248d94854bbd",
                 "via_device_id": null,
                 "area_id": "1c23e83cbade491baee05e147348f807",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -311,7 +323,8 @@
                 "id": "18f15f1dc4b544a9844ded5a20dca79a",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -332,7 +345,8 @@
                 "id": "4747767cdb5f463f99b9f3f41b3fb385",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -353,7 +367,8 @@
                 "id": "00c9afaf752f45e9a048bf77d63c94c8",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -374,7 +389,8 @@
                 "id": "df45d667667040e18895f51f3931a969",
                 "via_device_id": null,
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -395,7 +411,8 @@
                 "id": "c6c2258e3d31421299a820c799ee8680",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -416,7 +433,8 @@
                 "id": "ddd77abb118441c787f5147880433ce3",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -437,7 +455,8 @@
                 "id": "756c6dde33774829a02833e63f754cba",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -458,7 +477,8 @@
                 "id": "5c647738db224c9282951487d2b5b2b6",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -478,8 +498,9 @@
                 "entry_type": null,
                 "id": "7ae9af55b7524410a536634d7669ec9a",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -500,7 +521,8 @@
                 "id": "68c7cfaa11a2405e90d5a338ffdb5bb4",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -521,7 +543,8 @@
                 "id": "04ad8f813e5a4ae48c59b32579c26344",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -542,7 +565,8 @@
                 "id": "86a53da94d0b4745b351eb9c5c0ad362",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
                 "area_id": null,
-                "name_by_user": "Ignore"
+                "name_by_user": "Ignore",
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -568,7 +592,8 @@
                 "id": "e1d53cad90374791acb8f9c2a39e4cc3",
                 "via_device_id": null,
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -588,29 +613,9 @@
                 "entry_type": null,
                 "id": "f5b481459f664f5f94d2b8ccb57ae95c",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "dd7e8f28-6992-4d8b-af31-95306df91ca5"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Julgranen",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "77d20c46d1364fd185ffdb16e7ae71a0",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -630,8 +635,9 @@
                 "entry_type": null,
                 "id": "a676cab262ad44108753cb60680114f5",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "25402a4469504932b40ffaf8de999275",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -651,8 +657,9 @@
                 "entry_type": null,
                 "id": "cf77c86bc40d434a8920bd363d879ad5",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -672,8 +679,9 @@
                 "entry_type": null,
                 "id": "209782652f2e425a847dbd8c59e3516f",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -694,7 +702,8 @@
                 "id": "d39fd1efcc4b46cdb3caf4c36f394249",
                 "via_device_id": null,
                 "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -715,7 +724,8 @@
                 "id": "b7efeef8554f486a81e87ebedaaa0ca7",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -735,8 +745,9 @@
                 "entry_type": null,
                 "id": "61ecca2ba33e4f4aa0d8f6bdc1215e20",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -756,8 +767,9 @@
                 "entry_type": null,
                 "id": "f5ef8df5d0254f51a986b0b7300f0bff",
                 "via_device_id": null,
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -778,7 +790,8 @@
                 "id": "4aff8d2434444132868dd540ce1c2c88",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -798,239 +811,9 @@
                 "entry_type": null,
                 "id": "831f9fdbb07b4424a53ad8d9b8e2ed13",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "a167ab35-2da8-4371-bdee-900bdccdca40"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "Vit inne",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "4409d57526d942379d3a896691814ee1",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "f28ed27c-d219-4074-8599-394f0ff827b9"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "e57de02130c24deaaf67ce4a14eacadd",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "279f3382-e116-46a0-b163-afa3bbfef633"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "Vinden",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "c3fa6018addb42288bcad8248f996a19",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "4dca15a8-7887-4cdd-adeb-7b32f19b4268"
-                    ]
-                ],
-                "manufacturer": "Mandolyn",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "b21901c7a97347f18e59aa8d10b9adba",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "94a8a711-7507-4e56-a00d-7aaa0d3bca7e"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "0069dae565104e0f99a90fb13d5dc922",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "121bd2f2-b39e-4f83-bcf5-ad8add67c963"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "fb861308db7c499980230397bfa99078",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "f88851f8-a8e4-480a-a878-6fe59fc7262c"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "befbf31afa1b48ccb98923c486a34e77",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "19d63d3d-4af0-41ce-9562-9abd4a58014a"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "a1f68f785e3844529e69bc27c8895f5c",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "79c4d784-bb9b-48ed-903c-590090c69cfa"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "2d156e9358154016b0722a40081bb844",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "c36bb0d1-207c-435c-9386-9aeab0a832ae"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperature",
-                "name": "",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "2c943651e970472f91b322b4770533f9",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "e7659946-b9c4-47a4-a509-9aaf5bd3e9ff"
-                    ]
-                ],
-                "manufacturer": "Arctech",
-                "model": "Selflearning-Switch:Nexa",
-                "name": "Sovrummet",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "fa35e61db2fd43e4b064bfd89556b1d5",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1050,8 +833,9 @@
                 "entry_type": null,
                 "id": "df61adb5b4a446d08560a7c018b79c8f",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "25402a4469504932b40ffaf8de999275",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1071,29 +855,9 @@
                 "entry_type": null,
                 "id": "0df255a945624669808dd023fe9f35d2",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "a4102659-310f-4d5d-be5e-54af3ac91657"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "Christian",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "6fd8e87dccb74c5da21fca39558c5e12",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "d82c1410fa024dca9545153715fe91e3",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1113,8 +877,9 @@
                 "entry_type": null,
                 "id": "d30e695425ce4f39b102a8e2ce846cc5",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "vinden",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1134,8 +899,9 @@
                 "entry_type": null,
                 "id": "a81319cf9fe24281a32b98df13df9a03",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "e893c1251d52478bb8de5f2a438edd55",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1155,8 +921,9 @@
                 "entry_type": null,
                 "id": "c6e5f83b5c9a4975867b33b624cfafdf",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "506ad41c1c7e4918a8345ac0aa613b81",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1176,8 +943,9 @@
                 "entry_type": null,
                 "id": "579213370c454567b5e0d2dd6cf0572e",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "vinden",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1197,8 +965,9 @@
                 "entry_type": null,
                 "id": "0e2ac01d5d4349f8b2b254110974ebee",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1218,8 +987,9 @@
                 "entry_type": null,
                 "id": "fa07fe1f262f48789c13b20a11c52891",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "1c23e83cbade491baee05e147348f807",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1239,8 +1009,9 @@
                 "entry_type": null,
                 "id": "3e39d1e5aa6047e48a488dc58613955b",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "25402a4469504932b40ffaf8de999275",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1260,92 +1031,9 @@
                 "entry_type": null,
                 "id": "79c942903a77432087c6d590768619cb",
                 "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "c9b87457-5d57-4364-ac0c-803ae2360869"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "0159-0001-0051",
-                "name": "F\u00f6nster vardagsrum",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "1fd13af0f84f4ecea013891eeff338aa",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "a99e0b99-42e0-418e-a9a1-41cafd9fd147"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "0159-0001-0051",
-                "name": "Utebelysning",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "2d48f79748c4427f984e75b18be0bd1a",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "6a362bbb-13f3-41ba-b869-ee619dd28725"
-                    ]
-                ],
-                "manufacturer": "Zwave",
-                "model": "019A-0003-0003",
-                "name": "Altand\u00f6rr",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "962f5073e8244688b7c4a70023231225",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "5b59b3b8-4bfd-4969-b812-420ab34df5fb"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "Christian??",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "dcff6e38418c46a0932ec115e6ec0c42",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
-                "area_id": null,
-                "name_by_user": null
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1366,7 +1054,8 @@
                 "id": "96979ac099744b84ae07357391ff2bb8",
                 "via_device_id": null,
                 "area_id": "73df634d963b499ba37edf3b3bf70fb0",
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1387,7 +1076,8 @@
                 "id": "61f7ba4d0b9c11eb938b39abadbd4adb",
                 "via_device_id": null,
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1408,7 +1098,8 @@
                 "id": "d7bd3bbc0e0811eb9845f929d1d1b9a1",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1429,7 +1120,8 @@
                 "id": "2337a895154f11ebb29c851adb5be4ca",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
             },
             {
                 "config_entries": [
@@ -1449,8 +1141,338 @@
                 "entry_type": null,
                 "id": "c4397c0216e711eb865bf9b48f2fbd56",
                 "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "e114c77c-47a8-47c4-a723-6da5a920fef8"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "Device 205",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "a7364f13236d11ebb7666b7f471dc222",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
                 "area_id": null,
-                "name_by_user": null
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "19d60328-5233-48dc-91da-5c6404778789"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "Utebelysningen",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "a739c35a236d11ebb29dd17dcebb826b",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": "25402a4469504932b40ffaf8de999275",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "d9fbc9e3-b284-4f66-a4e3-131775454cfc"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "019A-0003-0003",
+                "name": "Device 207",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "a73b2bfc236d11eba5146d7acf90b27a",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "c9b87457-5d57-4364-ac0c-803ae2360869"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "F\u00f6nster vardagsrum",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "1fd13af0f84f4ecea013891eeff338aa",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a99e0b99-42e0-418e-a9a1-41cafd9fd147"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "0159-0001-0051",
+                "name": "Utebelysning",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "2d48f79748c4427f984e75b18be0bd1a",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": "25402a4469504932b40ffaf8de999275",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "6a362bbb-13f3-41ba-b869-ee619dd28725"
+                    ]
+                ],
+                "manufacturer": "Zwave",
+                "model": "019A-0003-0003",
+                "name": "Altand\u00f6rr",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "962f5073e8244688b7c4a70023231225",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "6e6220fed6a443188f2f639f8ef1bef6"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "48:3f:da:58:4f:76"
+                    ]
+                ],
+                "identifiers": [],
+                "manufacturer": "espressif",
+                "model": "PLATFORMIO_D1_MINI",
+                "name": "ekorrbo_esp",
+                "sw_version": "1.16.0-dev (Jan  8 2021, 12:53:18)",
+                "entry_type": null,
+                "id": "ffbcd95f2e8c11ebbb7bbd5c6f1d298e",
+                "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "ab6b98a9-0a72-448e-b089-f4e00713ef2d"
+                    ]
+                ],
+                "manufacturer": "Arctech",
+                "model": "Selflearning-Switch:Nexa",
+                "name": "Julgran",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "305cbde73c9c11ebaeca71f7ef573137",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "1e003f000547343232363230"
+                    ]
+                ],
+                "manufacturer": "Particle",
+                "model": "Photon",
+                "name": "Xmas Tree",
+                "sw_version": "2.0.0",
+                "entry_type": null,
+                "id": "367aa5843fe911eb9857cf5a759c1c55",
+                "via_device_id": null,
+                "area_id": "2cabf7a1cca8420db7d17f5927e234b4",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "1fa500ff93ec48aeb5054e23a934ab9f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "met"
+                    ]
+                ],
+                "manufacturer": "Met.no",
+                "model": "Forecast",
+                "name": "Forecast",
+                "sw_version": null,
+                "entry_type": "service",
+                "id": "a733277a6aa0cd554bb3ef4b0c8e58cc",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "plex",
+                        "49fec578109cdfaa-com-plexapp-android"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plex for Android (Mobile)",
+                "name": "Plex (Plex for Android (Mobile) - Pixel 4a)",
+                "sw_version": "8.11.0.22186",
+                "entry_type": null,
+                "id": "0f3e9c7e387ad169c8dcc627ee6383e4",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a4102659-310f-4d5d-be5e-54af3ac91657"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "Christian",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "6fd8e87dccb74c5da21fca39558c5e12",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "f28ed27c-d219-4074-8599-394f0ff827b9"
+                    ]
+                ],
+                "manufacturer": "Mandolyn",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "e57de02130c24deaaf67ce4a14eacadd",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "5b59b3b8-4bfd-4969-b812-420ab34df5fb"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "Christian??",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "dcff6e38418c46a0932ec115e6ec0c42",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "plex",
+                        "058e1ee9-666e-4fcc-855b-cca78ca4fe2d"
+                    ]
+                ],
+                "manufacturer": "Android",
+                "model": "Plexamp",
+                "name": "Plex (Plexamp - Android)",
+                "sw_version": "3.4.0",
+                "entry_type": null,
+                "id": "ff560370302e56dde15866f2cbc3c924",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
             }
         ],
         "deleted_devices": [
@@ -1544,6 +1566,162 @@
                     ]
                 ],
                 "id": "02ced18680c649aea22d98a3e336c3a3"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "dd7e8f28-6992-4d8b-af31-95306df91ca5"
+                    ]
+                ],
+                "id": "77d20c46d1364fd185ffdb16e7ae71a0"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "e7659946-b9c4-47a4-a509-9aaf5bd3e9ff"
+                    ]
+                ],
+                "id": "fa35e61db2fd43e4b064bfd89556b1d5"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "4dca15a8-7887-4cdd-adeb-7b32f19b4268"
+                    ]
+                ],
+                "id": "b21901c7a97347f18e59aa8d10b9adba"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "94a8a711-7507-4e56-a00d-7aaa0d3bca7e"
+                    ]
+                ],
+                "id": "0069dae565104e0f99a90fb13d5dc922"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "121bd2f2-b39e-4f83-bcf5-ad8add67c963"
+                    ]
+                ],
+                "id": "fb861308db7c499980230397bfa99078"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "f88851f8-a8e4-480a-a878-6fe59fc7262c"
+                    ]
+                ],
+                "id": "befbf31afa1b48ccb98923c486a34e77"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "19d63d3d-4af0-41ce-9562-9abd4a58014a"
+                    ]
+                ],
+                "id": "a1f68f785e3844529e69bc27c8895f5c"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "79c4d784-bb9b-48ed-903c-590090c69cfa"
+                    ]
+                ],
+                "id": "2d156e9358154016b0722a40081bb844"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "c36bb0d1-207c-435c-9386-9aeab0a832ae"
+                    ]
+                ],
+                "id": "2c943651e970472f91b322b4770533f9"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a167ab35-2da8-4371-bdee-900bdccdca40"
+                    ]
+                ],
+                "id": "4409d57526d942379d3a896691814ee1"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "279f3382-e116-46a0-b163-afa3bbfef633"
+                    ]
+                ],
+                "id": "c3fa6018addb42288bcad8248f996a19"
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "1f69bac2-4d2f-43f2-b212-6594103dfeed"
+                    ]
+                ],
+                "id": "0d3cb41640523d56f599333894ba3cd6"
             }
         ]
     }
