@@ -4,3 +4,5 @@
 !packages
 !.gitignore
 secrets.yaml
+*.pyc
+__pycache__
