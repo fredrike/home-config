@@ -5,7 +5,7 @@ import logging
 from homeassistant.const import DEVICE_CLASS_POWER, ENERGY_KILO_WATT_HOUR, POWER_WATT
 
 from . import ChargeampsEntity
-from .const import DOMAIN_DATA
+from .const import DOMAIN_DATA, SCAN_INTERVAL  # noqa
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -19,7 +19,11 @@ async def async_setup_platform(
     for cp_id in handler.charge_point_ids:
         cp_info = handler.get_chargepoint_info(cp_id)
         sensors.append(
-            ChargeampsTotalEnergy(hass, f"{cp_info.name}_{cp_id}_total_energy", cp_id,)
+            ChargeampsTotalEnergy(
+                hass,
+                f"{cp_info.name}_{cp_id}_total_energy",
+                cp_id,
+            )
         )
         for connector in cp_info.connectors:
             sensors.append(
@@ -51,6 +55,16 @@ class ChargeampsSensor(ChargeampsEntity):
 
     def __init__(self, hass, name, charge_point_id, connector_id):
         super().__init__(hass, name, charge_point_id, connector_id)
+        self._interviewed = False
+
+    async def interview(self):
+        chargepoint_info = self.handler.get_chargepoint_info(self.charge_point_id)
+        connector_info = self.handler.get_connector_info(
+            self.charge_point_id, self.connector_id
+        )
+        self._attributes["chargepoint_type"] = chargepoint_info.type
+        self._attributes["connector_type"] = connector_info.type
+        self._interviewed = True
 
     async def async_update(self):
         """Update the sensor."""
@@ -87,12 +101,14 @@ class ChargeampsTotalEnergy(ChargeampsEntity):
     async def async_update(self):
         """Update the sensor."""
         _LOGGER.debug(
-            "Update chargepoint %s", self.charge_point_id,
+            "Update chargepoint %s",
+            self.charge_point_id,
         )
         await self.handler.update_data(self.charge_point_id)
         self._state = self.handler.get_chargepoint_total_energy(self.charge_point_id)
         _LOGGER.debug(
-            "Finished update chargepoint %s", self.charge_point_id,
+            "Finished update chargepoint %s",
+            self.charge_point_id,
         )
 
     @property

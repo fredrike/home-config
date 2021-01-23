@@ -5,7 +5,7 @@ import logging
 from homeassistant.components.light import SUPPORT_BRIGHTNESS, LightEntity
 
 from . import ChargeampsEntity
-from .const import DOMAIN_DATA
+from .const import DOMAIN, DOMAIN_DATA, SCAN_INTERVAL  # noqa
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -25,7 +25,9 @@ async def async_setup_platform(
                 ChargeampsLight(hass, f"{cp_info.name}_{cp_id}_{_type}", cp_id, _type)
             )
             _LOGGER.info(
-                "Adding chargepoint %s light %s", cp_id, _type,
+                "Adding chargepoint %s light %s",
+                cp_id,
+                _type,
             )
     async_add_entities(lights, True)
 
@@ -34,11 +36,17 @@ class ChargeampsLight(LightEntity, ChargeampsEntity):
     """Chargeamps Light class."""
 
     def __init__(self, hass, name, charge_point_id, light_type):
-        super().__init__(hass, name, charge_point_id, light_type)
+        super().__init__(hass, name, charge_point_id)
         self._light_type = light_type
         self._supported_features = 0
         if light_type == "dimmer":
             self._supported_features |= SUPPORT_BRIGHTNESS
+        self._attributes["light_type"] = light_type
+
+    @property
+    def unique_id(self):
+        """Return a unique ID to use for this sensor."""
+        return f"{DOMAIN}_{self.charge_point_id}_{self._light_type}"
 
     @property
     def supported_features(self):
