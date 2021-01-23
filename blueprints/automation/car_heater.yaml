@@ -1,0 +1,118 @@
+blueprint:
+  name: Car heater
+  description: Activate car heater based on sensor temperature
+  domain: automation
+  input:
+    temp_sensor:
+      name: Reference temperature sensor
+      selector:
+        entity:
+          domain: sensor
+          device_class: temperature
+    car_heater_switch:
+      name: Car heater switch
+      selector:
+        entity:
+          domain: switch
+    time_to_leave:
+      name: Time to leave
+      description: The time the car should be warm
+      default: '7:00:00'
+      selector:
+        time: {}
+    factor:
+      name: Heat factor
+      description: >
+        The heating factor indicates how fast the car will get heated
+         a value of 4.0 means that the car heats by 1/4° per minute (4 minutes per 1°C).
+      default: 4.0
+      selector:
+        number:
+          min: 0.1
+          max: 10.0
+          step: 0.1
+          mode: slider
+    comfy_temp:
+      name: Comfort temperature
+      description: Target temperature
+      default: 18
+      selector:
+        number:
+          min: 5
+          max: 25
+          step: 1
+          unit_of_measurement: °C
+          mode: slider
+    notify_device:
+      name: Device to notify
+      description: Device needs to run the official Home Assistant app to receive notifications.
+      selector:
+        device:
+          integration: mobile_app
+    vacation_sensor:
+      name: Vacation sensor (optional)
+      description: Bolean sensor that indicates if current day is a workingday or not.
+      default: none
+      selector:
+        entity:
+          domain: bolean_sensor
+
+variables:
+  temp_sensor: !input temp_sensor
+  comfort_temperature: !input comfy_temp
+  heat_factor: !input factor
+  # running_time_sec: "{{ (delta_temperature * heat_factor *60) | abs }}"  # will be -30 * 4 = -120 minutes (2h)
+  manual_time: !input time_to_leave
+trigger:
+  - platform: time_pattern
+    minutes: '*'
+condition:
+  - condition: template
+    value_template: >-
+      {%- set seconds = ((float(states(temp_sensor)) - 
+      float(comfort_temperature)) * float(heat_factor) * 60) | abs %}
+      {%- set nnow = now()%}
+      {%- set time_diff = (as_timestamp(nnow.strftime("%Y-%m-%d ") ~ manual_time) - as_timestamp(nnow) ) -%}
+      
+      {{- (0 < time_diff <= seconds) or ((24*60*60)-seconds < time_diff*-1 < (24*60*60)) -}}
+action:
+  - service: switch.turn_on
+    entity_id: !input car_heater_switch
+  - domain: mobile_app
+    type: notify
+    device_id: 3a3076e1accc4fa8b5333d9bedc5c376
+    message: >-
+      {%- set seconds = ((float(states(temp_sensor)) - 
+      float(comfort_temperature)) * float(heat_factor) 
+      * 60) | abs -%}
+
+      The car heater is turned on to have the car warm
+      ({{comfort_temperature}}°C) at {{manual_time}}.
+      Current outside temperature is {{
+      states(temp_sensor) }}.
+      Will run for {{ (seconds + (5 * 60)) / 60 }} minutes..
+    title: 'Car heater {{ states(temp_sensor) }}°C @ {{now()}}'
+  - wait_template: false
+    continue_on_timeout: true
+    timeout:
+      seconds: >-
+        {%- set seconds = ((float(states(temp_sensor)) - 
+        float(comfort_temperature)) * float(heat_factor) 
+        * 60) | abs %}
+        {{- seconds + (5 * 60) -}}
+  - service: switch.turn_off
+    entity_id: !input car_heater_switch
+  - domain: mobile_app
+    type: notify
+    device_id: 3a3076e1accc4fa8b5333d9bedc5c376
+    message: >-
+      {%- set seconds = ((float(states(temp_sensor)) - 
+      float(comfort_temperature)) * float(heat_factor) 
+      * 60) | abs -%}
+
+      The car heater is turned OFF to have the car warm
+      ({{ comfort_temperature }}°C) at {{manual_time}}.
+      Was running for {{- seconds + (5 * 60) -}} secs.
+    title: 'Car heater OFF {{ states(temp_sensor) }}°C @ {{now()}}'
+mode: single
+
