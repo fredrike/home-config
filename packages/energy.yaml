@@ -23,6 +23,12 @@ homeassistant:
       friendly_name: Sparsnas this month
     sensor.sparsnas_yearly:
       friendly_name: Sparsnas this year
+    sensor.energy_meter_ekorrbo_daily:
+      friendly_name: Ekorrbo today
+    sensor.energy_meter_ekorrbo_monthly:
+      friendly_name: Ekorrbo this month
+    sensor.energy_meter_ekorrbo_yearly:
+      friendly_name: Ekorrbo this year
 
 sensor:
   - platform: rest
@@ -227,4 +233,13 @@ utility_meter:
   inverter_daily:
     source: sensor.inverter_kwh
     cycle: daily
-
+  energy_meter_ekorrbo_yearly:
+    source: sensor.energy_meter_ekorrbo
+    cycle: yearly
+  energy_meter_ekorrbo_monthly:
+    source: sensor.energy_meter_ekorrbo
+    cycle: monthly
+  energy_meter_ekorrbo_daily:
+    source: sensor.energy_meter_ekorrbo
+    cycle: daily
+    

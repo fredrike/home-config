@@ -5,14 +5,14 @@ from datetime import timedelta
 # Base component constants
 DOMAIN = "chargeamps"
 DOMAIN_DATA = f"{DOMAIN}_data"
-VERSION = "1.3.0"
+VERSION = "1.4.2"
 PLATFORMS = ["sensor", "switch", "light"]
 ISSUE_URL = "https://github.com/kirei/hass-chargeamps/issues"
 
 # Icons
 DEFAULT_ICON = "mdi:car-electric"
 ICON_MAP = {
-    "Charger": "mdi:ev-station",
+    "Charger": "mdi:ev-plug-type2",
     "Schuko": "mdi:power-socket-de",
 }
 

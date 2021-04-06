@@ -125,3 +125,10 @@
     ignore_availability: true
     name: Fredrik @ Consid 
     track: true
+
+- cal_id: 2aapa82ki39ku35o49gvtk432v21g5br@import.calendar.google.com
+  entities:
+  - device_id: kalender
+    ignore_availability: true
+    name: Kalender
+    track: true

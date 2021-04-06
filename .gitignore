@@ -1,8 +1,10 @@
 *
+!.gitignore
 !*.yaml
 !scenes
 !packages
-!.gitignore
+!blueprints
+!configuration.yaml
 secrets.yaml
 *.pyc
 __pycache__

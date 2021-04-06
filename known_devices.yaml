@@ -819,3 +819,255 @@ emmas_ipad_2_2:
   icon:
   picture:
   track: true
+
+leas_ipad_2:
+  name: Leas-iPad
+  mac: 92:6C:1B:85:B1:C8
+  icon:
+  picture:
+  track: true
+
+jfipadmini4:
+  name: JFiPadmini4
+  mac: A2:BC:4E:A8:41:20
+  icon:
+  picture:
+  track: true
+
+52_55_00_d1_55_01:
+  name: 52_55_00_d1_55_01
+  mac: 52:55:00:D1:55:01
+  icon:
+  picture:
+  track: true
+
+homeassistant:
+  name: homeassistant
+  mac: 02:11:32:2E:EE:84
+  icon:
+  picture:
+  track: true
+
+homeassistant_2:
+  name: homeassistant
+  mac: 02:11:32:25:3A:03
+  icon:
+  picture:
+  track: true
+
+homeassistant_3:
+  name: homeassistant
+  mac: 02:11:32:2D:33:D1
+  icon:
+  picture:
+  track: true
+
+homeassistant_4:
+  name: homeassistant
+  mac: 02:11:32:21:FF:32
+  icon:
+  picture:
+  track: true
+
+homeassistant_5:
+  name: homeassistant
+  mac: 02:11:32:29:AA:0F
+  icon:
+  picture:
+  track: true
+
+homeassistant_6:
+  name: homeassistant
+  mac: 02:11:32:2C:2F:19
+  icon:
+  picture:
+  track: true
+
+homeassistant_7:
+  name: homeassistant
+  mac: 02:11:32:27:53:56
+  icon:
+  picture:
+  track: true
+
+homeassistant_8:
+  name: homeassistant
+  mac: 02:11:32:21:03:26
+  icon:
+  picture:
+  track: true
+
+homeassistant_9:
+  name: homeassistant
+  mac: 02:11:32:25:35:6A
+  icon:
+  picture:
+  track: true
+
+homeassistant_10:
+  name: homeassistant
+  mac: 02:11:32:26:63:A5
+  icon:
+  picture:
+  track: true
+
+homeassistant_11:
+  name: homeassistant
+  mac: 02:11:32:28:80:7D
+  icon:
+  picture:
+  track: true
+
+homeassistant_12:
+  name: homeassistant
+  mac: 02:11:32:29:51:4E
+  icon:
+  picture:
+  track: true
+
+homeassistant_13:
+  name: homeassistant
+  mac: 02:11:32:2C:FD:A5
+  icon:
+  picture:
+  track: true
+
+homeassistant_14:
+  name: homeassistant
+  mac: 02:11:32:2E:6B:A1
+  icon:
+  picture:
+  track: true
+
+homeassistant_15:
+  name: homeassistant
+  mac: 02:11:32:23:27:0E
+  icon:
+  picture:
+  track: true
+
+homeassistant_16:
+  name: homeassistant
+  mac: 02:11:32:25:4B:97
+  icon:
+  picture:
+  track: true
+
+homeassistant_17:
+  name: homeassistant
+  mac: 02:11:32:2C:19:E7
+  icon:
+  picture:
+  track: true
+
+homeassistant_18:
+  name: homeassistant
+  mac: 02:11:32:28:B8:4A
+  icon:
+  picture:
+  track: true
+
+homeassistant_19:
+  name: homeassistant
+  mac: 02:11:32:2E:7F:FB
+  icon:
+  picture:
+  track: true
+
+homeassistant_20:
+  name: homeassistant
+  mac: 02:11:32:21:F4:87
+  icon:
+  picture:
+  track: true
+
+homeassistant_21:
+  name: homeassistant
+  mac: 02:11:32:2C:0D:75
+  icon:
+  picture:
+  track: true
+
+homeassistant_22:
+  name: homeassistant
+  mac: 02:11:32:2B:C0:26
+  icon:
+  picture:
+  track: true
+
+homeassistant_23:
+  name: homeassistant
+  mac: 02:11:32:21:A2:BA
+  icon:
+  picture:
+  track: true
+
+homeassistant_24:
+  name: homeassistant
+  mac: 02:11:32:29:D3:60
+  icon:
+  picture:
+  track: true
+
+homeassistant_25:
+  name: homeassistant
+  mac: 02:11:32:2B:26:1B
+  icon:
+  picture:
+  track: true
+
+f8_0f_f9_f7_27_ec:
+  name: f8_0f_f9_f7_27_ec
+  mac: F8:0F:F9:F7:27:EC
+  icon:
+  picture:
+  track: true
+
+72_41_d0_61_c7_d7:
+  name: 72_41_d0_61_c7_d7
+  mac: 72:41:D0:61:C7:D7
+  icon:
+  picture:
+  track: true
+
+homematic_raspi:
+  name: homematic-raspi
+  mac: 02:11:32:2F:86:83
+  icon:
+  picture:
+  track: true
+
+homematic_raspi_2:
+  name: homematic-raspi
+  mac: 02:11:32:2B:DC:F8
+  icon:
+  picture:
+  track: true
+
+homeassistant_26:
+  name: homeassistant
+  mac: 02:11:32:2B:63:4B
+  icon:
+  picture:
+  track: true
+
+homeassistant_27:
+  name: homeassistant
+  mac: 02:11:32:26:8C:01
+  icon:
+  picture:
+  track: true
+
+jfipadmini4_2:
+  name: JFiPadmini4
+  mac: 8E:BF:EE:E4:4A:DA
+  icon:
+  picture:
+  track: true
+
+emmas_ipad_5:
+  name: Emmas-iPad
+  mac: 32:37:92:95:3E:16
+  icon:
+  picture:
+  track: true

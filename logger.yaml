@@ -1,4 +1,21 @@
-
-  default: error
+  default: warning
+  # default: error
   logs:
-    influxdb: warning
+    volvooncall.volvooncall: warning
+    # googleapiclient.discovery: warning
+    # influxdb: info
+    # homeassistant.loader: error
+    # netdisco: debug
+    # requests: debug
+    # tellduslive: debug
+    # lg_webos_smart_tv: info
+    # pydaikin: notset
+    # asuswrt: warning
+    pypoint: debug
+  
+    # custom_components.shelly: debug
+    # homeassistant.components.sensor.rest: critical
+    homeassistant.components.point: debug
+    # homeassistant.components.point: notset
+    homeassistant.components.binary_sensor.point: debug
+    homeassistant.components.point.binary_sensor: debug

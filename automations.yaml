@@ -51,7 +51,7 @@
   - condition: state
     entity_id: input_boolean.trip_mode
     state: 'off'
-  - below: '21'
+  - below: '22'
     condition: numeric_state
     entity_id: sensor.vit_inne_temperature
   action:
@@ -67,6 +67,7 @@
   - data:
       entity_id: climate.mjovik
     service: climate.turn_on
+  mode: single
 - id: 6c7d7b4527c243ada790a57ff40abada
   alias: AC weekday afternoon (heat 23)
   trigger:
@@ -165,12 +166,14 @@
   - platform: template
     value_template: '{{ is_state("binary_sensor.workday_sensor", "off") or is_state("calendar.lediga",
       "on")}} '
+  - platform: state
+    entity_id: binary_sensor.workday_sensor
+    to: 'on'
   condition: []
   action:
-  - alias: ''
-    data:
-      entity_id: input_boolean.vacation_mode
-    service: input_boolean.turn_on
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.vacation_mode
+  mode: single
 - id: '1534411228139'
   alias: Automatic "Vi är lediga" (off)
   trigger:
@@ -565,6 +568,7 @@
         \ ({{ states('sensor.krz81s_battery_range')}} km). \n{%- endif %}"
       title: KRZ81S charging time
     service: notify.pushover
+  mode: single
 - id: '1584388288192'
   alias: Sunset
   description: ''
@@ -719,14 +723,20 @@
   - platform: event
     event_type: shelly_switch_click
     event_data:
-      entity_id: light.shelly_barnens_fonster
       click_cnt: 2
+      entity_id: binary_sensor.shelly_shdm_1_d0af99_1_switch
       state: false
-  condition: []
+  condition:
+  - condition: time
+    after: '18:00'
   action:
   - service: persistent_notification.create
     data:
       message: Barnen ska sova..
+  - type: turn_off
+    device_id: fa07fe1f262f48789c13b20a11c52891
+    entity_id: switch.bollarna
+    domain: switch
   mode: single
 - id: '1603380456794'
   alias: Chargeamps current
@@ -734,6 +744,10 @@
   trigger:
   - platform: time
     at: 05:00
+  - platform: state
+    entity_id: binary_sensor.krz81s_battery_charging
+    to: 'off'
+    for: 00:05:00
   condition:
   - condition: numeric_state
     entity_id: switch.chargeamps
@@ -746,3 +760,94 @@
       connector: 1
       max_current: 12
   mode: single
+- id: '1611047417608'
+  alias: 00 Notify when car is charging
+  description: ''
+  use_blueprint:
+    path: charging.yaml
+    input:
+      battery_charging: binary_sensor.krz81s_battery_charging
+      battery_range: sensor.krz81s_battery_range
+      battery_level: sensor.krz81s_battery_level
+      time_to_fully_charged: sensor.krz81s_time_to_fully_charged
+      notify_device: 3a3076e1accc4fa8b5333d9bedc5c376
+- id: '1611221871294'
+  alias: zz_Heat car
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: '*'
+  condition:
+  - condition: template
+    value_template: '{%- set temp_sensor = ''sensor.ute_temperature'' %} {%- set comfort_temperature
+      = ''10'' %} {%- set heat_factor = ''1'' %} {%- set manual_time = ''15:30:00''
+      -%} {%- set seconds = ((float(states(temp_sensor)) -  float(comfort_temperature))
+      * float(heat_factor) * 60) | abs %} {%- set nnow = now()%} {%- set time_diff
+      = (as_timestamp(nnow.strftime("%Y-%m-%d ") ~ manual_time) - as_timestamp(nnow)
+      ) -%}
+
+      {{- (0 < time_diff <= seconds) or ((24*60*60)-seconds < time_diff*-1 < (24*60*60))
+      -}}'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.extra_ute_2
+  - domain: mobile_app
+    type: notify
+    device_id: 3a3076e1accc4fa8b5333d9bedc5c376
+    message: '{%- set temp_sensor = ''sensor.ute_temperature'' %} {%- set comfort_temperature
+      = ''10'' %} {%- set heat_factor = ''1'' %} {%- set manual_time = ''15:30:00''%}
+      {%- set seconds = ((float(states(temp_sensor)) -  float(comfort_temperature))
+      * float(heat_factor)  * 60) | abs -%}The car heater is turned on to have the
+      car warm ({{comfort_temperature}}°C) at ''''15:30:00''''. {{ states(''sensor.ute_temperature'')|float
+      }} Will run for {{ seconds / 60 }} minutes..'
+    title: Car heater {{ states('sensor.ute_temperature')}}°C @ {{now()}}
+  - wait_template: false
+    continue_on_timeout: true
+    timeout: '[object Object]'
+  - service: switch.turn_off
+    entity_id: switch.extra_ute_2
+  - domain: mobile_app
+    type: notify
+    device_id: 3a3076e1accc4fa8b5333d9bedc5c376
+    message: '{%- set temp_sensor = ''sensor.ute_temperature'' %} {%- set comfort_temperature
+      = ''10'' %} {%- set heat_factor = ''1'' %} {%- set manual_time = ''15:30:00''%}
+      {%- set seconds = ((float(states(temp_sensor)) -  float(comfort_temperature))
+      * float(heat_factor)  * 60) | abs -%}The car heater is turned OFF to have the
+      car warm ({{ comfort_temperature }}°C) at ''''15:30:00''''. Was running for
+      {{- seconds + (5 * 60) -}} secs.'
+    title: OFF Car heater {{ states('sensor.ute_temperature')}}°C @ {{utcnow()}}
+  mode: single
+- id: '1611430425941'
+  alias: 00 - Car heater
+  description: ''
+  use_blueprint:
+    path: car_heater.yaml
+    input:
+      comfy_temp: '20'
+      temp_sensor: sensor.ute_temperature
+      car_heater_switch: switch.krz81s_heater
+      time_to_leave: 07:25:00
+      factor: '0.65'
+      notify_device: 3a3076e1accc4fa8b5333d9bedc5c376
+- id: '1617735696585'
+  alias: '[ekorrbo] Lights On At Sunset'
+  description: ''
+  use_blueprint:
+    path: CyanAutomation/lights_on_at_sunset.yaml
+    input:
+      target_light:
+        entity_id: light.shelly_shdm_2_d8bfc01a025f
+      elevation_shift: -3
+- id: '1617736559425'
+  alias: '[ekorrbo] Dim lights based on sun elevation'
+  description: ''
+  use_blueprint:
+    path: EvTheFuture/dim_lights_based_on_sun_elevation.yaml
+    input:
+      reverse: true
+      max_brightness: 67
+      target_lights:
+        entity_id: light.shelly_shdm_2_d8bfc01a025f
+      turn_on: true
+      turn_off: true
+      min_brightness: 10

@@ -1252,6 +1252,45 @@
                         {
                             "entity": "device_tracker.a06faa48ed64",
                             "type": "entity"
+                        },
+                        {
+                            "type": "grid",
+                            "cards": [
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.transmission_turtle_mode",
+                                    "icon": "hass:turtle"
+                                },
+                                {
+                                    "type": "glance",
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.transmission_active_torrents"
+                                        }
+                                    ],
+                                    "show_icon": false
+                                },
+                                {
+                                    "type": "vertical-stack",
+                                    "cards": [
+                                        {
+                                            "type": "gauge",
+                                            "min": 0,
+                                            "max": 100,
+                                            "entity": "sensor.transmission_down_speed"
+                                        },
+                                        {
+                                            "type": "gauge",
+                                            "min": 0,
+                                            "max": 100,
+                                            "entity": "sensor.transmission_up_speed"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "icon": "mdi:television",
@@ -1259,6 +1298,11 @@
                     "title": "Media Players"
                 },
                 {
+                    "icon": "mdi:car",
+                    "panel": false,
+                    "path": "krz81s",
+                    "theme": "Backend-selected",
+                    "title": "KRZ81S",
                     "badges": [
                         {
                             "entity": "binary_sensor.krz81s_battery_charging"
@@ -1280,6 +1324,12 @@
                         },
                         {
                             "entity": "sensor.krz81s_last_trip"
+                        },
+                        {
+                            "entity": "automation.car_heater"
+                        },
+                        {
+                            "entity": "switch.krz81s_heater"
                         }
                     ],
                     "cards": [
@@ -1451,12 +1501,7 @@
                             "title": "KRZ81S",
                             "type": "entities"
                         }
-                    ],
-                    "icon": "mdi:car",
-                    "panel": false,
-                    "path": "krz81s",
-                    "theme": "Backend-selected",
-                    "title": "KRZ81S"
+                    ]
                 },
                 {
                     "icon": "mdi:flash-circle",

@@ -27,6 +27,7 @@
             },
             {
                 "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629",
                     "59890af008794f16b6cb3e2413b0d609"
                 ],
                 "connections": [
@@ -35,11 +36,16 @@
                         "b0:f1:ec:1d:1b:70"
                     ]
                 ],
-                "identifiers": [],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "B0:F1:EC:1D:1B:70"
+                    ]
+                ],
                 "manufacturer": "Minut",
                 "model": "Point v106",
                 "name": "Point ",
-                "sw_version": 13383,
+                "sw_version": 14166,
                 "entry_type": null,
                 "id": "2e8f0a1a0bd9481dbb5503d87a8b6159",
                 "via_device_id": "608156697c2f4785aa0a07cfa703327a",
@@ -60,6 +66,14 @@
                 "identifiers": [
                     [
                         "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
+                    ],
+                    [
+                        "upnp",
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
+                    ],
+                    [
+                        "upnp",
                         "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_bytes_received"
                     ],
                     [
@@ -68,11 +82,11 @@
                     ],
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
                     ],
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_sent"
                     ],
                     [
                         "upnp",
@@ -84,15 +98,7 @@
                     ],
                     [
                         "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_kbyte/sec_received"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets_received"
-                    ],
-                    [
-                        "upnp",
-                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_received"
+                        "uuid:3ddcd1d3-2380-45f5-b069-6045cb5b1858_packets/sec_sent"
                     ]
                 ],
                 "manufacturer": "ASUSTek",
@@ -142,7 +148,7 @@
                 "manufacturer": "hacs.xyz",
                 "model": "",
                 "name": "HACS",
-                "sw_version": "1.10.0",
+                "sw_version": "1.11.3",
                 "entry_type": "service",
                 "id": "fdf813a6bf914f57ae9615c786a6edbd",
                 "via_device_id": null,
@@ -152,6 +158,7 @@
             },
             {
                 "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629",
                     "0d563b7869354082b003e7fde3a77fff"
                 ],
                 "connections": [
@@ -160,11 +167,16 @@
                         "cc:50:e3:af:87:a8"
                     ]
                 ],
-                "identifiers": [],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "CC:50:E3:AF:87:A8"
+                    ]
+                ],
                 "manufacturer": "espressif",
                 "model": "Espressif ESP32 Dev Module",
                 "name": "display_node",
-                "sw_version": "1.15.2 (Oct 14 2020, 08:51:12)",
+                "sw_version": "1.17.0-dev (Apr  2 2021, 07:44:49)",
                 "entry_type": null,
                 "id": "cc0f1fdd51ad4a8ba1533d2900dd776a",
                 "via_device_id": null,
@@ -252,7 +264,7 @@
                 "manufacturer": "Plex",
                 "model": "Plex Media Server",
                 "name": "Activity Sensor",
-                "sw_version": "1.21.1.3876-3c3adfcb4",
+                "sw_version": "1.22.2.4276-3cbd5e781",
                 "entry_type": null,
                 "id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
                 "via_device_id": null,
@@ -274,7 +286,7 @@
                 "manufacturer": "webOS",
                 "model": "Plex for LG",
                 "name": "Plex (Plex for LG - LG 43UH664V-ZC)",
-                "sw_version": "5.6.1",
+                "sw_version": "5.12.2",
                 "entry_type": null,
                 "id": "263c20d580db4a7493dc6f4492a64ca5",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
@@ -450,7 +462,7 @@
                 "manufacturer": "iOS",
                 "model": "Plex for iOS",
                 "name": "Plex (Lea & Emma - Plex for iOS - Leas iPad)",
-                "sw_version": "7.4",
+                "sw_version": "7.12",
                 "entry_type": null,
                 "id": "756c6dde33774829a02833e63f754cba",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
@@ -570,7 +582,8 @@
             },
             {
                 "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
+                    "706f675d770742d1831003ae1fd10058",
+                    "0381cc3629b54b72084ccec59dea8629"
                 ],
                 "connections": [
                     [
@@ -580,13 +593,17 @@
                 ],
                 "identifiers": [
                     [
+                        "asuswrt",
+                        "AC:CA:54:01:B5:EA"
+                    ],
+                    [
                         "mqtt",
                         "ACCA5401B5EA"
                     ]
                 ],
-                "manufacturer": "Telldus Technologies",
+                "manufacturer": "AsusWRT Tracked device",
                 "model": "Tellstick_Znet_Lite_V2",
-                "name": "TellstickZnetLite",
+                "name": "TellStick-ZNet-Lite",
                 "sw_version": "1.3.1",
                 "entry_type": null,
                 "id": "e1d53cad90374791acb8f9c2a39e4cc3",
@@ -697,7 +714,7 @@
                 "manufacturer": "Allterco",
                 "model": "Shelly Dimmer",
                 "name": "Shelly Dimmer - D0EE05",
-                "sw_version": "1.8.5",
+                "sw_version": "1.9.4",
                 "entry_type": null,
                 "id": "d39fd1efcc4b46cdb3caf4c36f394249",
                 "via_device_id": null,
@@ -729,6 +746,7 @@
             },
             {
                 "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629",
                     "7ac5429ad53f45318f29149a97904b08"
                 ],
                 "connections": [
@@ -737,11 +755,16 @@
                         "a4:08:ea:f0:7a:fe"
                     ]
                 ],
-                "identifiers": [],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "A4:08:EA:F0:7A:FE"
+                    ]
+                ],
                 "manufacturer": "Daikin",
                 "model": "NOTSUPPORT",
                 "name": "Mj\u00f6vik",
-                "sw_version": "3.3.6",
+                "sw_version": "3.3.9",
                 "entry_type": null,
                 "id": "61ecca2ba33e4f4aa0d8f6bdc1215e20",
                 "via_device_id": null,
@@ -782,10 +805,10 @@
                         "CFB0FEE0-E0EB-4213-8CE1-A847DC9A7726"
                     ]
                 ],
-                "manufacturer": "Plex",
+                "manufacturer": "iOS",
                 "model": "Plex for iOS",
                 "name": "Plex (Plex for iOS - J & F iPad mini 4)",
-                "sw_version": "7.2.1",
+                "sw_version": null,
                 "entry_type": null,
                 "id": "4aff8d2434444132868dd540ce1c2c88",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
@@ -1114,8 +1137,8 @@
                 ],
                 "manufacturer": "Plex",
                 "model": "Plex for Mac",
-                "name": "Plex (Plex for Mac - FredrikssonsMBP)",
-                "sw_version": "1.21.0.1410-50a34597",
+                "name": "Plex (Plex for Mac - Fredriks-MBP)",
+                "sw_version": "1.22.0.1421-be6a7c42",
                 "entry_type": null,
                 "id": "2337a895154f11ebb29c851adb5be4ca",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
@@ -1279,6 +1302,7 @@
             },
             {
                 "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629",
                     "6e6220fed6a443188f2f639f8ef1bef6"
                 ],
                 "connections": [
@@ -1287,8 +1311,13 @@
                         "48:3f:da:58:4f:76"
                     ]
                 ],
-                "identifiers": [],
-                "manufacturer": "espressif",
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "48:3F:DA:58:4F:76"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
                 "model": "PLATFORMIO_D1_MINI",
                 "name": "ekorrbo_esp",
                 "sw_version": "1.16.0-dev (Jan  8 2021, 12:53:18)",
@@ -1378,32 +1407,10 @@
                 "manufacturer": "Plex",
                 "model": "Plex for Android (Mobile)",
                 "name": "Plex (Plex for Android (Mobile) - Pixel 4a)",
-                "sw_version": "8.11.0.22186",
+                "sw_version": "8.15.1.23935",
                 "entry_type": null,
                 "id": "0f3e9c7e387ad169c8dcc627ee6383e4",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
-                "area_id": null,
-                "name_by_user": null,
-                "disabled_by": null
-            },
-            {
-                "config_entries": [
-                    "706f675d770742d1831003ae1fd10058"
-                ],
-                "connections": [],
-                "identifiers": [
-                    [
-                        "mqtt",
-                        "a4102659-310f-4d5d-be5e-54af3ac91657"
-                    ]
-                ],
-                "manufacturer": "Fineoffset",
-                "model": "Temperaturehumidity",
-                "name": "Christian",
-                "sw_version": null,
-                "entry_type": null,
-                "id": "6fd8e87dccb74c5da21fca39558c5e12",
-                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
                 "area_id": null,
                 "name_by_user": null,
                 "disabled_by": null
@@ -1466,10 +1473,1247 @@
                 "manufacturer": "Android",
                 "model": "Plexamp",
                 "name": "Plex (Plexamp - Android)",
-                "sw_version": "3.4.0",
+                "sw_version": "3.4.3",
                 "entry_type": null,
                 "id": "ff560370302e56dde15866f2cbc3c924",
                 "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "396fc8a6-9cc7-489a-8401-d500449d60e4"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "f300382445fa0dd40c3bdf028ee73bfe",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "7c:2e:bd:28:a9:6d"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "7C:2E:BD:28:A9:6D"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Google-Nest-Hub",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "49e1b2903e74b8bcb75d339b81f1c7db",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "ee:8c:48:c3:1b:1a"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "EE:8C:48:C3:1B:1A"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Emmas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "ef86d125c6194543064629aa7b11d364",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "5c:cf:7f:ae:8e:a1"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "5C:CF:7F:AE:8E:A1"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Halo",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "0b7e57647f36c9475149f6171f2028ef",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "34:12:98:6c:3e:80"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "34:12:98:6C:3E:80"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "JFiPadmini4",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "2601c85e2d56db03001784ac12d97c23",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "98:f4:ab:d0:ee:05"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "98:F4:AB:D0:EE:05"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellydimmer-D0EE05",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "a89e34dfe00b3a5679e144b1a4ae50d0",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "30:52:cb:df:3a:e1"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "30:52:CB:DF:3A:E1"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "bluray",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "370caa13990a9f00cdfda9f23b61e835",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "b8:27:eb:4e:e6:03"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "B8:27:EB:4E:E6:03"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Mode",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "8a3812dc047e4849d90303841071b2a7",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "98:f4:ab:d0:af:99"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "98:F4:AB:D0:AF:99"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellydimmer-D0AF99",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "80060db2bd14dd19f0644d5179c712ba",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "a0:20:a6:1c:2f:10"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "A0:20:A6:1C:2F:10"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "iotawatt",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "954613f5dbd2722023d0976834a72c1c",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "2c:3a:e8:35:9f:e7"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "2C:3A:E8:35:9F:E7"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "espsparsnas",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "0c6b502bd3857f41d69861ec5512c103",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "14:7d:da:7a:bd:1b"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "14:7D:DA:7A:BD:1B"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Fredriks-MBP",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "74d777d504a65668a040059491b064f9",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "60:b7:6e:2f:31:76"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "60:B7:6E:2F:31:76"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Fredrik-s-Pixel-4a",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "9f2c3263977759b3549a39e20137d4cf",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "92:6c:1b:85:b1:c8"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "92:6C:1B:85:B1:C8"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Leas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "e597b0e308ebe48d16fa532dd289e55f",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "14:7d:da:52:b4:28"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "14:7D:DA:52:B4:28"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Johannas_MBA",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "c26b74445b29e46fd5b40da8129aed5b",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "AsusWRT"
+                    ]
+                ],
+                "manufacturer": "Asus",
+                "model": "Asus Router",
+                "name": "AsusWRT",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "7b95404c408d61055f5a8b3568d0c604",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "e0:63:da:06:66:f7"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "E0:63:DA:06:66:F7"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "EkorrboAP",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "7b869b4af6cf54394b349d64a93a57f1",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "f8:0f:f9:f7:27:ec"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "F8:0F:F9:F7:27:EC"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Johannas-pixel3a",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "c9fbadc840c1c79b55ca909ed57102f4",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "b8:08:cf:d2:82:be"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "B8:08:CF:D2:82:BE"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "HP4E169890",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "2f26e228b0e73e2d938b7dddda131ac0",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "a0:6f:aa:48:ed:64"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "A0:6F:AA:48:ED:64"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "LGwebOSTV",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "262074ba05d576f71b258315cdcc5d74",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "6c:ad:f8:4a:b3:a0"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "6C:AD:F8:4A:B3:A0"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Chromecast",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "b6495a875c898b19ba61f6f9dcfb5ade",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "00:1b:ea:cf:21:54"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "00:1B:EA:CF:21:54"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Wii",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "fe65b6c96b4e16ef2c88e727f6bf1a93",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "ea:3c:56:1a:1b:6f"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "EA:3C:56:1A:1B:6F"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Emmas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "a5b0a4eb0d3c873b5833ea1a529950c8",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "00:10:02:42:40:08"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "00:10:02:42:40:08"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "ISTA-VCCYV1ZWBMTDK1330514",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "c53c1c227bb9adfb7f36efcc8dda6ca2",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "30:f7:c5:e4:bf:97"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "30:F7:C5:E4:BF:97"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "iPhone",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "eb9fb88541a908b750128c1b7b7296c4",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "ae:07:7c:7f:3e:86"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "AE:07:7C:7F:3E:86"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Pixel-3a",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "b9067b8b559fe86a1929690f1d8c5e43",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "plex",
+                        "be0e2702-3b14-47d4-8410-56f00738dec7"
+                    ]
+                ],
+                "manufacturer": "Plex",
+                "model": "Plexamp",
+                "name": "Plex (Plexamp - Engelholm Audio)",
+                "sw_version": "1.0",
+                "entry_type": null,
+                "id": "fcf5179803ca1ca2af0c6565bec0afb5",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "plex",
+                        "gqoqz1zkbdo4jmmr97rylowi"
+                    ]
+                ],
+                "manufacturer": "Chromecast",
+                "model": "Plex Cast",
+                "name": "Plex (Plex Cast - Chromecast)",
+                "sw_version": "4.53.1",
+                "entry_type": null,
+                "id": "75be9e55be39c9ffd568b9a5b13bf84e",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "46:19:46:d4:49:e4"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "46:19:46:D4:49:E4"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Pixel-3a",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "73b7a6b56831268adaca873b984e8e24",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "32:37:92:95:3e:16"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "32:37:92:95:3E:16"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Emmas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "3cc02233286a0d18dce6cd8328fba524",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "4e:43:b2:9d:ee:e1"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "4E:43:B2:9D:EE:E1"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Leas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "be907f8c12204cd648bcbba7f5ef75de",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "72:41:d0:61:c7:d7"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "72:41:D0:61:C7:D7"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Leas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "b1fb58cf3ce840e75fc8a02fb24f3963",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "59890af008794f16b6cb3e2413b0d609"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "point",
+                        "605e2a1e8db187011d2a45a4"
+                    ]
+                ],
+                "manufacturer": "Minut",
+                "model": null,
+                "name": "Ekorrbo",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "0e3e3ade7a0f1931ad2d32cb9530b4d4",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629",
+                    "59890af008794f16b6cb3e2413b0d609"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "c0:84:7d:dd:c6:0c"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "C0:84:7D:DD:C6:0C"
+                    ]
+                ],
+                "manufacturer": "Minut",
+                "model": "Point v110",
+                "name": "Ekorrbo",
+                "sw_version": 14166,
+                "entry_type": null,
+                "id": "a906c78127e18baf6dcbc0ddd6ff6b16",
+                "via_device_id": "0e3e3ade7a0f1931ad2d32cb9530b4d4",
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": "Point Ekorrbo",
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "74:ac:b9:8d:b5:b1"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "74:AC:B9:8D:B5:B1"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "airCube-AC",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "31ab0a28afb149feab38432d326701c9",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "shelly",
+                        "40F520014226"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly Dimmer 2",
+                "name": "Shelly Dimmer 2 - 40F520014226",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "e928a2eb13331d26617399f06a989dae",
+                "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "40:f5:20:01:42:26"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "40:F5:20:01:42:26"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellydimmer2-40F520014226",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "acf5a2ab8e690e6883a969f7de971a9d",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "shelly",
+                        "40F520016385"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly Dimmer 2",
+                "name": "Shelly Dimmer 2 - 40F520016385",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "2960d01bda7a61ab9e8772a56cf9f1ca",
+                "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "40:f5:20:01:63:85"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "40:F5:20:01:63:85"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellydimmer2-40F520016385",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "b7e565c9c24652e3b585f44b19a70828",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "shelly",
+                        "40F52000A4C7"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly 2.5",
+                "name": "Shelly 2.5 - 40F52000A4C7-2",
+                "sw_version": "20210323-104714/v1.10.1-gf276b51",
+                "entry_type": null,
+                "id": "258cbc210d2f38e0efba3b0122d79968",
+                "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": "Shelly Relay",
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "40:f5:20:00:a4:c7"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "40:F5:20:00:A4:C7"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellyswitch25-40F52000A4C7",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "e7fb71041156fbcd768d9ef4e8e3ace9",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "ab7a50e2-616f-4274-9892-66ccd10e319f"
+                    ]
+                ],
+                "manufacturer": "Fineoffset",
+                "model": "Temperaturehumidity",
+                "name": "",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "a17d24637036d74251aa32380dec8e58",
+                "via_device_id": "e1d53cad90374791acb8f9c2a39e4cc3",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "shelly",
+                        "FC98A9"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly RGBW2",
+                "name": "Shelly RGBW2 - FC98A9",
+                "sw_version": "20210325-094218/v1.10.1-34-g2fe647000",
+                "entry_type": null,
+                "id": "b873210275815e92f971427baf3a037f",
+                "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": "RGBW-LED",
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "d8:bf:c0:fc:98:a9"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "D8:BF:C0:FC:98:A9"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellyrgbw2-FC98A9",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "eb4d9a8aca3022ef9ef0fce9bb3b323c",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "d8:bf:c0:1a:02:5f"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "D8:BF:C0:1A:02:5F"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "shellydimmer2-D8BFC01A025F",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "489a21a184bbec082703f2cd08e48ab6",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "459bc201a2884c3ea0b6e737ded40e39"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "shelly",
+                        "D8BFC01A025F"
+                    ]
+                ],
+                "manufacturer": "Allterco",
+                "model": "Shelly Dimmer 2",
+                "name": "Shelly Dimmer 2 - D8BFC01A025F",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "635f79d1bc7e0869513a9b6a300ce25a",
+                "via_device_id": null,
+                "area_id": "73df634d963b499ba37edf3b3bf70fb0",
+                "name_by_user": "Utebelysning Ekorrbo",
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "686151ec6e2e4a5592025de56f551939"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "plex",
+                        "qhttlv8qzu70ugm0c897h1kk"
+                    ]
+                ],
+                "manufacturer": "Chromecast",
+                "model": "Plex Cast",
+                "name": "Plex (Plex Cast - Chromecast)",
+                "sw_version": "4.54.1",
+                "entry_type": null,
+                "id": "1195a1fe0432f5452f78f22fa04aa1f9",
+                "via_device_id": "972e7973c5bf4cd3ae3f065c3d89f0a8",
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "0381cc3629b54b72084ccec59dea8629"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "28:ec:95:7b:36:27"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "asuswrt",
+                        "28:EC:95:7B:36:27"
+                    ]
+                ],
+                "manufacturer": "AsusWRT Tracked device",
+                "model": null,
+                "name": "Emmas-iPad",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "ef4aca5f7b8752ea7a1c6752ad546239",
+                "via_device_id": null,
                 "area_id": null,
                 "name_by_user": null,
                 "disabled_by": null
@@ -1487,7 +2731,8 @@
                         "e0566281-b2a5-4419-9bb1-611ae665052f"
                     ]
                 ],
-                "id": "e63ca33c913a4d63b8ca3684dad8ccc8"
+                "id": "e63ca33c913a4d63b8ca3684dad8ccc8",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1500,7 +2745,8 @@
                         "77e395b7-fcc2-4d00-bafb-fffdfc650166"
                     ]
                 ],
-                "id": "e2d2185904a8410e8eb325d3f6ffdd32"
+                "id": "e2d2185904a8410e8eb325d3f6ffdd32",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1513,7 +2759,8 @@
                         "5b0d10a2-3027-40bb-9697-69000a146c45"
                     ]
                 ],
-                "id": "7774d900f21c436782e66d5b897c7697"
+                "id": "7774d900f21c436782e66d5b897c7697",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1526,7 +2773,8 @@
                         "dbb82493-d8b2-4f59-910f-2e3f7ee73250"
                     ]
                 ],
-                "id": "737a64d0e1574cf1b46b287628ab8ae4"
+                "id": "737a64d0e1574cf1b46b287628ab8ae4",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1539,7 +2787,8 @@
                         "03241099-734e-47ca-8eb9-e8483d8ddd86"
                     ]
                 ],
-                "id": "bec8166c107845ea923d2af033e73559"
+                "id": "bec8166c107845ea923d2af033e73559",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1552,7 +2801,8 @@
                         "c1c32690-2fad-4c8e-bbf0-9c3a6a22203c"
                     ]
                 ],
-                "id": "8e8cf0c9976c41158beac6b136861d07"
+                "id": "8e8cf0c9976c41158beac6b136861d07",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1565,7 +2815,8 @@
                         "39ba4f7e-a76d-4e12-b450-5df50ce47850"
                     ]
                 ],
-                "id": "02ced18680c649aea22d98a3e336c3a3"
+                "id": "02ced18680c649aea22d98a3e336c3a3",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1578,7 +2829,8 @@
                         "dd7e8f28-6992-4d8b-af31-95306df91ca5"
                     ]
                 ],
-                "id": "77d20c46d1364fd185ffdb16e7ae71a0"
+                "id": "77d20c46d1364fd185ffdb16e7ae71a0",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1591,7 +2843,8 @@
                         "e7659946-b9c4-47a4-a509-9aaf5bd3e9ff"
                     ]
                 ],
-                "id": "fa35e61db2fd43e4b064bfd89556b1d5"
+                "id": "fa35e61db2fd43e4b064bfd89556b1d5",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1604,7 +2857,8 @@
                         "4dca15a8-7887-4cdd-adeb-7b32f19b4268"
                     ]
                 ],
-                "id": "b21901c7a97347f18e59aa8d10b9adba"
+                "id": "b21901c7a97347f18e59aa8d10b9adba",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1617,7 +2871,8 @@
                         "94a8a711-7507-4e56-a00d-7aaa0d3bca7e"
                     ]
                 ],
-                "id": "0069dae565104e0f99a90fb13d5dc922"
+                "id": "0069dae565104e0f99a90fb13d5dc922",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1630,7 +2885,8 @@
                         "121bd2f2-b39e-4f83-bcf5-ad8add67c963"
                     ]
                 ],
-                "id": "fb861308db7c499980230397bfa99078"
+                "id": "fb861308db7c499980230397bfa99078",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1643,7 +2899,8 @@
                         "f88851f8-a8e4-480a-a878-6fe59fc7262c"
                     ]
                 ],
-                "id": "befbf31afa1b48ccb98923c486a34e77"
+                "id": "befbf31afa1b48ccb98923c486a34e77",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1656,7 +2913,8 @@
                         "19d63d3d-4af0-41ce-9562-9abd4a58014a"
                     ]
                 ],
-                "id": "a1f68f785e3844529e69bc27c8895f5c"
+                "id": "a1f68f785e3844529e69bc27c8895f5c",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1669,7 +2927,8 @@
                         "79c4d784-bb9b-48ed-903c-590090c69cfa"
                     ]
                 ],
-                "id": "2d156e9358154016b0722a40081bb844"
+                "id": "2d156e9358154016b0722a40081bb844",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1682,7 +2941,8 @@
                         "c36bb0d1-207c-435c-9386-9aeab0a832ae"
                     ]
                 ],
-                "id": "2c943651e970472f91b322b4770533f9"
+                "id": "2c943651e970472f91b322b4770533f9",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1695,7 +2955,8 @@
                         "a167ab35-2da8-4371-bdee-900bdccdca40"
                     ]
                 ],
-                "id": "4409d57526d942379d3a896691814ee1"
+                "id": "4409d57526d942379d3a896691814ee1",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1708,7 +2969,8 @@
                         "279f3382-e116-46a0-b163-afa3bbfef633"
                     ]
                 ],
-                "id": "c3fa6018addb42288bcad8248f996a19"
+                "id": "c3fa6018addb42288bcad8248f996a19",
+                "orphaned_timestamp": null
             },
             {
                 "config_entries": [
@@ -1721,7 +2983,36 @@
                         "1f69bac2-4d2f-43f2-b212-6594103dfeed"
                     ]
                 ],
-                "id": "0d3cb41640523d56f599333894ba3cd6"
+                "id": "0d3cb41640523d56f599333894ba3cd6",
+                "orphaned_timestamp": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "682f015a-87b1-4a4f-ad5f-a422dd8bd76a"
+                    ]
+                ],
+                "id": "ef08e3626774bbbb479cda4709ec60bd",
+                "orphaned_timestamp": null
+            },
+            {
+                "config_entries": [
+                    "706f675d770742d1831003ae1fd10058"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mqtt",
+                        "a4102659-310f-4d5d-be5e-54af3ac91657"
+                    ]
+                ],
+                "id": "6fd8e87dccb74c5da21fca39558c5e12",
+                "orphaned_timestamp": null
             }
         ]
     }
