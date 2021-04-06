@@ -27,17 +27,11 @@
         - 192.168.1.0/24
         - 194.47.137.69
 
-# Show links to resources in log and frontend
-#introduction:
-
-map:
+default_config:
 
 # Enables the frontend
 frontend:
   themes: !include_dir_merge_named themes
-
-# Enables configuration UI
-config:
 
 http:
   # Add the following modification: https://github.com/orobardet/dsm-reverse-proxy-websocket
@@ -56,18 +50,12 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
 
-system_health:
-
-person:
 
 # Discover some devices automatically
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
-
-# Enables support for tracking state changes over time
-history:
 
 # View all events in a logbook
 logbook:
@@ -77,10 +65,8 @@ logbook:
       - sensor.plex_recently_added
       - sensor.time
       - sensor.time_date
-      - sensor.sun_elev
     domains:
       - sun
-
 
 recorder:
   auto_purge: true
@@ -95,15 +81,11 @@ recorder:
       - sensor.date
       - sensor.ambient_light
       - sensor.ambient_light_10
-      - sensor.sun_elev
       - sensor.fonster_vardagsrum_power
       - sensor.washer_runtime
       - sensor.sparsnas_frequency_error
     domains:
       - weather
-
-# Enables a map showing the location of tracked devices
-#map:
 
 notify:
   - platform: pushover
@@ -115,7 +97,6 @@ notify:
     vapid_pub_key: !secret vapid_pub_key
     vapid_prv_key: !secret vapid_priv_key
     vapid_email: !secret fredrik_gravatar
-    
 
 asuswrt:
   host: 192.168.1.1
@@ -129,9 +110,6 @@ asuswrt:
 point:
   client_id:     !secret point_id
   client_secret: !secret point_secret
-
-# Track the sun
-sun:
 
 influxdb:
   host: 192.168.1.2
@@ -202,7 +180,6 @@ binary_sensor:
     days_offset: 1
     name: workday_tomorrow
 
-
 google:
   client_id:     !secret google_client_id
   client_secret: !secret google_client_secret
@@ -251,8 +228,6 @@ input_number:
 #    service_name: google_say
 
 # cloud:
-
-mobile_app:
 
 automation: !include automations.yaml
 script: !include scripts.yaml
